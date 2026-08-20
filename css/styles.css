@@ -1994,50 +1994,120 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.75rem;
 }
 
-/* Modulo 1 Visual Box Simulator */
-.form-box-grid {
-  display: flex;
-  gap: 3px;
-  flex-wrap: wrap;
-  margin: 0.4rem 0 0.6rem 0;
-}
-
-.char-box {
-  width: 24px;
-  height: 28px;
-  border: 1.5px solid var(--slate-400);
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: monospace;
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--slate-900);
-  border-radius: 2px;
-}
-
-.char-box.filled {
-  background-color: #eff6ff;
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.stamp-box-placeholder {
-  width: 90px;
-  height: 90px;
-  border: 2px dashed #ef4444;
-  border-radius: var(--radius-md);
-  background-color: #fef2f2;
+/* Step-by-Step Guide & Embedded PDF Preview Styles */
+.step-instructions-container {
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.step-instruction-box {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: var(--transition);
+}
+
+.step-instruction-box:hover {
+  border-color: var(--primary-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.step-number-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--slate-900);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 0.4rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #991b1b;
+  flex-shrink: 0;
+}
+
+.step-instruction-content {
+  flex: 1;
+}
+
+.step-instruction-content h4 {
+  font-size: 1.1rem;
+  color: var(--slate-900);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.step-instruction-content p {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.step-instruction-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--slate-700);
+}
+
+.step-instruction-content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.step-instruction-content li i {
+  color: var(--primary);
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.pdf-preview-container {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.pdf-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.pdf-preview-header h4 {
+  font-size: 1.1rem;
+  color: var(--slate-900);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.pdf-viewer-frame {
+  width: 100%;
+  height: 650px;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-md);
+  background-color: var(--slate-100);
 }
 
 /* Spoken Italian Phrase Cards */
