@@ -2257,7 +2257,11 @@ h1, h2, h3, h4, h5, h6 {
   .video-preview-grid,
   .media-press-grid,
   .social-feed-grid,
-  .links-grid {
+  .links-grid,
+  .survival-grid,
+  .glossary-grid,
+  .field-callout-grid,
+  .checklist-items-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
@@ -2267,8 +2271,28 @@ h1, h2, h3, h4, h5, h6 {
   .link-card,
   .media-press-card,
   .social-post-card,
-  .video-card-body {
+  .video-card-body,
+  .survival-card,
+  .glossary-card,
+  .field-callout-card,
+  .interactive-tool-card {
     padding: 1.25rem;
+  }
+
+  .pdf-ref-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .pdf-ref-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .pdf-ref-actions .btn {
+    width: 100%;
   }
 
   .stat-card-lg {
