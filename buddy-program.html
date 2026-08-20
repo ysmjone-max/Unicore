@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNICORE Buddy Mentorship Program | Peer Support & Community</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="UNICORE">
+        UNICORE<span class="brand-dot">.</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <!-- About Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="about.html" class="nav-link dropdown-trigger">
+            About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link"><i class="fa-solid fa-info-circle"></i> Overview & Mission</a>
+            <a href="how-it-works.html" class="dropdown-link"><i class="fa-solid fa-route"></i> How It Works & Academics</a>
+            <a href="progress-stats.html" class="dropdown-link"><i class="fa-solid fa-chart-simple"></i> Stats & Impact</a>
+          </div>
+        </div>
+
+        <a href="living-in-italy.html" class="nav-link">Living in Italy</a>
+        <a href="buddy-program.html" class="nav-link active">Buddy Program</a>
+        <a href="faq.html" class="nav-link">FAQs</a>
+        <a href="stories-archive.html" class="nav-link">Stories & Archive</a>
+        <a href="important-links.html" class="nav-link">Important Links</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs-bar">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">Buddy Program</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2);">
+          <i class="fa-solid fa-people-arrows"></i> Peer-to-Peer Support
+        </span>
+        <h1>UNICORE Buddy Mentorship Program</h1>
+        <p>
+          Designed by senior scholars to guide incoming refugee students through every step of academic, bureaucratic, and cultural integration across Italian university cities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Overview & Philosophy -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-handshake-angle"></i> Scholars Supporting Scholars</span>
+          <h2 style="font-size: 2rem; margin-bottom: 1rem;">Why the Buddy Program Matters</h2>
+          <p style="font-size: 1rem; color: var(--slate-600); margin-bottom: 1rem;">
+            Transitioning from an asylum country to an Italian university involves overcoming unfamiliar bureaucratic hurdles, academic cultures, and daily life routines.
+          </p>
+          <p style="font-size: 1rem; color: var(--slate-600); margin-bottom: 1.5rem;">
+            The <strong>UNICORE Buddy Program</strong> pairs each incoming scholar with a senior international or Italian peer mentor. Buddies provide individualized guidance from pre-departure planning and arrival accompaniment to oral exam preparation and graduation.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#contact" class="btn btn-primary">
+              <i class="fa-solid fa-envelope"></i> Connect with a Buddy
+            </a>
+            <a href="living-in-italy.html" class="btn btn-secondary">
+              <i class="fa-solid fa-passport"></i> View Settlement Guide
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-title" style="margin-bottom: 1rem;">Buddy Mentorship Pillars</div>
+          <ul class="hero-feature-list">
+            <li><i class="fa-solid fa-check"></i> <strong>Pre-Departure Orientation:</strong> Video calls, packing tips, and airport arrival planning.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>First-Week Settlement:</strong> In-person accompaniment for <em>Kit Giallo</em>, SIM card, and <em>Codice Fiscale</em>.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Academic Mentorship:</strong> Study schedules, exam registration (<em>esse3</em>), and oral exam tips.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Community Inclusion:</strong> Language exchange, campus clubs, and city exploration.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Three-Phase Mentorship Roadmap -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-timeline"></i> The Mentorship Journey</span>
+        <h2>Three Phases of Peer Mentorship</h2>
+        <p>
+          A structured timeline ensuring continuous support before, during, and after arrival in Italy.
+        </p>
+      </div>
+
+      <div class="journey-timeline">
+
+        <!-- Phase 1 -->
+        <div class="journey-step">
+          <div class="step-marker">1</div>
+          <div class="step-card">
+            <div class="step-meta">
+              <span class="step-timeline-tag">Phase 1: Pre-Arrival (August–September)</span>
+            </div>
+            <h3>Direct Contact & Travel Preparation</h3>
+            <p>
+              Before departure, incoming scholars are introduced to their assigned buddy via WhatsApp and email. The buddy answers questions about weather, clothing, university housing, and essential luggage items.
+            </p>
+            <ul class="step-checklist">
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Initial introductory video call & welcome package</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Packing checklist & voltage adapter advice</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Airport arrival route & public transit instructions</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="journey-step">
+          <div class="step-marker">2</div>
+          <div class="step-card">
+            <div class="step-meta">
+              <span class="step-timeline-tag">Phase 2: First 30 Days (September–October)</span>
+            </div>
+            <h3>On-the-Ground Settlement & Bureaucracy</h3>
+            <p>
+              Upon arrival, the buddy meets the student, assists with settling into dormitory accommodation, and accompanies them through key bureaucratic offices.
+            </p>
+            <ul class="step-checklist">
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Buying an Italian SIM card & opening a bank account</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Submitting the <em>Kit Giallo</em> at Poste Italiane Sportello Amico</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Campus tour: libraries, student canteen (<em>Mensa</em>), and department offices</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="journey-step">
+          <div class="step-marker">3</div>
+          <div class="step-card">
+            <div class="step-meta">
+              <span class="step-timeline-tag">Phase 3: Academic Year (November–July)</span>
+            </div>
+            <h3>Academic Excellence & Social Inclusion</h3>
+            <p>
+              Ongoing peer support during coursework and exam sessions. Buddies help navigate Italian exam formats, professor consultations, and social life.
+            </p>
+            <ul class="step-checklist">
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Exam booking procedures on online university portals</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Study groups & oral exam mock practice</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Italian conversational tandem & community gatherings</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Regional Peer Chapters -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-map-location-dot"></i> Nationwide Network</span>
+        <h2>Regional UNICORE Buddy Chapters</h2>
+        <p>
+          Peer network coverage across Northern, Central, and Southern Italian universities.
+        </p>
+      </div>
+
+      <div class="survival-grid">
+
+        <!-- Northern Chapter -->
+        <div class="survival-card">
+          <div class="survival-card-header">
+            <div class="survival-card-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+            <div>
+              <h4 style="margin: 0; font-size: 1.15rem;">Northern Italy Chapter</h4>
+              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">18+ UNIVERSITIES</span>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 1rem;">
+            Covering university cities in Lombardy, Emilia-Romagna, Piedmont, Veneto, Liguria, and Trentino.
+          </p>
+          <div style="font-size: 0.8rem; color: var(--slate-700); line-height: 1.6; margin-bottom: 1rem;">
+            <strong>Key Hubs:</strong> Bologna, Milano (Statale, Bocconi, Bicocca, PoliMi), Torino (UniTo, PoliTo), Verona, Padova, Venezia (Ca' Foscari, Iuav), Trento, Genova, Brescia, Bergamo, Pavia, Ferrara, Modena-Reggio Emilia, Parma.
+          </div>
+        </div>
+
+        <!-- Central Chapter -->
+        <div class="survival-card">
+          <div class="survival-card-header">
+            <div class="survival-card-icon"><i class="fa-solid fa-landmark"></i></div>
+            <div>
+              <h4 style="margin: 0; font-size: 1.15rem;">Central Italy Chapter</h4>
+              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">12+ UNIVERSITIES</span>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 1rem;">
+            Covering university cities in Lazio, Tuscany, Umbria, Abruzzo, and Marche.
+          </p>
+          <div style="font-size: 0.8rem; color: var(--slate-700); line-height: 1.6; margin-bottom: 1rem;">
+            <strong>Key Hubs:</strong> Roma (Sapienza, Luiss, Tor Vergata, Roma Tre), Firenze (UniFI, EUI), Pisa, Siena (UniSi, UniStrasi), Perugia, L'Aquila, Tuscia (Viterbo), Camerino, Macerata, Urbino.
+          </div>
+        </div>
+
+        <!-- Southern & Islands Chapter -->
+        <div class="survival-card">
+          <div class="survival-card-header">
+            <div class="survival-card-icon"><i class="fa-solid fa-sun"></i></div>
+            <div>
+              <h4 style="margin: 0; font-size: 1.15rem;">Southern & Islands Chapter</h4>
+              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">11+ UNIVERSITIES</span>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 1rem;">
+            Covering university cities in Campania, Apulia, Sicily, Sardinia, and Calabria.
+          </p>
+          <div style="font-size: 0.8rem; color: var(--slate-700); line-height: 1.6; margin-bottom: 1rem;">
+            <strong>Key Hubs:</strong> Napoli (Federico II, L'Orientale, Vanvitelli), Bari (UniBa, PoliBa), Foggia, Salento (Lecce), Messina, Palermo, Catania, Cagliari, Sassari, Reggio Calabria, Magna Graecia.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Contact & Mentorship Inquiry -->
+  <section class="section bg-light" id="contact">
+    <div class="container">
+      <div class="interactive-tool-card" style="max-width: 800px; margin: 0 auto;">
+        <div class="tool-header">
+          <div>
+            <h3><i class="fa-solid fa-headset" style="color: var(--primary);"></i> Connect with the Buddy Coordinator</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); margin: 0.25rem 0 0 0;">
+              Are you an incoming UNICORE scholar looking for a peer mentor, or a current student wishing to volunteer as a buddy? Reach out directly.
+            </p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+          
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.25rem;">
+            <div style="font-size: 1.25rem; color: var(--slate-800); margin-bottom: 0.5rem;"><i class="fa-brands fa-linkedin"></i></div>
+            <h5 style="font-size: 1rem; margin-bottom: 0.25rem;">UNICORE Students Association</h5>
+            <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 0.75rem;">
+              Official student and alumni network on LinkedIn for peer mentoring and career updates.
+            </p>
+            <a href="https://www.linkedin.com/company/unicore-students-association" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              Visit LinkedIn Association <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.25rem;">
+            <div style="font-size: 1.25rem; color: var(--slate-800); margin-bottom: 0.5rem;"><i class="fa-solid fa-envelope"></i></div>
+            <h5 style="font-size: 1rem; margin-bottom: 0.25rem;">Direct Program Inquiries</h5>
+            <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 0.75rem;">
+              For buddy allocation and mentor guidelines, contact your host university international relations office or the student network.
+            </p>
+            <a href="mailto:unicore.students.association@gmail.com" class="btn btn-secondary btn-sm">
+              <i class="fa-solid fa-paper-plane"></i> Email Coordinator
+            </a>
+          </div>
+
+        </div>
+
+        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1rem; font-size: 0.85rem; color: var(--slate-600);">
+          <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> <strong>Note:</strong> You can also request a buddy directly during your pre-arrival registration with your university's International Desk or Welcome Office.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">UNICORE<span class="brand-dot">.</span></div>
+          <p>
+            University Corridors for Refugees is promoted by 40+ Italian universities with the support of UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">What is UNICORE</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="living-in-italy.html">Living in Italy</a></li>
+            <li><a href="buddy-program.html">Buddy Program</a></li>
+            <li><a href="progress-stats.html">Stats & Impact</a></li>
+            <li><a href="faq.html">FAQ Guide</a></li>
+            <li><a href="stories-archive.html">Stories & Archive</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>External Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal</a></li>
+            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italia</a></li>
+            <li><a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Ministry of Foreign Affairs (MAECI)</a></li>
+            <li><a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">CIMEA Academic Recognition</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub</div>
+        <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

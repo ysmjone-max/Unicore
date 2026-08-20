@@ -1,6 +1,6 @@
 /* ==========================================================================
    UNICORE Scholar & Student Support Platform — Application Logic
-   Accessible, Mobile-Optimized & Fast
+   Accessible, Mobile-Optimized & Interactive
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -100,6 +100,53 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       countUp();
     }
+  }
+
+  // Interactive Arrival Checklist with LocalStorage (on living-in-italy.html)
+  const checklistContainer = document.getElementById('arrivalChecklist');
+  if (checklistContainer) {
+    const items = checklistContainer.querySelectorAll('.checklist-item');
+    const progressBar = document.getElementById('progressBar');
+    const progressPercent = document.getElementById('progressPercent');
+
+    const updateChecklist = () => {
+      let checkedCount = 0;
+      items.forEach(item => {
+        const checkbox = item.querySelector('.checklist-checkbox');
+        const docId = item.getAttribute('data-id');
+        if (checkbox.checked) {
+          item.classList.add('checked');
+          checkedCount++;
+          localStorage.setItem('unicore_' + docId, 'true');
+        } else {
+          item.classList.remove('checked');
+          localStorage.removeItem('unicore_' + docId);
+        }
+      });
+
+      const percent = Math.round((checkedCount / items.length) * 100);
+      if (progressBar) progressBar.style.width = percent + '%';
+      if (progressPercent) progressPercent.innerText = percent + '%';
+    };
+
+    // Load saved states from localStorage
+    items.forEach(item => {
+      const checkbox = item.querySelector('.checklist-checkbox');
+      const docId = item.getAttribute('data-id');
+      if (localStorage.getItem('unicore_' + docId) === 'true') {
+        checkbox.checked = true;
+        item.classList.add('checked');
+      }
+
+      item.addEventListener('click', (e) => {
+        if (e.target !== checkbox) {
+          checkbox.checked = !checkbox.checked;
+        }
+        updateChecklist();
+      });
+    });
+
+    updateChecklist();
   }
 
   // FAQ Accordion Toggle & Filter (on faq.html)
