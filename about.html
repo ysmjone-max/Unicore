@@ -3,56 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What is UNICORE? | Mission, Core Pillars & Partners</title>
+  <title>What is UNICORE? | Mission, Core Pillars & Governance</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <aside class="topbar" aria-label="Announcement">
-    <div class="container">
-      <div class="topbar-info">
-        <span class="topbar-tag">UNICORE 8.0</span>
-        <span>Call Open for Academic Year 2026/2027</span>
-      </div>
-      <div class="topbar-links">
-        <span>Official UNHCR Project &bull; <a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-      </div>
-    </div>
-  </aside>
-
   <!-- Navbar -->
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="brand" aria-label="UNICORE Hub">
-        <div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div class="brand-text">
-          <span class="brand-title">UNICORE</span>
-          <span class="brand-subtitle">Scholar & Support Portal</span>
-        </div>
+      <a href="index.html" class="brand" aria-label="UNICORE">
+        UNICORE<span class="brand-dot">.</span>
       </a>
 
       <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">What is UNICORE</a>
-        <a href="progress-stats.html" class="nav-link">Progress & Stats</a>
-        <a href="how-it-works.html" class="nav-link">How It Works</a>
-        <a href="faq.html" class="nav-link">FAQ Guide</a>
-        <a href="support-directory.html" class="nav-link">Support & Links</a>
+        
+        <!-- About Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="about.html" class="nav-link dropdown-trigger active">
+            About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link active"><i class="fa-solid fa-info-circle"></i> Overview & Mission</a>
+            <a href="how-it-works.html" class="dropdown-link"><i class="fa-solid fa-route"></i> How It Works</a>
+            <a href="progress-stats.html" class="dropdown-link"><i class="fa-solid fa-chart-simple"></i> Stats & Impact</a>
+          </div>
+        </div>
+
+        <a href="faq.html" class="nav-link">FAQs</a>
+        <a href="support-directory.html" class="nav-link">Support</a>
         <a href="stories.html" class="nav-link">Stories</a>
-        <a href="blog-events.html" class="nav-link">Blog & Events</a>
+        <a href="blog-events.html" class="nav-link">Media & News</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-          <i class="fa-solid fa-book-open"></i> 430+ Courses
+        <a href="support-directory.html" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-handshake-angle"></i> Support Network
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
@@ -65,9 +58,11 @@
   <div class="breadcrumbs-bar">
     <div class="container">
       <div class="breadcrumbs">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-        <span class="current">What is UNICORE</span>
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span>About</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">Overview & Mission</span>
       </div>
     </div>
   </div>
@@ -76,114 +71,110 @@
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #fff;">
-          <i class="fa-solid fa-landmark-dome"></i> Overview & Mission
+        <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2);">
+          <i class="fa-solid fa-info-circle"></i> Mission & Vision
         </span>
         <h1>What is University Corridors for Refugees?</h1>
         <p>
-          Discover the vision, humanitarian principles, institutional partnership matrix, and global targets driving the UNICORE initiative.
+          A flagship higher education initiative offering refugee youth safe, legal, and fully-funded pathways to complete Master's degree studies across Italy.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Section 1: The Core Mission -->
+  <!-- Section 1: Overview & 15by30 Goal -->
   <section class="section bg-white">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-bullseye"></i> The Vision</span>
-        <h2>A Safe, Dignified Academic Bridge to Higher Education</h2>
+        <span class="section-badge"><i class="fa-solid fa-bullseye"></i> Purpose</span>
+        <h2>Bridging the Global Refugee Education Gap</h2>
         <p>
-          UNICORE represents one of Europe's most successful complementary education pathways for displaced youth.
+          Enabling displaced academic talent to rebuild their futures with dignity and scholarship excellence.
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; align-items: center;" class="hero-grid">
+      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: center;" class="hero-grid">
         <div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--dark);">Transforming Talent into Global Leadership</h3>
-          <p style="color: var(--gray-700); margin-bottom: 1.25rem;">
-            The <strong>University Corridors for Refugees (UNICORE)</strong> project was established to allow refugees residing in first countries of asylum to continue their higher education in Italy, completing two-year Master’s degree programs (*Laurea Magistrale*).
+          <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">From Displacement to Higher Education</h3>
+          <p style="color: var(--slate-600); margin-bottom: 1.25rem;">
+            The <strong>University Corridors for Refugees (UNICORE)</strong> project was established to allow refugees residing in countries of first asylum to continue their higher education in Italy, completing two-year Master’s degree programs (*Laurea Magistrale*).
           </p>
-          <p style="color: var(--gray-700); margin-bottom: 1.25rem;">
-            Instead of risking life-threatening irregular routes, refugee scholars obtain regular <strong>National Study Visas (Type D)</strong>, fly directly to Italy with full financial support, and integrate into university communities with dedicated local partners.
+          <p style="color: var(--slate-600); margin-bottom: 1.25rem;">
+            Instead of facing hazardous irregular journeys, refugee scholars enter Italy with regular <strong>National Study Visas (Type D)</strong>, received with full tuition fee waivers, monthly living stipends, accommodation, and community integration support.
           </p>
-          <p style="color: var(--gray-700);">
-            The project is promoted by Italian universities in close collaboration with the <strong>United Nations High Commissioner for Refugees (UNHCR)</strong>, the <strong>Italian Ministry of Foreign Affairs and International Cooperation (MAECI)</strong>, <strong>Caritas Italiana</strong>, <strong>Diaconia Valdese</strong>, <strong>Centro Astalli</strong>, and local reception networks.
+          <p style="color: var(--slate-600);">
+            The project is promoted by 40+ Italian universities in close collaboration with the <strong>United Nations High Commissioner for Refugees (UNHCR)</strong>, the <strong>Italian Ministry of Foreign Affairs (MAECI)</strong>, <strong>Caritas Italiana</strong>, <strong>Diaconia Valdese</strong>, <strong>Centro Astalli</strong>, and local reception networks.
           </p>
         </div>
 
-        <div style="background: linear-gradient(145deg, #f0f7fc 0%, #e2effa 100%); padding: 2.25rem; border-radius: var(--radius-lg); border: 1px solid #c7e2f7;">
-          <h4 style="font-size: 1.25rem; color: var(--primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fa-solid fa-bullhorn"></i> The UNHCR 15by30 Target
+        <div style="background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 2rem;">
+          <h4 style="font-size: 1.15rem; color: var(--slate-900); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-chart-pie" style="color: var(--primary);"></i> The UNHCR 15by30 Target
           </h4>
-          <p style="font-size: 0.95rem; color: var(--gray-700); margin-bottom: 1.25rem; line-height: 1.6;">
-            Worldwide, only <strong>7% of young refugees</strong> have access to higher education, compared to the global youth average of <strong>40%+</strong>.
+          <p style="font-size: 0.925rem; color: var(--slate-600); margin-bottom: 1.25rem;">
+            Globally, only <strong>7% of refugee youth</strong> have access to higher education, compared to the global youth average of over <strong>40%</strong>.
           </p>
-          <div style="background: var(--white); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary); margin-bottom: 1.25rem;">
-            <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary); line-height: 1;">15% by 2030</div>
-            <div style="font-size: 0.85rem; color: var(--gray-600); margin-top: 0.35rem;">
-              UNHCR’s global goal to enroll 15% of refugee youth in tertiary education by 2030 through initiatives like UNICORE.
+          <div style="background: var(--white); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+            <div style="font-size: 1.75rem; font-weight: 800; color: var(--primary); line-height: 1;">15% by 2030</div>
+            <div style="font-size: 0.8rem; color: var(--slate-500); margin-top: 0.35rem;">
+              UNHCR’s global target to expand tertiary enrollment for young refugees through complementary university pathways.
             </div>
           </div>
-          <div style="font-size: 0.85rem; color: var(--gray-600);">
-            <i class="fa-solid fa-check-double" style="color: var(--success);"></i> UNICORE serves as an international benchmark model for higher education complementary pathways across the EU.
+          <div style="font-size: 0.825rem; color: var(--slate-500);">
+            <i class="fa-solid fa-check" style="color: var(--success);"></i> UNICORE is celebrated across Europe as a pioneer model for legal higher education corridors.
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Section 2: The Three Core Pillars -->
+  <!-- Section 2: 3 Core Pillars -->
   <section class="section bg-light">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-cubes"></i> Fundamental Principles</span>
-        <h2>The 3 Pillars of the UNICORE Model</h2>
+        <span class="section-badge"><i class="fa-solid fa-cubes"></i> Foundations</span>
+        <h2>The 3 Pillars of UNICORE</h2>
         <p>
-          Every scholarship under UNICORE is built upon three non-negotiable foundations of dignity and quality.
+          Every scholarship under UNICORE is built upon three non-negotiable principles of dignity and academic quality.
         </p>
       </div>
 
       <div class="pillars-grid">
-        <!-- Pillar 1 -->
         <div class="pillar-card">
           <div class="pillar-icon"><i class="fa-solid fa-plane-shield"></i></div>
           <h3>1. Safe & Legal Entry</h3>
           <p>
-            Eliminates dangerous, life-threatening irregular crossings. Scholars travel to Italy with valid national study visas and passport waivers facilitated by the Italian Ministry of Foreign Affairs and UNHCR.
+            Eliminates dangerous, life-threatening crossings. Scholars travel to Italy with national study visas facilitated by the Italian Ministry of Foreign Affairs (MAECI) and UNHCR.
           </p>
         </div>
 
-        <!-- Pillar 2 -->
         <div class="pillar-card">
           <div class="pillar-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h3>2. Full Financial & Academic Coverage</h3>
+          <h3>2. Comprehensive Funding</h3>
           <p>
-            Complete scholarship coverage guarantees that financial barriers are removed: full tuition waiver, monthly stipend, university housing, study materials, and health insurance.
+            Full scholarship coverage: complete tuition fee waivers, monthly living stipends, student accommodation, study materials allowance, and health insurance.
           </p>
         </div>
 
-        <!-- Pillar 3 -->
         <div class="pillar-card">
           <div class="pillar-icon"><i class="fa-solid fa-people-roof"></i></div>
-          <h3>3. Holistic Social Inclusion</h3>
+          <h3>3. Holistic Community Inclusion</h3>
           <p>
-            Beyond academics, students receive psychosocial support, peer "Buddy" mentorship from Italian students, Italian language courses, and administrative accompaniment for legal permits.
+            Beyond academics, students receive psychosocial support, peer "Buddy" mentorship from Italian students, Italian language courses, and administrative guidance for permits.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 3: Governance & Partners Matrix -->
+  <!-- Section 3: Governance & Partners -->
   <section class="section bg-white">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-network-wired"></i> Multistakeholder Model</span>
+        <span class="section-badge"><i class="fa-solid fa-network-wired"></i> Partner Matrix</span>
         <h2>How UNICORE is Governed & Organised</h2>
         <p>
-          A unique coalition uniting academia, humanitarian agencies, government ministries, and civil society.
+          A multi-stakeholder partnership uniting Italian universities, UN agencies, government ministries, and humanitarian organizations.
         </p>
       </div>
 
@@ -196,30 +187,30 @@
 
         <div class="partner-box">
           <span class="partner-badge">UN Agency</span>
-          <h4>UNHCR (The UN Refugee Agency)</h4>
+          <h4>UNHCR Italia</h4>
           <p>International coordination, refugee status verification with country of asylum offices, policy standards, and global advocacy.</p>
         </div>
 
         <div class="partner-box">
           <span class="partner-badge">Government</span>
-          <h4>MAECI (Ministry of Foreign Affairs)</h4>
+          <h4>MAECI (Foreign Affairs)</h4>
           <p>Diplomatic support, consular visa coordination (Type D Study Visa), and facilitation through Italian embassies overseas.</p>
         </div>
 
         <div class="partner-box">
-          <span class="partner-badge">Humanitarian Partner</span>
+          <span class="partner-badge">Humanitarian</span>
           <h4>Caritas Italiana</h4>
-          <p>Accommodation arrangements, welcome kits, food and living support, and local integration network across Italian dioceses.</p>
+          <p>Accommodation arrangements, welcome kits, food and living support, and local integration networks across Italian dioceses.</p>
         </div>
 
         <div class="partner-box">
-          <span class="partner-badge">Psychosocial Care</span>
+          <span class="partner-badge">Psychosocial</span>
           <h4>Diaconia Valdese</h4>
-          <p>Mental health support, psychological counseling, trauma support, community centers, and cultural orientation sessions.</p>
+          <p>Mental health support, psychological counseling, trauma care, community centers, and cultural orientation sessions.</p>
         </div>
 
         <div class="partner-box">
-          <span class="partner-badge">Legal Support</span>
+          <span class="partner-badge">Legal</span>
           <h4>Centro Astalli (JRS Italy)</h4>
           <p>Legal clinics, immigration law consultations, Permesso di Soggiorno assistance, and guidance for post-graduation status transition.</p>
         </div>
@@ -231,10 +222,10 @@
   <section class="section bg-light">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-earth-africa"></i> Geographical Scope</span>
-        <h2>Eligible Countries of Asylum (UNICORE 8.0)</h2>
+        <span class="section-badge"><i class="fa-solid fa-earth-africa"></i> Country Scope</span>
+        <h2>13 Eligible Countries of Asylum</h2>
         <p>
-          Candidates must be officially recognized refugees residing in one of the 13 participating nations.
+          Eligible candidates are officially recognized refugees residing in one of the participating countries.
         </p>
       </div>
 
@@ -267,48 +258,48 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3><i class="fa-solid fa-graduation-cap"></i> UNICORE Portal</h3>
+          <div class="brand">UNICORE<span class="brand-dot">.</span></div>
           <p>
-            University Corridors for Refugees (UNICORE) is promoted by 40+ Italian universities with UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
+            University Corridors for Refugees is promoted by 40+ Italian universities with the support of UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Dedicated Pages</h4>
+          <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="about.html">What is UNICORE</a></li>
-            <li><a href="progress-stats.html">Progress & Stats</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="progress-stats.html">Stats & Impact</a></li>
             <li><a href="faq.html">FAQ Guide</a></li>
             <li><a href="support-directory.html">Support Directory</a></li>
-            <li><a href="stories.html">Student Stories</a></li>
-            <li><a href="blog-events.html">Blog & Events</a></li>
+            <li><a href="stories.html">Stories & Testimonies</a></li>
+            <li><a href="blog-events.html">Media & News</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Official Portals</h4>
+          <h4>External Portals</h4>
           <ul class="footer-links">
-            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal</a></li>
-            <li><a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer">Search 430+ Courses</a></li>
-            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italy</a></li>
-            <li><a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Italian Ministry of Foreign Affairs</a></li>
+            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal</a></li>
+            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italia</a></li>
+            <li><a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Ministry of Foreign Affairs (MAECI)</a></li>
+            <li><a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">CIMEA Academic Recognition</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Support & Inquiries</h4>
-          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1rem;">
-            Consult our dedicated support directory for housing, mental health, legal clinics, and university coordination contacts.
+          <h4>Support Directory</h4>
+          <p style="font-size: 0.825rem; color: var(--slate-400); margin-bottom: 0.85rem;">
+            Access verified assistance for housing, legal clinic appointments, and mental health counseling.
           </p>
-          <a href="support-directory.html" class="btn btn-outline-white btn-sm" style="width: 100%;">
-            <i class="fa-solid fa-handshake-angle"></i> Open Support Directory
+          <a href="support-directory.html" class="btn btn-outline btn-sm" style="width: 100%;">
+            <i class="fa-solid fa-handshake-angle"></i> Open Directory
           </a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 UNICORE Platform &bull; Dedicated Refugee Education & Support Hub</div>
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub</div>
         <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
       </div>
     </div>

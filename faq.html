@@ -3,56 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frequently Asked Questions | UNICORE Knowledge Hub</title>
+  <title>Frequently Asked Questions (FAQ) | UNICORE Student Guide</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <aside class="topbar" aria-label="Announcement">
-    <div class="container">
-      <div class="topbar-info">
-        <span class="topbar-tag">UNICORE 8.0</span>
-        <span>Call Open for Academic Year 2026/2027</span>
-      </div>
-      <div class="topbar-links">
-        <span>Official UNHCR Project &bull; <a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-      </div>
-    </div>
-  </aside>
-
   <!-- Navbar -->
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="brand" aria-label="UNICORE Hub">
-        <div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div class="brand-text">
-          <span class="brand-title">UNICORE</span>
-          <span class="brand-subtitle">Scholar & Support Portal</span>
-        </div>
+      <a href="index.html" class="brand" aria-label="UNICORE">
+        UNICORE<span class="brand-dot">.</span>
       </a>
 
       <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">What is UNICORE</a>
-        <a href="progress-stats.html" class="nav-link">Progress & Stats</a>
-        <a href="how-it-works.html" class="nav-link">How It Works</a>
-        <a href="faq.html" class="nav-link active">FAQ Guide</a>
-        <a href="support-directory.html" class="nav-link">Support & Links</a>
+        
+        <!-- About Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="about.html" class="nav-link dropdown-trigger">
+            About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link"><i class="fa-solid fa-info-circle"></i> Overview & Mission</a>
+            <a href="how-it-works.html" class="dropdown-link"><i class="fa-solid fa-route"></i> How It Works</a>
+            <a href="progress-stats.html" class="dropdown-link"><i class="fa-solid fa-chart-simple"></i> Stats & Impact</a>
+          </div>
+        </div>
+
+        <a href="faq.html" class="nav-link active">FAQs</a>
+        <a href="support-directory.html" class="nav-link">Support</a>
         <a href="stories.html" class="nav-link">Stories</a>
-        <a href="blog-events.html" class="nav-link">Blog & Events</a>
+        <a href="blog-events.html" class="nav-link">Media & News</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-          <i class="fa-solid fa-book-open"></i> 430+ Courses
+        <a href="support-directory.html" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-handshake-angle"></i> Support Network
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
@@ -65,9 +58,9 @@
   <div class="breadcrumbs-bar">
     <div class="container">
       <div class="breadcrumbs">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-        <span class="current">Frequently Asked Questions</span>
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">FAQ Guide</span>
       </div>
     </div>
   </div>
@@ -76,232 +69,163 @@
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #fff;">
-          <i class="fa-solid fa-circle-question"></i> Comprehensive FAQ Hub
+        <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2);">
+          <i class="fa-solid fa-circle-question"></i> Help & Guidance
         </span>
         <h1>Frequently Asked Questions</h1>
         <p>
-          Organized by student lifecycle: Pre-Arrival & Prospective Applicants, Current Scholars Living in Italy, and Post-Graduation & Alumni Pathways.
+          Find clear, verified answers structured across every stage of the student lifecycle: pre-arrival applications, daily student life in Italy, and post-graduation career opportunities.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Interactive Section -->
+  <!-- FAQ Hub Interactive Section -->
   <section class="section bg-light">
     <div class="container">
       
-      <!-- FAQ Search -->
+      <!-- Search Bar -->
       <div class="faq-search-wrapper">
         <i class="fa-solid fa-magnifying-glass faq-search-icon"></i>
-        <input type="text" id="faqSearch" class="faq-search-input" placeholder="Search any question (e.g. GPA, visa, work permit, stipend, CFU credits)..." aria-label="Search FAQs">
+        <input type="text" id="faqSearch" class="faq-search-input" placeholder="Search questions by keyword (e.g. stipend, visa, GPA, permit, housing)..." aria-label="Search FAQs">
       </div>
 
-      <!-- FAQ Category Tabs -->
+      <!-- Filter Tabs -->
       <div class="faq-tabs">
         <button class="faq-tab-btn active" data-category="all">
           <i class="fa-solid fa-layer-group"></i> All Questions
         </button>
         <button class="faq-tab-btn" data-category="pre-arrival">
-          <i class="fa-solid fa-plane-departure"></i> 🛫 Before Arrival / Applicants
+          <i class="fa-solid fa-plane-departure"></i> Pre-Arrival / Applicants
         </button>
         <button class="faq-tab-btn" data-category="current">
-          <i class="fa-solid fa-graduation-cap"></i> 🎓 Current Students in Italy
+          <i class="fa-solid fa-graduation-cap"></i> Current Students in Italy
         </button>
         <button class="faq-tab-btn" data-category="alumni">
-          <i class="fa-solid fa-briefcase"></i> 💼 After Graduation / Alumni
+          <i class="fa-solid fa-briefcase"></i> Post-Graduation & Alumni
         </button>
       </div>
 
       <!-- FAQ Accordion List -->
       <div class="faq-accordion-list" id="faqList">
 
-        <!-- ==================== BEFORE ARRIVAL ==================== -->
+        <!-- Pre-Arrival Questions -->
         <div class="faq-item" data-category="pre-arrival">
           <button class="faq-question">
-            <span><span class="faq-badge badge-pre">Pre-Arrival</span> Where do I start and how can I apply?</span>
+            <span><span class="faq-badge badge-pre">Pre-Arrival</span> Is there any fee to apply for UNICORE?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <p>
-              Begin by exploring the <a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer">course catalog on the official UNICORE portal</a>. Identify the Master's programs that align with your undergraduate degree. Carefully read the individual calls for application published by your target universities, create your applicant account on the official portal, and upload your refugee certificate, Bachelor's diploma, academic transcripts, and CV.
+              <strong>No, applying for UNICORE is completely 100% free of charge.</strong> UNHCR, participating Italian universities, and partner organizations will never ask for money or payment at any stage of the application or selection process. Anyone asking for money claiming to represent UNICORE is committing fraud.
             </p>
           </div>
         </div>
 
         <div class="faq-item" data-category="pre-arrival">
           <button class="faq-question">
-            <span><span class="faq-badge badge-pre">Pre-Arrival</span> Is there any fee or payment required to apply?</span>
+            <span><span class="faq-badge badge-pre">Pre-Arrival</span> Who is eligible to apply for UNICORE scholarships?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
-            <p>
-              <strong>No. Applying to UNICORE is 100% free of charge.</strong> Neither UNHCR, the Italian universities, nor our humanitarian partners charge any application fees. Be alert to scams or fraudulent intermediaries claiming to sell or guarantee scholarships.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item" data-category="pre-arrival">
-          <button class="faq-question">
-            <span><span class="faq-badge badge-pre">Pre-Arrival</span> What are the basic eligibility criteria?</span>
-            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-          </button>
-          <div class="faq-answer">
-            <p>
-              To be eligible for UNICORE 8.0, you must:
-            </p>
-            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; list-style-type: disc; color: var(--gray-700);">
-              <li>Be recognized as a refugee residing in one of the 13 designated countries (<em>Bangladesh, Burkina Faso, Cameroon, Ethiopia, India, Kenya, Mozambique, Niger, Nigeria, South Africa, Uganda, Zambia, Zimbabwe</em>).</li>
-              <li>Hold a valid Bachelor’s degree (minimum 3 years) equivalent to Italian higher education standards.</li>
-              <li>Have a Grade Point Average (GPA) of at least 3.0 (out of 4.0) or national equivalent.</li>
-              <li>Have graduated in or after 2021 (check specific university calls for any variations).</li>
-              <li>Not have been previously enrolled at any UNICORE partner Italian university.</li>
+            <p>To be eligible for UNICORE, you must meet all the following criteria:</p>
+            <ul style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <li>&bull; Be an officially recognized refugee residing in one of the 13 eligible countries (Bangladesh, Burkina Faso, Cameroon, Ethiopia, India, Kenya, Mozambique, Niger, Nigeria, South Africa, Uganda, Zambia, Zimbabwe).</li>
+              <li>&bull; Hold a Bachelor's degree (equivalent to at least 3.0 / 4.0 GPA) recognized as eligible for entry into an Italian Master's program.</li>
+              <li>&bull; Have obtained your Bachelor's degree no earlier than the year specified in the respective call (usually within the last 5 years).</li>
+              <li>&bull; Have never been enrolled at an Italian university before.</li>
             </ul>
           </div>
         </div>
 
         <div class="faq-item" data-category="pre-arrival">
           <button class="faq-question">
-            <span><span class="faq-badge badge-pre">Pre-Arrival</span> How many universities can I apply to?</span>
+            <span><span class="faq-badge badge-pre">Pre-Arrival</span> How many Italian universities can I apply to?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <p>
-              Candidates may submit a <strong>maximum of two (2) applications</strong> to different Italian universities. Submitting more than two will result in only the first two chronological submissions being considered.
+              Under UNICORE guidelines, candidates may select and apply to a <strong>maximum of two (2) Italian universities</strong> among the participating institutions. If you apply to more than two, only the first two submitted applications will be considered, or your dossier may be invalidated.
             </p>
           </div>
         </div>
 
         <div class="faq-item" data-category="pre-arrival">
           <button class="faq-question">
-            <span><span class="faq-badge badge-pre">Pre-Arrival</span> Is an official English certificate (IELTS/TOEFL) mandatory?</span>
+            <span><span class="faq-badge badge-pre">Pre-Arrival</span> What if I do not have a formal English certificate (IELTS/TOEFL)?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <p>
-              An expensive commercial certificate (such as IELTS or TOEFL) is generally not required if your undergraduate degree was taught in English. Your language proficiency and conversational ability will be directly evaluated during the online interview with the university selection committee.
+              Many participating Italian universities accept an official <strong>English as Medium of Instruction (EMI)</strong> certificate from your Bachelor's university if your entire undergraduate degree was taught in English. Additionally, your English proficiency will be evaluated directly during the online interview with the university board.
             </p>
           </div>
         </div>
 
-        <div class="faq-item" data-category="pre-arrival">
-          <button class="faq-question">
-            <span><span class="faq-badge badge-pre">Pre-Arrival</span> What happens if I have missing educational documentation?</span>
-            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-          </button>
-          <div class="faq-answer">
-            <p>
-              If your academic documents were lost or incomplete due to forced displacement, notify the admissions department of your target university during application. Partner institutions and CIMEA work with the <strong>European Qualifications Passport for Refugees (EQPR)</strong> framework to assess background qualifications where appropriate.
-            </p>
-          </div>
-        </div>
-
-        <!-- ==================== CURRENT STUDENTS ==================== -->
+        <!-- Current Students in Italy -->
         <div class="faq-item" data-category="current">
           <button class="faq-question">
-            <span><span class="faq-badge badge-current">Current Students</span> What financial benefits and services do I receive?</span>
+            <span><span class="faq-badge badge-current">Current Students</span> How does the monthly living allowance and scholarship disbursement work?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <p>
-              The full UNICORE scholarship package provides:
-            </p>
-            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; list-style-type: disc; color: var(--gray-700);">
-              <li><strong>100% Tuition Fee Exemption:</strong> Complete university tuition fee waiver.</li>
-              <li><strong>Living Allowance:</strong> Monthly stipend for food, local transport, and personal expenses.</li>
-              <li><strong>Accommodation:</strong> Free university dormitory room or dedicated housing grant through Caritas/partners.</li>
-              <li><strong>Health Insurance:</strong> Full registration in the Italian National Health Service (SSN) with a family doctor.</li>
-              <li><strong>Academic Support:</strong> Study materials allowance (laptops/books), Italian language classes, and student peer buddies.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="faq-item" data-category="current">
-          <button class="faq-question">
-            <span><span class="faq-badge badge-current">Current Students</span> Am I legally allowed to work while studying in Italy?</span>
-            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-          </button>
-          <div class="faq-answer">
-            <p>
-              <strong>Yes.</strong> Under Italian immigration law, international holders of a Student Residence Permit (<em>Permesso di Soggiorno per Studio</em>) are legally permitted to work part-time up to <strong>20 hours per week</strong> (or up to 1,040 hours per calendar year).
+              Upon arrival in Italy and opening an Italian bank account (with an IBAN and Italian *Codice Fiscale*), your university or regional scholarship authority (*Ente Regionale per il Diritto allo Studio*) will disburse your monthly allowance directly into your bank account. Allowances typically range from <strong>&euro;450 to &euro;600 per month</strong>, alongside free or heavily subsidized dormitory housing and meal cafeteria subsidies.
             </p>
           </div>
         </div>
 
         <div class="faq-item" data-category="current">
           <button class="faq-question">
-            <span><span class="faq-badge badge-current">Current Students</span> What are the criteria for renewing the scholarship in Year 2?</span>
+            <span><span class="faq-badge badge-current">Current Students</span> How do I apply for and renew my Italian Permesso di Soggiorno Studio?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <p>
-              Scholarship renewal is based on academic achievement. Students must complete and pass a minimum number of university course credits (**CFU - Crediti Formativi Universitari**, typically around 30 CFU by the end of their first academic year) to continue receiving both their living stipend and student residence permit.
+              Within <strong>8 working days</strong> of arrival in Italy, you must send the application packet (*Kit Giallo*) from an Italian post office (*Poste Italiane - Sportello Amico*). UNICORE tutors and local partner organizations (such as Centro Astalli or Diaconia Valdese) will assist you with filling out the forms, submitting tax stamps, and scheduling your fingerprinting appointment at the local police headquarters (*Questura*).
             </p>
           </div>
         </div>
 
         <div class="faq-item" data-category="current">
           <button class="faq-question">
-            <span><span class="faq-badge badge-current">Current Students</span> Who assists me with Italian permits and bureaucracy?</span>
+            <span><span class="faq-badge badge-current">Current Students</span> Can I work part-time while studying under UNICORE in Italy?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <p>
-              Local humanitarian partners (Caritas Italiana, Diaconia Valdese, Centro Astalli) and university international student desks will accompany you in obtaining your Codice Fiscale, submitting your Permesso di Soggiorno application at the Questura/Poste Italiane, registering with the ASL (Health Authority), and opening an Italian bank account.
+              Yes. Under Italian immigration law, holders of a *Permesso di Soggiorno per Studio* are legally permitted to work part-time for up to a maximum of <strong>20 hours per week</strong> (or up to 1,040 hours per year). However, students must ensure their employment does not interfere with academic exam requirements.
             </p>
           </div>
         </div>
 
-        <!-- ==================== ALUMNI & POST-GRADUATION ==================== -->
+        <!-- Alumni & Careers -->
         <div class="faq-item" data-category="alumni">
           <button class="faq-question">
-            <span><span class="faq-badge badge-alumni">Alumni & Post-Study</span> Can I stay and work in Italy after completing my Master's?</span>
+            <span><span class="faq-badge badge-alumni">Post-Graduation</span> What residence permit options exist after I graduate from my Master's?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <p>
-              <strong>Yes.</strong> Italian law grants graduates of Italian Master’s programs (Laurea Magistrale) the right to convert their study permit into a <strong>12-Month Job Search Residence Permit</strong> (<em>Permesso di Soggiorno per Ricerca Lavoro o Imprenditorialità</em>). Upon securing employment, this permit can be converted into a standard Work Residence Permit (<em>Permesso di Soggiorno per Lavoro Subordinato</em>).
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item" data-category="alumni">
-          <button class="faq-question">
-            <span><span class="faq-badge badge-alumni">Alumni & Post-Study</span> Can I apply for third-country resettlement from Italy?</span>
-            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-          </button>
-          <div class="faq-answer">
-            <p>
-              <strong>No.</strong> UNICORE is a complementary education pathway, not a refugee resettlement scheme. There is no resettlement mechanism from Italy to other nations (such as the US, Canada, UK, or other EU member states).
+              Upon successfully completing your Master’s degree (*Laurea Magistrale*), you are legally entitled to apply for the <strong>Permesso di Soggiorno per Ricerca Lavoro o Imprenditorialit&agrave;</strong> (Job Search Permit). This permit grants you a <strong>12-month legal residence extension</strong> in Italy to search for employment or register a business, which can subsequently be converted into a regular Work Residence Permit (*Permesso per Lavoro Subordinato* or *Autonomo*).
             </p>
           </div>
         </div>
 
         <div class="faq-item" data-category="alumni">
           <button class="faq-question">
-            <span><span class="faq-badge badge-alumni">Alumni & Post-Study</span> Can I pursue a Ph.D. in Italy after graduation?</span>
+            <span><span class="faq-badge badge-alumni">Post-Graduation</span> Can UNICORE graduates apply for Ph.D. / Doctoral positions in Europe?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <p>
-              <strong>Yes!</strong> Your Italian Laurea Magistrale degree fully qualifies you to apply for national and European doctoral competitions (<em>Dottorato di Ricerca</em>), many of which provide three-year fully funded research scholarships.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item" data-category="alumni">
-          <button class="faq-question">
-            <span><span class="faq-badge badge-alumni">Alumni & Post-Study</span> How does the UNICORE Alumni Network support graduates?</span>
-            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-          </button>
-          <div class="faq-answer">
-            <p>
-              The <strong>UNICORE Alumni Network</strong> connects past scholars across Europe for career mentorship, professional job opportunities, peer advice on European work visas, speaking engagements at UNHCR forums, and mentoring newly arrived scholar cohorts.
+              Yes. Your Italian Master’s degree (*Laurea Magistrale*, 120 ECTS) is fully accredited across the European Higher Education Area (EHEA) and recognized worldwide. Numerous UNICORE alumni have successfully entered fully-funded Ph.D. programs and research fellowships in Italy and across the European Union.
             </p>
           </div>
         </div>
 
       </div>
+
     </div>
   </section>
 
@@ -310,47 +234,48 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3><i class="fa-solid fa-graduation-cap"></i> UNICORE Portal</h3>
+          <div class="brand">UNICORE<span class="brand-dot">.</span></div>
           <p>
-            University Corridors for Refugees (UNICORE) is promoted by 40+ Italian universities with UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
+            University Corridors for Refugees is promoted by 40+ Italian universities with the support of UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Dedicated Pages</h4>
+          <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="about.html">What is UNICORE</a></li>
-            <li><a href="progress-stats.html">Progress & Stats</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="progress-stats.html">Stats & Impact</a></li>
             <li><a href="faq.html">FAQ Guide</a></li>
             <li><a href="support-directory.html">Support Directory</a></li>
-            <li><a href="stories.html">Student Stories</a></li>
-            <li><a href="blog-events.html">Blog & Events</a></li>
+            <li><a href="stories.html">Stories & Testimonies</a></li>
+            <li><a href="blog-events.html">Media & News</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Official Portals</h4>
+          <h4>External Portals</h4>
           <ul class="footer-links">
-            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal</a></li>
-            <li><a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer">Search 430+ Courses</a></li>
-            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italy</a></li>
+            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal</a></li>
+            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italia</a></li>
+            <li><a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Ministry of Foreign Affairs (MAECI)</a></li>
+            <li><a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">CIMEA Academic Recognition</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Support & Inquiries</h4>
-          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1rem;">
-            Consult our dedicated support directory for housing, mental health, legal clinics, and university coordination contacts.
+          <h4>Support Directory</h4>
+          <p style="font-size: 0.825rem; color: var(--slate-400); margin-bottom: 0.85rem;">
+            Access verified assistance for housing, legal clinic appointments, and mental health counseling.
           </p>
-          <a href="support-directory.html" class="btn btn-outline-white btn-sm" style="width: 100%;">
-            <i class="fa-solid fa-handshake-angle"></i> Open Support Directory
+          <a href="support-directory.html" class="btn btn-outline btn-sm" style="width: 100%;">
+            <i class="fa-solid fa-handshake-angle"></i> Open Directory
           </a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 UNICORE Platform &bull; Dedicated Refugee Education & Support Hub</div>
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub</div>
         <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
       </div>
     </div>

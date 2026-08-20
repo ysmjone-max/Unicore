@@ -3,56 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How It Works & Organisation | UNICORE 5-Stage Journey</title>
+  <title>How UNICORE Works | 5-Stage Selection & Study Journey</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <aside class="topbar" aria-label="Announcement">
-    <div class="container">
-      <div class="topbar-info">
-        <span class="topbar-tag">UNICORE 8.0</span>
-        <span>Call Open for Academic Year 2026/2027</span>
-      </div>
-      <div class="topbar-links">
-        <span>Official UNHCR Project &bull; <a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-      </div>
-    </div>
-  </aside>
-
   <!-- Navbar -->
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="brand" aria-label="UNICORE Hub">
-        <div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div class="brand-text">
-          <span class="brand-title">UNICORE</span>
-          <span class="brand-subtitle">Scholar & Support Portal</span>
-        </div>
+      <a href="index.html" class="brand" aria-label="UNICORE">
+        UNICORE<span class="brand-dot">.</span>
       </a>
 
       <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">What is UNICORE</a>
-        <a href="progress-stats.html" class="nav-link">Progress & Stats</a>
-        <a href="how-it-works.html" class="nav-link active">How It Works</a>
-        <a href="faq.html" class="nav-link">FAQ Guide</a>
-        <a href="support-directory.html" class="nav-link">Support & Links</a>
+        
+        <!-- About Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="about.html" class="nav-link dropdown-trigger active">
+            About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link"><i class="fa-solid fa-info-circle"></i> Overview & Mission</a>
+            <a href="how-it-works.html" class="dropdown-link active"><i class="fa-solid fa-route"></i> How It Works</a>
+            <a href="progress-stats.html" class="dropdown-link"><i class="fa-solid fa-chart-simple"></i> Stats & Impact</a>
+          </div>
+        </div>
+
+        <a href="faq.html" class="nav-link">FAQs</a>
+        <a href="support-directory.html" class="nav-link">Support</a>
         <a href="stories.html" class="nav-link">Stories</a>
-        <a href="blog-events.html" class="nav-link">Blog & Events</a>
+        <a href="blog-events.html" class="nav-link">Media & News</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-          <i class="fa-solid fa-book-open"></i> 430+ Courses
+        <a href="support-directory.html" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-handshake-angle"></i> Support Network
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
@@ -65,9 +58,11 @@
   <div class="breadcrumbs-bar">
     <div class="container">
       <div class="breadcrumbs">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-        <span class="current">How It Works & Organisation</span>
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span>About</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">How It Works</span>
       </div>
     </div>
   </div>
@@ -76,189 +71,187 @@
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #fff;">
-          <i class="fa-solid fa-route"></i> Roadmap & Process
+        <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2);">
+          <i class="fa-solid fa-route"></i> Step-by-Step Guide
         </span>
-        <h1>How UNICORE Works & How It Is Organised</h1>
+        <h1>How UNICORE Works & Is Organised</h1>
         <p>
-          A transparent, merit-based 5-stage pathway from initial online application to arrival in Italy, degree completion, and post-graduation career opportunities.
+          A transparent breakdown of the 5-stage scholar journey from application submission to academic graduation and career transition in Italy.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Section 1: The 5-Stage Journey -->
-  <section class="section bg-light">
+  <!-- Section 1: 5-Stage Journey Roadmap -->
+  <section class="section bg-white">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-shoe-prints"></i> The 5 Stages</span>
-        <h2>The Complete Scholar Journey</h2>
+        <span class="section-badge"><i class="fa-solid fa-stairs"></i> The Scholar Roadmap</span>
+        <h2>The 5 Stages of the UNICORE Journey</h2>
         <p>
-          Each phase is accompanied by university academic coordinators and humanitarian partner organizations.
+          Understand what happens at every step of the process from eligibility check to post-study career opportunities.
         </p>
       </div>
 
       <div class="journey-timeline">
-        
-        <!-- Step 1 -->
+
+        <!-- Stage 1 -->
         <div class="journey-step">
           <div class="step-marker">1</div>
           <div class="step-card">
             <div class="step-meta">
-              <span class="step-timeline-tag"><i class="fa-regular fa-calendar"></i> March &ndash; April</span>
-              <span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 600;">Phase 1: Application</span>
+              <span class="step-timeline-tag">Stage 1</span>
+              <span style="font-size: 0.8rem; color: var(--slate-500);"><i class="fa-regular fa-clock"></i> Application Phase</span>
             </div>
-            <h3>Online Application & Refugee Screening</h3>
+            <h3>Online Application & Dossier Submission</h3>
             <p>
-              Candidates consult the 430+ courses offered by the 40 partner universities. Each student may apply to a <strong>maximum of 2 universities</strong> through the centralized portal. Applications require undergraduate degree certificates, transcripts, CV, motivation letters, and refugee documentation.
+              Candidates choose up to two Italian universities and submit their academic credentials via the official portal. Applications are completely free of charge.
             </p>
             <ul class="step-checklist">
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Bachelor's Degree (GPA &ge; 3.0 or equivalent)</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Official UNHCR Refugee ID Card</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Max 2 University Applications</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 100% Free Application Process</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Valid UNHCR Refugee Identity Document</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Bachelor's degree diploma & transcripts</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> GPA equivalent &gt;= 3.0 / 4.0</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> English Motivation Letter & CV (Europass)</li>
             </ul>
           </div>
         </div>
 
-        <!-- Step 2 -->
+        <!-- Stage 2 -->
         <div class="journey-step">
           <div class="step-marker">2</div>
           <div class="step-card">
             <div class="step-meta">
-              <span class="step-timeline-tag"><i class="fa-regular fa-calendar"></i> April &ndash; May</span>
-              <span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 600;">Phase 2: Selection</span>
+              <span class="step-timeline-tag">Stage 2</span>
+              <span style="font-size: 0.8rem; color: var(--slate-500);"><i class="fa-regular fa-clock"></i> Evaluation Phase</span>
             </div>
-            <h3>Document Merit Evaluation & Online Interview</h3>
+            <h3>Academic Evaluation & Online Interviews</h3>
             <p>
-              Independent university committees evaluate candidates through a strict two-tier scoring process:
+              University committees evaluate applications based on strict merit criteria: <strong>Document Screening (0–40 points)</strong> followed by a virtual <strong>Academic Interview (0–40 points)</strong>.
             </p>
-            <div style="background: var(--white); border: 1px solid var(--gray-200); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1rem; font-size: 0.9rem;">
-              <strong>Step 1: Document Review (0&ndash;40 points)</strong> &mdash; Academic background, grades, CV, and subject alignment (Minimum passing score: 25 pts).<br>
-              <strong>Step 2: Virtual Interview (0&ndash;40 points)</strong> &mdash; Technical competence, academic passion, and English language proficiency.
-            </div>
             <ul class="step-checklist">
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Merit-based Evaluation by Professors</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Live Interview on MS Teams / Zoom</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Anonymous Result Publication (Refugee ID)</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Direct Email Notification to Winners</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Document scoring: GPA & curriculum fit</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Shortlisted candidates invited to interview</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> English oral proficiency test</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Final ranking list published on university site</li>
             </ul>
           </div>
         </div>
 
-        <!-- Step 3 -->
+        <!-- Stage 3 -->
         <div class="journey-step">
           <div class="step-marker">3</div>
           <div class="step-card">
             <div class="step-meta">
-              <span class="step-timeline-tag"><i class="fa-regular fa-calendar"></i> June &ndash; August</span>
-              <span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 600;">Phase 3: Pre-Departure</span>
+              <span class="step-timeline-tag">Stage 3</span>
+              <span style="font-size: 0.8rem; color: var(--slate-500);"><i class="fa-regular fa-clock"></i> Pre-Departure Phase</span>
             </div>
-            <h3>Study Visa Issuance, Flight Ticketing & Briefings</h3>
+            <h3>Visa Issuance & Flight Coordination</h3>
             <p>
-              Admitted scholars receive direct administrative support for their Italian National Study Visa (Type D) through Italian Embassies and MAECI. UNHCR and local partners coordinate CIMEA Comparability certificates, travel documents, pre-departure webinars, and flight tickets to Italy.
+              Selected candidates receive assistance from UNHCR and the Italian Embassy to obtain their <strong>National Study Visa (Type D)</strong> and travel tickets.
             </p>
             <ul class="step-checklist">
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> National Study Visa (Type D) Assistance</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Flight Tickets Covered by Programme</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> CIMEA Degree Equivalence Statement</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Cultural & Logistics Pre-departure Webinar</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Consular fee exemptions supported by MAECI</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Free flight tickets to Italy arranged</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Pre-departure briefing & orientation</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Safe arrival coordination at Italian airports</li>
             </ul>
           </div>
         </div>
 
-        <!-- Step 4 -->
+        <!-- Stage 4 -->
         <div class="journey-step">
           <div class="step-marker">4</div>
           <div class="step-card">
             <div class="step-meta">
-              <span class="step-timeline-tag"><i class="fa-regular fa-calendar"></i> September &ndash; Year 2</span>
-              <span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 600;">Phase 4: Studies in Italy</span>
+              <span class="step-timeline-tag">Stage 4</span>
+              <span style="font-size: 0.8rem; color: var(--slate-500);"><i class="fa-regular fa-clock"></i> 2-Year Study Period</span>
             </div>
-            <h3>Arrival, Academic Studies & Local Integration</h3>
+            <h3>Studies & Campus Life in Italy</h3>
             <p>
-              Scholars arrive in Italy and are welcomed by university international offices and local partners (Caritas, Diaconia Valdese, Centro Astalli). Support covers housing placement, Codice Fiscale, Permesso di Soggiorno, National Health Service (SSN) enrollment, monthly stipends, and student peer buddies.
+              Scholars begin their 2-year Master's degree with ongoing financial and social support from universities and partner organizations.
             </p>
             <ul class="step-checklist">
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Housing & Living Stipend Distribution</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Permesso di Soggiorno & Healthcare Setup</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Student Peer Buddy Integration</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Legal Part-time Work Rights (up to 20h/week)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Monthly stipend (approx. &euro;450&ndash;&euro;600/month)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Free student housing & meal cards (Mensa)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Permesso di Soggiorno Studio administrative help</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Free Italian language courses & student buddies</li>
             </ul>
           </div>
         </div>
 
-        <!-- Step 5 -->
+        <!-- Stage 5 -->
         <div class="journey-step">
           <div class="step-marker">5</div>
           <div class="step-card">
             <div class="step-meta">
-              <span class="step-timeline-tag"><i class="fa-regular fa-calendar"></i> Post-Graduation</span>
-              <span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 600;">Phase 5: Career & Alumni</span>
+              <span class="step-timeline-tag">Stage 5</span>
+              <span style="font-size: 0.8rem; color: var(--slate-500);"><i class="fa-regular fa-clock"></i> Post-Study Phase</span>
             </div>
-            <h3>Degree Completion, Job Search Permit & Career Pathways</h3>
+            <h3>Graduation & Career Pathways</h3>
             <p>
-              Upon completing their Laurea Magistrale, graduates are legally eligible under Italian immigration law to convert their study permit into a <strong>12-Month Job Search Residence Permit</strong> (<em>Permesso di Soggiorno per Ricerca Lavoro</em>), pursue doctoral research (Ph.D.), or transition directly into full-time employment in Europe.
+              Upon graduation, students can legally transition into the Italian or European workforce, or pursue Ph.D. research fellowships.
             </p>
             <ul class="step-checklist">
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> 12-Month Job Search Permit Conversion</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Subordinate Work Permit Transition</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Funded Ph.D. Research Opportunities</li>
-              <li><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> UNICORE Alumni Mentorship Network</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> 12-month Job Search Residence Permit (Ricerca Lavoro)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Conversion to work permit upon employment contract</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Access to doctoral programs across Europe</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Active participation in UNICORE Alumni Network</li>
             </ul>
           </div>
         </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- Section 2: Detailed Selection Criteria -->
-  <section class="section bg-white">
+  <!-- Section 2: Merit & Selection Rules -->
+  <section class="section bg-light">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-list-check"></i> Eligibility Criteria</span>
-        <h2>Standard Candidate Admission Requirements</h2>
+        <span class="section-badge"><i class="fa-solid fa-scale-balanced"></i> Merit Principles</span>
+        <h2>Selection Criteria & Anti-Fraud Rules</h2>
         <p>
-          While each university issues its own official call for applications, the following criteria apply across the UNICORE framework.
+          UNICORE operates on transparent academic merit, equal opportunity, and strict credential verification.
         </p>
       </div>
 
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;" class="hero-grid">
-        
-        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 2rem;">
-          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-dark);">
-            <i class="fa-solid fa-user-check"></i> Mandatory Qualifications
+        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--slate-900);">
+            <i class="fa-solid fa-calculator" style="color: var(--primary);"></i> Scoring System Breakdown
           </h3>
-          <ul style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.95rem; color: var(--gray-700);">
-            <li><strong>Refugee Status:</strong> Recognized as a refugee residing in one of the 13 eligible countries.</li>
-            <li><strong>Academic Degree:</strong> Bachelor's degree (minimum 3 years) from a recognized university.</li>
-            <li><strong>Grade Point Average (GPA):</strong> Minimum 3.0 out of 4.0 (or regional equivalent conversion).</li>
-            <li><strong>Graduation Timeline:</strong> Degree obtained in or after 2021 (some universities have no limit).</li>
-            <li><strong>First-time Candidate:</strong> Never previously enrolled at a UNICORE partner institution.</li>
+          <ul style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.925rem; color: var(--slate-700);">
+            <li>
+              <strong>Phase 1: Dossier Screening (Max 40 points)</strong><br>
+              <span style="color: var(--slate-600); font-size: 0.85rem;">Evaluation of Bachelor's GPA, academic transcript relevance to chosen Master's program, CV, and motivation statement.</span>
+            </li>
+            <li>
+              <strong>Phase 2: Academic Interview (Max 40 points)</strong><br>
+              <span style="color: var(--slate-600); font-size: 0.85rem;">Virtual interview conducted by university faculty to assess field knowledge, motivation, and conversational English proficiency.</span>
+            </li>
+            <li>
+              <strong>Minimum Passing Threshold:</strong><br>
+              <span style="color: var(--slate-600); font-size: 0.85rem;">Typically requires at least 25/40 in Phase 1 and 25/40 in Phase 2 (50/80 total) to qualify for scholarship ranking.</span>
+            </li>
           </ul>
         </div>
 
-        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 2rem;">
-          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-dark);">
-            <i class="fa-solid fa-file-lines"></i> Required Application Dossier
+        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--slate-900);">
+            <i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> Credential Verification & Anti-Fraud
           </h3>
-          <ul style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.95rem; color: var(--gray-700);">
-            <li><strong>Refugee Documentation:</strong> Proof of refugee status / ration card.</li>
-            <li><strong>Degree Certificate & Transcripts:</strong> Official transcripts showing all completed coursework.</li>
-            <li><strong>Curriculum Vitae (CV):</strong> Detailed academic and professional background.</li>
-            <li><strong>Motivation Letter:</strong> Explanation of academic goals and program choice.</li>
-            <li><strong>Reference Letters:</strong> Academic recommendation letters (where requested).</li>
+          <p style="font-size: 0.9rem; color: var(--slate-600); margin-bottom: 1rem;">
+            UNICORE applications are strictly <strong>100% free of charge</strong>. All candidate credentials (refugee identity and academic diplomas) undergo thorough multi-agency verification:
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: var(--slate-700);">
+            <li><i class="fa-solid fa-check" style="color: var(--success);"></i> Refugee status verified directly with UNHCR country offices.</li>
+            <li><i class="fa-solid fa-check" style="color: var(--success);"></i> Bachelor's degree authenticated via CIMEA Statement of Comparability or EQPR.</li>
+            <li><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i> Submitting false or forged documents results in immediate disqualification and legal reporting.</li>
           </ul>
         </div>
-
       </div>
 
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="faq.html" class="btn btn-secondary">
-          <i class="fa-solid fa-circle-question"></i> View FAQ on Selection & Requirements
-        </a>
-      </div>
     </div>
   </section>
 
@@ -267,47 +260,48 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3><i class="fa-solid fa-graduation-cap"></i> UNICORE Portal</h3>
+          <div class="brand">UNICORE<span class="brand-dot">.</span></div>
           <p>
-            University Corridors for Refugees (UNICORE) is promoted by 40+ Italian universities with UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
+            University Corridors for Refugees is promoted by 40+ Italian universities with the support of UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Dedicated Pages</h4>
+          <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="about.html">What is UNICORE</a></li>
-            <li><a href="progress-stats.html">Progress & Stats</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="progress-stats.html">Stats & Impact</a></li>
             <li><a href="faq.html">FAQ Guide</a></li>
             <li><a href="support-directory.html">Support Directory</a></li>
-            <li><a href="stories.html">Student Stories</a></li>
-            <li><a href="blog-events.html">Blog & Events</a></li>
+            <li><a href="stories.html">Stories & Testimonies</a></li>
+            <li><a href="blog-events.html">Media & News</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Official Portals</h4>
+          <h4>External Portals</h4>
           <ul class="footer-links">
-            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal</a></li>
-            <li><a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer">Search 430+ Courses</a></li>
-            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italy</a></li>
+            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal</a></li>
+            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italia</a></li>
+            <li><a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Ministry of Foreign Affairs (MAECI)</a></li>
+            <li><a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">CIMEA Academic Recognition</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Support & Inquiries</h4>
-          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1rem;">
-            Consult our dedicated support directory for housing, mental health, legal clinics, and university coordination contacts.
+          <h4>Support Directory</h4>
+          <p style="font-size: 0.825rem; color: var(--slate-400); margin-bottom: 0.85rem;">
+            Access verified assistance for housing, legal clinic appointments, and mental health counseling.
           </p>
-          <a href="support-directory.html" class="btn btn-outline-white btn-sm" style="width: 100%;">
-            <i class="fa-solid fa-handshake-angle"></i> Open Support Directory
+          <a href="support-directory.html" class="btn btn-outline btn-sm" style="width: 100%;">
+            <i class="fa-solid fa-handshake-angle"></i> Open Directory
           </a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 UNICORE Platform &bull; Dedicated Refugee Education & Support Hub</div>
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub</div>
         <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
       </div>
     </div>

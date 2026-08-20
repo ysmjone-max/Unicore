@@ -3,56 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support Directory & Connections | UNICORE Support Network</title>
+  <title>Support Directory & Connections | UNICORE Community Hub</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <aside class="topbar" aria-label="Announcement">
-    <div class="container">
-      <div class="topbar-info">
-        <span class="topbar-tag">UNICORE 8.0</span>
-        <span>Call Open for Academic Year 2026/2027</span>
-      </div>
-      <div class="topbar-links">
-        <span>Official UNHCR Project &bull; <a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-      </div>
-    </div>
-  </aside>
-
   <!-- Navbar -->
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="brand" aria-label="UNICORE Hub">
-        <div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div class="brand-text">
-          <span class="brand-title">UNICORE</span>
-          <span class="brand-subtitle">Scholar & Support Portal</span>
-        </div>
+      <a href="index.html" class="brand" aria-label="UNICORE">
+        UNICORE<span class="brand-dot">.</span>
       </a>
 
       <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">What is UNICORE</a>
-        <a href="progress-stats.html" class="nav-link">Progress & Stats</a>
-        <a href="how-it-works.html" class="nav-link">How It Works</a>
-        <a href="faq.html" class="nav-link">FAQ Guide</a>
-        <a href="support-directory.html" class="nav-link active">Support & Links</a>
+        
+        <!-- About Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="about.html" class="nav-link dropdown-trigger">
+            About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link"><i class="fa-solid fa-info-circle"></i> Overview & Mission</a>
+            <a href="how-it-works.html" class="dropdown-link"><i class="fa-solid fa-route"></i> How It Works</a>
+            <a href="progress-stats.html" class="dropdown-link"><i class="fa-solid fa-chart-simple"></i> Stats & Impact</a>
+          </div>
+        </div>
+
+        <a href="faq.html" class="nav-link">FAQs</a>
+        <a href="support-directory.html" class="nav-link active">Support</a>
         <a href="stories.html" class="nav-link">Stories</a>
-        <a href="blog-events.html" class="nav-link">Blog & Events</a>
+        <a href="blog-events.html" class="nav-link">Media & News</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-          <i class="fa-solid fa-book-open"></i> 430+ Courses
+        <a href="support-directory.html" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-handshake-angle"></i> Support Network
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
@@ -65,9 +58,9 @@
   <div class="breadcrumbs-bar">
     <div class="container">
       <div class="breadcrumbs">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-        <span class="current">Support Directory & Connections</span>
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">Support Directory</span>
       </div>
     </div>
   </div>
@@ -76,12 +69,12 @@
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #fff;">
-          <i class="fa-solid fa-handshake-angle"></i> Support Network
+        <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2);">
+          <i class="fa-solid fa-handshake-angle"></i> Assistance & Partner Network
         </span>
         <h1>Support Directory & Useful Connections</h1>
         <p>
-          Direct links, verified descriptions, and contact points for housing, legal clinics, mental health counseling, academic equivalence, and emergency services.
+          A comprehensive, verified directory of specialized partner organizations providing accommodation, psychological support, legal clinics, academic recognition, and emergency help in Italy.
         </p>
       </div>
     </div>
@@ -91,193 +84,177 @@
   <section class="section bg-light">
     <div class="container">
       
-      <!-- Category Filter Bar -->
+      <!-- Filter Bar -->
       <div class="support-filter-bar">
         <button class="support-filter-btn active" data-filter="all">
-          <i class="fa-solid fa-layer-group"></i> All Services
+          <i class="fa-solid fa-layer-group"></i> All Support Services
         </button>
-        <button class="support-filter-btn" data-filter="official">
-          <i class="fa-solid fa-landmark"></i> Official Portals
-        </button>
-        <button class="support-filter-btn" data-filter="housing">
-          <i class="fa-solid fa-house-user"></i> Housing & Welfare
+        <button class="support-filter-btn" data-filter="welfare">
+          <i class="fa-solid fa-house-chimney-user"></i> Housing & Living
         </button>
         <button class="support-filter-btn" data-filter="mental-health">
-          <i class="fa-solid fa-heart-pulse"></i> Psychosocial & Health
+          <i class="fa-solid fa-heart-pulse"></i> Psychosocial & Mental Health
         </button>
         <button class="support-filter-btn" data-filter="legal">
-          <i class="fa-solid fa-scale-balanced"></i> Legal Clinics & Bureaucracy
+          <i class="fa-solid fa-scale-balanced"></i> Legal Clinics & Permits
         </button>
         <button class="support-filter-btn" data-filter="academic">
-          <i class="fa-solid fa-certificate"></i> Academic Recognition
+          <i class="fa-solid fa-certificate"></i> Degree Recognition
         </button>
       </div>
 
       <!-- Support Cards Grid -->
       <div class="support-grid">
 
-        <!-- 1. Official UNICORE Portal -->
-        <div class="support-card" data-category="official">
+        <!-- Card 1: Caritas Italiana -->
+        <div class="support-card" data-category="welfare">
           <div class="support-card-header">
-            <div class="support-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="support-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
             <div>
-              <span class="support-category">Official Hub</span>
-              <h3>UNICORE Official Portal</h3>
-            </div>
-          </div>
-          <p class="support-desc">
-            The primary application hub hosted by UNHCR Italy. Features the full searchable database of 432 Master's degrees, university-specific calls, admission rules, and personal applicant tracking dashboards.
-          </p>
-          <ul class="support-services-list">
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> 432 Searchable Master's programs</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Application guidelines (PDF download)</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Secure applicant registration & login</li>
-          </ul>
-          <div class="support-link-action">
-            <span style="font-size: 0.8rem; color: var(--gray-500);">UNHCR Italy</span>
-            <a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Visit Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-
-        <!-- 2. MAECI (Ministry of Foreign Affairs) -->
-        <div class="support-card" data-category="official">
-          <div class="support-card-header">
-            <div class="support-icon"><i class="fa-solid fa-landmark"></i></div>
-            <div>
-              <span class="support-category">Government</span>
-              <h3>MAECI & Italian Embassies</h3>
-            </div>
-          </div>
-          <p class="support-desc">
-            The Italian Ministry of Foreign Affairs and International Cooperation coordinates with Italian embassies across the 13 eligible countries to issue National Study Visas (Type D) for selected scholars.
-          </p>
-          <ul class="support-services-list">
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Study visa regulations & requirements</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Italian consular network directory</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Official bilateral mobility protocols</li>
-          </ul>
-          <div class="support-link-action">
-            <span style="font-size: 0.8rem; color: var(--gray-500);">Government of Italy</span>
-            <a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Visit MAECI <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-
-        <!-- 3. Caritas Italiana -->
-        <div class="support-card" data-category="housing">
-          <div class="support-card-header">
-            <div class="support-icon"><i class="fa-solid fa-house-chimney"></i></div>
-            <div>
-              <span class="support-category">Housing & Reception</span>
+              <span class="support-category">Housing & Welfare</span>
               <h3>Caritas Italiana</h3>
             </div>
           </div>
           <p class="support-desc">
-            A key national partner coordinating local diocesan networks in every university city to guarantee accommodation, welcome packages, community mentorship, and immediate living assistance.
+            Provides vital housing assistance, welcome kits, food subsidies, and diocesan community networks that welcome UNICORE scholars upon arrival in Italian cities.
           </p>
           <ul class="support-services-list">
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Dormitory & apartment placement</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Local integration & volunteer networks</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Emergency social assistance</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Student accommodation arrangements</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Meal subsidies and food distribution centers</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Local family integration networks</li>
           </ul>
           <div class="support-link-action">
-            <span style="font-size: 0.8rem; color: var(--gray-500);">National Partner</span>
-            <a href="https://www.caritas.it/" target="_blank" rel="noopener noreferrer">Visit Caritas <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">National Network</span>
+            <a href="https://www.caritas.it/" target="_blank" rel="noopener noreferrer">
+              Visit Caritas <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
         </div>
 
-        <!-- 4. Diaconia Valdese -->
+        <!-- Card 2: Diaconia Valdese -->
         <div class="support-card" data-category="mental-health">
           <div class="support-card-header">
-            <div class="support-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div class="support-icon"><i class="fa-solid fa-head-side-heart"></i></div>
             <div>
               <span class="support-category">Psychosocial Care</span>
-              <h3>Diaconia Valdese</h3>
+              <h3>Diaconia Valdese (CSD)</h3>
             </div>
           </div>
           <p class="support-desc">
-            Provides specialized mental health support, trauma-informed psychological counseling, cultural transition assistance, and community drop-in centers across Italy.
+            Specialized in psychosocial well-being, trauma-informed counseling, cultural orientation, and community centers (*Community Center*) across Italy.
           </p>
           <ul class="support-services-list">
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Free confidential psychological therapy</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Cultural orientation & coping strategies</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Community spaces & intercultural workshops</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Free psychological support & mental healthcare</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Cultural orientation & social inclusion workshops</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Peer counseling and support circles</li>
           </ul>
           <div class="support-link-action">
-            <span style="font-size: 0.8rem; color: var(--gray-500);">Healthcare & Psychosocial</span>
-            <a href="https://www.diaconiavaldese.org/" target="_blank" rel="noopener noreferrer">Visit Diaconia <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">Community Care</span>
+            <a href="https://www.diaconiavaldese.org/" target="_blank" rel="noopener noreferrer">
+              Visit Diaconia <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
         </div>
 
-        <!-- 5. Centro Astalli -->
+        <!-- Card 3: Centro Astalli -->
         <div class="support-card" data-category="legal">
           <div class="support-card-header">
-            <div class="support-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="support-icon"><i class="fa-solid fa-scale-unbalanced"></i></div>
             <div>
-              <span class="support-category">Legal Clinic</span>
+              <span class="support-category">Legal Clinics</span>
               <h3>Centro Astalli (JRS Italy)</h3>
             </div>
           </div>
           <p class="support-desc">
-            The Italian branch of Jesuit Refugee Service, offering dedicated legal advice on immigration laws, *Permesso di Soggiorno* renewals, tax code issues, and transition to post-study work permits.
+            The Italian branch of Jesuit Refugee Service, offering specialized legal orientation, Permesso di Soggiorno assistance, and guidance for international protection rights.
           </p>
           <ul class="support-services-list">
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Immigration & residence permit guidance</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Free legal clinic appointments</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Post-graduation permit conversion advice</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Immigration legal counsel & Questura guidance</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Permesso di Soggiorno Studio to Work conversion</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Italian language learning laboratories</li>
           </ul>
           <div class="support-link-action">
-            <span style="font-size: 0.8rem; color: var(--gray-500);">Legal Support Network</span>
-            <a href="https://www.centroastalli.net/" target="_blank" rel="noopener noreferrer">Visit Astalli <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">Legal Aid</span>
+            <a href="https://www.centroastalli.net/" target="_blank" rel="noopener noreferrer">
+              Visit Centro Astalli <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
         </div>
 
-        <!-- 6. CIMEA & Universitaly -->
+        <!-- Card 4: CIMEA -->
         <div class="support-card" data-category="academic">
           <div class="support-card-header">
-            <div class="support-icon"><i class="fa-solid fa-certificate"></i></div>
+            <div class="support-icon"><i class="fa-solid fa-file-signature"></i></div>
             <div>
               <span class="support-category">Academic Recognition</span>
-              <h3>CIMEA & Universitaly</h3>
+              <h3>CIMEA & EQPR Service</h3>
             </div>
           </div>
           <p class="support-desc">
-            The official Italian center for academic recognition (MUR). Issues Statements of Comparability and implements the European Qualifications Passport for Refugees (EQPR) for missing documentation.
+            The official Italian Information Centre on Academic Mobility and Equivalence. Issues Statements of Comparability and the European Qualifications Passport for Refugees (EQPR).
           </p>
           <ul class="support-services-list">
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Statements of Comparability & Verification</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> European Qualifications Passport (EQPR)</li>
-            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Official Italian pre-enrollment portal</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Verification of foreign undergraduate degrees</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Statement of Comparability / Verification</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Credential assessment for missing documentation</li>
           </ul>
           <div class="support-link-action">
-            <span style="font-size: 0.8rem; color: var(--gray-500);">MUR Recognition</span>
-            <a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">Visit CIMEA <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">Credentials Authority</span>
+            <a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">
+              Visit CIMEA <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
         </div>
 
-      </div>
-
-      <!-- Emergency & Support Helpline Callout -->
-      <div style="background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 2.5rem; margin-top: 3.5rem; box-shadow: var(--shadow-sm);">
-        <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--dark); display: flex; align-items: center; gap: 0.5rem;">
-          <i class="fa-solid fa-phone-volume" style="color: var(--accent);"></i> Urgent Contacts & Emergency Numbers in Italy
-        </h3>
-        <p style="color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1.5rem;">
-          Keep these essential national numbers saved on your phone during your stay in Italy:
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-          <div style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
-            <div style="font-size: 1.3rem; font-weight: 800; color: var(--primary);">112</div>
-            <div style="font-size: 0.85rem; color: var(--gray-600);">Single European Emergency Number</div>
+        <!-- Card 5: ARCI -->
+        <div class="support-card" data-category="welfare">
+          <div class="support-card-header">
+            <div class="support-icon"><i class="fa-solid fa-users"></i></div>
+            <div>
+              <span class="support-category">Community & Culture</span>
+              <h3>ARCI Nazionale</h3>
+            </div>
           </div>
-          <div style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent);">
-            <div style="font-size: 1.3rem; font-weight: 800; color: var(--accent);">118</div>
-            <div style="font-size: 0.85rem; color: var(--gray-600);">Medical Emergency & Ambulance</div>
-          </div>
-          <div style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--success);">
-            <div style="font-size: 1.3rem; font-weight: 800; color: var(--success);">800 905 570</div>
-            <div style="font-size: 0.85rem; color: var(--gray-600);">UNHCR Italy Toll-Free Helpline</div>
+          <p class="support-desc">
+            Nationwide cultural association running social clubs, language exchanges, and free helpline support (*Numero Verde per Richiedenti Asilo e Rifugiati*).
+          </p>
+          <ul class="support-services-list">
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Free Helpline for Refugees: 800 905 570</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Cultural events, student meetups, and language exchanges</li>
+            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Local community circles across all Italian regions</li>
+          </ul>
+          <div class="support-link-action">
+            <span style="font-size: 0.8rem; color: var(--slate-500);">Cultural Network</span>
+            <a href="https://www.arci.it/" target="_blank" rel="noopener noreferrer">
+              Visit ARCI <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
         </div>
+
+        <!-- Card 6: Italian Emergency Contacts -->
+        <div class="support-card" data-category="welfare" style="border-left: 4px solid var(--danger);">
+          <div class="support-card-header">
+            <div class="support-icon" style="background-color: #fee2e2; color: #dc2626;"><i class="fa-solid fa-phone-volume"></i></div>
+            <div>
+              <span class="support-category" style="color: #dc2626;">Emergency Lines</span>
+              <h3>Emergency Helplines in Italy</h3>
+            </div>
+          </div>
+          <p class="support-desc">
+            Essential toll-free emergency phone numbers to know when living and studying in Italy:
+          </p>
+          <ul class="support-services-list">
+            <li><strong>112</strong> &ndash; Single European Emergency Number (Police / Carabinieri)</li>
+            <li><strong>118</strong> &ndash; Medical Emergency & Ambulance Service (*Pronto Soccorso*)</li>
+            <li><strong>1522</strong> &ndash; Anti-Violence & Stalking Helpline (Multilingual, 24/7)</li>
+            <li><strong>800 905 570</strong> &ndash; Toll-Free Refugee Helpline (ARCI/UNHCR)</li>
+          </ul>
+          <div class="support-link-action">
+            <span style="font-size: 0.8rem; color: var(--slate-500);">24/7 Emergency</span>
+            <span style="font-weight: 700; color: #dc2626;">Toll-Free Numbers</span>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -288,47 +265,48 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3><i class="fa-solid fa-graduation-cap"></i> UNICORE Portal</h3>
+          <div class="brand">UNICORE<span class="brand-dot">.</span></div>
           <p>
-            University Corridors for Refugees (UNICORE) is promoted by 40+ Italian universities with UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
+            University Corridors for Refugees is promoted by 40+ Italian universities with the support of UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Dedicated Pages</h4>
+          <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="about.html">What is UNICORE</a></li>
-            <li><a href="progress-stats.html">Progress & Stats</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="progress-stats.html">Stats & Impact</a></li>
             <li><a href="faq.html">FAQ Guide</a></li>
             <li><a href="support-directory.html">Support Directory</a></li>
-            <li><a href="stories.html">Student Stories</a></li>
-            <li><a href="blog-events.html">Blog & Events</a></li>
+            <li><a href="stories.html">Stories & Testimonies</a></li>
+            <li><a href="blog-events.html">Media & News</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Official Portals</h4>
+          <h4>External Portals</h4>
           <ul class="footer-links">
-            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal</a></li>
-            <li><a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer">Search 430+ Courses</a></li>
-            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italy</a></li>
+            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal</a></li>
+            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italia</a></li>
+            <li><a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Ministry of Foreign Affairs (MAECI)</a></li>
+            <li><a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">CIMEA Academic Recognition</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Support & Inquiries</h4>
-          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1rem;">
-            Consult our dedicated support directory for housing, mental health, legal clinics, and university coordination contacts.
+          <h4>Support Directory</h4>
+          <p style="font-size: 0.825rem; color: var(--slate-400); margin-bottom: 0.85rem;">
+            Access verified assistance for housing, legal clinic appointments, and mental health counseling.
           </p>
-          <a href="support-directory.html" class="btn btn-outline-white btn-sm" style="width: 100%;">
-            <i class="fa-solid fa-handshake-angle"></i> Open Support Directory
+          <a href="support-directory.html" class="btn btn-outline btn-sm" style="width: 100%;">
+            <i class="fa-solid fa-handshake-angle"></i> Open Directory
           </a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 UNICORE Platform &bull; Dedicated Refugee Education & Support Hub</div>
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub</div>
         <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
       </div>
     </div>

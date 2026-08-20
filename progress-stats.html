@@ -8,51 +8,44 @@
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <aside class="topbar" aria-label="Announcement">
-    <div class="container">
-      <div class="topbar-info">
-        <span class="topbar-tag">UNICORE 8.0</span>
-        <span>Call Open for Academic Year 2026/2027</span>
-      </div>
-      <div class="topbar-links">
-        <span>Official UNHCR Project &bull; <a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-      </div>
-    </div>
-  </aside>
-
   <!-- Navbar -->
   <header class="navbar">
     <div class="container">
-      <a href="index.html" class="brand" aria-label="UNICORE Hub">
-        <div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div class="brand-text">
-          <span class="brand-title">UNICORE</span>
-          <span class="brand-subtitle">Scholar & Support Portal</span>
-        </div>
+      <a href="index.html" class="brand" aria-label="UNICORE">
+        UNICORE<span class="brand-dot">.</span>
       </a>
 
       <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">What is UNICORE</a>
-        <a href="progress-stats.html" class="nav-link active">Progress & Stats</a>
-        <a href="how-it-works.html" class="nav-link">How It Works</a>
-        <a href="faq.html" class="nav-link">FAQ Guide</a>
-        <a href="support-directory.html" class="nav-link">Support & Links</a>
+        
+        <!-- About Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="about.html" class="nav-link dropdown-trigger active">
+            About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link"><i class="fa-solid fa-info-circle"></i> Overview & Mission</a>
+            <a href="how-it-works.html" class="dropdown-link"><i class="fa-solid fa-route"></i> How It Works</a>
+            <a href="progress-stats.html" class="dropdown-link active"><i class="fa-solid fa-chart-simple"></i> Stats & Impact</a>
+          </div>
+        </div>
+
+        <a href="faq.html" class="nav-link">FAQs</a>
+        <a href="support-directory.html" class="nav-link">Support</a>
         <a href="stories.html" class="nav-link">Stories</a>
-        <a href="blog-events.html" class="nav-link">Blog & Events</a>
+        <a href="blog-events.html" class="nav-link">Media & News</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-          <i class="fa-solid fa-book-open"></i> 430+ Courses
+        <a href="support-directory.html" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-handshake-angle"></i> Support Network
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
@@ -65,9 +58,11 @@
   <div class="breadcrumbs-bar">
     <div class="container">
       <div class="breadcrumbs">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-        <span class="current">Progress & Statistics</span>
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span>About</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">Stats & Impact</span>
       </div>
     </div>
   </div>
@@ -76,8 +71,8 @@
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #fff;">
-          <i class="fa-solid fa-chart-line"></i> Impact & Growth
+        <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2);">
+          <i class="fa-solid fa-chart-line"></i> Quantitative Impact
         </span>
         <h1>UNICORE Progress & Key Statistics</h1>
         <p>
@@ -87,14 +82,14 @@
     </div>
   </section>
 
-  <!-- Section 1: Key Impact Dashboard -->
+  <!-- Section 1: Metrics Dashboard -->
   <section class="section bg-white">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-gauge-high"></i> Core Metrics</span>
-        <h2>Impact at a Glance (Edition 8.0)</h2>
+        <span class="section-badge"><i class="fa-solid fa-gauge-high"></i> Core Metrics</span>
+        <h2>Impact at a Glance</h2>
         <p>
-          Quantitative outcomes reflecting institutional commitment, diversity, and academic retention across Italy.
+          Quantitative indicators demonstrating academic retention, diversity, and nationwide institutional participation.
         </p>
       </div>
 
@@ -103,7 +98,7 @@
           <div class="stat-card-icon"><i class="fa-solid fa-building-columns"></i></div>
           <div class="stat-card-number counter-val" data-target="40" data-suffix="+">0</div>
           <div class="stat-card-title">Participating Universities</div>
-          <div class="stat-card-desc">Spread across all Italian geographic regions</div>
+          <div class="stat-card-desc">Spread across Northern, Central & Southern Italy</div>
         </div>
 
         <div class="stat-card-lg">
@@ -123,8 +118,8 @@
         <div class="stat-card-lg">
           <div class="stat-card-icon"><i class="fa-solid fa-award"></i></div>
           <div class="stat-card-number counter-val" data-target="92" data-suffix="%">0</div>
-          <div class="stat-card-title">Graduation & Retention Rate</div>
-          <div class="stat-card-desc">High academic achievement & retention</div>
+          <div class="stat-card-title">Academic Retention Rate</div>
+          <div class="stat-card-desc">High exam pass rates and degree completion</div>
         </div>
       </div>
     </div>
@@ -134,7 +129,7 @@
   <section class="section bg-light">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-timeline"></i> Historical Growth</span>
+        <span class="section-badge"><i class="fa-solid fa-timeline"></i> Program Milestones</span>
         <h2>Milestone Evolution: UNICORE 1.0 to 8.0</h2>
         <p>
           How UNICORE expanded from a 2019 pilot project in Ethiopia to 13 eligible countries across Africa and Asia.
@@ -148,8 +143,8 @@
               <th>Edition & Year</th>
               <th>Universities</th>
               <th>Scholarships</th>
-              <th>Eligible Countries of Asylum</th>
-              <th>Key Milestones</th>
+              <th>Eligible Countries</th>
+              <th>Key Highlights</th>
             </tr>
           </thead>
           <tbody>
@@ -178,15 +173,15 @@
               <td><strong>UNICORE 4.0 (2022)</strong></td>
               <td>32</td>
               <td>51</td>
-              <td>Cameroon, Malawi, Mozambique, Niger, Nigeria, South Africa, Zambia, Zimbabwe</td>
+              <td>8 African Nations</td>
               <td>First major geographical expansion beyond the Horn of Africa.</td>
             </tr>
             <tr>
               <td><strong>UNICORE 5.0 (2023)</strong></td>
               <td>35</td>
               <td>60+</td>
-              <td>Kenya, Niger, Nigeria, South Africa, Uganda, Zambia, Zimbabwe</td>
-              <td>Introduction of the European Qualifications Passport for Refugees (EQPR).</td>
+              <td>7 African Nations</td>
+              <td>Integration of the European Qualifications Passport for Refugees (EQPR).</td>
             </tr>
             <tr>
               <td><strong>UNICORE 6.0 (2024)</strong></td>
@@ -199,15 +194,15 @@
               <td><strong>UNICORE 7.0 (2025)</strong></td>
               <td>40</td>
               <td>80+</td>
-              <td>12 Nations (including India & Bangladesh)</td>
-              <td>First expansion into Asian countries of asylum.</td>
+              <td>12 Nations</td>
+              <td>First inclusion of Asian countries of asylum (India & Bangladesh).</td>
             </tr>
             <tr class="active-edition">
-              <td><strong>UNICORE 8.0 (2026 - Current)</strong></td>
+              <td><strong>UNICORE 8.0 (2026)</strong></td>
               <td><strong>40</strong></td>
               <td><strong>80+</strong></td>
-              <td><strong>13 Nations</strong> (Bangladesh, Burkina Faso, Cameroon, Ethiopia, India, Kenya, Mozambique, Niger, Nigeria, South Africa, Uganda, Zambia, Zimbabwe)</td>
-              <td><strong>432 Master's degrees</strong> offered; enhanced post-graduation transition support.</td>
+              <td><strong>13 Nations</strong></td>
+              <td>432 Master's degrees offered; structured alumni career pathways.</td>
             </tr>
           </tbody>
         </table>
@@ -215,58 +210,58 @@
     </div>
   </section>
 
-  <!-- Section 3: Disciplines & Fields of Study Breakdown -->
+  <!-- Section 3: Disciplines Breakdown -->
   <section class="section bg-white">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Diversity</span>
-        <h2>Distribution of Academic Disciplines</h2>
+        <span class="section-badge"><i class="fa-solid fa-graduation-cap"></i> Academic Diversity</span>
+        <h2>Distribution Across Academic Disciplines</h2>
         <p>
           UNICORE scholars pursue Master's degrees across all major fields of research and industry.
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
         
-        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 1.75rem;">
-          <div style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-laptop-code"></i></div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 0.25rem;">STEM & Technology</h4>
-          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.5rem;">38%</div>
-          <p style="font-size: 0.85rem; color: var(--gray-600);">
-            Computer Science, Data Engineering, Environmental Engineering, Biotechnology, and Physics.
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.5rem;">
+          <div style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-laptop-code"></i></div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">STEM & Technology</h4>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.35rem;">38%</div>
+          <p style="font-size: 0.85rem; color: var(--slate-600);">
+            Computer Science, Data Engineering, Environmental Engineering, and Physics.
           </p>
         </div>
 
-        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 1.75rem;">
-          <div style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;"><i class="fa-solid fa-chart-pie"></i></div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Economics & Business</h4>
-          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.5rem;">26%</div>
-          <p style="font-size: 0.85rem; color: var(--gray-600);">
-            International Management, Sustainable Development Economics, Finance, and Public Administration.
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.5rem;">
+          <div style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-chart-pie"></i></div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Economics & Business</h4>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.35rem;">26%</div>
+          <p style="font-size: 0.85rem; color: var(--slate-600);">
+            International Management, Economics, Finance, and Public Administration.
           </p>
         </div>
 
-        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 1.75rem;">
-          <div style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;"><i class="fa-solid fa-scale-balanced"></i></div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Social Sciences & Law</h4>
-          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.5rem;">22%</div>
-          <p style="font-size: 0.85rem; color: var(--gray-600);">
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.5rem;">
+          <div style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Social Sciences & Law</h4>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.35rem;">22%</div>
+          <p style="font-size: 0.85rem; color: var(--slate-600);">
             International Relations, Human Rights Law, Global Governance, and Peace Studies.
           </p>
         </div>
 
-        <div style="background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 1.75rem;">
-          <div style="font-size: 2rem; color: var(--purple); margin-bottom: 0.5rem;"><i class="fa-solid fa-flask-vial"></i></div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Health & Life Sciences</h4>
-          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.5rem;">14%</div>
-          <p style="font-size: 0.85rem; color: var(--gray-600);">
-            Clinical and Experimental Biology, Global Health, and Nutrition Science.
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.5rem;">
+          <div style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-flask-vial"></i></div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Health & Life Sciences</h4>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.35rem;">14%</div>
+          <p style="font-size: 0.85rem; color: var(--slate-600);">
+            Clinical and Experimental Biology, Global Health, and Nutrition Sciences.
           </p>
         </div>
 
       </div>
 
-      <div style="text-align: center; margin-top: 3.5rem;">
+      <div style="text-align: center; margin-top: 3rem;">
         <a href="how-it-works.html" class="btn btn-primary">
           <i class="fa-solid fa-compass"></i> Learn How the 5-Stage Selection Works
         </a>
@@ -279,47 +274,48 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3><i class="fa-solid fa-graduation-cap"></i> UNICORE Portal</h3>
+          <div class="brand">UNICORE<span class="brand-dot">.</span></div>
           <p>
-            University Corridors for Refugees (UNICORE) is promoted by 40+ Italian universities with UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
+            University Corridors for Refugees is promoted by 40+ Italian universities with the support of UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Dedicated Pages</h4>
+          <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="about.html">What is UNICORE</a></li>
-            <li><a href="progress-stats.html">Progress & Stats</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="progress-stats.html">Stats & Impact</a></li>
             <li><a href="faq.html">FAQ Guide</a></li>
             <li><a href="support-directory.html">Support Directory</a></li>
-            <li><a href="stories.html">Student Stories</a></li>
-            <li><a href="blog-events.html">Blog & Events</a></li>
+            <li><a href="stories.html">Stories & Testimonies</a></li>
+            <li><a href="blog-events.html">Media & News</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Official Portals</h4>
+          <h4>External Portals</h4>
           <ul class="footer-links">
-            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official Application Portal</a></li>
-            <li><a href="https://universitycorridors.unhcr.it/explore-courses/" target="_blank" rel="noopener noreferrer">Search 430+ Courses</a></li>
-            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italy</a></li>
+            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal</a></li>
+            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italia</a></li>
+            <li><a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Ministry of Foreign Affairs (MAECI)</a></li>
+            <li><a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">CIMEA Academic Recognition</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Support & Inquiries</h4>
-          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1rem;">
-            Consult our dedicated support directory for housing, mental health, legal clinics, and university coordination contacts.
+          <h4>Support Directory</h4>
+          <p style="font-size: 0.825rem; color: var(--slate-400); margin-bottom: 0.85rem;">
+            Access verified assistance for housing, legal clinic appointments, and mental health counseling.
           </p>
-          <a href="support-directory.html" class="btn btn-outline-white btn-sm" style="width: 100%;">
-            <i class="fa-solid fa-handshake-angle"></i> Open Support Directory
+          <a href="support-directory.html" class="btn btn-outline btn-sm" style="width: 100%;">
+            <i class="fa-solid fa-handshake-angle"></i> Open Directory
           </a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 UNICORE Platform &bull; Dedicated Refugee Education & Support Hub</div>
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub</div>
         <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
       </div>
     </div>

@@ -1,3 +1,7 @@
+/* ==========================================================================
+   UNICORE Scholar & Student Support Platform — Application Logic
+   ========================================================================== */
+
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile Navigation Toggle
   const navToggle = document.getElementById('navToggle');
@@ -10,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close menu when clicking nav link
-    document.querySelectorAll('.nav-link').forEach(link => {
+    // Close menu when clicking links
+    document.querySelectorAll('.nav-link:not(.dropdown-trigger), .dropdown-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
       });
@@ -20,23 +24,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Active Link Highlighting
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link').forEach(link => {
+  
+  // Direct nav links
+  document.querySelectorAll('.nav-link, .dropdown-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
+      
+      // If inside dropdown, also highlight parent
+      const parentDropdown = link.closest('.nav-dropdown');
+      if (parentDropdown) {
+        const trigger = parentDropdown.querySelector('.nav-link');
+        if (trigger) trigger.classList.add('active');
+      }
     }
   });
 
   // Animated Stats Counters
   const counters = document.querySelectorAll('.counter-val');
   if (counters.length > 0) {
-    let speed = 200;
-
     const countUp = () => {
       counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
         const count = +counter.innerText.replace('+', '').replace('%', '');
-        const inc = Math.max(1, Math.ceil(target / 40));
+        const inc = Math.max(1, Math.ceil(target / 30));
 
         if (count < target) {
           const nextVal = count + inc > target ? target : count + inc;
@@ -49,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let animated = false;
-    const statsContainer = document.querySelector('.stats-dashboard') || document.getElementById('statsBar');
+    const statsContainer = document.querySelector('.stats-dashboard') || document.querySelector('.quick-stats-grid');
     
     if (statsContainer) {
       const observer = new IntersectionObserver((entries) => {
@@ -63,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       observer.observe(statsContainer);
     } else {
-      // Fallback
       countUp();
     }
   }
