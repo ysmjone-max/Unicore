@@ -262,4 +262,25 @@ document.addEventListener('DOMContentLoaded', () => {
       linkSearchInput.addEventListener('input', filterLinks);
     }
   }
+
+  // Modulo 1 Form Tabs Switcher (on living-in-italy.html)
+  const formTabBtns = document.querySelectorAll('.form-tab-btn');
+  const formTabPanes = document.querySelectorAll('.form-tab-pane');
+
+  if (formTabBtns.length > 0 && formTabPanes.length > 0) {
+    formTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetPage = btn.getAttribute('data-tab');
+        
+        formTabBtns.forEach(b => b.classList.remove('active'));
+        formTabPanes.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        const activePane = document.getElementById(targetPage);
+        if (activePane) {
+          activePane.classList.add('active');
+        }
+      });
+    });
+  }
 });
