@@ -282,6 +282,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Spoken Italian Copy-to-Clipboard & Category Filter
+  const copyPhraseBtns = document.querySelectorAll('.copy-phrase-btn');
+  copyPhraseBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const phraseCard = btn.closest('.phrase-card');
+      const textToCopy = phraseCard?.querySelector('.phrase-italian')?.textContent.trim();
+      if (textToCopy) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          const originalHTML = btn.innerHTML;
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('copied');
+          }, 1800);
+        });
+      }
+    });
+  });
+
+  const phraseFilterBtns = document.querySelectorAll('.phrase-filter-btn');
+  const phraseCards = document.querySelectorAll('.phrase-card');
+  if (phraseFilterBtns.length > 0 && phraseCards.length > 0) {
+    phraseFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-phrase-cat');
+        phraseFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        phraseCards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-phrase-cat') === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
   // Theme Switcher (Dark Mode / Light Mode)
   const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
   const currentTheme = localStorage.getItem('unicore_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');

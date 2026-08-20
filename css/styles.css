@@ -1794,10 +1794,221 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--slate-200);
 }
 
-.progress-fill {
-  height: 100%;
-  background: var(--primary);
-  width: 0%;
+/* Quick Jump Subnav */
+.quick-jump-nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.quick-jump-links {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.quick-jump-pill {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate-700);
+  background-color: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.quick-jump-pill:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary-border);
+}
+
+/* Modulo 1 Visual Box Simulator */
+.form-box-grid {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  margin: 0.4rem 0 0.6rem 0;
+}
+
+.char-box {
+  width: 24px;
+  height: 28px;
+  border: 1.5px solid var(--slate-400);
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  border-radius: 2px;
+}
+
+.char-box.filled {
+  background-color: #eff6ff;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.stamp-box-placeholder {
+  width: 90px;
+  height: 90px;
+  border: 2px dashed #ef4444;
+  border-radius: var(--radius-md);
+  background-color: #fef2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #991b1b;
+}
+
+/* Spoken Italian Phrase Cards */
+.phrases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.phrase-card {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.phrase-card:hover {
+  border-color: var(--primary-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.phrase-italian {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.phrase-phonetic {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--slate-500);
+  margin-bottom: 0.5rem;
+}
+
+.phrase-english {
+  font-size: 0.85rem;
+  color: var(--slate-600);
+  margin-bottom: 1rem;
+}
+
+.phrase-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--slate-100);
+  padding-top: 0.75rem;
+}
+
+.copy-phrase-btn {
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  color: var(--slate-700);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition);
+}
+
+.copy-phrase-btn:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary-border);
+}
+
+.copy-phrase-btn.copied {
+  background-color: #dcfce7;
+  color: #15803d;
+  border-color: #86efac;
+}
+
+/* Warnings & Trap Cards */
+.warning-box {
+  background-color: #fffbeb;
+  border: 1px solid #fef3c7;
+  border-left: 4px solid #f59e0b;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.warning-box h4 {
+  color: #92400e;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.warning-box p {
+  color: #78350f;
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Print Stylesheet for Offline Pocket Guide */
+@media print {
+  .navbar, .footer, .breadcrumbs-bar, .search-trigger-btn, .theme-toggle-btn, .quick-jump-nav, .pdf-ref-actions, .copy-phrase-btn {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt !important;
+  }
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .interactive-tool-card, .survival-card, .phrase-card, .field-callout-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 1rem !important;
+  }
+}
   transition: width 0.3s ease;
 }
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Living in Italy: Bureaucracy, Kit Giallo & Italian Essentials | UNICORE Hub</title>
+  <title>Living in Italy: Bureaucracy, Kit Giallo & Settlement Hub | UNICORE</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@
         <a href="important-links.html" class="nav-link">Important Links</a>
       </nav>
 
-            <div class="nav-actions">
+      <div class="nav-actions">
         <button class="search-trigger-btn" aria-label="Open global search">
           <i class="fa-solid fa-magnifying-glass"></i>
           <span>Search...</span>
@@ -89,33 +89,51 @@
     <div class="container">
       <div class="page-hero-content">
         <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2);">
-          <i class="fa-solid fa-passport"></i> Practical Settlement Guide
+          <i class="fa-solid fa-passport"></i> Essential Settlement Guide
         </span>
-        <h1>Living in Italy: Bureaucracy, Kit Giallo & Italian Essentials</h1>
+        <h1>Living in Italy: Bureaucracy, Documents & Survival Kit</h1>
         <p>
-          A comprehensive guide to Italian administrative procedures, interactive box-by-box <em>Kit Giallo</em> filling instructions with official university annotations, residence permit tracking, and essential everyday Italian vocabulary.
+          Your complete operational handbook for Italian administration: the first 30-day settlement roadmap, interactive <em>Kit Giallo</em> form simulator, healthcare enrollment, bank accounts, and spoken Italian phrasebook.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Section 1: Interactive Document Readiness Tracker -->
-  <section class="section bg-white">
+  <!-- Quick Jump Subnav & Print Action -->
+  <section class="section bg-white" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="quick-jump-nav">
+        <div class="quick-jump-links">
+          <a href="#timeline" class="quick-jump-pill"><i class="fa-solid fa-list-check"></i> 30-Day Roadmap</a>
+          <a href="#modulo1" class="quick-jump-pill"><i class="fa-solid fa-envelope-open-text"></i> Kit Giallo Simulator</a>
+          <a href="#documents" class="quick-jump-pill"><i class="fa-solid fa-id-card"></i> Core Documents</a>
+          <a href="#phrases" class="quick-jump-pill"><i class="fa-solid fa-language"></i> Spoken Italian</a>
+          <a href="#warnings" class="quick-jump-pill"><i class="fa-solid fa-triangle-exclamation"></i> Common Traps</a>
+        </div>
+        <button onclick="window.print()" class="btn btn-outline btn-sm" aria-label="Print or save pocket guide">
+          <i class="fa-solid fa-print"></i> Print / Save Pocket PDF
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: First 30 Days Settlement Roadmap & Interactive Checklist -->
+  <section class="section bg-white" id="timeline">
     <div class="container">
       
       <div class="interactive-tool-card">
         <div class="tool-header">
           <div>
-            <h3><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Arrival Documents Checklist</h3>
+            <h3><i class="fa-solid fa-calendar-check" style="color: var(--primary);"></i> The First 30 Days in Italy: Step-by-Step Checklist</h3>
             <p style="font-size: 0.875rem; color: var(--slate-600); margin: 0.25rem 0 0 0;">
-              Check off each document as you complete it during your first 8 to 30 days in Italy. Your progress is saved automatically.
+              Check off tasks as you complete them upon arrival. Progress is automatically saved in your browser.
             </p>
           </div>
         </div>
 
         <div class="progress-container">
           <div class="progress-label-wrap">
-            <span>Settlement Progress</span>
+            <span>Overall Settlement Completion</span>
             <span id="progressPercent">0%</span>
           </div>
           <div class="progress-track">
@@ -125,67 +143,69 @@
 
         <div class="checklist-items-grid" id="arrivalChecklist">
           
-          <label class="checklist-item" data-id="doc-cf">
-            <input type="checkbox" class="checklist-checkbox">
-            <div class="checklist-text">
-              <h5>1. Codice Fiscale (Tax Code)</h5>
-              <p>Obtained at the <em>Agenzia delle Entrate</em>. Required for contracts, SIM cards, and bank accounts.</p>
-            </div>
-          </label>
-
+          <!-- Days 1-3 -->
           <label class="checklist-item" data-id="doc-sim">
             <input type="checkbox" class="checklist-checkbox">
             <div class="checklist-text">
-              <h5>2. Italian SIM Card & Phone Number</h5>
-              <p>Essential for SMS notifications from Questura, banking 2FA, and university communications.</p>
+              <h5>1. Italian SIM Card & Mobile Number (Days 1–3)</h5>
+              <p>Buy an Italian prepaid SIM card (e.g. Iliad, TIM, Vodafone, WindTre) with your passport. Required for 2FA, SMS from Questura, and bank accounts.</p>
             </div>
           </label>
 
+          <label class="checklist-item" data-id="doc-housing">
+            <input type="checkbox" class="checklist-checkbox">
+            <div class="checklist-text">
+              <h5>2. Check-In at Dormitory / Housing (Days 1–3)</h5>
+              <p>Sign your residence contract or housing agreement. Obtain the official registered address proof (<em>Dichiarazione di Ospitalità / Contratto</em>).</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="doc-cf">
+            <input type="checkbox" class="checklist-checkbox">
+            <div class="checklist-text">
+              <h5>3. Codice Fiscale at Agenzia delle Entrate (Days 4–8)</h5>
+              <p>Apply for your 16-character Italian Tax Identifier with your passport and Type D visa. Issued free of charge on the spot.</p>
+            </div>
+          </label>
+
+          <!-- Legal Deadline: 8 Working Days -->
           <label class="checklist-item" data-id="doc-kit">
             <input type="checkbox" class="checklist-checkbox">
             <div class="checklist-text">
-              <h5>3. Kit Giallo (Permesso di Soggiorno)</h5>
-              <p>Submitted at <em>Poste Italiane Sportello Amico</em> within 8 working days of arrival in Italy.</p>
+              <h5>4. Submit Kit Giallo at Poste Italiane (LEGAL DEADLINE: Day 8)</h5>
+              <p>Submit Modulo 1 + photocopies + €16 Marca da Bollo + postal payments at Sportello Amico within 8 business days of arrival.</p>
             </div>
           </label>
 
           <label class="checklist-item" data-id="doc-bank">
             <input type="checkbox" class="checklist-checkbox">
             <div class="checklist-text">
-              <h5>4. Italian Bank Account / Conto Corrente</h5>
-              <p>Opened with university certificate and Codice Fiscale to receive monthly scholarship stipends.</p>
+              <h5>5. Open Italian Bank Account / Postepay (Days 9–15)</h5>
+              <p>Open a basic bank account (<em>Conto di Base</em>) or Postepay Evolution to receive your UNICORE monthly living stipend.</p>
             </div>
           </label>
 
           <label class="checklist-item" data-id="doc-ssn">
             <input type="checkbox" class="checklist-checkbox">
             <div class="checklist-text">
-              <h5>5. Tessera Sanitaria (Health Coverage)</h5>
-              <p>Registered at local <em>ASL</em> to choose a General Practitioner (<em>Medico di Base</em>).</p>
-            </div>
-          </label>
-
-          <label class="checklist-item" data-id="doc-cie">
-            <input type="checkbox" class="checklist-checkbox">
-            <div class="checklist-text">
-              <h5>6. Carta d'Identità (ID Card at Comune)</h5>
-              <p>Applied at the <em>Ufficio Anagrafe</em> after residence registration (<em>Iscrizione Anagrafica</em>).</p>
-            </div>
-          </label>
-
-          <label class="checklist-item" data-id="doc-spid">
-            <input type="checkbox" class="checklist-checkbox">
-            <div class="checklist-text">
-              <h5>7. SPID / CIE Digital Identity</h5>
-              <p>Digital login credentials for Italian public administration, INPS, and regional university portals.</p>
+              <h5>6. Tessera Sanitaria & Medico di Base at ASL (Days 16–20)</h5>
+              <p>Register at the local health authority (ASL) to choose a General Practitioner (<em>Medico di Base</em>) for free public medical care.</p>
             </div>
           </label>
 
           <label class="checklist-item" data-id="doc-transport">
             <input type="checkbox" class="checklist-checkbox">
             <div class="checklist-text">
-              <h5>8. Student City Transport Pass</h5>
-              <p>Subsidized annual or monthly bus/metro pass registered through your student portal.</p>
+              <h5>7. Subsidized Student Public Transit Pass (Days 16–25)</h5>
+              <p>Apply for the discounted annual/monthly bus and metro student transit card with your university enrollment badge.</p>
+            </div>
+          </label>
+
+          <label class="checklist-item" data-id="doc-cie">
+            <input type="checkbox" class="checklist-checkbox">
+            <div class="checklist-text">
+              <h5>8. Carta d'Identità (CIE) at Comune (Days 20–30)</h5>
+              <p>Apply for Civil Residence (<em>Iscrizione Anagrafica</em>) and Electronic ID Card (CIE) at your local city hall registry desk.</p>
             </div>
           </label>
 
@@ -195,18 +215,18 @@
     </div>
   </section>
 
-  <!-- Section 2: Detailed Permesso di Soggiorno & Kit Giallo Guide -->
-  <section class="section bg-light">
+  <!-- Section 2: Interactive Modulo 1 Form Simulator & Official PDF Guide -->
+  <section class="section bg-light" id="modulo1">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge"><i class="fa-solid fa-envelope-open-text"></i> Official Procedure</span>
-        <h2>Step-by-Step Kit Giallo & Modulo 1 Guide</h2>
+        <span class="section-badge"><i class="fa-solid fa-envelope-open-text"></i> Official Form Guide</span>
+        <h2>Interactive Modulo 1 Form Visualizer</h2>
         <p>
-          Comprehensive instructions for filling out Modulo 1, attaching documents, postal payments, and Questura appointments.
+          Simulating the actual yellow envelope form (<em>Kit Giallo</em>) with real field-by-field annotations for UNICORE refugee scholars.
         </p>
       </div>
 
-      <!-- Official University PDF Reference Card -->
+      <!-- PDF Download Banner -->
       <div class="pdf-ref-banner">
         <div class="pdf-ref-info">
           <div class="pdf-icon-badge">
@@ -215,13 +235,13 @@
           <div class="pdf-ref-text">
             <h4>Official University Reference: Guida Permesso di Soggiorno</h4>
             <p>
-              Official annotated visual guide with exact field samples for incoming international & refugee students (Duty stamp, Passport & Visa details, Entry stamp, and University C/O address).
+              Download the official 3-page annotated university handbook with visual samples of the duty stamp, visa codes, and university C/O address.
             </p>
           </div>
         </div>
         <div class="pdf-ref-actions">
           <a href="docs/Guida_Permesso_di_Soggiorno.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open PDF Guide
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open PDF
           </a>
           <a href="docs/Guida_Permesso_di_Soggiorno.pdf" download="Guida_Permesso_di_Soggiorno.pdf" class="btn btn-outline btn-sm" style="color: #fff; border-color: rgba(255,255,255,0.4);">
             <i class="fa-solid fa-download"></i> Download PDF
@@ -230,12 +250,12 @@
       </div>
 
       <!-- Interactive 3-Page Form Simulator -->
-      <div class="interactive-tool-card" style="margin-bottom: 2.5rem;">
+      <div class="interactive-tool-card">
         <div class="tool-header">
           <div>
-            <h3><i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Interactive Modulo 1 Field Guide (Pages 1–3)</h3>
+            <h3><i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Form Simulator: Visual Character-by-Character Layout</h3>
             <p style="font-size: 0.875rem; color: var(--slate-600); margin: 0.25rem 0 0 0;">
-              Switch between tabs below to view annotated fields corresponding to each page of the official Italian postal kit.
+              Select a page tab below to view exactly how to fill each box in <strong>BLACK INK & CAPITAL LETTERS</strong>.
             </p>
           </div>
         </div>
@@ -249,168 +269,229 @@
             <i class="fa-solid fa-passport"></i> Page 2: Tax Code, Passport, Visa & Entry Stamp
           </button>
           <button type="button" class="form-tab-btn" data-tab="form-page-3">
-            <i class="fa-solid fa-house-chimney"></i> Page 3: Address & University C/O Contact
+            <i class="fa-solid fa-house-chimney"></i> Page 3: Italian Address & University C/O
           </button>
         </div>
 
-        <!-- Form Tab Pane 1 -->
+        <!-- Page 1 Pane -->
         <div class="form-tab-pane active" id="form-page-1">
           <div class="field-callout-grid">
             
             <div class="field-callout-card">
-              <span class="field-label-tag">Header & Location</span>
+              <span class="field-label-tag">Box 1 & 2: Province & City</span>
               <div class="field-title">
                 <span>Sigla Provincia & Comune</span>
                 <span class="code-chip">SI / RM / BO / MI</span>
               </div>
-              <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                Write the 2-letter abbreviation of your university town (e.g. <code>SI</code> for Siena, <code>RM</code> for Rome, <code>BO</code> for Bologna, <code>TO</code> for Turin) and write the full municipality name in capital letters.
+              <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 0.5rem;">
+                Write the 2-letter provincial abbreviation of your university town in Box 1 and the full town name in Box 2:
               </p>
-            </div>
-
-            <div class="field-callout-card">
-              <span class="field-label-tag">Top-Right Box</span>
-              <div class="field-title">
-                <span>Duty Stamp (Marca da Bollo)</span>
-                <span class="code-chip" style="background: #fee2e2; color: #991b1b;">€16.00</span>
+              <div class="form-box-grid">
+                <div class="char-box filled">S</div>
+                <div class="char-box filled">I</div>
+                <div style="width: 12px;"></div>
+                <div class="char-box filled">S</div>
+                <div class="char-box filled">I</div>
+                <div class="char-box filled">E</div>
+                <div class="char-box filled">N</div>
+                <div class="char-box filled">A</div>
               </div>
-              <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                Stick the <strong>€16.00</strong> tax revenue stamp (purchased at any <em>Tabaccheria</em>) directly into the designated square box on page 1.
-              </p>
             </div>
 
             <div class="field-callout-card">
-              <span class="field-label-tag">Type of Request</span>
+              <span class="field-label-tag">Top-Right Corner</span>
               <div class="field-title">
-                <span>Rilascio vs Rinnovo</span>
+                <span>Marca da Bollo (€16.00)</span>
+                <span class="code-chip" style="background: #fee2e2; color: #991b1b;">REQUIRED</span>
+              </div>
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
+                <div class="stamp-box-placeholder">
+                  <i class="fa-solid fa-stamp" style="font-size: 1.25rem; margin-bottom: 0.25rem;"></i>
+                  MARCA DA BOLLO €16
+                </div>
+                <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
+                  Buy a <strong>€16.00 tax revenue stamp</strong> at any Tobacco shop (<em>Tabaccheria</em>) and stick it directly in the top-right rectangular space on Page 1.
+                </p>
+              </div>
+            </div>
+
+            <div class="field-callout-card">
+              <span class="field-label-tag">Box 3: Request Type</span>
+              <div class="field-title">
+                <span>Richiesta di: Rilascio</span>
                 <span class="code-chip">RILASCIO [X]</span>
               </div>
               <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                Tick <strong>"Rilascio"</strong> for your first residence permit upon arrival in Italy. Tick <strong>"Rinnovo"</strong> for subsequent annual scholarship renewals.
+                For your first permit upon arrival in Italy, put an <strong>X in the [RILASCIO]</strong> box. For subsequent years, put an <strong>X in [RINNOVO]</strong>.
               </p>
             </div>
 
             <div class="field-callout-card">
-              <span class="field-label-tag">Box 14 & 21</span>
+              <span class="field-label-tag">Box 14 & 21: Motivo & Attachments</span>
               <div class="field-title">
-                <span>Reason Code & Attachments Count</span>
+                <span>Reason Code (Studio)</span>
                 <span class="code-chip">CODICE: 11</span>
               </div>
-              <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                <strong>Box 14:</strong> Code <code>11</code> (Studio / Study).<br>
-                <strong>Box 21:</strong> Total number of attached photocopy sheets (Passport, Visa, University Enrollment, Scholarship Guarantee, Insurance).
+              <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 0.5rem;">
+                <strong>Box 14:</strong> Write code <code>11</code> (Studio / University Studies).<br>
+                <strong>Box 21:</strong> Write total count of attached photocopies (e.g. <code>08</code>).
               </p>
+              <div class="form-box-grid">
+                <div class="char-box filled">1</div>
+                <div class="char-box filled">1</div>
+                <div style="width: 20px;"></div>
+                <div class="char-box">0</div>
+                <div class="char-box">8</div>
+              </div>
             </div>
 
-            <div class="field-callout-card">
-              <span class="field-label-tag">Bottom of Page 1</span>
+            <div class="field-callout-card" style="grid-column: 1 / -1;">
+              <span class="field-label-tag">Bottom of Page 1: Submission & Signature</span>
               <div class="field-title">
-                <span>Date of Submission & Signature</span>
-                <span class="code-chip" style="background: #fef3c7; color: #92400e;">DO NOT SIGN YET!</span>
+                <span>Signature Warning</span>
+                <span class="code-chip" style="background: #fef3c7; color: #92400e;">DO NOT SIGN AT HOME</span>
               </div>
-              <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                Write the date of submission when you go to the post office. <strong>DO NOT sign at home</strong> — you must sign in front of the postal operator at Sportello Amico!
+              <p style="font-size: 0.85rem; color: var(--slate-700); margin: 0;">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #d97706;"></i> <strong>Crucial Rule:</strong> Write the date of submission on the day you go to the post office. <strong>DO NOT sign the form in advance</strong>. You must physically sign page 1 in front of the postal operator at Sportello Amico!
               </p>
             </div>
 
           </div>
         </div>
 
-        <!-- Form Tab Pane 2 -->
+        <!-- Page 2 Pane -->
         <div class="form-tab-pane" id="form-page-2">
           <div class="field-callout-grid">
             
             <div class="field-callout-card">
-              <span class="field-label-tag">Sezione 1</span>
+              <span class="field-label-tag">Sezione 1: Tax Identifier</span>
               <div class="field-title">
-                <span>Codice Fiscale & Personal Data</span>
+                <span>Codice Fiscale</span>
                 <span class="code-chip">16 CHARACTERS</span>
               </div>
+              <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 0.5rem;">
+                Enter your 16-character Italian fiscal code (if already issued by Agenzia delle Entrate):
+              </p>
+              <div class="form-box-grid">
+                <div class="char-box filled">M</div>
+                <div class="char-box filled">L</div>
+                <div class="char-box filled">L</div>
+                <div class="char-box filled">Y</div>
+                <div class="char-box filled">H</div>
+                <div class="char-box filled">N</div>
+                <div class="char-box filled">9</div>
+                <div class="char-box filled">5</div>
+                <div class="char-box filled">M</div>
+                <div class="char-box filled">1</div>
+                <div class="char-box filled">5</div>
+                <div class="char-box filled">Z</div>
+                <div class="char-box filled">3</div>
+                <div class="char-box filled">3</div>
+                <div class="char-box filled">0</div>
+                <div class="char-box filled">K</div>
+              </div>
+            </div>
+
+            <div class="field-callout-card">
+              <span class="field-label-tag">Sezione 1: Marital Status & Gender</span>
+              <div class="field-title">
+                <span>Stato Civile & Sesso</span>
+                <span class="code-chip">A = SINGLE | M/F</span>
+              </div>
               <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                Enter your Italian Tax Code (if already obtained from Agenzia delle Entrate).<br>
-                <strong>Stato Civile:</strong> <code>A</code> (Single / Celibe-Nubile) or <code>B</code> (Married).<br>
-                <strong>Sesso:</strong> <code>M</code> or <code>F</code> | <strong>Data di Nascita:</strong> <code>DD / MM / YYYY</code>.
+                <strong>Stato Civile:</strong> <code>A</code> (Single / Celibe-Nubile) or <code>B</code> (Married / Coniugato).<br>
+                <strong>Sesso:</strong> <code>M</code> (Male) or <code>F</code> (Female).<br>
+                <strong>Data di Nascita:</strong> <code>DD / MM / YYYY</code>.
               </p>
             </div>
 
             <div class="field-callout-card">
-              <span class="field-label-tag">Sezione 2</span>
+              <span class="field-label-tag">Sezione 2: Document Details</span>
               <div class="field-title">
                 <span>Passport / Travel Document</span>
-                <span class="code-chip">01 = GOV / 06 = POLICE</span>
+                <span class="code-chip">01 = PASSPORT</span>
               </div>
               <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                <strong>Documento:</strong> <code>01</code> (Passport) or <code>02</code> (Refugee CTD).<br>
-                <strong>Rilasciato da:</strong> <code>01</code> (Government) or <code>06</code> (Police authority).<br>
-                Enter Passport Number and Expiration Date.
+                <strong>Tipo Documento:</strong> <code>01</code> (National Passport) or <code>02</code> (Refugee Travel Document / CTD).<br>
+                <strong>Rilasciato da:</strong> <code>01</code> (Government) or <code>06</code> (Police).<br>
+                Enter document number and expiration date.
               </p>
             </div>
 
             <div class="field-callout-card">
-              <span class="field-label-tag">Sezione 2 (Entry Stamp)</span>
+              <span class="field-label-tag">Sezione 2: Entry Stamp (Timbro)</span>
               <div class="field-title">
-                <span>Date & Port of Entry in Italy</span>
-                <span class="code-chip">FIUMICINO / MALPENSA</span>
+                <span>Port & Date of Entry in Italy</span>
+                <span class="code-chip">BORDER POLICE STAMP</span>
               </div>
               <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                Check the Italian border police ink stamp inside your passport:<br>
-                <strong>Data di ingresso:</strong> Exact arrival date.<br>
-                <strong>Valico di frontiera:</strong> e.g. <code>AEROPORTO FIUMICINO ROMA</code> or <code>AEROPORTO MALPENSA MILANO</code>.
+                Check the entry ink stamp stamped by Italian border police on your passport:<br>
+                <strong>Valico di Frontiera:</strong> e.g. <code>AEROPORTO FIUMICINO ROMA</code> or <code>AEROPORTO MALPENSA MILANO</code>.<br>
+                <strong>Data di Ingresso:</strong> Exact arrival date.
               </p>
             </div>
 
-            <div class="field-callout-card">
-              <span class="field-label-tag">Sezione 2 (Visa Details)</span>
+            <div class="field-callout-card" style="grid-column: 1 / -1;">
+              <span class="field-label-tag">Sezione 2: Italian Study Visa Details</span>
               <div class="field-title">
-                <span>Visa Number, Type & Validity</span>
+                <span>Visa Vignette Information</span>
                 <span class="code-chip">TYPE: D | STUDIO</span>
               </div>
-              <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                <strong>Numero Visto:</strong> Visa number from the vignette sticker.<br>
-                <strong>Tipo Visto:</strong> <code>D</code> (National Study Visa).<br>
-                <strong>Motivo:</strong> <code>STUDIO</code>.<br>
-                Enter days of validity, start date (<em>Valido dal</em>), and end date (<em>Valido al</em>).
+              <p style="font-size: 0.85rem; color: var(--slate-700); margin: 0;">
+                Copy the exact numbers from the visa sticker in your passport: <strong>Numero Visto</strong>, <strong>Tipo Visto: D</strong>, <strong>Motivo: STUDIO</strong>, duration in days, start date (<em>Valido dal</em>), and end date (<em>Valido al</em>).
               </p>
             </div>
 
           </div>
         </div>
 
-        <!-- Form Tab Pane 3 -->
+        <!-- Page 3 Pane -->
         <div class="form-tab-pane" id="form-page-3">
           <div class="field-callout-grid">
             
             <div class="field-callout-card">
-              <span class="field-label-tag">Sezione 3 (Residence in Italy)</span>
+              <span class="field-label-tag">Sezione 3: Domicile in Italy</span>
               <div class="field-title">
-                <span>Personal Italian Address</span>
-                <span class="code-chip">STREET & NUMBER</span>
+                <span>Street Address & Postal Code</span>
+                <span class="code-chip">RESIDENCE ADDRESS</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 0.5rem;">
+                Write your Italian street name, house number, and CAP postal code:
+              </p>
+              <div class="form-box-grid">
+                <div class="char-box filled">V</div>
+                <div class="char-box filled">I</div>
+                <div class="char-box filled">A</div>
+                <div style="width: 8px;"></div>
+                <div class="char-box filled">R</div>
+                <div class="char-box filled">O</div>
+                <div class="char-box filled">M</div>
+                <div class="char-box filled">A</div>
+                <div style="width: 12px;"></div>
+                <div class="char-box filled">1</div>
+                <div class="char-box filled">2</div>
+              </div>
+            </div>
+
+            <div class="field-callout-card">
+              <span class="field-label-tag">Sezione 3: University International Desk</span>
+              <div class="field-title">
+                <span>Presso (C/O International Division)</span>
+                <span class="code-chip">COORDINATION DESK</span>
               </div>
               <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                <strong>Sigla Provincia & Comune:</strong> e.g. <code>SI</code> / <code>SIENA</code>.<br>
-                <strong>Indirizzo:</strong> Street name (e.g. <code>VIA SAN VIGILIO</code>), building number (<code>6</code>), and Italian postal code (<code>53100</code>).
+                Under <em>Presso</em>, write your university international relations office (e.g. <code>DIVISIONE RELAZIONI INTERNAZIONALI UNIVERSITA DI SIENA</code>) if instructed by your local UNICORE coordinator.
               </p>
             </div>
 
             <div class="field-callout-card">
-              <span class="field-label-tag">Sezione 3 (University Reference)</span>
+              <span class="field-label-tag">Sezione 3: Direct Phone & Email</span>
               <div class="field-title">
-                <span>Presso (C/O International Relations)</span>
-                <span class="code-chip">UNIVERSITY DESK</span>
+                <span>Italian Mobile & University Email</span>
+                <span class="code-chip">SMS PICKUP ALERTS</span>
               </div>
               <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                If instructed by your host university, write the official department reference under <em>Presso</em> (e.g. <code>DIVISIONE RELAZIONI INTERNAZIONALI UNIVERSITA DI SIENA</code>) to ensure Questura correspondence reaches your international coordinator.
-              </p>
-            </div>
-
-            <div class="field-callout-card">
-              <span class="field-label-tag">Sezione 3 (Direct Contact)</span>
-              <div class="field-title">
-                <span>Italian Mobile & Email</span>
-                <span class="code-chip">2FA & SMS ALERTS</span>
-              </div>
-              <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                Write your active Italian phone number and institutional university email address. The Questura uses this mobile number to send SMS notifications when your electronic card is ready.
+                Write your active Italian mobile number. Questura will send an SMS to this number when your physical electronic residence permit is printed and ready for pickup.
               </p>
             </div>
 
@@ -418,10 +499,10 @@
               <span class="field-label-tag">Modulo 2 Rule</span>
               <div class="field-title">
                 <span>Modulo 2 (Employment Section)</span>
-                <span class="code-chip" style="background: #fee2e2; color: #991b1b;">LEAVE BLANK</span>
+                <span class="code-chip" style="background: #fee2e2; color: #991b1b;">LEAVE ENTIRELY BLANK</span>
               </div>
               <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
-                <strong>DO NOT fill out Modulo 2!</strong> Modulo 2 is strictly reserved for applicants with subordinate employment contracts or business ownership.
+                <strong>DO NOT FILL MODULO 2!</strong> Modulo 2 is strictly reserved for applicants with employment contracts or business ownership. Keep it blank inside the envelope.
               </p>
             </div>
 
@@ -430,176 +511,129 @@
 
       </div>
 
-      <!-- Five Stage Submission Roadmap -->
-      <div class="journey-timeline">
-
-        <!-- Kit Step 1 -->
-        <div class="journey-step">
-          <div class="step-marker">1</div>
-          <div class="step-card">
-            <div class="step-meta">
-              <span class="step-timeline-tag">Step 1: Pick Up the Envelope</span>
-            </div>
-            <h3>Collect the Kit Giallo at Poste Italiane</h3>
-            <p>
-              Visit any post office branch featuring a <strong>Sportello Amico</strong> counter and ask: <em>"Vorrei un kit per il permesso di soggiorno per favore"</em>. The kit envelope is 100% <strong>free of charge</strong>.
-            </p>
-            <ul class="step-checklist">
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Free yellow-striped envelope (Kit Giallo)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Modulo 1 (Personal data form)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Pre-printed postal bulletin (Bollettino Postale 674)</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Kit Step 2 -->
-        <div class="journey-step">
-          <div class="step-marker">2</div>
-          <div class="step-card">
-            <div class="step-meta">
-              <span class="step-timeline-tag">Step 2: Prepare Photocopies</span>
-            </div>
-            <h3>Prepare Required Photocopies (Never Originals)</h3>
-            <p>
-              Insert only clear A4 photocopies into the envelope. Keep all original documents with you:
-            </p>
-            <ul class="step-checklist">
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Photocopy of all pages of your Passport & Italian Type D Visa</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Photocopy of University Enrollment Certificate (<em>Iscrizione Universitaria</em>)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Photocopy of UNICORE Scholarship Award Letter / Financial Guarantee</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Photocopy of Health Insurance / Tessera Sanitaria registration</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> 1x Revenue Stamp (<em>Marca da Bollo</em>) of <strong>€16.00</strong> (affixed to top-right of page 1)</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Kit Step 3 -->
-        <div class="journey-step">
-          <div class="step-marker">3</div>
-          <div class="step-card">
-            <div class="step-meta">
-              <span class="step-timeline-tag">Step 3: Submission & Counter Payment</span>
-            </div>
-            <h3>Submitting the Kit at Sportello Amico</h3>
-            <p>
-              Take the open envelope and your original passport to a Poste Italiane Sportello Amico counter within 8 working days of arrival:
-            </p>
-            <ul class="step-checklist">
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>€70.46</strong> (or €30.46) Electronic Permit Production Fee via pre-printed bulletin</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>€30.00</strong> Postal Service Fee paid directly at the counter</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Receive the official <strong>Ricevuta Postale (Cedolino)</strong> with User ID and Password</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Receive the Questura appointment slip with date, time, and address for fingerprinting</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Kit Step 4 -->
-        <div class="journey-step">
-          <div class="step-marker">4</div>
-          <div class="step-card">
-            <div class="step-meta">
-              <span class="step-timeline-tag">Step 4: Biometrics at Questura</span>
-            </div>
-            <h3>Questura Appointment (Fotosegnalamento)</h3>
-            <p>
-              Attend your appointment at the local Police Immigration Office (<em>Ufficio Immigrazione della Questura</em>):
-            </p>
-            <ul class="step-checklist">
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Bring <strong>4 passport-size photos</strong> (identical, white background, recent)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Bring original Passport, original Ricevuta Postale, and university certificates</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Biometric fingerprinting (<em>Rilevamento impronte digitali</em>)</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Kit Step 5 -->
-        <div class="journey-step">
-          <div class="step-marker">5</div>
-          <div class="step-card">
-            <div class="step-meta">
-              <span class="step-timeline-tag">Step 5: Online Status Tracking</span>
-            </div>
-            <h3>Tracking Your Permit Online</h3>
-            <p>
-              Track the progress of your electronic card using the credentials on your postal receipt:
-            </p>
-            <ul class="step-checklist">
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>portaleimmigrazione.it:</strong> Enter User ID & Password (found on your postal receipt)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>poliziadistato.it:</strong> Enter the 10-digit registered mail number (<em>Numero Assicurata</em>)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> You will receive an SMS when the electronic card is ready for collection at the Questura</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
     </div>
   </section>
 
-  <!-- Section 3: Essential Italian Documents Guide -->
-  <section class="section bg-white">
+  <!-- Section 3: Deep-Dive into Core Italian Documents -->
+  <section class="section bg-white" id="documents">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge"><i class="fa-solid fa-id-card"></i> Civil Registry & Services</span>
-        <h2>Core Italian Civil & Health Documents</h2>
+        <span class="section-badge"><i class="fa-solid fa-id-card"></i> Legal & Civil Infrastructure</span>
+        <h2>The 6 Pillars of Italian Bureaucracy</h2>
         <p>
-          Key bureaucratic steps after submitting your residence permit application.
+          Everything you need to know about official requirements, costs, office appointments, and rights.
         </p>
       </div>
 
       <div class="survival-grid">
 
-        <!-- Codice Fiscale -->
+        <!-- 1. Permesso di Soggiorno -->
+        <div class="survival-card">
+          <div class="survival-card-header">
+            <div class="survival-card-icon"><i class="fa-solid fa-passport"></i></div>
+            <div>
+              <h4 style="margin: 0; font-size: 1.15rem;">1. Permesso di Soggiorno Studio</h4>
+              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">QUESTURA & POSTE ITALIANE</span>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.75rem;">
+            The primary legal residence title for non-EU students in Italy. Renewable annually based on academic credit acquisition (30–36 CFU).
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> <strong>Total Cost:</strong> €116.46 (€70.46 electronic card + €30 postal fee + €16 Marca da Bollo)</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Work Right:</strong> Allows up to 20 hours/week (1,040 hours/year) of legal employment</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Ricevuta Rights:</strong> The postal receipt acts as legal proof of regular stay while waiting for the card</li>
+          </ul>
+        </div>
+
+        <!-- 2. Codice Fiscale -->
         <div class="survival-card">
           <div class="survival-card-header">
             <div class="survival-card-icon"><i class="fa-solid fa-barcode"></i></div>
             <div>
-              <h4 style="margin: 0; font-size: 1.15rem;">Codice Fiscale</h4>
+              <h4 style="margin: 0; font-size: 1.15rem;">2. Codice Fiscale (Tax Code)</h4>
               <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">AGENZIA DELLE ENTRATE</span>
             </div>
           </div>
-          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 1rem;">
-            A 16-character alphanumeric tax identifier mandatory for all legal, university, financial, and healthcare activities in Italy.
+          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.75rem;">
+            A 16-digit alphanumeric tax code required for rental contracts, university enrollment, bank accounts, and health insurance.
           </p>
           <ul class="link-features-list">
-            <li><i class="fa-solid fa-check"></i> Free of charge at any local Agenzia delle Entrate office</li>
-            <li><i class="fa-solid fa-check"></i> Bring original passport, visa, and university certificate</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Cost:</strong> 100% Free of charge</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Where:</strong> Any local Agenzia delle Entrate office (walk-in or online appointment)</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Documents:</strong> Original passport, Type D visa, university enrollment letter</li>
           </ul>
         </div>
 
-        <!-- Carta d'Identità -->
+        <!-- 3. Conto Corrente / Bank Account -->
         <div class="survival-card">
           <div class="survival-card-header">
-            <div class="survival-card-icon"><i class="fa-solid fa-id-badge"></i></div>
+            <div class="survival-card-icon"><i class="fa-solid fa-building-columns"></i></div>
             <div>
-              <h4 style="margin: 0; font-size: 1.15rem;">Carta d'Identità Elettronica (CIE)</h4>
-              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">COMUNE / ANAGRAFE</span>
+              <h4 style="margin: 0; font-size: 1.15rem;">3. Italian Bank Account / Postepay</h4>
+              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">BANCA / POSTE ITALIANE</span>
             </div>
           </div>
-          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 1rem;">
-            Electronic National Identity Card issued by your city hall (<em>Comune</em>) after completing residence registration (<em>Iscrizione Anagrafica / Residenza</em>).
+          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.75rem;">
+            Mandatory for receiving your UNICORE monthly living stipend and paying university fees.
           </p>
           <ul class="link-features-list">
-            <li><i class="fa-solid fa-check"></i> Valid photo ID for travel within Italy and the Schengen area</li>
-            <li><i class="fa-solid fa-check"></i> Cost: ~€22.20; valid for 10 years</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Options:</strong> <em>Postepay Evolution</em> (with Italian IBAN) or <em>Conto di Base Gratuito</em></li>
+            <li><i class="fa-solid fa-check"></i> <strong>Documents:</strong> Codice Fiscale, Passport, Ricevuta Postale, UNICORE scholarship letter</li>
           </ul>
         </div>
 
-        <!-- Tessera Sanitaria -->
+        <!-- 4. Tessera Sanitaria -->
         <div class="survival-card">
           <div class="survival-card-header">
             <div class="survival-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
             <div>
-              <h4 style="margin: 0; font-size: 1.15rem;">Tessera Sanitaria & Medico di Base</h4>
-              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">ASL (LOCAL HEALTH AUTHORITY)</span>
+              <h4 style="margin: 0; font-size: 1.15rem;">4. Tessera Sanitaria & Medico di Base</h4>
+              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">ASL (LOCAL HEALTH SERVICE)</span>
             </div>
           </div>
-          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 1rem;">
-            National Health Card granting free access to a General Practitioner (<em>Medico di Base</em>), emergency care, and subsidized prescriptions across Italy.
+          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.75rem;">
+            Grants access to Italy's National Health Service (SSN) and free general medical consultations.
           </p>
           <ul class="link-features-list">
-            <li><i class="fa-solid fa-check"></i> Register at the nearest territorial ASL health desk</li>
-            <li><i class="fa-solid fa-check"></i> Free general doctor visits, referrals, and medical certificates</li>
+            <li><i class="fa-solid fa-check"></i> <strong>General Practitioner (GP):</strong> Choose a family doctor close to your dormitory</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Coverage:</strong> Free visits, medical prescriptions, specialist referrals, emergency care</li>
+          </ul>
+        </div>
+
+        <!-- 5. Carta d'Identità CIE -->
+        <div class="survival-card">
+          <div class="survival-card-header">
+            <div class="survival-card-icon"><i class="fa-solid fa-id-badge"></i></div>
+            <div>
+              <h4 style="margin: 0; font-size: 1.15rem;">5. Carta d'Identità Elettronica (CIE)</h4>
+              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">COMUNE / UFFICIO ANAGRAFE</span>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.75rem;">
+            The official electronic plastic national identity card issued after civil residence registration.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> <strong>Where:</strong> City Hall registry office (<em>Anagrafe</em>)</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Cost:</strong> ~€22.20; valid for 10 years across Italy and the Schengen area</li>
+          </ul>
+        </div>
+
+        <!-- 6. SPID Digital Identity -->
+        <div class="survival-card">
+          <div class="survival-card-header">
+            <div class="survival-card-icon"><i class="fa-solid fa-key"></i></div>
+            <div>
+              <h4 style="margin: 0; font-size: 1.15rem;">6. SPID Digital Identity</h4>
+              <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 700;">PUBLIC DIGITAL IDENTITY</span>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.75rem;">
+            Single digital login credential used to access Italian public administration portals, INPS, and DSU student services.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> <strong>Providers:</strong> PosteID (free via Post Office) or LepidaID</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Requirements:</strong> Italian ID or Passport, Codice Fiscale, Italian phone number</li>
           </ul>
         </div>
 
@@ -608,105 +642,144 @@
     </div>
   </section>
 
-  <!-- Section 4: Essential Italian Vocabulary for New Arrivals -->
-  <section class="section bg-light">
+  <!-- Section 4: Spoken Italian Practical Survival Toolkit -->
+  <section class="section bg-light" id="phrases">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge"><i class="fa-solid fa-language"></i> Practical Italian</span>
-        <h2>Essential Words & Phrases for Daily Life & Offices</h2>
+        <span class="section-badge"><i class="fa-solid fa-comments"></i> Spoken Italian Toolkit</span>
+        <h2>Practical Spoken Phrases for Public Offices</h2>
         <p>
-          Practical vocabulary and spoken Italian phrases to help you communicate confidently in public offices and around town.
+          Key phrases with phonetic pronunciation and 1-click copy buttons for communicating confidently in Italian offices.
         </p>
       </div>
 
-      <div class="glossary-grid">
+      <!-- Category Filter Buttons -->
+      <div class="filter-bar" style="margin-bottom: 1.75rem;">
+        <button class="phrase-filter-btn filter-btn active" data-phrase-cat="all">All Phrases</button>
+        <button class="phrase-filter-btn filter-btn" data-phrase-cat="posta">📮 Post Office (Poste)</button>
+        <button class="phrase-filter-btn filter-btn" data-phrase-cat="questura">👮 Police (Questura)</button>
+        <button class="phrase-filter-btn filter-btn" data-phrase-cat="anagrafe">🏛️ Tax & Registry (Entrate/Comune)</button>
+        <button class="phrase-filter-btn filter-btn" data-phrase-cat="salute">🏥 Doctor & Health (ASL)</button>
+        <button class="phrase-filter-btn filter-btn" data-phrase-cat="banca">🏦 Bank & University</button>
+      </div>
 
-        <div class="glossary-card">
-          <div class="glossary-term">
-            <span>Permesso di Soggiorno</span>
-            <span class="glossary-category-badge">Questura</span>
-          </div>
-          <div class="glossary-meaning">
-            <strong>Meaning:</strong> Residence Permit.<br>
-            <em>"Ho l'appuntamento per il fotosegnalamento e le impronte digitali."</em> (I have an appointment for photos and fingerprints.)
-          </div>
-        </div>
+      <div class="phrases-grid">
 
-        <div class="glossary-card">
-          <div class="glossary-term">
-            <span>Marca da Bollo</span>
-            <span class="glossary-category-badge">Tabaccheria</span>
+        <!-- Phrase 1: Post Office Kit Request -->
+        <div class="phrase-card" data-phrase-cat="posta">
+          <div>
+            <div class="phrase-italian">"Vorrei un kit per il permesso di soggiorno per favore."</div>
+            <div class="phrase-phonetic">[Voh-RYEH oon keet pehr eel pehr-MEHS-soh dee soh-JOHR-noh pehr fah-VOH-reh]</div>
+            <div class="phrase-english"><strong>Meaning:</strong> I would like a residence permit kit envelope, please.</div>
           </div>
-          <div class="glossary-meaning">
-            <strong>Meaning:</strong> Official tax revenue stamp (€16.00).<br>
-            <em>"Vorrei una marca da bollo da sedici euro per favore."</em> (I would like a €16 revenue stamp please.)
-          </div>
-        </div>
-
-        <div class="glossary-card">
-          <div class="glossary-term">
-            <span>Ricevuta Postale</span>
+          <div class="phrase-actions">
             <span class="glossary-category-badge">Poste Italiane</span>
-          </div>
-          <div class="glossary-meaning">
-            <strong>Meaning:</strong> Postal receipt (Cedolino).<br>
-            Legal temporary document proving your lawful stay in Italy while awaiting the physical plastic permit.
+            <button class="copy-phrase-btn"><i class="fa-solid fa-copy"></i> Copy Phrase</button>
           </div>
         </div>
 
-        <div class="glossary-card">
-          <div class="glossary-term">
-            <span>Iscrizione Anagrafica</span>
-            <span class="glossary-category-badge">Comune</span>
+        <!-- Phrase 2: Post Office Bulletin Payment -->
+        <div class="phrase-card" data-phrase-cat="posta">
+          <div>
+            <div class="phrase-italian">"Devo pagare questo bollettino postale per il permesso di soggiorno."</div>
+            <div class="phrase-phonetic">[DEH-voh pah-GAH-reh KWEHS-toh bohl-leht-TEE-noh pohs-TAH-leh...]</div>
+            <div class="phrase-english"><strong>Meaning:</strong> I need to pay this postal bulletin slip for the residence permit.</div>
           </div>
-          <div class="glossary-meaning">
-            <strong>Meaning:</strong> Civil registry residence registration.<br>
-            <em>"Vorrei richiedere la residenza e la carta d'identità."</em> (I would like to apply for residency and ID card.)
-          </div>
-        </div>
-
-        <div class="glossary-card">
-          <div class="glossary-term">
-            <span>Medico di Base</span>
-            <span class="glossary-category-badge">Salute (ASL)</span>
-          </div>
-          <div class="glossary-meaning">
-            <strong>Meaning:</strong> Family doctor / General Practitioner.<br>
-            <em>"Vorrei fare la scelta del medico di base per favore."</em> (I would like to register with a family doctor.)
+          <div class="phrase-actions">
+            <span class="glossary-category-badge">Poste Italiane</span>
+            <button class="copy-phrase-btn"><i class="fa-solid fa-copy"></i> Copy Phrase</button>
           </div>
         </div>
 
-        <div class="glossary-card">
-          <div class="glossary-term">
-            <span>Segreteria Studenti</span>
-            <span class="glossary-category-badge">Università</span>
+        <!-- Phrase 3: Questura Fingerprinting Appointment -->
+        <div class="phrase-card" data-phrase-cat="questura">
+          <div>
+            <div class="phrase-italian">"Buongiorno, ho l'appuntamento oggi per il fotosegnalamento e le impronte digitali."</div>
+            <div class="phrase-phonetic">[Bwohn-JOHR-noh, oh lahp-poon-tah-MEHN-toh OHJ-jee pehr eel foh-toh-seh-nyah-lah-MEHN-toh...]</div>
+            <div class="phrase-english"><strong>Meaning:</strong> Good morning, I have an appointment today for photos and fingerprinting.</div>
           </div>
-          <div class="glossary-meaning">
-            <strong>Meaning:</strong> Student Administrative Registry Office.<br>
-            <em>"Devo ritirare il certificato di iscrizione per la Questura."</em> (I need to collect the enrollment certificate for Questura.)
-          </div>
-        </div>
-
-        <div class="glossary-card">
-          <div class="glossary-term">
-            <span>Contratto di Locazione</span>
-            <span class="glossary-category-badge">Alloggio</span>
-          </div>
-          <div class="glossary-meaning">
-            <strong>Meaning:</strong> Registered rental lease agreement.<br>
-            Essential document proving your official accommodation for residence and Questura applications.
+          <div class="phrase-actions">
+            <span class="glossary-category-badge">Questura</span>
+            <button class="copy-phrase-btn"><i class="fa-solid fa-copy"></i> Copy Phrase</button>
           </div>
         </div>
 
-        <div class="glossary-card">
-          <div class="glossary-term">
-            <span>Abbonamento Mezzi</span>
-            <span class="glossary-category-badge">Trasporti</span>
+        <!-- Phrase 4: Agenzia delle Entrate Codice Fiscale -->
+        <div class="phrase-card" data-phrase-cat="anagrafe">
+          <div>
+            <div class="phrase-italian">"Vorrei richiedere l'attribuzione del codice fiscale per motivi di studio universitario."</div>
+            <div class="phrase-phonetic">[Voh-RYEH ree-kyeh-DEH-reh lah-tree-boo-TSYOH-neh dehl KOH-dee-cheh fees-KAH-leh...]</div>
+            <div class="phrase-english"><strong>Meaning:</strong> I would like to apply for a tax code for university study purposes.</div>
           </div>
-          <div class="glossary-meaning">
-            <strong>Meaning:</strong> Public transit subscription pass.<br>
-            <em>"Vorrei fare l'abbonamento mensile/annuale studenti."</em> (I would like to purchase the student monthly/annual transit pass.)
+          <div class="phrase-actions">
+            <span class="glossary-category-badge">Agenzia Entrate</span>
+            <button class="copy-phrase-btn"><i class="fa-solid fa-copy"></i> Copy Phrase</button>
           </div>
+        </div>
+
+        <!-- Phrase 5: ASL Family Doctor -->
+        <div class="phrase-card" data-phrase-cat="salute">
+          <div>
+            <div class="phrase-italian">"Vorrei iscrivermi al Servizio Sanitario Nazionale e fare la scelta del medico di base."</div>
+            <div class="phrase-phonetic">[Voh-RYEH ees-KREE-vehr-mee ahl sehr-VEET-syoh sah-nee-TAH-ryoh naht-syoh-NAH-leh...]</div>
+            <div class="phrase-english"><strong>Meaning:</strong> I would like to register with the national health service and choose a family doctor.</div>
+          </div>
+          <div class="phrase-actions">
+            <span class="glossary-category-badge">ASL Sanità</span>
+            <button class="copy-phrase-btn"><i class="fa-solid fa-copy"></i> Copy Phrase</button>
+          </div>
+        </div>
+
+        <!-- Phrase 6: Bank Account Opening -->
+        <div class="phrase-card" data-phrase-cat="banca">
+          <div>
+            <div class="phrase-italian">"Sono uno studente del progetto UNICORE e vorrei aprire un conto corrente per ricevere la borsa di studio."</div>
+            <div class="phrase-phonetic">[SOH-noh OO-noh stoo-DEHN-teh dehl proh-JEHT-toh oo-nee-KOH-reh...]</div>
+            <div class="phrase-english"><strong>Meaning:</strong> I am a UNICORE project student and would like to open an account to receive my scholarship.</div>
+          </div>
+          <div class="phrase-actions">
+            <span class="glossary-category-badge">Banca / Poste</span>
+            <button class="copy-phrase-btn"><i class="fa-solid fa-copy"></i> Copy Phrase</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 5: Crucial Warnings & Common Traps to Avoid -->
+  <section class="section bg-white" id="warnings">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" style="background: #fef2f2; border-color: #fecaca; color: #991b1b;"><i class="fa-solid fa-shield-halved" style="color: #ef4444;"></i> Vital Rules</span>
+        <h2>Crucial Legal Traps & Mistakes to Avoid</h2>
+        <p>
+          Important precautions to safeguard your legal status and avoid bureaucratic delays in Italy.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        
+        <div class="warning-box">
+          <h4><i class="fa-solid fa-plane-slash"></i> Travel Rules with the Postal Receipt (Ricevuta)</h4>
+          <p>
+            While waiting for your electronic card, you can travel directly to your country of origin and return to Italy. However, <strong>you cannot transit through other Schengen countries</strong> (e.g. Germany, France, Switzerland). Flights must be non-stop direct or transit through non-Schengen nations.
+          </p>
+        </div>
+
+        <div class="warning-box">
+          <h4><i class="fa-solid fa-file-circle-xmark"></i> Never Insert Original Documents in the Kit</h4>
+          <p>
+            Insert <strong>only clear A4 photocopies</strong> into the yellow envelope. Never mail original passports, academic degrees, or original scholarship letters. Keep all originals with you to present physically during your Questura fingerprinting appointment.
+          </p>
+        </div>
+
+        <div class="warning-box">
+          <h4><i class="fa-solid fa-receipt"></i> Keep Your Payment Receipts Safe (Cedolino)</h4>
+          <p>
+            The postal slip (<em>Cedolino</em>) with your User ID and Password is your official legal proof of lawful stay in Italy. Take a clear photo/scan immediately and store digital copies in your cloud drive.
+          </p>
         </div>
 
       </div>
@@ -757,7 +830,7 @@
     </div>
   </footer>
 
-    <!-- Universal Global Search Modal -->
+  <!-- Universal Global Search Modal -->
   <div class="search-modal-backdrop" id="globalSearchModal" role="dialog" aria-modal="true" aria-label="Search site resources">
     <div class="search-modal-card">
       <div class="search-modal-header">
