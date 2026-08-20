@@ -19,15 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     });
 
-    // Mobile Dropdown Submenu Toggle
-    if (dropdownTrigger && navDropdown) {
-      dropdownTrigger.addEventListener('click', (e) => {
+    // Mobile Dropdown Submenus Toggle
+    document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
         if (window.innerWidth <= 820) {
           e.preventDefault();
-          navDropdown.classList.toggle('mobile-open');
+          const parentDropdown = trigger.closest('.nav-dropdown');
+          if (parentDropdown) {
+            parentDropdown.classList.toggle('mobile-open');
+          }
         }
       });
-    }
+    });
 
     // Close menu when clicking direct nav links or outside
     document.querySelectorAll('.nav-link:not(.dropdown-trigger), .dropdown-link').forEach(link => {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Living in Italy: Bureaucracy, Documents & Italian Essentials | UNICORE Hub</title>
+  <title>Living in Italy: Bureaucracy, Kit Giallo & Italian Essentials | UNICORE Hub</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +37,17 @@
           </div>
         </div>
 
-        <a href="living-in-italy.html" class="nav-link active">Living in Italy</a>
-        <a href="buddy-program.html" class="nav-link">Buddy Program</a>
+        <!-- Guides Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="living-in-italy.html" class="nav-link dropdown-trigger active">
+            Guides <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="living-in-italy.html" class="dropdown-link active"><i class="fa-solid fa-passport"></i> Living in Italy & Documents</a>
+            <a href="buddy-program.html" class="dropdown-link"><i class="fa-solid fa-people-arrows"></i> Buddy Mentorship Program</a>
+          </div>
+        </div>
+
         <a href="faq.html" class="nav-link">FAQs</a>
         <a href="stories-archive.html" class="nav-link">Stories & Archive</a>
         <a href="important-links.html" class="nav-link">Important Links</a>
@@ -58,7 +67,9 @@
       <div class="breadcrumbs">
         <a href="index.html">Home</a>
         <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
-        <span class="current">Living in Italy</span>
+        <span>Guides</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">Living in Italy & Documents</span>
       </div>
     </div>
   </div>
@@ -70,9 +81,9 @@
         <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2);">
           <i class="fa-solid fa-passport"></i> Practical Settlement Guide
         </span>
-        <h1>Living in Italy: Bureaucracy, Documents & Italian Essentials</h1>
+        <h1>Living in Italy: Bureaucracy, Kit Giallo & Italian Essentials</h1>
         <p>
-          A comprehensive guide to Italian administrative procedures, step-by-step <em>Kit Giallo</em> filling instructions, residence permit tracking, and essential everyday Italian vocabulary for new scholars.
+          A comprehensive guide to Italian administrative procedures, detailed box-by-box <em>Kit Giallo</em> filling instructions, residence permit tracking, and essential everyday Italian vocabulary.
         </p>
       </div>
     </div>
@@ -94,7 +105,7 @@
 
         <div class="progress-container">
           <div class="progress-label-wrap">
-            <span>Settlement Completion</span>
+            <span>Settlement Progress</span>
             <span id="progressPercent">0%</span>
           </div>
           <div class="progress-track">
@@ -179,12 +190,96 @@
     <div class="container">
       <div class="section-header">
         <span class="section-badge"><i class="fa-solid fa-envelope-open-text"></i> Official Procedure</span>
-        <h2>Step-by-Step Kit Giallo Filling Guide</h2>
+        <h2>Step-by-Step Kit Giallo Guide (Pratichiamo Legge Reference)</h2>
         <p>
-          How to correctly complete and submit the residence permit application (<em>Kit Giallo</em>) at Poste Italiane.
+          Comprehensive instructions for filling out Modulo 1, attaching documents, postal payments, and Questura appointments.
         </p>
       </div>
 
+      <!-- Pratichiamo Legge Box-by-Box Guide -->
+      <div class="interactive-tool-card" style="margin-bottom: 2rem;">
+        <div class="tool-header">
+          <div>
+            <h3><i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Modulo 1: Box-by-Box Instructions for Students</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); margin: 0.25rem 0 0 0;">
+              Follow these rules: Use a <strong>BLACK ink pen</strong> only, write in <strong>CAPITAL LETTERS</strong>, and fill <strong>ONE letter/number per box</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+          
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.25rem;">
+            <div style="font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">
+              <span class="archive-edition-tag">Boxes 1–3</span> Top Header
+            </div>
+            <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
+              <strong>Box 1 (Sigla Provincia):</strong> 2-letter province code (e.g. <code>RM</code> for Rome, <code>MI</code> for Milan, <code>BO</code> for Bologna).<br>
+              <strong>Box 2 (Comune):</strong> City name (e.g. <code>ROMA</code>).<br>
+              <strong>Box 3 (Richiesta di):</strong> Tick <strong>"Rilascio"</strong> (First issuance) or <strong>"Rinnovo"</strong> (Renewal).
+            </p>
+          </div>
+
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.25rem;">
+            <div style="font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">
+              <span class="archive-edition-tag">Box 14 & 21</span> Reason & Attachments
+            </div>
+            <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
+              <strong>Box 14 (Codice Motivo):</strong> Write code <code>11</code> (Motivo: Studio / Study).<br>
+              <em>(Note: For post-grad job search, use code <code>25</code> for Ricerca Lavoro).</em><br>
+              <strong>Box 21 (Numero Fogli):</strong> Write the exact number of attached photocopy sheets.
+            </p>
+          </div>
+
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.25rem;">
+            <div style="font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">
+              <span class="archive-edition-tag">Sezione 1</span> Personal Data (Dati Richiedente)
+            </div>
+            <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
+              <strong>Codice Fiscale:</strong> Your 16-character Italian tax code.<br>
+              <strong>Stato Civile:</strong> <code>A</code> (Single / Celibe-Nubile) or <code>B</code> (Married).<br>
+              <strong>Sesso:</strong> <code>M</code> or <code>F</code>.<br>
+              <strong>Data di Nascita:</strong> <code>DD / MM / YYYY</code>.
+            </p>
+          </div>
+
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.25rem;">
+            <div style="font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">
+              <span class="archive-edition-tag">Sezione 2</span> Travel Document (Dati Documento)
+            </div>
+            <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
+              <strong>Tipo Documento:</strong> <code>01</code> (National Passport) or <code>02</code> (Refugee Travel Document / CTD).<br>
+              <strong>Numero:</strong> Passport / CTD number.<br>
+              <strong>Valido fino al:</strong> Expiration date.<br>
+              <strong>Rilasciato da:</strong> <code>01</code> (Foreign authority).
+            </p>
+          </div>
+
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.25rem;">
+            <div style="font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">
+              <span class="archive-edition-tag">Sezione 3</span> Address for Communications
+            </div>
+            <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
+              <strong>Presso (C/O):</strong> University Dormitory / Landlord name.<br>
+              <strong>Indirizzo, Civico, CAP:</strong> Street name, building number, postal code.<br>
+              <strong>Cellulare & Email:</strong> Your Italian phone number and university email address.
+            </p>
+          </div>
+
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.25rem;">
+            <div style="font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">
+              <span class="archive-edition-tag">Modulo 2 & Signature</span> Critical Rules
+            </div>
+            <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
+              <strong>Modulo 2:</strong> <strong>LEAVE ENTIRELY BLANK!</strong> (Only for employment contracts).<br>
+              <strong>Signature:</strong> <strong>DO NOT SIGN YET!</strong> Sign page 8 in front of the post office employee when submitting.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Five Stage Submission Roadmap -->
       <div class="journey-timeline">
 
         <!-- Kit Step 1 -->
@@ -196,12 +291,12 @@
             </div>
             <h3>Collect the Kit Giallo at Poste Italiane</h3>
             <p>
-              Visit any major post office branch featuring a <strong>Sportello Amico</strong> desk and ask the postal clerk: <em>"Vorrei un kit per il permesso di soggiorno per favore"</em>. The kit envelope is completely <strong>free of charge</strong>.
+              Visit any post office branch featuring a <strong>Sportello Amico</strong> counter and ask: <em>"Vorrei un kit per il permesso di soggiorno per favore"</em>. The kit envelope is 100% <strong>free of charge</strong>.
             </p>
             <ul class="step-checklist">
               <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Free yellow-striped envelope (Kit Giallo)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Contains Modulo 1 (Personal data) and Modulo 2 (Work data - leave blank)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Contains the postal payment slip (Bollettino postale)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Modulo 1 (Personal data form)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Pre-printed postal bulletin (Bollettino Postale 674)</li>
             </ul>
           </div>
         </div>
@@ -211,28 +306,7 @@
           <div class="step-marker">2</div>
           <div class="step-card">
             <div class="step-meta">
-              <span class="step-timeline-tag">Step 2: Complete Modulo 1</span>
-            </div>
-            <h3>Filling Out Modulo 1 (Student Instructions)</h3>
-            <p>
-              Fill out <strong>Modulo 1 ONLY</strong> using a <strong>BLACK ink pen</strong> and writing in clear <strong>CAPITAL LETTERS</strong> within the designated boxes:
-            </p>
-            <ul class="step-checklist">
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>Sezione 1:</strong> Select <em>"Rilascio"</em> (first issuance) and write code <strong>11</strong> for <em>Motivo: Studio</em> (Study).</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>Dati Anagrafici:</strong> Surname (<em>Cognome</em>), Given Name (<em>Nome</em>), Date of Birth, Gender, Nationality.</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>Dati Passaporto:</strong> Passport/Travel document number, expiry date, issuing authority.</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>Recapito in Italia:</strong> Address of your university dormitory or temporary apartment in Italy.</li>
-              <li><i class="fa-solid fa-caution" style="color: #e11d48;"></i> <strong>DO NOT SIGN</strong> the form yet — you will sign it in front of the postal operator!</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Kit Step 3 -->
-        <div class="journey-step">
-          <div class="step-marker">3</div>
-          <div class="step-card">
-            <div class="step-meta">
-              <span class="step-timeline-tag">Step 3: Document Attachments</span>
+              <span class="step-timeline-tag">Step 2: Prepare Photocopies</span>
             </div>
             <h3>Prepare Required Photocopies (Never Originals)</h3>
             <p>
@@ -243,7 +317,27 @@
               <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Photocopy of University Enrollment Certificate (<em>Iscrizione Universitaria</em>)</li>
               <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Photocopy of UNICORE Scholarship Award Letter / Financial Guarantee</li>
               <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Photocopy of Health Insurance / Tessera Sanitaria registration</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> 1x Revenue Stamp (<em>Marca da Bollo</em>) of <strong>€16.00</strong> purchased from a Tobacco shop (<em>Tabaccheria</em>)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> 1x Revenue Stamp (<em>Marca da Bollo</em>) of <strong>€16.00</strong> (affixed to top-right of page 1)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Kit Step 3 -->
+        <div class="journey-step">
+          <div class="step-marker">3</div>
+          <div class="step-card">
+            <div class="step-meta">
+              <span class="step-timeline-tag">Step 3: Submission & Counter Payment</span>
+            </div>
+            <h3>Submitting the Kit at Sportello Amico</h3>
+            <p>
+              Take the open envelope and your original passport to a Poste Italiane Sportello Amico counter within 8 working days of arrival:
+            </p>
+            <ul class="step-checklist">
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>€70.46</strong> (or €30.46) Electronic Permit Production Fee via pre-printed bulletin</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>€30.00</strong> Postal Service Fee paid directly at the counter</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Receive the official <strong>Ricevuta Postale (Cedolino)</strong> with User ID and Password</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Receive the Questura appointment slip with date, time, and address for fingerprinting</li>
             </ul>
           </div>
         </div>
@@ -253,17 +347,16 @@
           <div class="step-marker">4</div>
           <div class="step-card">
             <div class="step-meta">
-              <span class="step-timeline-tag">Step 4: Submission & Payment</span>
+              <span class="step-timeline-tag">Step 4: Biometrics at Questura</span>
             </div>
-            <h3>Submitting the Kit at Sportello Amico</h3>
+            <h3>Questura Appointment (Fotosegnalamento)</h3>
             <p>
-              Take the open envelope and your original passport to a Poste Italiane Sportello Amico. The postal operator will verify your passport, affix the postal bar code, and process your payments:
+              Attend your appointment at the local Police Immigration Office (<em>Ufficio Immigrazione della Questura</em>):
             </p>
             <ul class="step-checklist">
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>€70.46</strong> (or €30.46 for 1-year) Electronic Permit Production Fee via pre-printed bulletin</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>€30.00</strong> Postal Service Fee paid directly at the counter</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Receive the official <strong>Ricevuta Postale (Cedolino)</strong> with User ID and Password</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Receive appointment slip with exact date, time, and Questura address for fingerprinting</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Bring <strong>4 passport-size photos</strong> (identical, white background, recent)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Bring original Passport, original Ricevuta Postale, and university certificates</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Biometric fingerprinting (<em>Rilevamento impronte digitali</em>)</li>
             </ul>
           </div>
         </div>
@@ -273,17 +366,16 @@
           <div class="step-marker">5</div>
           <div class="step-card">
             <div class="step-meta">
-              <span class="step-timeline-tag">Step 5: Biometrics & Tracking</span>
+              <span class="step-timeline-tag">Step 5: Online Status Tracking</span>
             </div>
-            <h3>Questura Appointment & Online SMS Tracking</h3>
+            <h3>Tracking Your Permit Online</h3>
             <p>
-              Attend your appointment at the local Police Immigration Office (<em>Ufficio Immigrazione della Questura</em>):
+              Track the progress of your electronic card using the credentials on your postal receipt:
             </p>
             <ul class="step-checklist">
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Bring <strong>4 passport-size photos</strong> (white background, recent)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Bring original Passport, original Ricevuta Postale, and university certificates</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Biometric fingerprinting (<em>Rilevamento impronte digitali</em>)</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Track permit status online at <strong>portaleimmigrazione.it</strong> or <strong>poliziadistato.it</strong></li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>portaleimmigrazione.it:</strong> Enter User ID & Password (found on your postal receipt)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> <strong>poliziadistato.it:</strong> Enter the 10-digit registered mail number (<em>Numero Assicurata</em>)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> You will receive an SMS when the electronic card is ready for collection at the Questura</li>
             </ul>
           </div>
         </div>
