@@ -1,0 +1,789 @@
+# UNICORE Website Analysis & Gap Assessment
+## Analysis of universitycorridors.unhcr.it + Recommendations for Student Support Portal
+
+---
+
+## EXECUTIVE SUMMARY
+
+The official UNICORE website (universitycorridors.unhcr.it) serves as the **primary application and program information hub**. It effectively handles:
+- Application management and admission criteria
+- University course listings and information
+- Partner organization details
+- FAQ for prospective applicants
+
+**Critical Gap:** The website provides **application-stage support only**. Once students arrive in Italy, they lack:
+- Real-time financial/payment tracking
+- Mental health and wellbeing resources
+- Academic support coordination
+- Post-graduation pathway guidance
+- Alumni networking and career support
+- Community building and integration tools
+
+**Solution:** Build complementary **Student & Alumni Support Portal** that extends UNICORE support beyond admission through graduation and career transition.
+
+---
+
+## SECTION 1: CURRENT UNICORE WEBSITE STRUCTURE & CONTENT
+
+### 1.1 OFFICIAL WEBSITE: universitycorridors.unhcr.it
+
+**Primary Purpose:** Application platform + Program information
+
+**Main Navigation (8 sections):**
+1. **Unicore (Home)** – Overview, key stats, application status
+2. **Admission** – Criteria, requirements, deadlines
+3. **Universities** – 40+ participating institutions with course info
+4. **Partners** – National and international partners
+5. **Local Partners** – Housing, integration, community support
+6. **FAQ** – 20+ questions about application process
+7. **Contacts** – University-specific contact information
+8. **Courses** – Searchable database of 432 courses across universities
+
+---
+
+### 1.2 HOMEPAGE CONTENT & MESSAGING
+
+#### **Hero Section:**
+- "Applications for UNICORE 8.0 are now open!"
+- Application deadline: April 17, 2026
+- Video introduction (2-minute overview)
+- Clear CTA: "Register" or "Login" for applications
+
+#### **Key Information Highlighted:**
+- Current edition: UNICORE 8.0
+- Number of universities: 40
+- Available scholarships: 80+
+- Courses offered: 432
+- Countries of origin eligible: 13 (Bangladesh, Burkina Faso, Cameroon, Ethiopia, India, Kenya, Mozambique, Niger, Nigeria, South Africa, Uganda, Zambia, Zimbabwe)
+
+#### **Call to Action:**
+- Information session on March 17, 2026 (Teams meeting)
+- Guidance document: "UNICORE Guide for Students" (PDF download)
+- Direct login for existing account holders
+- Registration for new applicants
+
+---
+
+### 1.3 ADMISSION CRITERIA & REQUIREMENTS
+
+#### **Eligibility Requirements (7 criteria):**
+
+1. **Refugee Status** – Recognized as refugee in Bangladesh, Burkina Faso, Cameroon, Ethiopia, India, Kenya, Mozambique, Niger, Nigeria, South Africa, Uganda, Zambia, or Zimbabwe (in collaboration with UNHCR)
+
+2. **Qualification** – Bachelor's degree or equivalent (valid for admission to Master's programs in Italy)
+
+3. **GPA Minimum** – 3.0 or equivalent according to national grading system (conversion table provided)
+
+4. **Degree Timeline** – Obtained in or after 2021 and before deadline (some universities have no time limit)
+
+5. **English Proficiency** – Required; no official certificate usually required but may be assessed in interview
+
+6. **Never Enrolled** – Not previously enrolled in Master's at any UNICORE partner university
+
+7. **No Prior Enrollment** – First-time candidate for UNICORE program
+
+#### **Application Documents Required:**
+- Refugee ID card or proof of refugee registration
+- Bachelor's degree certificate
+- Transcripts with grades
+- GPA documentation
+- Curriculum Vitae
+- Motivation letter
+- Any university-specific additional documents
+
+#### **Application Timeline (UNICORE 8.0):**
+- General deadline: April 17, 2026 (12:00 noon UTC+2)
+- Maximum 2 university applications per student
+- Some universities have different dates:
+  - Early/later opening and closing dates vary (March 2 – May 20, 2026)
+  - 15 universities with staggered timelines listed
+
+#### **Selection Process (2-Step):**
+
+**Step 1: Document Evaluation**
+- Academic background & GPA (0-20 points)
+- Curriculum Vitae evaluation (0-10 points)
+- Coherence with chosen program (0-10 points)
+- **Minimum passing score: 25 points**
+
+**Step 2: Online Interview**
+- Technical knowledge and subject expertise
+- English language proficiency
+- **Score: 0-40 points**
+- Candidates notified by email about interview date/time
+
+#### **Selection Criteria:**
+- Merit-based selection
+- University-nominated committees of experts
+- No UNHCR role in final selection (universities autonomous)
+- Results published on individual university websites
+- Privacy: Results identified by ration card number or refugee ID number (not name)
+
+---
+
+### 1.4 UNIVERSITIES & PROGRAMS
+
+#### **40 Participating Universities:**
+
+**Major Research Universities:**
+- Sapienza University of Rome
+- University of Milan (Bicocca, Bocconi, Politecnico)
+- University of Bologna
+- University of Padua
+- University of Turin (Politecnico)
+- University of Florence
+- University of Naples
+
+**Regional Universities:**
+- Across all major Italian regions (North, Central, South, Islands)
+- Mix of public and private institutions
+- Politechnic, research, and specialized universities
+
+#### **Course Offerings:**
+- **432 total courses** across 40 universities
+- **Master's degree programs** (Second Cycle)
+- Fields: Engineering, Business, Law, Medicine, Humanities, Sciences, Technology
+- Available from March 2, 2026 (most; some later)
+- Searchable course database on website
+
+#### **What Students Get:**
+- Tuition fee exemption (full waiver)
+- Monthly study grant/stipend for living expenses
+- Plane ticket assistance
+- Visa and residence permit-related expenses covered
+- Accommodation support (varies by university)
+- Health insurance
+- Academic and psychosocial support (varies)
+
+---
+
+### 1.5 PARTNERS & SUPPORT NETWORK
+
+#### **National Partners:**
+- **UNHCR Italy** – Overall program coordination, refugee status verification
+- **Italian Ministry of Foreign Affairs & International Cooperation** – Policy support
+- **Caritas Italiana** – Housing, integration, community support
+- **Diaconia Valdese** – Mental health, psychosocial support
+- **Centro Astalli** – Legal support, documentation assistance
+- **Other partner organizations** – Varies by location
+
+#### **Local Partner Services (by university/city):**
+- Housing coordination and accommodation
+- Reception and integration activities
+- Mental health and psychosocial support
+- Legal guidance and documentation help
+- Healthcare access
+- Community connection and events
+- Emergency support
+
+---
+
+### 1.6 FAQ SECTION CONTENT (Current)
+
+#### **20+ Questions Covered:**
+
+**Application Process (7 questions):**
+- Where do I start?
+- Can I create multiple profiles? (NO – explicitly forbidden)
+- How can I apply?
+- Who is eligible?
+- What are basic requirements?
+- How many applications can I submit? (Maximum 2 universities)
+- What if I'm missing documentation?
+
+**Scholarship & Benefits (5 questions):**
+- What are the benefits?
+- Is a fee required? (NO – participation is free)
+- Can I receive multiple scholarships? (NO)
+- English language requirement clarification
+- What happens after graduation?
+
+**Work & Study (2 questions):**
+- Am I allowed to work? (YES – part-time, max 20 hrs/week)
+- Is attendance mandatory? (Depends on program)
+
+**Results & Timelines (3 questions):**
+- When is the deadline? When will I get results?
+- How can I follow my application progress? (Dashboard status tracking)
+- When will courses start? (September/October 2026)
+
+**Post-Graduation (2 questions):**
+- Can I defer my admission? (NO)
+- Can I request resettlement to another EU country? (NO – no resettlement program from Italy)
+
+**Application Tracking:**
+- Dashboard shows status: "Screening pending," "Refugee status confirmed," "Refugee status denied"
+- UNHCR verification step tracked in dashboard
+- Universities handle shortlisting, interviews, final selection
+- Results communicated only via email
+
+---
+
+## SECTION 2: STRENGTHS OF CURRENT WEBSITE
+
+### ✅ What's Working Well
+
+1. **Clear Application Process**
+   - Step-by-step guidance for applicants
+   - Professional, user-friendly design
+   - Multilingual support (at least English/Italian)
+   - PDF guide for students (downloadable)
+
+2. **Comprehensive Program Information**
+   - 40 universities clearly listed with contact info
+   - 432 courses searchable and organized
+   - Admission criteria very explicit and detailed
+   - No ambiguity on requirements
+
+3. **Transparency & Anti-Fraud Measures**
+   - Clear warnings about fraudulent documents
+   - Explicit statement that participation is FREE
+   - Warning about financial exploitation
+   - Application deadline tracking
+
+4. **Accessibility Features**
+   - FAQ section for common questions
+   - Direct contact information for each university
+   - Information sessions offered (Teams webinars)
+   - Video content (YouTube links)
+
+5. **Secure Application Management**
+   - Individual account system
+   - Dashboard for tracking application status
+   - Privacy protection (names not published, ID numbers used instead)
+   - Multiple profile detection and prevention
+
+6. **Legal & Policy Information**
+   - Privacy Policy
+   - Terms of Use
+   - Cookie Policy
+   - Clear GDPR compliance
+
+7. **Social Media Integration**
+   - Facebook: UNHCR Italia
+   - Instagram: unhcr_italia
+   - YouTube: unhcritalia
+   - Twitter presence
+
+---
+
+## SECTION 3: CRITICAL GAPS IN CURRENT WEBSITE
+
+### ❌ What's Missing (Beyond Application Phase)
+
+#### **GAP 1: STUDENT ARRIVAL & ONBOARDING**
+- No first-month checklist
+- No orientation information
+- No practical arrival guidance
+- No accommodation details for arrival week
+- No emergency contact information structured for students
+
+#### **GAP 2: FINANCIAL MANAGEMENT**
+- No stipend payment tracking system
+- No budget planning tools
+- No cost-of-living information by city
+- No hardship fund information
+- No financial support FAQs for students receiving grants
+
+#### **GAP 3: MENTAL HEALTH & WELLBEING**
+- No mental health resource links
+- No counseling service information
+- No support for homesickness/culture shock
+- No crisis hotline information
+- No psychological support FAQ
+
+#### **GAP 4: DOCUMENTATION & LEGAL SUPPORT**
+- No step-by-step guidance for residence permit
+- No Codice Fiscale (tax ID) instructions
+- No health insurance registration help
+- No documentation checklist
+- No ongoing legal support after arrival
+
+#### **GAP 5: ACADEMIC SUPPORT**
+- No language learning resources
+- No tutoring information
+- No study group coordination
+- No academic advisor directory
+- No course-specific resources
+
+#### **GAP 6: COMMUNITY & BELONGING**
+- No buddy program information
+- No event calendar
+- No community forum or discussion space
+- No peer support groups
+- No integration activities listed
+
+#### **GAP 7: CAREER & POST-GRADUATION** (LARGEST GAP)
+- No job board
+- No career guidance
+- No internship opportunities
+- No alumni network
+- No post-graduation pathway information
+- No legal status transition guidance
+- No further study options
+- **CRITICAL: Survey data shows post-graduation transition is the #1 gap**
+
+#### **GAP 8: ALUMNI ENGAGEMENT**
+- No alumni directory
+- No networking opportunities
+- No mentorship program
+- No graduate tracking
+- No alumni success stories
+- No fundraising/sponsorship platform
+
+#### **GAP 9: BLOG & NEWS**
+- No regular content updates
+- No student stories
+- No practical guidance articles
+- No success stories
+- No news feed or updates
+
+#### **GAP 10: PROGRESS & MANAGEMENT TRANSPARENCY**
+- No public dashboard of program metrics
+- No student outcomes tracking
+- No graduate employment data
+- No organizational structure published
+- No progress reports to stakeholders
+
+---
+
+## SECTION 4: WEBSITE ARCHITECTURE COMPARISON
+
+### Current UNICORE Website vs. Proposed Student Support Portal
+
+```
+CURRENT WEBSITE                    PROPOSED STUDENT PORTAL
+════════════════════════════════════════════════════════════
+
+PURPOSE: Application + Info        PURPOSE: Student Experience + Alumni Support
+
+CONTENT FOCUS:
+✓ Admission eligibility            ✓ Student financial tracking
+✓ University listings              ✓ Mental health resources
+✓ Course database                  ✓ Academic support
+✓ Partner organizations            ✓ Community building
+✓ Application FAQ                  ✗ Post-graduation guidance
+✗ Post-selection support           ✓ Career pathways
+✗ Financial tracking               ✓ Alumni network
+✗ Mental health                    ✓ Blog & news
+✗ Community building               ✓ Project management
+✗ Career guidance                  ✓ Comprehensive FAQ
+✗ Alumni engagement
+
+TIMELINE COVERAGE:
+- Pre-arrival: 90% covered
+- First month: 10% covered
+- First year: 5% covered
+- Post-graduation: 0% covered
+
+KEY USERS:
+- Prospective applicants (✓ Well served)
+- Current students (✗ Poorly served)
+- Recent graduates (✗ Not served)
+- Alumni (✗ Not served)
+```
+
+---
+
+## SECTION 5: INFORMATION TO EXTRACT FROM CURRENT SITE
+
+### For New Student Support Website, Integrate:
+
+#### **From Admission Page:**
+- ✓ Eligibility criteria (for reference section)
+- ✓ University contact list (for resource directory)
+- ✓ Application document requirements (for documentation checklist)
+- ✓ Country/region specific information (for user profiles)
+- ✓ Selection committee structure (for transparency)
+- ✓ Deadline tracking system (as reference for students)
+
+#### **From Universities Page:**
+- ✓ All 40 university addresses and contacts
+- ✓ University website links
+- ✓ Department contact information
+- ✓ Academic advisor information (where available)
+- ✓ Student services contacts
+- ✓ International student office contacts
+
+#### **From Courses Database:**
+- ✓ Course titles and fields
+- ✓ Program requirements
+- ✓ Course descriptions
+- ✓ Course websites/syllabus links
+- ✓ Academic structure (if available)
+
+#### **From Partners Page:**
+- ✓ Caritas Italiana contact info → Housing support resources
+- ✓ Diaconia Valdese contact → Mental health services
+- ✓ Centro Astalli contact → Legal support directory
+- ✓ Partner services descriptions → Integration resources
+
+#### **From FAQ:**
+- ✓ Work rights information
+- ✓ Enrollment/attendance expectations
+- ✓ Post-graduation options (limited but important)
+- ✓ Scholarship renewal criteria (ties to academic progress)
+
+#### **From Brand & Design:**
+- ✓ Color scheme (UNICORE blue #006AB4)
+- ✓ Logo and visual identity
+- ✓ Tone of voice (professional, clear, supportive)
+- ✓ Typography and layout standards
+- ✓ Social media links and branding
+
+---
+
+## SECTION 6: INTEGRATION RECOMMENDATIONS
+
+### How New Student Portal Complements Official Site
+
+#### **Architecture Integration:**
+
+**Option A: Separate but Linked (Recommended)**
+```
+universitycorridors.unhcr.it
+├── [HOME] ← Link to → Support Portal (new site)
+├── Admission
+├── Universities ← Links to → Program details in Support Portal
+├── FAQ ← Links to → Comprehensive FAQ in Support Portal
+└── [Login/Register] ← Links to → Student Dashboard in Support Portal
+
+Support Portal (new)
+├── Student Dashboard (personal, login-required)
+├── Resources Hub (public)
+├── Blog & News (public)
+├── FAQ (public & interactive)
+├── Buddy Program (public info, login for coordination)
+└── Alumni Network (semi-public, login for details)
+```
+
+**Advantages:**
+- Main site remains focused on application process
+- Support portal is specialized for student needs
+- Clean separation of concerns
+- Easy to navigate for different audiences
+- Both discoverable from either site
+
+**Option B: Unified Platform (Future)**
+```
+universitycorridors.unhcr.it (expanded)
+├── Application Hub
+├── Program Information
+├── Student Dashboard (after admission)
+├── Support Resources
+├── Alumni Network
+└── Career Services
+```
+
+---
+
+#### **Data & Information Integration:**
+
+**Real-Time Synchronization Needed:**
+1. **University Information**
+   - Pull university contact info from main site database
+   - Link to course pages
+   - Update coordinator/department contacts
+
+2. **Scholarship & Financial Data**
+   - Synchronize eligibility criteria
+   - Share scholarship information
+   - Link to hardship fund policies
+
+3. **Partner Organization Info**
+   - Pull partner contacts and services
+   - Link to mental health, legal, housing resources
+   - Update service descriptions
+
+**Recommended Technical Approach:**
+- API connection between sites (if possible)
+- Regular data exports/imports
+- Shared user database for login (single sign-on ideal)
+- Centralized privacy/GDPR compliance system
+
+---
+
+## SECTION 7: REGISTRATION & LOGIN FLOW
+
+### Current System (universitycorridors.unhcr.it):
+```
+Anonymous User
+    ↓
+[Browse public pages]
+    ↓
+Click "Apply" or "Login"
+    ↓
+Register Account (if new)
+    │
+    └─→ Email verification
+        ↓
+        [Create profile with personal info]
+        ↓
+        [Provide refugee documentation]
+        ↓
+        [Upload application documents]
+        ↓
+        [Dashboard access for tracking]
+```
+
+### Proposed Enhanced System (with Student Portal):
+```
+Prospective Student (Current)
+    ↓
+[Browse universitycorridors.unhcr.it]
+    ↓
+Apply via main site
+    ↓
+[After admission notification]
+    ↓
+Student/Alumni
+    ├─→ Access Support Portal with student login
+    ├─→ Create personalized dashboard
+    ├─→ Access mental health/academic resources
+    ├─→ Join buddy program (if mentor available)
+    ├─→ Access job board (graduates)
+    └─→ Join alumni network
+
+Alumni
+    ├─→ Login to support portal
+    ├─→ Update professional profile
+    ├─→ Access mentorship opportunities
+    ├─→ Participate in alumni events
+    ├─→ Browse funding/sponsorship opportunities
+    └─→ Share success stories/mentor new students
+```
+
+---
+
+## SECTION 8: RECOMMENDED NEXT STEPS
+
+### Phase 1: Launch Preparation (Weeks 1-4)
+
+**Task 1: Data Extraction**
+- [ ] Document all university contact information from main site
+- [ ] Extract all FAQ answers and organize by category
+- [ ] List all partner organizations and services
+- [ ] Compile scholarship/benefit information
+- [ ] Create resource database of existing support services
+
+**Task 2: Website Strategy Finalization**
+- [ ] Decide: Separate portal or integrated platform
+- [ ] Define technical architecture and integration points
+- [ ] Select platform/technology (WordPress, custom, etc.)
+- [ ] Plan data synchronization approach
+- [ ] Create project timeline (detailed)
+
+**Task 3: Content Planning**
+- [ ] Create comprehensive content calendar
+- [ ] Plan FAQ expansion (100+ questions)
+- [ ] Outline blog launch content
+- [ ] Map buddy program features
+- [ ] Define project management/transparency dashboards
+
+### Phase 2: Development (Weeks 5-12)
+
+**Build Core Features:**
+- [ ] Student dashboard (financial tracking, document management)
+- [ ] Basic FAQ (50-75 most essential questions)
+- [ ] Blog launch (2 posts/month)
+- [ ] Buddy program overview & application
+- [ ] Resource directory (from current site)
+
+### Phase 3: Launch (Week 13-14)
+
+**Soft Launch to Current UNICORE Cohort**
+- [ ] Invite UNICORE 7.0/8.0 students to beta test
+- [ ] Gather feedback
+- [ ] Make rapid improvements
+- [ ] Full public launch
+
+### Phase 4: Expansion (Ongoing)
+
+**Post-Launch:**
+- [ ] Expand FAQ to 150+ questions
+- [ ] Grow blog to 4 posts/month
+- [ ] Implement mentorship matching
+- [ ] Build job board
+- [ ] Develop alumni network
+- [ ] Create project transparency dashboards
+
+---
+
+## SECTION 9: SPECIFIC CONTENT TO MAINTAIN/REFERENCE
+
+### Essential Information to Preserve from Official Site:
+
+**Keep as Reference Material:**
+1. Admission eligibility criteria
+2. GPA conversion table
+3. Application guide (PDF)
+4. University contact directory
+5. Partner organization information
+6. Course database
+7. Scholarship amount/terms information
+8. Policy documents (privacy, terms, cookies)
+
+**Link to Official Site From New Portal:**
+- "Apply to UNICORE" button → universitycorridors.unhcr.it
+- Application FAQ → official site FAQ
+- Admission criteria reference → official admission page
+- University information → official university pages
+- Course finder → official course database
+
+**Brand/Design Consistency:**
+- Use official UNICORE blue (#006AB4)
+- Maintain professional tone
+- Use UNICORE logo and branding
+- Reference official branding guidelines
+- Link to UNHCR for overall context
+
+---
+
+## SECTION 10: STAKEHOLDER COORDINATION
+
+### Coordination with Current Website Teams:
+
+#### **Information Sharing Required:**
+1. **From Website Admin:**
+   - Current FAQ analytics (what questions are asked most)
+   - User behavior data (what sections get most traffic)
+   - Technical infrastructure details
+   - Security/privacy systems in place
+
+2. **From Program Coordinators:**
+   - Student feedback on application process
+   - Common questions/problems after admission
+   - Support gaps they're experiencing
+   - Partner organization contact updates
+
+3. **From Universities:**
+   - Coordination contact information
+   - Student services descriptions
+   - Academic support available
+   - International student office contacts
+
+4. **From Partners:**
+   - Services they provide
+   - Contact information
+   - Process for student referrals
+   - Coverage/capacity information
+
+#### **Training & Transition:**
+- Orientation for website team on new portal
+- Cross-training on data synchronization
+- Documentation of integration points
+- Regular sync meetings (weekly during launch)
+
+---
+
+## SECTION 11: MESSAGING & COMMUNICATION
+
+### How to Introduce New Portal to Students:
+
+**Messaging Strategy (via official site & partners):**
+
+```
+ANNOUNCEMENT (at admission notification):
+
+"Welcome to UNICORE! 
+
+Your journey to Italy is about to begin. While 
+universitycorridors.unhcr.it helped you get here, 
+we're launching a new Student & Alumni Support 
+Portal to guide you through:
+
+✓ Your first month in Italy
+✓ Financial support and tracking
+✓ Academic guidance
+✓ Mental health resources
+✓ Community and buddy connections
+✓ Career planning and job search
+✓ Alumni networking (after graduation)
+
+[Create Your Support Portal Account]
+
+Your UNICORE journey doesn't end with admission—
+it's just beginning. We're here for the whole path."
+```
+
+**Promotional Channels:**
+1. Email to newly admitted students
+2. Information session (Teams/Zoom)
+3. PDF guide included with admission notification
+4. Posted on main website (prominent banner)
+5. Shared by university coordinators
+6. Shared by partner organizations
+7. Posted on UNHCR Italia social media
+8. Mentioned in pre-departure orientation
+
+---
+
+## CONCLUSION: INTEGRATION FRAMEWORK
+
+### New Portal as **Extension of Official Site**
+
+**Official Site Role:** ✓ Application, Admission, Program Info
+**New Portal Role:** ✓ Student Experience, Support, Alumni Engagement
+
+**Together They Provide:**
+- Complete UNICORE journey from application through alumni engagement
+- Seamless transition between application and student life
+- Integrated support from first step to career success
+- Transparent program management and outcomes tracking
+
+**Recommended Timeline:**
+- **Now (August 2026):** Plan and design new portal
+- **September-October 2026:** Develop MVP and core features
+- **November 2026:** Soft launch to current students
+- **December 2026:** Full public launch
+- **2027:** Expand features and capability based on feedback
+
+**Success Metrics:**
+- 80%+ of active students use portal monthly
+- 4.5/5 average satisfaction rating
+- 90%+ of FAQ questions answered satisfactorily
+- 50%+ of graduates engaged in alumni network
+- Measurable improvements in student outcomes (retention, mental health, employment)
+
+---
+
+## APPENDIX: KEY STATISTICS FROM OFFICIAL SITE
+
+**UNICORE 8.0 (Current Edition - 2026):**
+- Applications open: March 2, 2026
+- Application deadline: April 17, 2026
+- Number of participating universities: 40
+- Available places/scholarships: 80+
+- Courses offered: 432
+- Countries of origin served: 13
+  - Bangladesh, Burkina Faso, Cameroon, Ethiopia, India, Kenya, Mozambique, Niger, Nigeria, South Africa, Uganda, Zambia, Zimbabwe
+- Target student population: Refugees recognized in above countries
+- Degree level: Master's (Second Cycle)
+- Course start date: September/October 2026
+
+**Scholarship Benefits:**
+- Tuition fee waiver (full)
+- Monthly study grant
+- Plane ticket assistance
+- Visa/residence permit expenses
+- Accommodation support
+- Health insurance
+- Legal/psychosocial support (varies by location)
+
+**Selection Process:**
+- Step 1: Document evaluation (25-40 points)
+- Step 2: Online interview (0-40 points)
+- University-led selection (not UNHCR)
+- Transparent, merit-based process
+- Privacy-protected results (ID number, not name)
+
+---
+
+**Document Prepared:** August 2026
+**Source:** universitycorridors.unhcr.it (fetched and analyzed)
+**Status:** Analysis Complete - Ready for New Portal Development
+**Next Step:** Proceed with Phase 1 preparation for Student Support Portal
+
+---
+
+*This document provides a complete analysis of the official UNICORE website and identifies specific gaps where a complementary Student & Alumni Support Portal would add significant value to the UNICORE program's effectiveness and student outcomes.*

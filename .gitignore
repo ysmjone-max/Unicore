@@ -1,0 +1,8 @@
+# Node / Temporary
+node_modules/
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Analysis docx (if not needed in repo)
+# UNICORE_Website_Analysis_Current_Site.docx
