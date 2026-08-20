@@ -299,10 +299,17 @@ document.addEventListener('DOMContentLoaded', () => {
           if (toggleBtn) toggleBtn.innerHTML = '<i class="fa-solid fa-plus"></i>';
         } else {
           item.classList.add('active');
-          body.style.maxHeight = body.scrollHeight + 'px';
+          body.style.maxHeight = (body.scrollHeight + 100) + 'px';
           if (toggleBtn) toggleBtn.innerHTML = '<i class="fa-solid fa-minus"></i>';
         }
       }
+    });
+  });
+
+  // Recompute accordion heights on window resize
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.doc-accordion-item.active .doc-accordion-body').forEach(body => {
+      body.style.maxHeight = (body.scrollHeight + 100) + 'px';
     });
   });
 
