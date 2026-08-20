@@ -173,26 +173,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Support Directory Category Filter (on support-directory.html)
-  const supportFilterBtns = document.querySelectorAll('.support-filter-btn');
-  const supportCards = document.querySelectorAll('.support-card');
+  // Important Links Filtering & Search (on important-links.html)
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const linkCards = document.querySelectorAll('.link-card');
+  const linkSearchInput = document.getElementById('linkSearch');
 
-  if (supportFilterBtns.length > 0 && supportCards.length > 0) {
-    supportFilterBtns.forEach(btn => {
+  if (linkCards.length > 0) {
+    function filterLinks() {
+      const activeFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter') || 'all';
+      const searchQuery = (linkSearchInput ? linkSearchInput.value : '').toLowerCase().trim();
+
+      linkCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category') || '';
+        const titleText = card.querySelector('h3')?.textContent.toLowerCase() || '';
+        const descText = card.querySelector('p')?.textContent.toLowerCase() || '';
+        const featuresText = card.querySelector('.link-features-list')?.textContent.toLowerCase() || '';
+
+        const matchesCategory = (activeFilter === 'all' || cardCategory === activeFilter);
+        const matchesSearch = titleText.includes(searchQuery) || descText.includes(searchQuery) || featuresText.includes(searchQuery);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        supportFilterBtns.forEach(b => b.classList.remove('active'));
+        filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
-
-        supportCards.forEach(card => {
-          const cardCategory = card.getAttribute('data-category');
-          if (filter === 'all' || cardCategory === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+        filterLinks();
       });
     });
+
+    if (linkSearchInput) {
+      linkSearchInput.addEventListener('input', filterLinks);
+    }
   }
 });

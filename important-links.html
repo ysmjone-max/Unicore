@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Important Links & Essential Resources | UNICORE Support Hub</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="UNICORE">
+        UNICORE<span class="brand-dot">.</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <!-- About Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="about.html" class="nav-link dropdown-trigger">
+            About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link"><i class="fa-solid fa-info-circle"></i> Overview & Mission</a>
+            <a href="how-it-works.html" class="dropdown-link"><i class="fa-solid fa-route"></i> How It Works</a>
+            <a href="progress-stats.html" class="dropdown-link"><i class="fa-solid fa-chart-simple"></i> Stats & Impact</a>
+          </div>
+        </div>
+
+        <a href="faq.html" class="nav-link">FAQs</a>
+        <a href="stories-archive.html" class="nav-link">Stories & Archive</a>
+        <a href="important-links.html" class="nav-link active">Important Links</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs-bar">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">Important Links</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.2);">
+          <i class="fa-solid fa-link"></i> Essential Student Directory
+        </span>
+        <h1>Important Links & Support Resources</h1>
+        <p>
+          Verified links and resources for Italian language learning, free legal support, psychotherapy, asylum documentation, credential recognition, and career pathways in Italy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Search & Category Filter -->
+  <section class="section bg-light">
+    <div class="container">
+
+      <!-- Live Search Box -->
+      <div class="faq-search-wrapper">
+        <i class="fa-solid fa-magnifying-glass faq-search-icon"></i>
+        <input type="text" id="linkSearch" class="faq-search-input" placeholder="Search resources (e.g. language, legal, psychologist, job, CIMEA, emergency)..." aria-label="Search Links">
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-bar" style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
+        <button class="filter-btn faq-tab-btn active" data-filter="all">
+          <i class="fa-solid fa-border-all"></i> All Resources
+        </button>
+        <button class="filter-btn faq-tab-btn" data-filter="language">
+          <i class="fa-solid fa-language"></i> Learn Italian
+        </button>
+        <button class="filter-btn faq-tab-btn" data-filter="legal">
+          <i class="fa-solid fa-scale-balanced"></i> Legal & Asylum
+        </button>
+        <button class="filter-btn faq-tab-btn" data-filter="mental-health">
+          <i class="fa-solid fa-brain"></i> Psychotherapy & Health
+        </button>
+        <button class="filter-btn faq-tab-btn" data-filter="academic">
+          <i class="fa-solid fa-graduation-cap"></i> Degree Recognition
+        </button>
+        <button class="filter-btn faq-tab-btn" data-filter="jobs">
+          <i class="fa-solid fa-briefcase"></i> Jobs & Careers
+        </button>
+        <button class="filter-btn faq-tab-btn" data-filter="emergency">
+          <i class="fa-solid fa-phone-volume"></i> 24/7 Hotlines
+        </button>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="links-grid" id="linksList">
+
+        <!-- ==================== 1. Italian Language ==================== -->
+        <div class="link-card" data-category="language">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-school"></i></div>
+            <span class="link-badge">Italian Language</span>
+          </div>
+          <h3>CPIA — Public Adult Education Centers</h3>
+          <p>
+            Public state schools across every Italian province offering certified Italian language courses (A1, A2, B1, B2) and certification exams free of charge.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Free state-certified Italian A1–C2 courses</li>
+            <li><i class="fa-solid fa-check"></i> Recognized certification for residence permits</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.miur.gov.it/centri-provinciali-per-l-istruzione-degli-adulti" target="_blank" rel="noopener noreferrer">Ministry of Education CPIA Portal</a></div>
+          </div>
+          <a href="https://www.miur.gov.it/centri-provinciali-per-l-istruzione-degli-adulti" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Find Your Local CPIA Center <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="language">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-building-columns"></i></div>
+            <span class="link-badge">Italian Language</span>
+          </div>
+          <h3>University Language Centers (CLA)</h3>
+          <p>
+            Campus language centers (*Centri Linguistici di Ateneo*) present at all 40+ UNICORE universities, providing intensive academic Italian courses for enrolled scholars.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Free academic Italian for enrolled students</li>
+            <li><i class="fa-solid fa-check"></i> Free placement tests and university credits (CFU)</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.aiclu.it/" target="_blank" rel="noopener noreferrer">Associazione Centri Linguistici Universitari (AICLU)</a></div>
+          </div>
+          <a href="https://www.aiclu.it/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Access University CLA Directory <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="language">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-tv"></i></div>
+            <span class="link-badge">Italian Language</span>
+          </div>
+          <h3>Rai Scuola: Italiano per Stranieri</h3>
+          <p>
+            Official Italian public broadcaster educational portal providing multimedia lessons, vocabulary drills, and cultural grammar modules from beginner to advanced.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Interactive video lessons categorized by CEFR level</li>
+            <li><i class="fa-solid fa-check"></i> 100% free online digital learning library</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.raiscuola.rai.it/" target="_blank" rel="noopener noreferrer">raiscuola.rai.it</a></div>
+          </div>
+          <a href="https://www.raiscuola.rai.it/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Open Rai Language Courses <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- ==================== 2. Legal Support & Asylum ==================== -->
+        <div class="link-card" data-category="legal">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-scale-balanced"></i></div>
+            <span class="link-badge">Legal Support</span>
+          </div>
+          <h3>Centro Astalli (Jesuit Refugee Service Italy)</h3>
+          <p>
+            Specialized legal clinic providing free consultation on residence permits, international protection rights, family reunification, and administrative procedures in Italy.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Free legal advice on *Permesso di Soggiorno*</li>
+            <li><i class="fa-solid fa-check"></i> Assistance with travel document (CTD) renewals</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-phone"></i> +39 06 69700306</div>
+            <div><i class="fa-solid fa-globe"></i> <a href="https://centroastalli.net/" target="_blank" rel="noopener noreferrer">centroastalli.net</a></div>
+          </div>
+          <a href="https://centroastalli.net/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Visit Centro Astalli Portal <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="legal">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-headset"></i></div>
+            <span class="link-badge">Legal Helpline</span>
+          </div>
+          <h3>ARCI National Helpline for Refugees</h3>
+          <p>
+            National free toll-free telephone service offering multilingual orientation, legal information, and referral to local services for asylum seekers and refugees in Italy.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Free Toll-Free Number from Italian SIMs: <strong>800 905 570</strong></li>
+            <li><i class="fa-solid fa-check"></i> Available in English, French, Arabic, Tigrinya, Somali, Farsi</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-phone"></i> Toll-Free: 800 905 570 / +39 342 0929112</div>
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.jumamap.it/" target="_blank" rel="noopener noreferrer">jumamap.it (ARCI Services Map)</a></div>
+          </div>
+          <a href="https://www.jumamap.it/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Explore JumaMap Services Directory <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="legal">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-passport"></i></div>
+            <span class="link-badge">Immigration Portal</span>
+          </div>
+          <h3>Portale Immigrazione & Kit Giallo Tracking</h3>
+          <p>
+            Official Italian immigration tracking portal managed by Poste Italiane and the Ministry of Interior to track residence permit (*Permesso di Soggiorno*) applications.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Track application status using User ID & Password</li>
+            <li><i class="fa-solid fa-check"></i> Check Questura appointment dates and SMS alerts</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.portaleimmigrazione.it/" target="_blank" rel="noopener noreferrer">portaleimmigrazione.it</a></div>
+          </div>
+          <a href="https://www.portaleimmigrazione.it/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Check Permit Status Online <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- ==================== 3. Psychotherapy & Mental Health ==================== -->
+        <div class="link-card" data-category="mental-health">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-heart-pulse"></i></div>
+            <span class="link-badge">Psychotherapy</span>
+          </div>
+          <h3>Diaconia Valdese — Inclusion & Psychosocial Care</h3>
+          <p>
+            Humanitarian partner offering individualized psychological support, cultural mediation, and welfare orientation for international scholars across Italian regions.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Confidential individual & group psychological sessions</li>
+            <li><i class="fa-solid fa-check"></i> Professional cultural mediators in multiple languages</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-envelope"></i> info@diaconiavaldese.org</div>
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.diaconiavaldese.org/" target="_blank" rel="noopener noreferrer">diaconiavaldese.org</a></div>
+          </div>
+          <a href="https://www.diaconiavaldese.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Visit Diaconia Valdese <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="mental-health">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-hospital-user"></i></div>
+            <span class="link-badge">Specialized Healthcare</span>
+          </div>
+          <h3>SAMIFO (Salute Migranti Forzati — ASL Roma 1)</h3>
+          <p>
+            Public healthcare center specialized in medical, psychiatric, and psychotherapeutic assistance for refugees, asylum seekers, and survivors of conflict.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Direct NHS medical & psychiatric consultations</li>
+            <li><i class="fa-solid fa-check"></i> Trauma-informed psychotherapy and rehabilitation</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-location-dot"></i> Via Casilina 3T, Roma (ASL Roma 1)</div>
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.aslroma1.it/presidi-territoriali/samifo" target="_blank" rel="noopener noreferrer">ASL Roma 1 SAMIFO</a></div>
+          </div>
+          <a href="https://www.aslroma1.it/presidi-territoriali/samifo" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            View SAMIFO Healthcare Services <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="mental-health">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-user-doctor"></i></div>
+            <span class="link-badge">Campus Wellbeing</span>
+          </div>
+          <h3>University Counseling Centers (SAP)</h3>
+          <p>
+            Every Italian university provides a free, confidential Psychological Counseling Service (*Servizio di Aiuto Psicologico - SAP*) to assist students with exam anxiety and wellbeing.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Free individual sessions with licensed psychologists</li>
+            <li><i class="fa-solid fa-check"></i> Available on your host university student portal</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-info-circle"></i> Inquire directly at your University International Office</div>
+          </div>
+          <a href="about.html" class="btn btn-outline btn-sm" style="width: 100%;">
+            Explore University Network <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- ==================== 4. Academic Degree Recognition ==================== -->
+        <div class="link-card" data-category="academic">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-certificate"></i></div>
+            <span class="link-badge">Credential Recognition</span>
+          </div>
+          <h3>CIMEA (Academic Mobility & Equivalences)</h3>
+          <p>
+            Official Italian ENIC-NARIC center evaluating foreign qualifications, issuing Statements of Comparability and Verification for refugee admission without Declaration of Value.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Digital Statement of Comparability for Bachelor's degrees</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated fee waiver protocol for UNICORE candidates</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-envelope"></i> info@cimea.it</div>
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">cimea.it</a></div>
+          </div>
+          <a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Access CIMEA Portal <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="academic">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-passport"></i></div>
+            <span class="link-badge">European Standard</span>
+          </div>
+          <h3>Council of Europe — EQPR (Refugee Passport)</h3>
+          <p>
+            The European Qualifications Passport for Refugees (EQPR) assesses qualifications even when partial or no documentation is available, accepted across Italian universities.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Validated by international credential evaluators</li>
+            <li><i class="fa-solid fa-check"></i> Accepted by all UNICORE higher education institutes</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.coe.int/en/web/education/recognition-of-refugees-qualifications" target="_blank" rel="noopener noreferrer">coe.int EQPR Portal</a></div>
+          </div>
+          <a href="https://www.coe.int/en/web/education/recognition-of-refugees-qualifications" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Learn More About EQPR <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- ==================== 5. Jobs & Career Pathways ==================== -->
+        <div class="link-card" data-category="jobs">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-handshake-angle"></i></div>
+            <span class="link-badge">Employment Network</span>
+          </div>
+          <h3>UNHCR "Welcome" — Working for Refugee Integration</h3>
+          <p>
+            Official UNHCR Italia national program partnering with over 500 major Italian companies and enterprises committed to hiring and integrating refugee talent.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Network of 500+ verified inclusive employers in Italy</li>
+            <li><i class="fa-solid fa-check"></i> Direct job postings, apprenticeships, and paid internships</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-globe"></i> <a href="https://welcome.unhcr.it/" target="_blank" rel="noopener noreferrer">welcome.unhcr.it</a></div>
+          </div>
+          <a href="https://welcome.unhcr.it/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Explore UNHCR Welcome Employers <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="jobs">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-file-signature"></i></div>
+            <span class="link-badge">Post-Graduation Law</span>
+          </div>
+          <h3>12-Month Job Search Permit (Permesso Ricerca Lavoro)</h3>
+          <p>
+            Under art. 39-bis D.Lgs. 286/98, graduates of Italian Master's degrees can convert their student permit into a 12-month job search residence permit upon graduation.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> 12 months of legal residence to search for work in Italy</li>
+            <li><i class="fa-solid fa-check"></i> Easily convertible into a Subordinate Work permit (*Lavoro Subordinato*)</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.integrazionemigranti.gov.it/" target="_blank" rel="noopener noreferrer">integrazionemigranti.gov.it (Ministry of Labour)</a></div>
+          </div>
+          <a href="https://www.integrazionemigranti.gov.it/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            View Official Ministry Guidelines <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="jobs">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-brands fa-linkedin"></i></div>
+            <span class="link-badge">Alumni Network</span>
+          </div>
+          <h3>UNICORE Students Association Career Network</h3>
+          <p>
+            Official peer-led professional community providing CV clinics, LinkedIn profile optimization, corporate visits, and job interview preparation sessions with alumni.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Mentorship from alumni working in Italian & European companies</li>
+            <li><i class="fa-solid fa-check"></i> Career workshops in partnership with ManpowerGroup</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.linkedin.com/company/unicore-students-association" target="_blank" rel="noopener noreferrer">LinkedIn Official Page</a></div>
+          </div>
+          <a href="https://www.linkedin.com/company/unicore-students-association" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Join Association on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="link-card" data-category="jobs">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-database"></i></div>
+            <span class="link-badge">Graduate Placement</span>
+          </div>
+          <h3>AlmaLaurea Inter-University Database</h3>
+          <p>
+            National consortium tracking over 90% of Italian graduates, matching candidate CVs with companies looking for bilingual, specialized Master's graduates.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Upload certified CV seen by thousands of hiring recruiters</li>
+            <li><i class="fa-solid fa-check"></i> Free access for all graduates of participating universities</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.almalaurea.it/" target="_blank" rel="noopener noreferrer">almalaurea.it</a></div>
+          </div>
+          <a href="https://www.almalaurea.it/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Access AlmaLaurea Database <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- ==================== 6. Emergency 24/7 Hotlines ==================== -->
+        <div class="link-card" data-category="emergency">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-phone-volume"></i></div>
+            <span class="link-badge">24/7 Emergency</span>
+          </div>
+          <h3>112 — Single European Emergency Number</h3>
+          <p>
+            Universal emergency number across Italy and Europe for immediate police (*Carabinieri/Polizia*), fire department (*Vigili del Fuoco*), or medical response.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Free call 24/7 from any phone even without SIM/credit</li>
+            <li><i class="fa-solid fa-check"></i> Immediate geolocation and multilingual operators</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-phone"></i> <strong>Call: 112</strong> (Toll-Free, 24/7)</div>
+          </div>
+          <a href="tel:112" class="btn btn-primary btn-sm" style="width: 100%;">
+            <i class="fa-solid fa-phone"></i> Call 112 Immediately
+          </a>
+        </div>
+
+        <div class="link-card" data-category="emergency">
+          <div class="link-card-header">
+            <div class="link-icon-wrap"><i class="fa-solid fa-shield-cat"></i></div>
+            <span class="link-badge">24/7 Helpline</span>
+          </div>
+          <h3>1522 — National Anti-Violence & Stalking Helpline</h3>
+          <p>
+            Public service promoted by the Department for Equal Opportunities, active 24/7 to support victims of gender-based violence, domestic abuse, or stalking.
+          </p>
+          <ul class="link-features-list">
+            <li><i class="fa-solid fa-check"></i> Free, confidential call available in Italian, English, French, Arabic, Spanish</li>
+            <li><i class="fa-solid fa-check"></i> Free online chat available at 1522.eu</li>
+          </ul>
+          <div class="link-contacts">
+            <div><i class="fa-solid fa-phone"></i> <strong>Call: 1522</strong> (Toll-Free, 24/7)</div>
+            <div><i class="fa-solid fa-globe"></i> <a href="https://www.1522.eu/" target="_blank" rel="noopener noreferrer">1522.eu</a></div>
+          </div>
+          <a href="https://www.1522.eu/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            Visit 1522 Online Support <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">UNICORE<span class="brand-dot">.</span></div>
+          <p>
+            University Corridors for Refugees is promoted by 40+ Italian universities with the support of UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">What is UNICORE</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="progress-stats.html">Stats & Impact</a></li>
+            <li><a href="faq.html">FAQ Guide</a></li>
+            <li><a href="stories-archive.html">Stories & Archive</a></li>
+            <li><a href="important-links.html">Important Links</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>External Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal</a></li>
+            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italia</a></li>
+            <li><a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Ministry of Foreign Affairs (MAECI)</a></li>
+            <li><a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">CIMEA Academic Recognition</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub</div>
+        <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
