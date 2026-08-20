@@ -1,14 +1,12 @@
 /* ==========================================================================
    UNICORE Scholar & Student Support Platform — Application Logic
-   Accessible, Mobile-Optimized & Interactive
+   Accessible, Mobile-Optimized, Universal Search & Dark Mode
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile Navigation Drawer & Dropdown Toggle
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
-  const dropdownTrigger = document.querySelector('.dropdown-trigger');
-  const navDropdown = document.querySelector('.nav-dropdown');
 
   if (navToggle && navMenu) {
     navToggle.addEventListener('click', (e) => {
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
       
-      // If inside dropdown, also highlight parent
+      // If inside dropdown, also highlight parent trigger
       const parentDropdown = link.closest('.nav-dropdown');
       if (parentDropdown) {
         const trigger = parentDropdown.querySelector('.nav-link');
@@ -283,4 +281,179 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Theme Switcher (Dark Mode / Light Mode)
+  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  const currentTheme = localStorage.getItem('unicore_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  const applyTheme = (theme) => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggleBtns.forEach(btn => {
+        btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        btn.setAttribute('aria-label', 'Switch to Light Mode');
+      });
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      themeToggleBtns.forEach(btn => {
+        btn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        btn.setAttribute('aria-label', 'Switch to Dark Mode');
+      });
+    }
+    localStorage.setItem('unicore_theme', theme);
+  };
+
+  applyTheme(currentTheme);
+
+  themeToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const activeTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(activeTheme);
+    });
+  });
+
+  // Universal Global Search Modal (Ctrl + K / Cmd + K)
+  const searchBackdrop = document.getElementById('globalSearchModal');
+  const searchInput = document.getElementById('globalSearchInput');
+  const searchResultsList = document.getElementById('globalSearchResults');
+  const searchTriggerBtns = document.querySelectorAll('.search-trigger-btn');
+  const searchCloseBtns = document.querySelectorAll('.search-modal-close-btn');
+
+  // Comprehensive Search Index
+  const searchIndex = [
+    { title: "Living in Italy: Bureaucracy & Documents", url: "living-in-italy.html", tag: "Guide", desc: "Complete guide for Permesso di Soggiorno, Codice Fiscale, CIE, Tessera Sanitaria & essential Italian words.", icon: "fa-passport" },
+    { title: "Kit Giallo Step-by-Step Filling Guide", url: "living-in-italy.html#modulo1", tag: "Procedure", desc: "Detailed Modulo 1 box-by-box filling instructions for students, Code 11, postal payment & Marca da Bollo.", icon: "fa-envelope-open-text" },
+    { title: "Official PDF Guide: Guida Permesso di Soggiorno", url: "docs/Guida_Permesso_di_Soggiorno.pdf", tag: "PDF Download", desc: "Annotated visual reference PDF for filling out the residence permit form for students.", icon: "fa-file-pdf" },
+    { title: "Essential Italian Vocabulary for New Arrivals", url: "living-in-italy.html#vocabulary", tag: "Language", desc: "Practical Italian words and phrases for Questura, Poste, Anagrafe, and family doctor (Medico di Base).", icon: "fa-language" },
+    { title: "UNICORE Buddy Mentorship Program", url: "buddy-program.html", tag: "Mentorship", desc: "Peer-to-peer support network pairing incoming refugee scholars with senior student buddies across Italian cities.", icon: "fa-people-arrows" },
+    { title: "Regional Buddy Chapters (North, Center, South)", url: "buddy-program.html#regional", tag: "Community", desc: "Connect with UNICORE peer buddies across 40+ participating Italian universities.", icon: "fa-map-location-dot" },
+    { title: "How Does UNICORE Work? (5-Stage Journey)", url: "how-it-works.html", tag: "Roadmap", desc: "Selection roadmap from online call, academic evaluation, visa and flights to arrival and studies.", icon: "fa-route" },
+    { title: "Italian University Academic Survival Guide", url: "how-it-works.html#academics", tag: "Academics", desc: "The CFU credit system (60/yr), 18–30L grading scale, Appelli sessions, and oral exam preparation.", icon: "fa-graduation-cap" },
+    { title: "Italian University Campus Glossary", url: "how-it-works.html#glossary", tag: "Academics", desc: "Definitions of Verbalizzazione, Statino, Appello, Ricevimento Professori, ISEE Parificato, Mensa, DSU.", icon: "fa-book" },
+    { title: "From Thesis to Career: 12-Month Job Search Permit", url: "how-it-works.html#career", tag: "Career", desc: "Converting study permit to Permesso Ricerca Lavoro (Art. 39-bis), CPI registration, and Ph.D. bandi.", icon: "fa-briefcase" },
+    { title: "UNHCR 'Welcome' Employer Network", url: "how-it-works.html#career", tag: "Jobs", desc: "500+ certified Italian inclusive enterprises hiring refugee graduates.", icon: "fa-handshake" },
+    { title: "FAQ Guide (Pre-Arrival, Studies, Alumni)", url: "faq.html", tag: "FAQ", desc: "Frequently asked questions regarding scholarships, GPA, work limits (20h/week), and visa steps.", icon: "fa-circle-question" },
+    { title: "Stories & Official Digital Archive (2018–2026)", url: "stories-archive.html", tag: "Archive", desc: "Reflections, video documentaries, graduate profiles (Apollo Pach, Bidong Ruot), and UNHCR press timeline.", icon: "fa-box-archive" },
+    { title: "Important Links: Legal Support & Free Hotlines", url: "important-links.html#legal", tag: "Support", desc: "Centro Astalli legal clinic, ARCI Free Toll-Free Helpline (800 905 570), JumaMap.", icon: "fa-scale-balanced" },
+    { title: "Important Links: Psychotherapy & Mental Health", url: "important-links.html#psychotherapy", tag: "Health", desc: "SAMIFO specialized psychiatric healthcare (ASL Roma 1 & Astalli), Diaconia Valdese psychosocial care.", icon: "fa-brain" },
+    { title: "Important Links: Italian Language Centers (CPIA)", url: "important-links.html#language", tag: "Language", desc: "Free state adult education centers (CPIA) and university CLA language laboratories.", icon: "fa-comments" },
+    { title: "Stats & Impact: Milestones from Pilot to 8.0", url: "progress-stats.html", tag: "Stats", desc: "Data dashboard on 41 universities, 300+ students, 432 Master's degrees, and 92% retention rate.", icon: "fa-chart-line" },
+    { title: "What is UNICORE? (Mission & 15by30 Vision)", url: "about.html", tag: "About", desc: "The UNHCR 15by30 global target, 3 pillars of UNICORE, and institutional partner matrix.", icon: "fa-info-circle" }
+  ];
+
+  const openSearch = () => {
+    if (searchBackdrop) {
+      searchBackdrop.classList.add('open');
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+        renderSearchResults('');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const closeSearch = () => {
+    if (searchBackdrop) {
+      searchBackdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  };
+
+  const renderSearchResults = (query) => {
+    if (!searchResultsList) return;
+    const cleanQuery = query.toLowerCase().trim();
+
+    const filtered = cleanQuery === '' 
+      ? searchIndex.slice(0, 6) 
+      : searchIndex.filter(item => 
+          item.title.toLowerCase().includes(cleanQuery) || 
+          item.desc.toLowerCase().includes(cleanQuery) || 
+          item.tag.toLowerCase().includes(cleanQuery)
+        );
+
+    if (filtered.length === 0) {
+      searchResultsList.innerHTML = `
+        <div class="search-empty-state">
+          <i class="fa-solid fa-magnifying-glass" style="font-size: 1.75rem; margin-bottom: 0.5rem; opacity: 0.5;"></i>
+          <p>No results found for "<strong>${query}</strong>". Try searching for <em>Permesso, CFU, Astalli,</em> or <em>Buddy</em>.</p>
+        </div>
+      `;
+      return;
+    }
+
+    searchResultsList.innerHTML = filtered.map((item, idx) => `
+      <a href="${item.url}" class="search-result-item ${idx === 0 ? 'selected' : ''}">
+        <div class="search-result-info">
+          <div class="search-result-title">
+            <i class="fa-solid ${item.icon}" style="color: var(--primary); font-size: 0.9rem;"></i>
+            <span>${item.title}</span>
+          </div>
+          <div class="search-result-desc">${item.desc}</div>
+        </div>
+        <span class="search-result-tag">${item.tag}</span>
+      </a>
+    `).join('');
+
+    // Attach click listeners to close search on navigate
+    searchResultsList.querySelectorAll('.search-result-item').forEach(link => {
+      link.addEventListener('click', closeSearch);
+    });
+  };
+
+  searchTriggerBtns.forEach(btn => btn.addEventListener('click', openSearch));
+  searchCloseBtns.forEach(btn => btn.addEventListener('click', closeSearch));
+
+  if (searchBackdrop) {
+    searchBackdrop.addEventListener('click', (e) => {
+      if (e.target === searchBackdrop) closeSearch();
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      renderSearchResults(e.target.value);
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      const items = searchResultsList?.querySelectorAll('.search-result-item');
+      if (!items || items.length === 0) return;
+
+      let selectedIndex = Array.from(items).findIndex(el => el.classList.contains('selected'));
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        items[selectedIndex]?.classList.remove('selected');
+        selectedIndex = (selectedIndex + 1) % items.length;
+        items[selectedIndex]?.classList.add('selected');
+        items[selectedIndex]?.scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        items[selectedIndex]?.classList.remove('selected');
+        selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+        items[selectedIndex]?.classList.add('selected');
+        items[selectedIndex]?.scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        const activeLink = items[selectedIndex] || items[0];
+        if (activeLink) {
+          activeLink.click();
+        }
+      }
+    });
+  }
+
+  // Keyboard shortcut Ctrl + K / Cmd + K & Escape
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (searchBackdrop?.classList.contains('open')) {
+        closeSearch();
+      } else {
+        openSearch();
+      }
+    } else if (e.key === 'Escape' && searchBackdrop?.classList.contains('open')) {
+      closeSearch();
+    }
+  });
 });
