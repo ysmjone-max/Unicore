@@ -282,6 +282,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Tractable Document Description Accordion (+ / - Toggle)
+  const docAccordionHeaders = document.querySelectorAll('.doc-accordion-header');
+  docAccordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.closest('.doc-accordion-item');
+      const body = item?.querySelector('.doc-accordion-body');
+      const toggleBtn = item?.querySelector('.doc-toggle-btn');
+
+      if (item && body) {
+        const isActive = item.classList.contains('active');
+
+        if (isActive) {
+          item.classList.remove('active');
+          body.style.maxHeight = null;
+          if (toggleBtn) toggleBtn.innerHTML = '<i class="fa-solid fa-plus"></i>';
+        } else {
+          item.classList.add('active');
+          body.style.maxHeight = body.scrollHeight + 'px';
+          if (toggleBtn) toggleBtn.innerHTML = '<i class="fa-solid fa-minus"></i>';
+        }
+      }
+    });
+  });
+
   // Spoken Italian Copy-to-Clipboard & Category Filter
   const copyPhraseBtns = document.querySelectorAll('.copy-phrase-btn');
   copyPhraseBtns.forEach(btn => {

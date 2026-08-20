@@ -1830,10 +1830,168 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-.quick-jump-pill:hover {
-  background-color: var(--primary-light);
-  color: var(--primary);
+/* Tractable Description Accordion with Plus/Minus (+ / -) */
+.doc-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.doc-accordion-item {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition);
+}
+
+.doc-accordion-item:hover {
   border-color: var(--primary-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-accordion-item.active {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.doc-accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.75rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  gap: 1rem;
+}
+
+.doc-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.doc-header-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--slate-100);
+  color: var(--slate-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.doc-accordion-item.active .doc-header-icon {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.doc-header-titles h3 {
+  font-size: 1.2rem;
+  color: var(--slate-900);
+  margin-bottom: 0.15rem;
+}
+
+.doc-header-subtitle {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.doc-toggle-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--slate-100);
+  color: var(--slate-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.doc-accordion-item.active .doc-toggle-btn {
+  background-color: var(--slate-900);
+  color: #ffffff;
+}
+
+.doc-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 1.75rem;
+  background-color: var(--slate-50);
+  border-top: 1px solid transparent;
+}
+
+.doc-accordion-item.active .doc-accordion-body {
+  border-top-color: var(--slate-200);
+  padding: 1.5rem 1.75rem 1.75rem 1.75rem;
+}
+
+.doc-grid-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.doc-detail-card {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.doc-detail-card h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.doc-detail-card p {
+  font-size: 0.85rem;
+  color: var(--slate-600);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.doc-detail-card ul {
+  font-size: 0.85rem;
+  color: var(--slate-600);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.doc-detail-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.doc-detail-card li i {
+  color: var(--primary);
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
 }
 
 /* Modulo 1 Visual Box Simulator */
