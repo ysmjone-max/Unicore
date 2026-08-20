@@ -1,31 +1,55 @@
 /* ==========================================================================
    UNICORE Scholar & Student Support Platform — Application Logic
+   Accessible, Mobile-Optimized & Fast
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Navigation Toggle
+  // Mobile Navigation Drawer & Dropdown Toggle
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
+  const dropdownTrigger = document.querySelector('.dropdown-trigger');
+  const navDropdown = document.querySelector('.nav-dropdown');
 
   if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       navMenu.classList.toggle('open');
       const isOpen = navMenu.classList.contains('open');
       navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     });
 
-    // Close menu when clicking links
+    // Mobile Dropdown Submenu Toggle
+    if (dropdownTrigger && navDropdown) {
+      dropdownTrigger.addEventListener('click', (e) => {
+        if (window.innerWidth <= 820) {
+          e.preventDefault();
+          navDropdown.classList.toggle('mobile-open');
+        }
+      });
+    }
+
+    // Close menu when clicking direct nav links or outside
     document.querySelectorAll('.nav-link:not(.dropdown-trigger), .dropdown-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+        navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
       });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+        navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
     });
   }
 
   // Active Link Highlighting
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   
-  // Direct nav links
   document.querySelectorAll('.nav-link, .dropdown-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
@@ -70,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             countUp();
           }
         });
-      }, { threshold: 0.2 });
+      }, { threshold: 0.15 });
 
       observer.observe(statsContainer);
     } else {
@@ -89,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         questionBtn.addEventListener('click', () => {
           const isActive = item.classList.contains('active');
 
-          // Close other accordions for clean focus
+          // Close other accordions for clean mobile focus
           faqItems.forEach(otherItem => {
             if (otherItem !== item) {
               otherItem.classList.remove('active');
