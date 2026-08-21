@@ -55,6 +55,9 @@
 
             <div class="nav-actions">
         <div class="nav-search-wrapper" id="navSearchWrapper">
+          <button type="button" class="mobile-search-toggle-btn" id="mobileSearchToggle" aria-label="Open search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
           <div class="nav-search-box">
             <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
             <input type="text" id="siteSearchInput" class="nav-search-input" placeholder="Search the whole website..." autocomplete="off" aria-label="Search the whole website">
@@ -64,8 +67,7 @@
           </div>
           <div class="search-dropdown-panel" id="siteSearchResults" style="display: none;"></div>
         </div>
-
-        <button class="theme-toggle-btn" aria-label="Switch between light and dark mode">
+<button class="theme-toggle-btn" aria-label="Switch between light and dark mode">
           <i class="fa-solid fa-moon"></i>
         </button>
 
@@ -274,54 +276,59 @@
         </p>
       </div>
 
-      <div class="partners-matrix">
+            <div class="partners-matrix">
         <div class="partner-box">
-          <div class="partner-badge">Academic Institutions</div>
+          <div class="partner-badge trust-badge-official"><i class="fa-solid fa-building-columns"></i> National Academic Network</div>
           <h4>42 Italian Universities</h4>
           <p>Over 258 Master's scholarship pathways funded across Rome, Milan, Bologna, Florence, Venice, Padua, and beyond.</p>
         </div>
 
         <div class="partner-box">
-          <div class="partner-badge">United Nations</div>
+          <div class="partner-badge trust-badge-official"><i class="fa-solid fa-earth-africa"></i> Strategic Coordination</div>
           <h4>UNHCR Italia</h4>
           <p>Coordinates international partner outreach, overseas eligibility verification, and Welcome employer network.</p>
         </div>
 
         <div class="partner-box">
-          <div class="partner-badge">Italian Government</div>
-          <h4>MAECI (Farnesina)</h4>
+          <div class="partner-badge trust-badge-official"><i class="fa-solid fa-passport"></i> Italian Government</div>
+          <h4>MAECI (Ministry of Foreign Affairs)</h4>
           <p>Oversees study visa issuance protocols and consular coordination across participating embassies.</p>
         </div>
 
         <div class="partner-box">
-          <div class="partner-badge">Humanitarian Partners</div>
+          <div class="partner-badge trust-badge-official"><i class="fa-solid fa-hand-holding-heart"></i> Core Humanitarian Partners</div>
           <h4>Caritas, Diaconia & Astalli</h4>
           <p>Provide local housing solutions, arrival welcome support, psychological counseling, and legal clinic guidance.</p>
         </div>
 
         <div class="partner-box">
-          <div class="partner-badge">Flight Partner</div>
+          <div class="partner-badge trust-badge-verified"><i class="fa-solid fa-plane"></i> Flight Sponsorship</div>
           <h4>Miles4Migrants</h4>
           <p>Global non-profit providing donated frequent flyer miles to fund international flights, saving 60%+ in travel costs.</p>
         </div>
 
         <div class="partner-box">
-          <div class="partner-badge">Housing Partner</div>
+          <div class="partner-badge trust-badge-verified"><i class="fa-solid fa-building"></i> Local Housing Partner</div>
           <h4>Fondazione Experience (CampusX)</h4>
-          <p>Provides free residential housing in Milan for continuing second-year UNICORE scholars.</p>
+          <p>Provides subsidized/free residential housing partnerships for continuing UNICORE scholars in Milan.</p>
         </div>
 
         <div class="partner-box">
-          <div class="partner-badge">Financial Inclusion</div>
+          <div class="partner-badge trust-badge-verified"><i class="fa-solid fa-piggy-bank"></i> Financial Inclusion</div>
           <h4>Banca Etica & ACRI</h4>
           <p>Facilitate zero-fee student bank accounts, flight contributions, and integration stipends.</p>
         </div>
 
         <div class="partner-box">
-          <div class="partner-badge">Corporate Sponsors</div>
-          <h4>Permira & Calzedonia</h4>
-          <p>Provide corporate funding, executive mentorship for students in Milan, and graduate internship pipelines.</p>
+          <div class="partner-badge trust-badge-verified"><i class="fa-solid fa-briefcase"></i> Inclusion & Employment</div>
+          <h4>Assolavoro & Welcome Employers</h4>
+          <p>Provide corporate mentorship, 100% psychotherapy reimbursement, and graduate internship pipelines via <em>Welcome-in-One-Click</em>.</p>
         </div>
+      </div>
+
+      <div class="stat-source-note" style="margin-top: 1.5rem;">
+        <i class="fa-solid fa-check-double" style="color: var(--primary);"></i>
+        <span>Official partner list verified on <a href="https://universitycorridors.unhcr.it/partners/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">UNHCR UNICORE Partners Portal</a> &bull; Local partners vary by university</span>
       </div>
     </div>
   </section>

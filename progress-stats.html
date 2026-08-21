@@ -55,6 +55,9 @@
 
             <div class="nav-actions">
         <div class="nav-search-wrapper" id="navSearchWrapper">
+          <button type="button" class="mobile-search-toggle-btn" id="mobileSearchToggle" aria-label="Open search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
           <div class="nav-search-box">
             <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
             <input type="text" id="siteSearchInput" class="nav-search-input" placeholder="Search the whole website..." autocomplete="off" aria-label="Search the whole website">
@@ -64,8 +67,7 @@
           </div>
           <div class="search-dropdown-panel" id="siteSearchResults" style="display: none;"></div>
         </div>
-
-        <button class="theme-toggle-btn" aria-label="Switch between light and dark mode">
+<button class="theme-toggle-btn" aria-label="Switch between light and dark mode">
           <i class="fa-solid fa-moon"></i>
         </button>
 
@@ -118,31 +120,35 @@
       <div class="stats-dashboard">
         <div class="stat-card-lg">
           <div class="stat-card-icon"><i class="fa-solid fa-building-columns"></i></div>
-          <div class="stat-card-number counter-val" data-target="42" data-suffix="">0</div>
+          <div class="stat-card-number counter-val" data-target="42" data-suffix="">42</div>
           <div class="stat-card-title">Participating Universities</div>
           <div class="stat-card-desc">Institutions spanning Northern, Central & Southern Italy</div>
         </div>
 
         <div class="stat-card-lg">
           <div class="stat-card-icon"><i class="fa-solid fa-book-bookmark"></i></div>
-          <div class="stat-card-number counter-val" data-target="258" data-suffix="+">0</div>
+          <div class="stat-card-number counter-val" data-target="258" data-suffix="+">258+</div>
           <div class="stat-card-title">Master's Scholarships Offered</div>
           <div class="stat-card-desc">Funded 2-year postgraduate corridors (2019–2024)</div>
         </div>
 
         <div class="stat-card-lg">
           <div class="stat-card-icon"><i class="fa-solid fa-user-graduate"></i></div>
-          <div class="stat-card-number counter-val" data-target="1063" data-suffix="">0</div>
+          <div class="stat-card-number counter-val" data-target="1063" data-suffix="">1,063</div>
           <div class="stat-card-title">UNICORE 6.0 Applicants</div>
           <div class="stat-card-desc">Record candidate pool across 9 asylum countries</div>
         </div>
 
         <div class="stat-card-lg">
           <div class="stat-card-icon"><i class="fa-solid fa-venus"></i></div>
-          <div class="stat-card-number counter-val" data-target="31" data-suffix="%">0</div>
+          <div class="stat-card-number counter-val" data-target="31" data-suffix="%">31%</div>
           <div class="stat-card-title">Female Scholars (Record High)</div>
           <div class="stat-card-desc">Steady expansion from 0% in pilot to 31% in 6.0</div>
         </div>
+      </div>
+      <div class="stat-source-note" style="margin-top: 1.25rem;">
+        <i class="fa-solid fa-check-double" style="color: var(--primary);"></i>
+        <span>Data verified against official UNHCR UNICORE reports &bull; Editions 1.0 to 6.0</span>
       </div>
     </div>
   </section>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UNICORE | University Corridors for Refugees Support Hub</title>
+  <title>UNICORE | University Corridors for Refugees Student & Alumni Support Hub</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,8 +54,11 @@
         <a href="important-links.html" class="nav-link">Important Links</a>
       </nav>
 
-            <div class="nav-actions">
+      <div class="nav-actions">
         <div class="nav-search-wrapper" id="navSearchWrapper">
+          <button type="button" class="mobile-search-toggle-btn" id="mobileSearchToggle" aria-label="Open search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
           <div class="nav-search-box">
             <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
             <input type="text" id="siteSearchInput" class="nav-search-input" placeholder="Search the whole website..." autocomplete="off" aria-label="Search the whole website">
@@ -77,60 +80,176 @@
     </div>
   </header>
 
+  <!-- Prominent Independent Hub Positioning Banner -->
+  <div class="independent-hub-banner">
+    <div class="container independent-hub-banner-inner">
+      <div class="independent-hub-tag">
+        <span class="trust-badge-community"><i class="fa-solid fa-users"></i> Independent Community Hub</span>
+      </div>
+      <div class="independent-hub-text">
+        This platform is a peer guidance and alumni support hub. For official university applications, calls, and scholarship submissions, visit the official UNHCR portal.
+      </div>
+      <a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary-light">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Official UNHCR Portal
+      </a>
+    </div>
+  </div>
+
   <!-- Hero Section -->
-  <section class="home-hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <span class="section-badge">
-            <i class="fa-solid fa-graduation-cap"></i> Refugee Higher Education In Italy
-          </span>
-          <h1>Empowering Refugee Scholars Across <span>Italian Universities</span></h1>
-          <p>
-            University Corridors for Refugees (UNICORE) provides recognized refugees with safe, regular, and fully supported pathways to pursue Master's degree programs across 40+ Italian institutions.
-          </p>
-          <div class="hero-cta-group">
-            <a href="how-it-works.html" class="btn btn-primary">
-              <i class="fa-solid fa-route"></i> How It Works
-            </a>
-            <a href="living-in-italy.html" class="btn btn-secondary">
-              <i class="fa-solid fa-passport"></i> Living in Italy Guide
-            </a>
-          </div>
+  <section class="hero-section">
+    <div class="container hero-layout">
+      
+      <!-- Hero Left: Mission & Action -->
+      <div class="hero-content">
+        <span class="section-badge"><i class="fa-solid fa-graduation-cap"></i> Student & Alumni Support Hub</span>
+        <h1>Higher Education Pathways for Refugee Scholars in Italy</h1>
+        <p class="hero-subtitle">
+          University Corridors for Refugees (UNICORE) provides recognized refugees with safe, regular, and fully supported pathways to pursue Master's degree programs across 40+ Italian institutions.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#how-we-help" class="btn btn-primary">
+            <i class="fa-solid fa-compass"></i> Find Help by Stage
+          </a>
+          <a href="how-it-works.html" class="btn btn-outline">
+            <i class="fa-solid fa-route"></i> Scholar Roadmap
+          </a>
         </div>
 
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <div class="hero-card-title">Program Key Facts</div>
-            <span style="font-size: 0.85rem; font-weight: 700; color: var(--slate-700);">Nationwide Network</span>
+        <!-- Quick Stats Strip (Pre-Filled Standard Numbers with Verified Source) -->
+        <div class="quick-stats-grid">
+          <div class="quick-stat-item">
+            <span class="stat-num counter-val" data-target="41" data-suffix="+">41+</span>
+            <span class="stat-label">Italian Universities</span>
           </div>
-          <div class="quick-stats-grid">
-            <div class="quick-stat-item">
-              <div class="quick-stat-number counter-val" data-target="41" data-suffix="+">0</div>
-              <div class="quick-stat-label">Italian Universities</div>
-            </div>
-            <div class="quick-stat-item">
-              <div class="quick-stat-number counter-val" data-target="432" data-suffix="">0</div>
-              <div class="quick-stat-label">Master's Degrees</div>
-            </div>
-            <div class="quick-stat-item">
-              <div class="quick-stat-number counter-val" data-target="13" data-suffix="">0</div>
-              <div class="quick-stat-label">Asylum Countries</div>
-            </div>
-            <div class="quick-stat-item">
-              <div class="quick-stat-number counter-val" data-target="300" data-suffix="+">0</div>
-              <div class="quick-stat-label">Scholars Supported</div>
-            </div>
+          <div class="quick-stat-item">
+            <span class="stat-num counter-val" data-target="78">78</span>
+            <span class="stat-label">UNICORE 8.0 Scholarships</span>
           </div>
+          <div class="quick-stat-item">
+            <span class="stat-num counter-val" data-target="13">13</span>
+            <span class="stat-label">Host Countries</span>
+          </div>
+          <div class="quick-stat-item">
+            <span class="stat-num counter-val" data-target="250" data-suffix="+">250+</span>
+            <span class="stat-label">Scholars Supported</span>
+          </div>
+        </div>
+        <div class="stat-source-note">
+          <i class="fa-solid fa-check-double" style="color: var(--primary);"></i> 
+          <span>Source: UNHCR UNICORE 8.0 Announcement &bull; Verified 2026</span>
+        </div>
+      </div>
+
+      <!-- Hero Right: Quick Orientation Card -->
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span class="trust-badge-official"><i class="fa-solid fa-shield-halved"></i> Official UNICORE Framework</span>
+          <h3>What UNICORE Offers</h3>
+          <p>
+            An Italian multi-stakeholder partnership offering regular academic corridors for refugee students.
+          </p>
+        </div>
+        <div class="hero-card-body">
           <ul class="hero-feature-list">
-            <li><i class="fa-solid fa-check"></i> Full tuition fee exemption & monthly living stipend</li>
-            <li><i class="fa-solid fa-check"></i> Accommodation, flight travel & visa assistance</li>
-            <li><i class="fa-solid fa-check"></i> Student peer mentorship & academic support</li>
+            <li><i class="fa-solid fa-check"></i> 100% University tuition fee waivers and enrollment support</li>
+            <li><i class="fa-solid fa-check"></i> Study visa facilitation & international travel coordination</li>
+            <li><i class="fa-solid fa-check"></i> Accommodation, living allowances & peer buddy mentorship</li>
           </ul>
           <a href="about.html" class="btn btn-outline" style="width: 100%;">
             Learn More About UNICORE
           </a>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEW: "How Can We Help You?" Interactive 8-Stage Matrix -->
+  <section class="section bg-white" id="how-we-help">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-hands-holding-circle"></i> Student Lifecycle Navigation</span>
+        <h2>How Can We Help You?</h2>
+        <p>
+          Select your current stage to find tailored guides, legal orientation, administrative checklists, and community support.
+        </p>
+      </div>
+
+      <div class="help-stage-grid">
+        
+        <!-- Stage 1 -->
+        <a href="faq.html#pre-arrival" class="help-stage-card">
+          <div class="help-stage-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <div class="help-stage-badge">Stage 1 &bull; Applicants</div>
+          <h3>I Want to Apply</h3>
+          <p>Eligibility criteria, 2-university limit, CIMEA/EQPR missing transcript pathways, and selection guidelines.</p>
+          <span class="help-stage-link">Explore Application FAQs <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Stage 2 -->
+        <a href="how-it-works.html#journey" class="help-stage-card">
+          <div class="help-stage-icon"><i class="fa-solid fa-plane-departure"></i></div>
+          <div class="help-stage-badge">Stage 2 &bull; Pre-Departure</div>
+          <h3>I Was Selected</h3>
+          <p>Visa processing, emergency consular travel documents (Laissez-Passer), flight bookings, and pre-departure checklist.</p>
+          <span class="help-stage-link">View Travel Roadmap <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Stage 3 -->
+        <a href="living-in-italy.html" class="help-stage-card">
+          <div class="help-stage-icon"><i class="fa-solid fa-passport"></i></div>
+          <div class="help-stage-badge">Stage 3 &bull; First 30 Days</div>
+          <h3>I Just Arrived in Italy</h3>
+          <p>Step-by-step Kit Giallo, Codice Fiscale, bank accounts, Mensa meal cards, and €150–€300 buffer tips.</p>
+          <span class="help-stage-link">Open Living in Italy Guide <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Stage 4 -->
+        <a href="how-it-works.html#academics" class="help-stage-card">
+          <div class="help-stage-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="help-stage-badge">Stage 4 &bull; Academics</div>
+          <h3>I'm Studying at University</h3>
+          <p>The CFU credit system (60/yr), 18–30L grading scale, oral exam prep, and tutor hardship appeal protocols.</p>
+          <span class="help-stage-link">Master Italian Academics <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Stage 5 -->
+        <a href="important-links.html#health" class="help-stage-card">
+          <div class="help-stage-icon"><i class="fa-solid fa-notes-medical"></i></div>
+          <div class="help-stage-badge">Support &bull; Healthcare</div>
+          <h3>Health & Mental Wellbeing</h3>
+          <p>ASL Tessera Sanitaria registration, annual renewal, free campus counseling, SAMIFO, and Assolavoro therapy refund.</p>
+          <span class="help-stage-link">Access Health Services <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Stage 6 -->
+        <a href="buddy-program.html" class="help-stage-card">
+          <div class="help-stage-icon"><i class="fa-solid fa-people-arrows"></i></div>
+          <div class="help-stage-badge">Community &bull; Mentorship</div>
+          <h3>I Need a Buddy</h3>
+          <p>Peer-to-peer student matching, senior scholar mentors, and UNHCR Community Matching active across 13 cities.</p>
+          <span class="help-stage-link">Explore Buddy Program <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Stage 7 -->
+        <a href="how-it-works.html#career" class="help-stage-card">
+          <div class="help-stage-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="help-stage-badge">Career &bull; Post-Grad</div>
+          <h3>I'm Graduating / Job Search</h3>
+          <p>12-Month Job Search Residence Permit (Art. 39-bis.1), Welcome-in-One-Click platform, and Ph.D. bandi.</p>
+          <span class="help-stage-link">Launch Your Career <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- Stage 8 -->
+        <a href="stories-archive.html" class="help-stage-card">
+          <div class="help-stage-icon"><i class="fa-solid fa-user-tie"></i></div>
+          <div class="help-stage-badge">Alumni &bull; Network</div>
+          <h3>I'm an Alumnus / Supporter</h3>
+          <p>Connect with the UNICORE Students Association on LinkedIn, share research, mentor incoming cohorts, and give back.</p>
+          <span class="help-stage-link">Join Alumni Network <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
       </div>
     </div>
   </section>
@@ -163,7 +282,7 @@
           <div class="portal-card-icon"><i class="fa-solid fa-route"></i></div>
           <h3>How It Works & Academics</h3>
           <p>
-            5-stage scholar journey, Italian university exam guide, CFU credit rules, and career launchpad.
+            5-stage scholar journey, guaranteed vs varying benefits matrix, Italian exam guide, and career launchpad.
           </p>
           <a href="how-it-works.html" class="portal-card-link">Explore Roadmap <i class="fa-solid fa-arrow-right"></i></a>
         </div>
@@ -193,7 +312,7 @@
           <div class="portal-card-icon"><i class="fa-solid fa-circle-question"></i></div>
           <h3>FAQ Guide</h3>
           <p>
-            Key questions and answers organized by student lifecycle: Pre-Arrival, Studies in Italy, and Alumni Pathways.
+            24 deep-dive questions with 3-tier trust badges (Official &bull; Verified &bull; Community) covering the whole journey.
           </p>
           <a href="faq.html" class="portal-card-link">Browse FAQs <i class="fa-solid fa-arrow-right"></i></a>
         </div>
@@ -213,7 +332,7 @@
           <div class="portal-card-icon"><i class="fa-solid fa-box-archive"></i></div>
           <h3>Stories & Digital Archive</h3>
           <p>
-            Authentic reflections, video documentaries, and official UNHCR milestone press releases (2018–2026).
+            14 spotlight graduate profiles (Apollo Pach, Bidong Ruot, Charles Waru), videos, and UNHCR press timeline.
           </p>
           <a href="stories-archive.html" class="portal-card-link">Explore Archive <i class="fa-solid fa-arrow-right"></i></a>
         </div>
@@ -277,8 +396,8 @@
       <!-- Official Reference Callout -->
       <div class="official-reference-box">
         <div class="official-reference-text">
-          <h4><i class="fa-solid fa-arrow-up-right-from-square" style="color: var(--primary);"></i> Looking for the Official UNHCR UNICORE Portal?</h4>
-          <p>This website serves as an independent guidance and support hub for UNICORE students. Official university application submissions and course databases are hosted directly on the UNHCR portal.</p>
+          <h4><i class="fa-solid fa-arrow-up-right-from-square" style="color: var(--primary);"></i> Looking for the Official UNHCR UNICORE Application Portal?</h4>
+          <p>Official university application calls, candidate eligibility criteria, and admission rankings are published exclusively on the official UNHCR portal.</p>
         </div>
         <a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
           Visit Official Portal <i class="fa-solid fa-external-link"></i>
@@ -295,8 +414,11 @@
         <div class="footer-brand">
           <div class="brand">UNICORE<span class="brand-dot">.</span></div>
           <p>
-            University Corridors for Refugees is promoted by 40+ Italian universities with the support of UNHCR, MAECI, Caritas Italiana, Diaconia Valdese, Centro Astalli, and local partners.
+            Independent student guidance & alumni network hub supporting University Corridors for Refugees across Italian universities.
           </p>
+          <div style="margin-top: 0.75rem; font-size: 0.75rem; color: var(--slate-400);">
+            <i class="fa-solid fa-shield-halved"></i> Information verified against official sources &bull; Reviewed August 2026
+          </div>
         </div>
 
         <div class="footer-col">
@@ -314,9 +436,9 @@
         </div>
 
         <div class="footer-col">
-          <h4>External Portals</h4>
+          <h4>External Official Portals</h4>
           <ul class="footer-links">
-            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal</a></li>
+            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal (UNHCR)</a></li>
             <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italia</a></li>
             <li><a href="https://www.esteri.it/" target="_blank" rel="noopener noreferrer">Ministry of Foreign Affairs (MAECI)</a></li>
             <li><a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">CIMEA Academic Recognition</a></li>
@@ -325,14 +447,11 @@
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 UNICORE Student & Scholar Support Hub</div>
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub &bull; Independent Community Platform</div>
         <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
       </div>
     </div>
   </footer>
-
-    
-  </div>
 
   <script src="js/app.js"></script>
 </body>

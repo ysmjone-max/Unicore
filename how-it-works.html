@@ -55,6 +55,9 @@
 
             <div class="nav-actions">
         <div class="nav-search-wrapper" id="navSearchWrapper">
+          <button type="button" class="mobile-search-toggle-btn" id="mobileSearchToggle" aria-label="Open search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
           <div class="nav-search-box">
             <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
             <input type="text" id="siteSearchInput" class="nav-search-input" placeholder="Search the whole website..." autocomplete="off" aria-label="Search the whole website">
@@ -64,8 +67,7 @@
           </div>
           <div class="search-dropdown-panel" id="siteSearchResults" style="display: none;"></div>
         </div>
-
-        <button class="theme-toggle-btn" aria-label="Switch between light and dark mode">
+<button class="theme-toggle-btn" aria-label="Switch between light and dark mode">
           <i class="fa-solid fa-moon"></i>
         </button>
 
@@ -146,13 +148,13 @@
             </div>
             <h3>Merit Evaluation & Online Faculty Interview</h3>
             <p>
-              University academic committees evaluate candidate portfolios (0–40 points). Shortlisted applicants attend an online technical interview (0–40 points) assessing subject mastery and motivation.
+              Selection procedures and scoring rubrics (e.g. 100-point vs 80-point scales) are determined independently by each participating university. Committees evaluate academic transcripts and conduct an online technical/motivational interview.
             </p>
             <ul class="step-checklist">
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Document Score: Max 40 Points</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Interview Score: Max 40 Points</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Minimum Passing Threshold: 50/80</li>
-              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Final Merit Ranking Published</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Academic Portfolio Screening (Curriculum & Transcripts)</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Online Technical & English Proficiency Interview</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Scoring Rubric Defined by Host University Call</li>
+              <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Official Merit Ranking Published on University & UNHCR Portals</li>
             </ul>
           </div>
         </div>
@@ -217,6 +219,94 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: What is Standard vs What Varies -->
+  <section class="section bg-white" id="benefits-matrix">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-scale-balanced"></i> Transparency & Expectations</span>
+        <h2>What is Guaranteed vs. What Varies by University Call?</h2>
+        <p>
+          Because UNICORE is a consortium of 40+ independent Italian universities with regional welfare partners, some benefits are standardized nationally while others depend on your specific university's Call for Applications.
+        </p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="guarantee-table">
+          <thead>
+            <tr>
+              <th>Support Dimension</th>
+              <th>Program Status</th>
+              <th>What to Expect & How it Works</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tuition Fee Exemption</strong></td>
+              <td><span class="trust-badge-official"><i class="fa-solid fa-circle-check"></i> Standard (100% Free)</span></td>
+              <td>100% exemption from all university tuition fees and enrollment costs across all participating institutions.</td>
+            </tr>
+            <tr>
+              <td><strong>Application Fee</strong></td>
+              <td><span class="trust-badge-official"><i class="fa-solid fa-circle-check"></i> Standard (100% Free)</span></td>
+              <td>The UNICORE application and selection process is completely free of charge. No fees are ever charged to apply.</td>
+            </tr>
+            <tr>
+              <td><strong>Study Visa Facilitation</strong></td>
+              <td><span class="trust-badge-official"><i class="fa-solid fa-circle-check"></i> Standard Protocol</span></td>
+              <td>Coordinated via Italian Embassies, UNHCR, and MAECI with emergency consular travel support if conventional travel documents are delayed.</td>
+            </tr>
+            <tr>
+              <td><strong>International Flight Ticket</strong></td>
+              <td><span class="trust-badge-official"><i class="fa-solid fa-circle-check"></i> Standard Provision</span></td>
+              <td>Direct economy flight ticket to Italy funded through the UNICORE humanitarian partner coalition.</td>
+            </tr>
+            <tr>
+              <td><strong>Monthly Living Allowance</strong></td>
+              <td><span class="trust-badge-verified"><i class="fa-solid fa-sliders"></i> Varies by University</span></td>
+              <td>Amount varies by host university call and regional partner (typically between €400 and €600/month or regional DSU grant equivalent). Always check the individual university call.</td>
+            </tr>
+            <tr>
+              <td><strong>Accommodation / Housing</strong></td>
+              <td><span class="trust-badge-verified"><i class="fa-solid fa-sliders"></i> Varies by University</span></td>
+              <td>Provided either as a free student dormitory room or as a dedicated monthly housing contribution depending on university dormitory capacity and local partner contracts.</td>
+            </tr>
+            <tr>
+              <td><strong>Meals & Canteen (Mensa)</strong></td>
+              <td><span class="trust-badge-verified"><i class="fa-solid fa-sliders"></i> Varies by University</span></td>
+              <td>Some universities offer free canteen cards directly; others require calculating the ISEE Parificato to unlock Fascia 0 free/discounted meals.</td>
+            </tr>
+            <tr>
+              <td><strong>Local Transit Pass</strong></td>
+              <td><span class="trust-badge-verified"><i class="fa-solid fa-sliders"></i> Varies by City</span></td>
+              <td>Subsidized or free annual city transit pass depending on the municipality and regional student welfare agency (e.g. ER.GO, DiscoLazio, Edisu).</td>
+            </tr>
+            <tr>
+              <td><strong>Italian Language Course</strong></td>
+              <td><span class="trust-badge-official"><i class="fa-solid fa-circle-check"></i> Standard (Free CLA)</span></td>
+              <td>Free intensive and semester Italian language courses offered through University Language Centers (CLA) and municipal CPIA schools.</td>
+            </tr>
+            <tr>
+              <td><strong>Peer Buddy Mentorship</strong></td>
+              <td><span class="trust-badge-community"><i class="fa-solid fa-circle-check"></i> Standard Peer Network</span></td>
+              <td>Personal pairing with Italian and senior refugee student mentors, plus UNHCR Community Matching in 13 Italian cities.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Legal Orientation Disclaimer Box -->
+      <div class="legal-disclaimer-card" style="margin-top: 2.5rem;">
+        <div class="legal-disclaimer-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="legal-disclaimer-content">
+          <h4>Legal & Immigration Orientation Notice</h4>
+          <p>
+            The administrative and academic information on this website is compiled by senior scholars and alumni for peer orientation. Admission rubrics, scholarship quotas, and residency rules are governed by official Italian legislation, UNHCR directives, and individual university calls. Always consult your university International Desk, Questura, or accredited legal aid services for official decisions.
+          </p>
+        </div>
       </div>
     </div>
   </section>

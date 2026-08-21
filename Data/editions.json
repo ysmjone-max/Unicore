@@ -1,0 +1,116 @@
+[
+  {
+    "edition": "Pilot 1.0",
+    "year": "2019",
+    "universities": 2,
+    "scholarships": 6,
+    "countries": [
+      "Ethiopia"
+    ],
+    "focus": "Pilot higher education corridors at UniBo & UniSS."
+  },
+  {
+    "edition": "UNICORE 2.0",
+    "year": "2020",
+    "universities": 11,
+    "scholarships": 20,
+    "countries": [
+      "Ethiopia"
+    ],
+    "focus": "Expansion across Northern and Central Italian universities."
+  },
+  {
+    "edition": "UNICORE 3.0",
+    "year": "2021",
+    "universities": 24,
+    "scholarships": 43,
+    "countries": [
+      "Ethiopia"
+    ],
+    "focus": "National protocol formalization with MAECI, MIUR & Caritas."
+  },
+  {
+    "edition": "UNICORE 4.0",
+    "year": "2022",
+    "universities": 33,
+    "scholarships": 51,
+    "countries": [
+      "Cameroon",
+      "Niger",
+      "Nigeria",
+      "Ethiopia"
+    ],
+    "focus": "Geographical expansion to West and Central African asylum countries."
+  },
+  {
+    "edition": "UNICORE 5.0",
+    "year": "2023",
+    "universities": 35,
+    "scholarships": 61,
+    "countries": [
+      "Kenya",
+      "Niger",
+      "Nigeria",
+      "South Africa",
+      "Uganda",
+      "Zambia",
+      "Zimbabwe"
+    ],
+    "focus": "Southern African expansion and corporate inclusion with Welcome."
+  },
+  {
+    "edition": "UNICORE 6.0",
+    "year": "2024",
+    "universities": 42,
+    "scholarships": 77,
+    "countries": [
+      "Kenya",
+      "Mozambique",
+      "Niger",
+      "Nigeria",
+      "South Africa",
+      "Tanzania",
+      "Uganda",
+      "Zambia",
+      "Zimbabwe"
+    ],
+    "focus": "Record 1,063 applicants, 31% female participation milestone."
+  },
+  {
+    "edition": "UNICORE 7.0",
+    "year": "2025",
+    "universities": 42,
+    "scholarships": 75,
+    "countries": [
+      "Kenya",
+      "Uganda",
+      "Nigeria",
+      "Ethiopia",
+      "Tanzania",
+      "Zambia"
+    ],
+    "focus": "UNITUS and DIKE security & human rights corridor reception."
+  },
+  {
+    "edition": "UNICORE 8.0",
+    "year": "2026",
+    "universities": 41,
+    "scholarships": 78,
+    "countries": [
+      "Kenya",
+      "Uganda",
+      "Tanzania",
+      "Ethiopia",
+      "Nigeria",
+      "Cameroon",
+      "Mozambique",
+      "Niger",
+      "South Africa",
+      "Zambia",
+      "Zimbabwe",
+      "Bangladesh",
+      "India"
+    ],
+    "focus": "Current active edition across 41 participating universities."
+  }
+]

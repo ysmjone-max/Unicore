@@ -1,0 +1,78 @@
+{
+  "national_institutional": [
+    {
+      "name": "UNHCR Italia",
+      "role": "Strategic & International Protection Coordination",
+      "type": "official"
+    },
+    {
+      "name": "Ministry of Foreign Affairs (MAECI)",
+      "role": "Study Visa Facilitation & Consular Protocols",
+      "type": "official"
+    },
+    {
+      "name": "Participating Italian Universities (41+)",
+      "role": "100% Tuition Waivers, Faculty Teaching & Academic Tutorship",
+      "type": "official"
+    },
+    {
+      "name": "Caritas Italiana",
+      "role": "Local Accompaniment, Living Stipends & Bureaucracy Aid",
+      "type": "verified"
+    },
+    {
+      "name": "Diaconia Valdese",
+      "role": "Housing Solutions, Legal Clinics & Psychological Support",
+      "type": "verified"
+    },
+    {
+      "name": "Centro Astalli",
+      "role": "Refugee Reception, Language Integration & Social Aid",
+      "type": "verified"
+    },
+    {
+      "name": "Gandhi Charity",
+      "role": "Community Outreach & Relocation Liaison",
+      "type": "verified"
+    }
+  ],
+  "flight_and_housing": [
+    {
+      "name": "Miles4Migrants",
+      "role": "Flight Ticket Sponsorship & Donated Miles",
+      "type": "verified"
+    },
+    {
+      "name": "Fondazione Experience (CampusX)",
+      "role": "Subsidized Residential Housing in Milan",
+      "type": "verified"
+    },
+    {
+      "name": "Banca Etica & ACRI",
+      "role": "Zero-Fee Student Bank Accounts & Integration Grants",
+      "type": "verified"
+    }
+  ],
+  "employment_and_inclusion": [
+    {
+      "name": "Welcome-in-One-Click (UNHCR)",
+      "role": "Direct Recruitment with 500+ Certified Employers",
+      "type": "verified"
+    },
+    {
+      "name": "Assolavoro",
+      "role": "Training Grants, Nursery Aid & 100% Psychotherapy Reimbursement",
+      "type": "verified"
+    },
+    {
+      "name": "Community Matching (13 Cities)",
+      "role": "1-on-1 Mentorship with Local Italian Professionals",
+      "type": "verified"
+    },
+    {
+      "name": "JumaMap Helpline (800 905 570)",
+      "role": "Multilingual National Refugee Helpdesk & Services Directory",
+      "type": "verified"
+    }
+  ]
+}
