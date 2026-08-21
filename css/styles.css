@@ -3499,3 +3499,157 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.6rem;
   }
 }
+
+/* ==========================================================================
+   Spotlight Stories Showcase & Advanced Media UX Design System
+   ========================================================================== */
+.spotlight-story-card {
+  grid-column: 1 / -1;
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+  margin-bottom: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.spotlight-story-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.12);
+  border-color: var(--primary-border);
+}
+
+.spotlight-story-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 45%) 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .spotlight-story-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spotlight-media-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  background: #0f172a;
+  padding: 6px;
+  min-height: 280px;
+}
+
+.spotlight-media-single {
+  display: block;
+  background: #0f172a;
+  padding: 6px;
+  min-height: 280px;
+}
+
+.spotlight-media-quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  background: #0f172a;
+  padding: 6px;
+  min-height: 280px;
+}
+
+.spotlight-media-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  height: 100%;
+  min-height: 135px;
+}
+
+.spotlight-media-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spotlight-media-link:hover img {
+  transform: scale(1.05);
+}
+
+.spotlight-content-body {
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.spotlight-quote {
+  border-left: 3px solid var(--primary);
+  background: var(--slate-50);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 0.85rem 1.15rem;
+  margin: 0.85rem 0 1rem 0;
+  font-size: 0.9rem;
+  color: var(--slate-700);
+  font-style: italic;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+[data-theme="dark"] .spotlight-quote {
+  background: rgba(15, 23, 42, 0.6);
+  border-left-color: var(--primary);
+  color: var(--slate-300);
+}
+
+.spotlight-footer-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  border-top: 1px solid var(--slate-100);
+  padding-top: 1.15rem;
+  margin-top: 0.5rem;
+}
+
+[data-theme="dark"] .spotlight-footer-actions {
+  border-top-color: var(--slate-200);
+}
+
+/* ==========================================================================
+   Global Typography Alignment & UX Ergonomics
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p, li, blockquote {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+/* Smooth Interactive Focus Rings */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Enhanced Mobile Table Swiping */
+.milestones-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.milestones-table th,
+.milestones-table td {
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.55;
+}
+
