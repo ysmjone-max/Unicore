@@ -9786,3 +9786,275 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   background: #0f172a;
   border-color: #334155;
 }
+
+
+/* ==========================================================================
+   Full-Page Interactive Transition Simulation System (Zero Bulky Header)
+   ========================================================================== */
+
+.sim-fullscreen-body {
+  background-color: var(--slate-100);
+}
+
+.sim-fullscreen-wrapper {
+  min-height: calc(100vh - 4.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Minimalist Top Station Track & Control Bar */
+.sim-top-control-bar {
+  background: #0f172a;
+  border-bottom: 2px solid #e11d48;
+  position: sticky;
+  top: 4.5rem;
+  z-index: 920;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 0.65rem 0;
+}
+
+.sim-control-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sim-brand-status {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.sim-live-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseDot 1.5s infinite;
+}
+
+.sim-badge-code {
+  background: #e11d48;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 8px rgba(225, 29, 72, 0.4);
+}
+
+.sim-station-label {
+  font-size: 0.85rem;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .sim-station-label {
+    display: none;
+  }
+}
+
+/* 12-Stop Horizontal Interactive Route Stepper */
+.sim-track-stepper-scroll {
+  overflow-x: auto;
+  padding: 0.2rem 0.5rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  flex-grow: 1;
+}
+
+.sim-track-stepper-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.sim-track-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sim-stepper-node {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.75rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.sim-stepper-node:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.sim-stepper-node .node-code {
+  font-weight: 900;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.sim-stepper-node.active {
+  background: #e11d48;
+  border-color: #e11d48;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(225, 29, 72, 0.7);
+  transform: scale(1.04);
+}
+
+.sim-stepper-node.active .node-code {
+  color: #ffffff;
+}
+
+.sim-stepper-node.visited:not(.active) {
+  border-color: #10b981;
+  color: #34d399;
+}
+
+.sim-stepper-node.visited:not(.active) .node-code {
+  color: #10b981;
+}
+
+/* Quick Actions */
+.sim-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.sim-progress-indicator {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #94a3b8;
+  margin-right: 0.25rem;
+}
+
+.sim-icon-btn {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  padding: 0.35rem 0.65rem !important;
+}
+
+.sim-icon-btn:hover {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.sim-next-btn {
+  padding: 0.35rem 0.85rem !important;
+  font-weight: 800 !important;
+}
+
+/* Main Simulation Content Stage Area */
+.sim-stage-content-area {
+  flex-grow: 1;
+  padding: 2rem 0 5rem 0;
+}
+
+.sim-stage-container {
+  max-width: 900px;
+}
+
+.sim-station-stage-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  animation: simFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes simFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .sim-station-stage-card {
+    padding: 1.5rem;
+  }
+}
+
+.sim-hero-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.sim-hero-icon {
+  font-size: 2.75rem;
+  flex-shrink: 0;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(29, 78, 216, 0.1);
+}
+
+.sim-phase-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.sim-hero-title {
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: var(--slate-900);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.sim-stage-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--slate-200);
+  flex-wrap: wrap;
+}
+
+/* Dark Mode Overrides for Simulation */
+[data-theme="dark"] .sim-fullscreen-body {
+  background-color: #0b0f19 !important;
+}
+
+[data-theme="dark"] .sim-station-stage-card {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .sim-hero-icon {
+  background: #0f172a !important;
+}
+
+[data-theme="dark"] .sim-hero-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .sim-stage-bottom-bar {
+  border-color: #334155 !important;
+}
