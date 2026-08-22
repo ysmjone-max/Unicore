@@ -1,15 +1,16 @@
 /**
- * UNICORE: Welcome to Italy with Yohannes (v3.1 Mobile & Dynamic Budget Edition)
- * State Management, Touch Gesture Swipe, Dynamic Algorithm, Healthcare Triage, Audio Synthesis
+ * UNICORE: Welcome to Italy with Yohannes (v3.2 Ultra-Smooth Flow & Responsive Animation Engine)
+ * Robust Navigation, Dual Direction Transitions, Chapter Jump Selector, In-Card Continue Buttons
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+(function () {
+  'use strict';
+
   const TOTAL_CHAPTERS = 12;
   const STORAGE_KEY = 'unicore_yohannes_progress';
   const BACKPACK_KEY = 'unicore_yohannes_backpack';
   const CHECKLIST_KEY = 'unicore_yohannes_checklist';
 
-  // Milestone Backpack Rewards
   const BACKPACK_ITEMS = [
     { id: 'docs', icon: 'fa-solid fa-folder-closed', name: 'Pre-Departure Folder', desc: 'Degree certificates, visa/laissez-passer & comfort foods' },
     { id: 'adapter', icon: 'fa-solid fa-plug', name: 'EU Adapter & Coat', desc: 'Type C/L plug adapter, warm jacket & Google Maps offline' },
@@ -28,83 +29,82 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentChapter = 0;
   let unlockedItems = new Set();
   let checkedTasks = new Set();
+  let navigationDirection = 'next'; // 'next' or 'prev'
 
-  // Audio Context for UI Chimes
+  // Web Audio Synthesizer (Safe & Non-blocking)
   let audioCtx = null;
-  function getAudioContext() {
-    if (!audioCtx) {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      if (AudioContext) audioCtx = new AudioContext();
-    }
-    if (audioCtx && audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    return audioCtx;
-  }
-
-  function playChime(type = 'step') {
+  function playSound(type = 'step') {
     try {
-      const ctx = getAudioContext();
-      if (!ctx) return;
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) audioCtx = new AudioContext();
+      }
+      if (!audioCtx) return;
+      if (audioCtx.state === 'suspended') audioCtx.resume();
 
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
       osc.connect(gain);
-      gain.connect(ctx.destination);
-
-      const now = ctx.currentTime;
+      gain.connect(audioCtx.destination);
 
       if (type === 'unlock') {
         osc.type = 'triangle';
         osc.frequency.setValueAtTime(523.25, now);
-        osc.frequency.setValueAtTime(659.25, now + 0.09);
-        osc.frequency.setValueAtTime(783.99, now + 0.18);
-        gain.gain.setValueAtTime(0.15, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+        osc.frequency.setValueAtTime(659.25, now + 0.08);
+        osc.frequency.setValueAtTime(783.99, now + 0.16);
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
         osc.start(now);
-        osc.stop(now + 0.45);
+        osc.stop(now + 0.4);
       } else if (type === 'correct') {
         osc.type = 'sine';
         osc.frequency.setValueAtTime(587.33, now);
-        osc.frequency.setValueAtTime(880, now + 0.08);
-        gain.gain.setValueAtTime(0.2, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+        osc.frequency.setValueAtTime(880, now + 0.07);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
         osc.start(now);
-        osc.stop(now + 0.35);
+        osc.stop(now + 0.3);
+      } else if (type === 'step') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        osc.frequency.exponentialRampToValueAtTime(660, now + 0.08);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+        osc.start(now);
+        osc.stop(now + 0.12);
       } else if (type === 'complete') {
         [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
-          const o = ctx.createOscillator();
-          const g = ctx.createGain();
+          const o = audioCtx.createOscillator();
+          const g = audioCtx.createGain();
           o.type = 'triangle';
           o.frequency.setValueAtTime(freq, now + i * 0.08);
           o.connect(g);
-          g.connect(ctx.destination);
-          g.gain.setValueAtTime(0.15, now + i * 0.08);
-          g.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+          g.connect(audioCtx.destination);
+          g.gain.setValueAtTime(0.12, now + i * 0.08);
+          g.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
           o.start(now + i * 0.08);
-          o.stop(now + 0.8);
+          o.stop(now + 0.7);
         });
       }
     } catch (e) {
-      // Silent fallback
+      // Audio fallback
     }
   }
 
-  // DOM Elements
-  const chapterCards = document.querySelectorAll('.journey-chapter-card');
-  const scrubberPills = document.querySelectorAll('.scrubber-pill');
-  const prevBtn = document.getElementById('journeyPrevBtn');
-  const nextBtn = document.getElementById('journeyNextBtn');
-  const currentChapterNumEl = document.getElementById('currentChapterNum');
-  const chapterTitleHeaderEl = document.getElementById('chapterTitleHeader');
-  const progressBarFill = document.getElementById('journeyProgressBarFill');
-  const backpackCountEl = document.getElementById('backpackCount');
-  const backpackModal = document.getElementById('backpackModal');
-  const backpackToggleBtn = document.getElementById('backpackToggleBtn');
-  const closeBackpackBtn = document.getElementById('closeBackpackBtn');
-  const backpackGridEl = document.getElementById('backpackItemsGrid');
-  const audioBtns = document.querySelectorAll('.phrase-audio-btn');
-  const interactiveCheckboxes = document.querySelectorAll('.interactive-check-input');
+  function initJourney() {
+    loadSavedState();
+
+    // Attach Event Listeners to Navigation Elements
+    attachNavigationListeners();
+    attachInteractiveTools();
+    attachAudioPhrases();
+    attachQuizzes();
+    attachTouchGestures();
+
+    // Render Initial Chapter
+    renderChapter(currentChapter, false);
+  }
 
   function loadSavedState() {
     try {
@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
         checkedTasks = new Set(JSON.parse(savedChecks));
       }
     } catch (e) {
-      console.warn('Could not read from localStorage', e);
       currentChapter = 0;
       unlockedItems = new Set([BACKPACK_ITEMS[0].id]);
     }
@@ -142,34 +141,42 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem(BACKPACK_KEY, JSON.stringify(Array.from(unlockedItems)));
       localStorage.setItem(CHECKLIST_KEY, JSON.stringify(Array.from(checkedTasks)));
     } catch (e) {
-      console.warn('Could not write to localStorage', e);
+      // Storage fallback
     }
   }
 
   function renderChapter(index, isUserAction = false) {
     if (index < 0) index = 0;
     if (index >= TOTAL_CHAPTERS) index = TOTAL_CHAPTERS - 1;
+
+    navigationDirection = index >= currentChapter ? 'next' : 'prev';
     currentChapter = index;
 
+    // Unlock Backpack Item
     if (BACKPACK_ITEMS[currentChapter]) {
       const wasLocked = !unlockedItems.has(BACKPACK_ITEMS[currentChapter].id);
       unlockedItems.add(BACKPACK_ITEMS[currentChapter].id);
       if (wasLocked && isUserAction) {
-        playChime('unlock');
+        playSound('unlock');
       }
     }
     saveState();
 
+    const chapterCards = document.querySelectorAll('.journey-chapter-card');
     chapterCards.forEach((card, idx) => {
       if (idx === currentChapter) {
-        card.classList.add('active');
         card.style.display = 'block';
+        card.classList.remove('slide-in-right', 'slide-in-left');
+        card.classList.add(navigationDirection === 'next' ? 'slide-in-right' : 'slide-in-left');
+        card.classList.add('active');
       } else {
-        card.classList.remove('active');
         card.style.display = 'none';
+        card.classList.remove('active', 'slide-in-right', 'slide-in-left');
       }
     });
 
+    // Update Scrubber Pills
+    const scrubberPills = document.querySelectorAll('.scrubber-pill');
     scrubberPills.forEach((pill, idx) => {
       if (idx === currentChapter) {
         pill.classList.add('active');
@@ -183,39 +190,168 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Update Sticky Headers
     const activeCard = chapterCards[currentChapter];
     const chapterName = activeCard ? activeCard.getAttribute('data-title') : `Chapter ${currentChapter + 1}`;
-    if (currentChapterNumEl) currentChapterNumEl.textContent = (currentChapter + 1).toString();
-    if (chapterTitleHeaderEl) chapterTitleHeaderEl.textContent = chapterName;
+    
+    const currentNumEl = document.getElementById('currentChapterNum');
+    const titleHeaderEl = document.getElementById('chapterTitleHeader');
+    const progressBarFill = document.getElementById('journeyProgressBarFill');
+    const backpackCountEl = document.getElementById('backpackCount');
+
+    if (currentNumEl) currentNumEl.textContent = (currentChapter + 1).toString();
+    if (titleHeaderEl) titleHeaderEl.textContent = chapterName;
 
     const percent = Math.round(((currentChapter + 1) / TOTAL_CHAPTERS) * 100);
     if (progressBarFill) progressBarFill.style.width = `${percent}%`;
-
-    if (prevBtn) {
-      prevBtn.disabled = currentChapter === 0;
-      prevBtn.style.opacity = currentChapter === 0 ? '0.4' : '1';
-    }
-
-    if (nextBtn) {
-      if (currentChapter === TOTAL_CHAPTERS - 1) {
-        nextBtn.innerHTML = '<i class="fa-solid fa-trophy"></i> Complete Welcome Guide';
-        nextBtn.classList.add('btn-complete-journey');
-      } else {
-        nextBtn.innerHTML = 'Next Step <i class="fa-solid fa-arrow-right"></i>';
-        nextBtn.classList.remove('btn-complete-journey');
-      }
-    }
 
     if (backpackCountEl) {
       backpackCountEl.textContent = `${unlockedItems.size}/${TOTAL_CHAPTERS}`;
     }
 
+    // Update Bottom & In-Card Navigation Buttons
+    updateNavButtons();
     renderBackpackGrid();
     restoreCheckboxes();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (isUserAction) {
+      playSound('step');
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+    }
+  }
+
+  function updateNavButtons() {
+    const prevBtns = document.querySelectorAll('.btn-journey-prev, #journeyPrevBtn');
+    const nextBtns = document.querySelectorAll('.btn-journey-next, #journeyNextBtn, .in-card-continue-btn');
+
+    prevBtns.forEach(btn => {
+      btn.disabled = currentChapter === 0;
+      btn.style.opacity = currentChapter === 0 ? '0.4' : '1';
+      btn.style.pointerEvents = currentChapter === 0 ? 'none' : 'auto';
+    });
+
+    nextBtns.forEach(btn => {
+      if (currentChapter === TOTAL_CHAPTERS - 1) {
+        btn.innerHTML = '<i class="fa-solid fa-trophy"></i> Complete & Open Backpack';
+        btn.classList.add('btn-complete-journey');
+      } else {
+        const nextIdx = currentChapter + 1;
+        const nextCard = document.querySelector(`.journey-chapter-card[data-chapter="${nextIdx}"]`);
+        const nextTitle = nextCard ? nextCard.getAttribute('data-title') : `Chapter ${nextIdx + 1}`;
+        
+        if (btn.classList.contains('in-card-continue-btn')) {
+          btn.innerHTML = `Continue to ${nextTitle} <i class="fa-solid fa-arrow-right"></i>`;
+        } else {
+          btn.innerHTML = `Next Step <i class="fa-solid fa-arrow-right"></i>`;
+        }
+        btn.classList.remove('btn-complete-journey');
+      }
+    });
+  }
+
+  function attachNavigationListeners() {
+    // Top & Bottom Prev Buttons
+    document.addEventListener('click', (e) => {
+      const prevTarget = e.target.closest('.btn-journey-prev, #journeyPrevBtn');
+      if (prevTarget) {
+        e.preventDefault();
+        if (currentChapter > 0) renderChapter(currentChapter - 1, true);
+        return;
+      }
+
+      const nextTarget = e.target.closest('.btn-journey-next, #journeyNextBtn, .in-card-continue-btn');
+      if (nextTarget) {
+        e.preventDefault();
+        if (currentChapter < TOTAL_CHAPTERS - 1) {
+          renderChapter(currentChapter + 1, true);
+        } else {
+          playSound('complete');
+          triggerConfetti();
+          openBackpackModal();
+        }
+        return;
+      }
+
+      const pillTarget = e.target.closest('.scrubber-pill');
+      if (pillTarget) {
+        e.preventDefault();
+        const idx = parseInt(pillTarget.getAttribute('data-chapter'), 10);
+        if (!isNaN(idx)) renderChapter(idx, true);
+        return;
+      }
+
+      // Backpack Modal Toggles
+      if (e.target.closest('#backpackToggleBtn, .open-backpack-action')) {
+        e.preventDefault();
+        openBackpackModal();
+        return;
+      }
+
+      if (e.target.closest('#closeBackpackBtn, .backpack-modal-backdrop')) {
+        if (e.target.closest('#closeBackpackBtn') || e.target.classList.contains('backpack-modal-backdrop')) {
+          e.preventDefault();
+          closeBackpackModal();
+          return;
+        }
+      }
+    });
+
+    // Keyboard Shortcuts (Arrow Left/Right)
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('backpackModal');
+      if (modal && modal.classList.contains('active')) {
+        if (e.key === 'Escape') closeBackpackModal();
+        return;
+      }
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+        if (currentChapter < TOTAL_CHAPTERS - 1) renderChapter(currentChapter + 1, true);
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        if (currentChapter > 0) renderChapter(currentChapter - 1, true);
+      }
+    });
+  }
+
+  // Touch Gestures (Non-interfering)
+  function attachTouchGestures() {
+    let startX = 0;
+    let startY = 0;
+    let isTracking = false;
+
+    const mainArea = document.querySelector('main');
+    if (!mainArea) return;
+
+    mainArea.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isTracking = true;
+      }
+    }, { passive: true });
+
+    mainArea.addEventListener('touchend', (e) => {
+      if (!isTracking || e.changedTouches.length !== 1) return;
+      isTracking = false;
+
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+      const diffX = endX - startX;
+      const diffY = endY - startY;
+
+      // Ensure clear horizontal intent (> 85px and horizontal > 2x vertical)
+      if (Math.abs(diffX) > 85 && Math.abs(diffX) > Math.abs(diffY) * 2) {
+        if (diffX < 0) {
+          // Swipe Left -> Next
+          if (currentChapter < TOTAL_CHAPTERS - 1) renderChapter(currentChapter + 1, true);
+        } else {
+          // Swipe Right -> Prev
+          if (currentChapter > 0) renderChapter(currentChapter - 1, true);
+        }
+      }
+    }, { passive: true });
   }
 
   function renderBackpackGrid() {
+    const backpackGridEl = document.getElementById('backpackItemsGrid');
     if (!backpackGridEl) return;
     backpackGridEl.innerHTML = '';
 
@@ -241,8 +377,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function openBackpackModal() {
+    const modal = document.getElementById('backpackModal');
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeBackpackModal() {
+    const modal = document.getElementById('backpackModal');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
   function restoreCheckboxes() {
-    interactiveCheckboxes.forEach((cb) => {
+    document.querySelectorAll('.interactive-check-input').forEach((cb) => {
       const id = cb.getAttribute('data-task-id');
       if (id && checkedTasks.has(id)) {
         cb.checked = true;
@@ -252,364 +404,261 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  interactiveCheckboxes.forEach((cb) => {
-    cb.addEventListener('change', () => {
-      const id = cb.getAttribute('data-task-id');
-      const parentLi = cb.closest('li');
-      if (cb.checked) {
-        if (id) checkedTasks.add(id);
-        if (parentLi) parentLi.classList.add('task-completed');
-        playChime('correct');
-      } else {
-        if (id) checkedTasks.delete(id);
-        if (parentLi) parentLi.classList.remove('task-completed');
-      }
-      saveState();
-    });
-  });
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      if (currentChapter > 0) renderChapter(currentChapter - 1, true);
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      if (currentChapter < TOTAL_CHAPTERS - 1) {
-        renderChapter(currentChapter + 1, true);
-      } else {
-        playChime('complete');
-        triggerConfetti();
-        openBackpackModal();
-      }
-    });
-  }
-
-  scrubberPills.forEach((pill) => {
-    pill.addEventListener('click', () => {
-      const idx = parseInt(pill.getAttribute('data-chapter'), 10);
-      if (!isNaN(idx)) renderChapter(idx, true);
-    });
-  });
-
-  // Mobile Touch Swipe Gesture Support (Swipe Left/Right to change chapters)
-  let touchStartX = 0;
-  let touchEndX = 0;
-  let touchStartY = 0;
-  let touchEndY = 0;
-
-  document.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-    touchStartY = e.changedTouches[0].screenY;
-  }, { passive: true });
-
-  document.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    touchEndY = e.changedTouches[0].screenY;
-    handleSwipeGesture();
-  }, { passive: true });
-
-  function handleSwipeGesture() {
-    const diffX = touchEndX - touchStartX;
-    const diffY = touchEndY - touchStartY;
-
-    // Only register horizontal swipes (ignore vertical scrolling)
-    if (Math.abs(diffX) > 75 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
-      if (diffX < 0) {
-        // Swiped Left -> Next Chapter
-        if (currentChapter < TOTAL_CHAPTERS - 1) renderChapter(currentChapter + 1, true);
-      } else {
-        // Swiped Right -> Prev Chapter
-        if (currentChapter > 0) renderChapter(currentChapter - 1, true);
-      }
-    }
-  }
-
-  function openBackpackModal() {
-    if (backpackModal) {
-      backpackModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  function closeBackpackModal() {
-    if (backpackModal) {
-      backpackModal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  }
-
-  if (backpackToggleBtn) backpackToggleBtn.addEventListener('click', openBackpackModal);
-  if (closeBackpackBtn) closeBackpackBtn.addEventListener('click', closeBackpackModal);
-  if (backpackModal) {
-    backpackModal.addEventListener('click', (e) => {
-      if (e.target === backpackModal) closeBackpackModal();
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (backpackModal && backpackModal.classList.contains('active')) {
-      if (e.key === 'Escape') closeBackpackModal();
-      return;
-    }
-    if (e.key === 'ArrowRight') {
-      if (currentChapter < TOTAL_CHAPTERS - 1) renderChapter(currentChapter + 1, true);
-    } else if (e.key === 'ArrowLeft') {
-      if (currentChapter > 0) renderChapter(currentChapter - 1, true);
-    }
-  });
-
-  // Web Speech Spoken Italian
-  if ('speechSynthesis' in window) {
-    audioBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const text = btn.getAttribute('data-phrase');
-        if (!text) return;
-
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'it-IT';
-        utterance.rate = 0.85;
-
-        btn.classList.add('speaking');
-        utterance.onend = () => btn.classList.remove('speaking');
-        utterance.onerror = () => btn.classList.remove('speaking');
-
-        window.speechSynthesis.speak(utterance);
-      });
-    });
-  }
-
-  // =========================================================================
-  // DYNAMIC ALGORITHM: Customizable Stipend Range & Multi-Expense Calculator
-  // =========================================================================
-  const stipendInput = document.getElementById('budgetStipendInput');
-  const stipendSlider = document.getElementById('budgetStipendSlider');
-  const presetPills = document.querySelectorAll('.preset-pill');
-
-  const rentSlider = document.getElementById('budgetRent');
-  const foodSlider = document.getElementById('budgetFood');
-  const phoneSlider = document.getElementById('budgetPhone');
-  const transitSlider = document.getElementById('budgetTransit');
-  const otherSlider = document.getElementById('budgetOther');
-
-  const totalDisplay = document.getElementById('budgetTotalDisplay');
-  const netDisplay = document.getElementById('budgetNetBalanceDisplay');
-  const annualDisplay = document.getElementById('budgetAnnualSavingsDisplay');
-  const balanceStatusEl = document.getElementById('budgetBalanceStatus');
-
-  function calculateBudget() {
-    if (!stipendInput) return;
-
-    let stipend = parseFloat(stipendInput.value) || 0;
-    if (stipend < 0) stipend = 0;
-
-    const rent = parseFloat(rentSlider?.value) || 0;
-    const food = parseFloat(foodSlider?.value) || 0;
-    const phone = parseFloat(phoneSlider?.value) || 0;
-    const transit = parseFloat(transitSlider?.value) || 0;
-    const other = parseFloat(otherSlider?.value) || 0;
-
-    const totalExpenses = rent + food + phone + transit + other;
-    const netMonthly = stipend - totalExpenses;
-    const annualSavings = netMonthly * 10; // Standard 10-month university academic year
-
-    // Update Live Value Labels
-    if (document.getElementById('rentVal')) document.getElementById('rentVal').textContent = `€${rent}`;
-    if (document.getElementById('foodVal')) document.getElementById('foodVal').textContent = `€${food}`;
-    if (document.getElementById('phoneVal')) document.getElementById('phoneVal').textContent = `€${phone}`;
-    if (document.getElementById('transitVal')) document.getElementById('transitVal').textContent = `€${transit}`;
-    if (document.getElementById('otherVal')) document.getElementById('otherVal').textContent = `€${other}`;
-
-    // Update Result Metrics
-    if (totalDisplay) totalDisplay.textContent = `€${totalExpenses}`;
-
-    if (netDisplay) {
-      if (netMonthly >= 0) {
-        netDisplay.textContent = `+€${netMonthly}`;
-        netDisplay.className = 'metric-val text-surplus';
-      } else {
-        netDisplay.textContent = `-€${Math.abs(netMonthly)}`;
-        netDisplay.className = 'metric-val text-deficit';
-      }
-    }
-
-    if (annualDisplay) {
-      if (annualSavings >= 0) {
-        annualDisplay.textContent = `+€${annualSavings} Saved`;
-        annualDisplay.className = 'metric-val text-surplus';
-      } else {
-        annualDisplay.textContent = `-€${Math.abs(annualSavings)} Deficit`;
-        annualDisplay.className = 'metric-val text-deficit';
-      }
-    }
-
-    // Dynamic Contextual Advice Algorithm
-    if (balanceStatusEl) {
-      if (netMonthly >= 100) {
-        balanceStatusEl.innerHTML = `
-          <div class="budget-status-box positive">
-            <span class="status-title"><i class="fa-solid fa-circle-check"></i> Outstanding Budgeting! (+€${netMonthly}/mo)</span>
-            <p class="status-desc">
-              Over your 10-month Master's academic year, you will build a <strong>€${annualSavings} savings fund</strong>. This is enough to fund an <strong>Erasmus+ mobility semester</strong> in another EU country or cover your post-graduation job search transition permit (*Art. 39-bis.1*)!
-            </p>
-          </div>
-        `;
-      } else if (netMonthly >= 0) {
-        balanceStatusEl.innerHTML = `
-          <div class="budget-status-box balanced">
-            <span class="status-title"><i class="fa-solid fa-scale-balanced"></i> Healthy Balanced Budget (+€${netMonthly}/mo)</span>
-            <p class="status-desc">
-              You are living comfortably within your scholarship amount with €${netMonthly}/month set aside for unforeseen expenses. 
-            </p>
-          </div>
-        `;
-      } else {
-        const deficit = Math.abs(netMonthly);
-        balanceStatusEl.innerHTML = `
-          <div class="budget-status-box negative">
-            <span class="status-title"><i class="fa-solid fa-triangle-exclamation"></i> Budget Deficit Alert: -€${deficit}/month</span>
-            <p class="status-desc">
-              Your planned expenses exceed your monthly stipend by €${deficit}. 
-              <br>💡 <strong>Yohannes Tip:</strong> Apply for university canteen (*Mensa*) Fascia 0 (€2.50 full meals), share groceries with roommates, and buy student discounted annual transit passes to eliminate this deficit!
-            </p>
-          </div>
-        `;
-      }
-    }
-  }
-
-  // Sync Number Input with Slider & Presets
-  if (stipendInput && stipendSlider) {
-    stipendInput.addEventListener('input', () => {
-      stipendSlider.value = stipendInput.value;
-      updatePresetActive(stipendInput.value);
-      calculateBudget();
-    });
-
-    stipendSlider.addEventListener('input', () => {
-      stipendInput.value = stipendSlider.value;
-      updatePresetActive(stipendSlider.value);
-      calculateBudget();
-    });
-  }
-
-  presetPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      const amount = pill.getAttribute('data-amount');
-      if (stipendInput && stipendSlider) {
-        stipendInput.value = amount;
-        stipendSlider.value = amount;
-        updatePresetActive(amount);
-        calculateBudget();
-        playChime('step');
-      }
-    });
-  });
-
-  function updatePresetActive(val) {
-    presetPills.forEach(p => {
-      if (p.getAttribute('data-amount') === val) {
-        p.classList.add('active');
-      } else {
-        p.classList.remove('active');
-      }
-    });
-  }
-
-  [rentSlider, foodSlider, phoneSlider, transitSlider, otherSlider].forEach(slider => {
-    if (slider) slider.addEventListener('input', calculateBudget);
-  });
-  calculateBudget();
-
-  // Symptom Triage Tool
-  const triageOptions = document.querySelectorAll('.triage-select-btn');
-  const triageOutput = document.getElementById('triageResultBox');
-
-  const triageMap = {
-    cold: {
-      title: '💊 Non-Emergency: Cold, Cough, Muscle Pain, or Minor Ailment',
-      dest: 'Walk into your local Farmacia (Green Cross) or contact your Medico di Base',
-      action: 'Pharmacists in Italy are trained healthcare professionals and can recommend over-the-counter medicine. For sick leave certificates or prescription medicine, message or call your assigned Medico di Base (Family Doctor). Consultations and prescriptions are 100% free.',
-      urgent: false
-    },
-    fever: {
-      title: '🩺 Persistent Illness or Specialist Visit Referral (*Impegnativa*)',
-      dest: 'Contact your assigned Medico di Base (Family Doctor)',
-      action: 'Call your family doctor during clinic hours. If you need blood tests, X-rays, or a specialist doctor (e.g. dermatologist, dentist, ophthalmologist), your doctor will write an electronic prescription (Ricetta Elettronica) for the public hospital network with subsidized ticket fees.',
-      urgent: false
-    },
-    night: {
-      title: '🌙 Night or Weekend Sudden Illness (When Doctor's Clinic is Closed)',
-      dest: 'Call or visit the local Guardia Medica (Continuità Assistenziale)',
-      action: 'Every Italian city has a free out-of-hours public doctor service (Guardia Medica) open every night from 20:00 to 08:00, and 24 hours on weekends/holidays. They provide free medical consultations and urgent prescriptions when your family doctor is unavailable.',
-      urgent: false
-    },
-    emergency: {
-      title: '🚨 Severe Accident, Chest Pain, or Difficulty Breathing',
-      dest: 'Call 112 or go straight to Pronto Soccorso (Emergency Hospital)',
-      action: 'Dial 112 (free from any mobile phone) for emergency ambulance dispatch or proceed immediately to the hospital Pronto Soccorso. Emergency care is guaranteed to all persons regardless of residency status.',
-      urgent: true
-    },
-    mental: {
-      title: '🧠 Feeling Overwhelmed, Anxious, Isolated, or Stressed',
-      dest: 'Free University Psychological Counseling & SAMIFO Center',
-      action: 'Every Italian university offers confidential, 100% free psychological counseling (Servizio di Counseling Psicologico). You can also access SAMIFO (specialized refugee health centers in Rome/Milan) or 100% therapy refunds through Assolavoro.',
-      urgent: false
-    }
-  };
-
-  triageOptions.forEach(btn => {
-    btn.addEventListener('click', () => {
-      triageOptions.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const key = btn.getAttribute('data-triage');
-      const res = triageMap[key];
-      if (res && triageOutput) {
-        triageOutput.innerHTML = `
-          <div class="triage-result-card ${res.urgent ? 'urgent' : ''}">
-            <div class="triage-res-title">${res.title}</div>
-            <div class="triage-res-dest"><strong>Where to go:</strong> ${res.dest}</div>
-            <div class="triage-res-action">${res.action}</div>
-          </div>
-        `;
-        playChime('step');
-      }
-    });
-  });
-
-  // Mini Quizzes
-  document.querySelectorAll('.quiz-option-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const container = btn.closest('.mini-quiz-box');
-      if (!container) return;
-
-      const isCorrect = btn.getAttribute('data-correct') === 'true';
-      const feedbackEl = container.querySelector('.quiz-feedback');
-
-      container.querySelectorAll('.quiz-option-btn').forEach(b => {
-        b.disabled = true;
-        if (b.getAttribute('data-correct') === 'true') {
-          b.classList.add('correct');
-        } else if (b === btn && !isCorrect) {
-          b.classList.add('wrong');
-        }
-      });
-
-      if (feedbackEl) {
-        if (isCorrect) {
-          feedbackEl.innerHTML = `<span style="color: #059669; font-weight: 800;"><i class="fa-solid fa-circle-check"></i> Exactly right!</span> ${btn.getAttribute('data-explanation') || ''}`;
-          playChime('correct');
+  function attachInteractiveTools() {
+    // Checkboxes
+    document.addEventListener('change', (e) => {
+      if (e.target.classList.contains('interactive-check-input')) {
+        const id = e.target.getAttribute('data-task-id');
+        const parentLi = e.target.closest('li');
+        if (e.target.checked) {
+          if (id) checkedTasks.add(id);
+          if (parentLi) parentLi.classList.add('task-completed');
+          playSound('correct');
         } else {
-          feedbackEl.innerHTML = `<span style="color: #dc2626; font-weight: 800;"><i class="fa-solid fa-circle-xmark"></i> Not quite!</span> ${btn.getAttribute('data-explanation') || ''}`;
+          if (id) checkedTasks.delete(id);
+          if (parentLi) parentLi.classList.remove('task-completed');
         }
-        feedbackEl.style.display = 'block';
+        saveState();
       }
     });
-  });
 
-  // Confetti Particle Engine
+    // Dynamic Budget Calculation
+    const stipendInput = document.getElementById('budgetStipendInput');
+    const stipendSlider = document.getElementById('budgetStipendSlider');
+    const presetPills = document.querySelectorAll('.preset-pill');
+
+    const rentSlider = document.getElementById('budgetRent');
+    const foodSlider = document.getElementById('budgetFood');
+    const phoneSlider = document.getElementById('budgetPhone');
+    const transitSlider = document.getElementById('budgetTransit');
+    const otherSlider = document.getElementById('budgetOther');
+
+    function calculateBudget() {
+      if (!stipendInput) return;
+
+      let stipend = parseFloat(stipendInput.value) || 0;
+      if (stipend < 0) stipend = 0;
+
+      const rent = parseFloat(rentSlider ? rentSlider.value : 150) || 0;
+      const food = parseFloat(foodSlider ? foodSlider.value : 180) || 0;
+      const phone = parseFloat(phoneSlider ? phoneSlider.value : 30) || 0;
+      const transit = parseFloat(transitSlider ? transitSlider.value : 25) || 0;
+      const other = parseFloat(otherSlider ? otherSlider.value : 45) || 0;
+
+      const totalExpenses = rent + food + phone + transit + other;
+      const netMonthly = stipend - totalExpenses;
+      const annualSavings = netMonthly * 10;
+
+      if (document.getElementById('rentVal')) document.getElementById('rentVal').textContent = `€${rent}`;
+      if (document.getElementById('foodVal')) document.getElementById('foodVal').textContent = `€${food}`;
+      if (document.getElementById('phoneVal')) document.getElementById('phoneVal').textContent = `€${phone}`;
+      if (document.getElementById('transitVal')) document.getElementById('transitVal').textContent = `€${transit}`;
+      if (document.getElementById('otherVal')) document.getElementById('otherVal').textContent = `€${other}`;
+
+      const totalDisplay = document.getElementById('budgetTotalDisplay');
+      const netDisplay = document.getElementById('budgetNetBalanceDisplay');
+      const annualDisplay = document.getElementById('budgetAnnualSavingsDisplay');
+      const balanceStatusEl = document.getElementById('budgetBalanceStatus');
+
+      if (totalDisplay) totalDisplay.textContent = `€${totalExpenses}`;
+
+      if (netDisplay) {
+        if (netMonthly >= 0) {
+          netDisplay.textContent = `+€${netMonthly}`;
+          netDisplay.className = 'metric-val text-surplus';
+        } else {
+          netDisplay.textContent = `-€${Math.abs(netMonthly)}`;
+          netDisplay.className = 'metric-val text-deficit';
+        }
+      }
+
+      if (annualDisplay) {
+        if (annualSavings >= 0) {
+          annualDisplay.textContent = `+€${annualSavings} Saved`;
+          annualDisplay.className = 'metric-val text-surplus';
+        } else {
+          annualDisplay.textContent = `-€${Math.abs(annualSavings)} Deficit`;
+          annualDisplay.className = 'metric-val text-deficit';
+        }
+      }
+
+      if (balanceStatusEl) {
+        if (netMonthly >= 100) {
+          balanceStatusEl.innerHTML = `
+            <div class="budget-status-box positive">
+              <span class="status-title"><i class="fa-solid fa-circle-check"></i> Outstanding Budgeting! (+€${netMonthly}/mo)</span>
+              <p class="status-desc">
+                Over your 10-month Master's academic year, you will build a <strong>€${annualSavings} savings fund</strong>. This is enough to fund an <strong>Erasmus+ mobility semester</strong> in another EU country or cover your post-graduation job search transition permit (*Art. 39-bis.1*)!
+              </p>
+            </div>
+          `;
+        } else if (netMonthly >= 0) {
+          balanceStatusEl.innerHTML = `
+            <div class="budget-status-box balanced">
+              <span class="status-title"><i class="fa-solid fa-scale-balanced"></i> Healthy Balanced Budget (+€${netMonthly}/mo)</span>
+              <p class="status-desc">
+                You are living comfortably within your scholarship amount with €${netMonthly}/month set aside for unforeseen expenses. 
+              </p>
+            </div>
+          `;
+        } else {
+          const deficit = Math.abs(netMonthly);
+          balanceStatusEl.innerHTML = `
+            <div class="budget-status-box negative">
+              <span class="status-title"><i class="fa-solid fa-triangle-exclamation"></i> Budget Deficit Alert: -€${deficit}/month</span>
+              <p class="status-desc">
+                Your planned expenses exceed your monthly stipend by €${deficit}. 
+                <br>💡 <strong>Yohannes Tip:</strong> Apply for university canteen (*Mensa*) Fascia 0 (€2.50 full meals), share groceries with roommates, and buy student discounted annual transit passes to eliminate this deficit!
+              </p>
+            </div>
+          `;
+        }
+      }
+    }
+
+    if (stipendInput && stipendSlider) {
+      stipendInput.addEventListener('input', () => {
+        stipendSlider.value = stipendInput.value;
+        presetPills.forEach(p => p.classList.toggle('active', p.getAttribute('data-amount') === stipendInput.value));
+        calculateBudget();
+      });
+
+      stipendSlider.addEventListener('input', () => {
+        stipendInput.value = stipendSlider.value;
+        presetPills.forEach(p => p.classList.toggle('active', p.getAttribute('data-amount') === stipendSlider.value));
+        calculateBudget();
+      });
+    }
+
+    presetPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const amount = pill.getAttribute('data-amount');
+        if (stipendInput && stipendSlider) {
+          stipendInput.value = amount;
+          stipendSlider.value = amount;
+          presetPills.forEach(p => p.classList.toggle('active', p === pill));
+          calculateBudget();
+          playSound('step');
+        }
+      });
+    });
+
+    [rentSlider, foodSlider, phoneSlider, transitSlider, otherSlider].forEach(slider => {
+      if (slider) slider.addEventListener('input', calculateBudget);
+    });
+
+    calculateBudget();
+
+    // Healthcare Triage
+    const triageOptions = document.querySelectorAll('.triage-select-btn');
+    const triageOutput = document.getElementById('triageResultBox');
+
+    const triageMap = {
+      cold: {
+        title: '💊 Non-Emergency: Cold, Cough, Muscle Pain, or Minor Ailment',
+        dest: 'Walk into your local Farmacia (Green Cross) or contact your Medico di Base',
+        action: 'Pharmacists in Italy are trained healthcare professionals and can recommend over-the-counter medicine. For sick leave certificates or prescription medicine, message or call your assigned Medico di Base (Family Doctor). Consultations and prescriptions are 100% free.',
+        urgent: false
+      },
+      fever: {
+        title: '🩺 Persistent Illness or Specialist Visit Referral (*Impegnativa*)',
+        dest: 'Contact your assigned Medico di Base (Family Doctor)',
+        action: 'Call your family doctor during clinic hours. If you need blood tests, X-rays, or a specialist doctor (e.g. dermatologist, dentist, ophthalmologist), your doctor will write an electronic prescription (Ricetta Elettronica) for the public hospital network with subsidized ticket fees.',
+        urgent: false
+      },
+      night: {
+        title: '🌙 Night or Weekend Sudden Illness (When Doctor's Clinic is Closed)',
+        dest: 'Call or visit the local Guardia Medica (Continuità Assistenziale)',
+        action: 'Every Italian city has a free out-of-hours public doctor service (Guardia Medica) open every night from 20:00 to 08:00, and 24 hours on weekends/holidays. They provide free medical consultations and urgent prescriptions when your family doctor is unavailable.',
+        urgent: false
+      },
+      emergency: {
+        title: '🚨 Severe Accident, Chest Pain, or Difficulty Breathing',
+        dest: 'Call 112 or go straight to Pronto Soccorso (Emergency Hospital)',
+        action: 'Dial 112 (free from any mobile phone) for emergency ambulance dispatch or proceed immediately to the hospital Pronto Soccorso. Emergency care is guaranteed to all persons regardless of residency status.',
+        urgent: true
+      },
+      mental: {
+        title: '🧠 Feeling Overwhelmed, Anxious, Isolated, or Stressed',
+        dest: 'Free University Psychological Counseling & SAMIFO Center',
+        action: 'Every Italian university offers confidential, 100% free psychological counseling (Servizio di Counseling Psicologico). You can also access SAMIFO (specialized refugee health centers in Rome/Milan) or 100% therapy refunds through Assolavoro.',
+        urgent: false
+      }
+    };
+
+    triageOptions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        triageOptions.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const key = btn.getAttribute('data-triage');
+        const res = triageMap[key];
+        if (res && triageOutput) {
+          triageOutput.innerHTML = `
+            <div class="triage-result-card ${res.urgent ? 'urgent' : ''}">
+              <div class="triage-res-title">${res.title}</div>
+              <div class="triage-res-dest"><strong>Where to go:</strong> ${res.dest}</div>
+              <div class="triage-res-action">${res.action}</div>
+            </div>
+          `;
+          playSound('step');
+        }
+      });
+    });
+  }
+
+  function attachAudioPhrases() {
+    if ('speechSynthesis' in window) {
+      document.querySelectorAll('.phrase-audio-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const text = btn.getAttribute('data-phrase');
+          if (!text) return;
+
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'it-IT';
+          utterance.rate = 0.85;
+
+          btn.classList.add('speaking');
+          utterance.onend = () => btn.classList.remove('speaking');
+          utterance.onerror = () => btn.classList.remove('speaking');
+
+          window.speechSynthesis.speak(utterance);
+        });
+      });
+    }
+  }
+
+  function attachQuizzes() {
+    document.querySelectorAll('.quiz-option-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const container = btn.closest('.mini-quiz-box');
+        if (!container) return;
+
+        const isCorrect = btn.getAttribute('data-correct') === 'true';
+        const feedbackEl = container.querySelector('.quiz-feedback');
+
+        container.querySelectorAll('.quiz-option-btn').forEach(b => {
+          b.disabled = true;
+          if (b.getAttribute('data-correct') === 'true') {
+            b.classList.add('correct');
+          } else if (b === btn && !isCorrect) {
+            b.classList.add('wrong');
+          }
+        });
+
+        if (feedbackEl) {
+          if (isCorrect) {
+            feedbackEl.innerHTML = `<span style="color: #059669; font-weight: 800;"><i class="fa-solid fa-circle-check"></i> Exactly right!</span> ${btn.getAttribute('data-explanation') || ''}`;
+            playSound('correct');
+          } else {
+            feedbackEl.innerHTML = `<span style="color: #dc2626; font-weight: 800;"><i class="fa-solid fa-circle-xmark"></i> Not quite!</span> ${btn.getAttribute('data-explanation') || ''}`;
+          }
+          feedbackEl.style.display = 'block';
+        }
+      });
+    });
+  }
+
   function triggerConfetti() {
     try {
       const duration = 3500;
@@ -665,10 +714,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       draw();
     } catch (e) {
-      console.log('Confetti completed');
+      // Confetti fallback
     }
   }
 
-  loadSavedState();
-  renderChapter(currentChapter);
-});
+  // Initialize once DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initJourney);
+  } else {
+    initJourney();
+  }
+})();

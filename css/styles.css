@@ -7680,3 +7680,105 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 [data-theme="dark"] .metric-val.text-expense {
   color: #f8fafc !important;
 }
+
+
+/* ==========================================================================
+   Smooth Flow & In-Card Direct Continuation Navigation
+   ========================================================================== */
+
+/* Directional Chapter Card Transitions */
+.journey-chapter-card.slide-in-right {
+  animation: slideInFromRight 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.journey-chapter-card.slide-in-left {
+  animation: slideInFromLeft 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInFromRight {
+  0% { opacity: 0; transform: translateX(24px) scale(0.99); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes slideInFromLeft {
+  0% { opacity: 0; transform: translateX(-24px) scale(0.99); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+/* In-Card Direct Continuation Action Bar */
+.in-card-nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--slate-100);
+  flex-wrap: wrap;
+}
+
+.in-card-nav-wrap .btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.in-card-nav-wrap .in-card-continue-btn {
+  flex-grow: 1;
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+}
+
+.in-card-nav-wrap .in-card-continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
+}
+
+.in-card-nav-wrap .in-card-continue-btn.btn-complete-journey {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+}
+
+/* Floating Bottom Sticky Navigation Footer */
+.journey-nav-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 940;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--slate-200);
+  padding: 1rem 1.5rem;
+  box-shadow: 0 -4px 16px rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.journey-nav-footer .btn {
+  min-height: 46px;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+/* Dark Mode Overrides for Navigation */
+[data-theme="dark"] .in-card-nav-wrap {
+  border-top-color: #334155 !important;
+}
+
+[data-theme="dark"] .journey-nav-footer {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border-top-color: #334155 !important;
+}
