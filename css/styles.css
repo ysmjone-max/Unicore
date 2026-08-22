@@ -4774,3 +4774,569 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 [data-theme="dark"] .help-stage-card.ribbon-community {
   border-left-color: #fbbf24;
 }
+
+
+/* ==========================================================================
+   COMPREHENSIVE HIGH-CONTRAST DARK MODE TEXT & UI SYSTEM
+   Guarantees 100% legibility, crisp contrast, and zero invisible text
+   ========================================================================== */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Global Dark Mode Text & Backgrounds */
+[data-theme="dark"] body {
+  background-color: #0b1120;
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .section-header h2 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .section-header p {
+  color: #94a3b8 !important;
+}
+
+/* Section Backgrounds */
+[data-theme="dark"] .section.bg-white {
+  background-color: #0b1120 !important;
+}
+
+[data-theme="dark"] .section.bg-light {
+  background-color: #080d1a !important;
+}
+
+/* Navbar & Breadcrumbs */
+[data-theme="dark"] .navbar {
+  background-color: rgba(11, 17, 32, 0.95) !important;
+  border-bottom-color: #1e293b !important;
+}
+
+[data-theme="dark"] .brand {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .nav-link {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .dropdown-menu {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .dropdown-link {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .dropdown-link:hover {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .breadcrumbs-bar {
+  background-color: #0b1120 !important;
+  border-bottom-color: #1e293b !important;
+}
+
+[data-theme="dark"] .breadcrumbs {
+  color: #64748b !important;
+}
+
+[data-theme="dark"] .breadcrumbs a {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .breadcrumbs a:hover {
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .breadcrumbs .current {
+  color: #e2e8f0 !important;
+}
+
+/* Hero Section */
+[data-theme="dark"] .hero-section {
+  background-color: #0b1120 !important;
+  border-bottom-color: #1e293b !important;
+  background-image: radial-gradient(circle at 88% 18%, rgba(56, 189, 248, 0.08) 0%, transparent 45%) !important;
+}
+
+[data-theme="dark"] .hero-content h1 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .hero-subtitle {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .hero-card {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .hero-card-header h3 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .hero-card-header p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .hero-feature-list li {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .hero-feature-list li i {
+  color: #38bdf8 !important;
+}
+
+/* Stats Grids & Source Notes */
+[data-theme="dark"] .quick-stats-grid {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .quick-stat-item {
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .quick-stat-item .stat-num {
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .quick-stat-item .stat-label {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .stat-source-note {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .stat-card-lg {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .stat-card-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .stat-card-desc {
+  color: #94a3b8 !important;
+}
+
+/* 8-Stage Lifecycle Cards */
+[data-theme="dark"] .help-stage-card {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .help-stage-card:hover {
+  border-color: #0284c7 !important;
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.7) !important;
+}
+
+[data-theme="dark"] .help-stage-card h3 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .help-stage-card p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .help-stage-icon {
+  background-color: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .help-stage-link {
+  color: #38bdf8 !important;
+}
+
+/* Portal Knowledge Hub Grid */
+[data-theme="dark"] .portal-card {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .portal-card:hover {
+  border-color: #0284c7 !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .portal-card-icon {
+  background-color: #1e293b !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .portal-card:hover .portal-card-icon {
+  background-color: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .portal-card h3 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .portal-card p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .portal-card-link {
+  color: #38bdf8 !important;
+}
+
+/* Official Reference Box at Bottom */
+[data-theme="dark"] .official-reference-box {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(15, 23, 42, 0.7) 100%) !important;
+  border-color: #1e40af !important;
+}
+
+[data-theme="dark"] .official-reference-text h4 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .official-reference-text p {
+  color: #cbd5e1 !important;
+}
+
+/* FAQ Hub & Color Ribbons in Dark Mode */
+[data-theme="dark"] .faq-ribbon-key {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .ribbon-key-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .ribbon-key-item {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .faq-search-wrapper {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .faq-search-input {
+  background: transparent !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .faq-search-input::placeholder {
+  color: #64748b !important;
+}
+
+[data-theme="dark"] .faq-search-icon {
+  color: #64748b !important;
+}
+
+[data-theme="dark"] .faq-tab-btn {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .faq-tab-btn:hover,
+[data-theme="dark"] .faq-tab-btn.active {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .faq-item {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .faq-question {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .faq-question:hover {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .faq-item.active .faq-question {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .faq-icon {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .faq-answer {
+  background-color: #0f172a !important;
+  border-top-color: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .faq-answer p,
+[data-theme="dark"] .faq-answer li {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .faq-source-tag {
+  background-color: #1e293b !important;
+  color: #94a3b8 !important;
+  border-color: #334155 !important;
+}
+
+/* How It Works: Timeline, Benefits Table & Academic Guide */
+[data-theme="dark"] .step-card {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .step-card h3 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .step-card p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .step-timeline-tag {
+  background-color: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .step-checklist li {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .table-responsive {
+  border-color: #334155 !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .guarantee-table {
+  background-color: #131d33 !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .guarantee-table th {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-bottom-color: #334155 !important;
+}
+
+[data-theme="dark"] .guarantee-table td {
+  border-bottom-color: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .guarantee-table tr:hover td {
+  background-color: rgba(30, 58, 138, 0.2) !important;
+}
+
+[data-theme="dark"] .survival-card {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .survival-card h4 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .survival-card p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .survival-card-icon {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+}
+
+/* Living in Italy: Checklists, Form Simulator & Phrasebook */
+[data-theme="dark"] .interactive-tool-card,
+[data-theme="dark"] .modulo-guide-card,
+[data-theme="dark"] .phrase-card,
+[data-theme="dark"] .doc-accordion-item {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .tool-header h3,
+[data-theme="dark"] .modulo-guide-card h3,
+[data-theme="dark"] .phrase-card h4 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .checklist-item {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .checklist-item:hover {
+  background-color: #243248 !important;
+}
+
+[data-theme="dark"] .checklist-item.completed {
+  background-color: rgba(6, 78, 59, 0.25) !important;
+  border-color: #065f46 !important;
+}
+
+[data-theme="dark"] .checklist-text strong {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .checklist-text p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .doc-accordion-header {
+  background-color: #131d33 !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .doc-accordion-header:hover {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .doc-accordion-body {
+  background-color: #0f172a !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .phrase-italian {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .phrase-english {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .phrase-phonetic {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+}
+
+/* About Us & Partner Boxes */
+[data-theme="dark"] .partner-box {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .partner-box h4 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .partner-box p {
+  color: #94a3b8 !important;
+}
+
+/* Important Links Cards & Filters */
+[data-theme="dark"] .link-card {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .link-card:hover {
+  border-color: #0284c7 !important;
+}
+
+[data-theme="dark"] .link-card h3 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .link-card p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .link-features-list li {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .filter-btn {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .filter-btn:hover,
+[data-theme="dark"] .filter-btn.active {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+/* Stories & Digital Archive */
+[data-theme="dark"] .spotlight-story-card,
+[data-theme="dark"] .archive-item {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .spotlight-content-body h3,
+[data-theme="dark"] .archive-item h4 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .spotlight-content-body p,
+[data-theme="dark"] .archive-item p {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .spotlight-quote {
+  color: #e2e8f0 !important;
+  border-left-color: #0284c7 !important;
+}
+
+/* Footer in Dark Mode */
+[data-theme="dark"] .footer {
+  background-color: #070c18 !important;
+  border-top-color: #1e293b !important;
+}
+
+[data-theme="dark"] .footer-brand p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .footer-col h4 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .footer-links a {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .footer-links a:hover {
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .footer-bottom {
+  border-top-color: #1e293b !important;
+  color: #64748b !important;
+}
