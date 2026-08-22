@@ -5697,3 +5697,1050 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     height: 260px;
   }
 }
+
+
+/* ==========================================================================
+   UNICORE: MEET SAMI — 30-DAY ANIMATED SURVIVAL JOURNEY STYLES
+   ========================================================================== */
+
+.sami-journey-sticky-header {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 950;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--slate-200);
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+  padding: 0.75rem 0 0 0;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.journey-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.journey-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sami-avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 10px rgba(29, 78, 216, 0.25);
+  flex-shrink: 0;
+  animation: floatAvatar 3s ease-in-out infinite;
+}
+
+@keyframes floatAvatar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.journey-subtitle {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+}
+
+.journey-chapter-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  line-height: 1.25;
+}
+
+.btn-backpack-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  background-color: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--slate-800);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-backpack-toggle:hover {
+  background-color: var(--slate-200);
+  border-color: var(--slate-300);
+  transform: translateY(-1px);
+}
+
+.backpack-badge-pill {
+  background-color: #f59e0b;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+}
+
+/* Scrubber Trail */
+.journey-scrubber-track {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 0.65rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.journey-scrubber-track::-webkit-scrollbar {
+  display: none;
+}
+
+.scrubber-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--slate-200);
+  background-color: var(--slate-50);
+  color: var(--slate-600);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.scrubber-pill span {
+  font-weight: 800;
+  background-color: var(--slate-200);
+  color: var(--slate-700);
+  padding: 0.05rem 0.35rem;
+  border-radius: var(--radius-full);
+  font-size: 0.68rem;
+}
+
+.scrubber-pill:hover {
+  background-color: var(--slate-100);
+  border-color: var(--slate-300);
+  color: var(--slate-900);
+}
+
+.scrubber-pill.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
+}
+
+.scrubber-pill.active span {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.scrubber-pill.completed {
+  border-color: #10b981;
+  color: #065f46;
+  background-color: #ecfdf5;
+}
+
+.scrubber-pill.completed span {
+  background-color: #a7f3d0;
+  color: #047857;
+}
+
+/* Progress Bar */
+.journey-progress-bar {
+  height: 4px;
+  background-color: var(--slate-100);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1d4ed8, #059669);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Chapter Card Canvas */
+.journey-chapter-card {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  padding: 2rem 2.25rem;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06);
+  margin-bottom: 2rem;
+  animation: chapterFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes chapterFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scene Banner */
+.sami-scene-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.75rem;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  border: 1px solid #bfdbfe;
+}
+
+.scene-icon-huge {
+  font-size: 3rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.scene-phase-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.sami-scene-banner h2 {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--slate-900);
+  margin: 0;
+  line-height: 1.25;
+}
+
+/* Speech Dialogue Bubble */
+.sami-dialogue-bubble {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--slate-800);
+}
+
+.sami-dialogue-avatar {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+/* Info, Action & Warning Boxes */
+.journey-info-box {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.journey-info-box h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.journey-info-box p {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.journey-action-card {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.journey-action-card h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sami-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sami-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.885rem;
+  line-height: 1.55;
+  color: var(--slate-700);
+}
+
+.sami-checklist li i {
+  color: #059669;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.journey-warning-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-left: 5px solid #f59e0b;
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.885rem;
+  color: #92400e;
+  line-height: 1.55;
+}
+
+.warning-icon {
+  font-size: 1.4rem;
+  color: #d97706;
+  flex-shrink: 0;
+}
+
+.journey-help-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.885rem;
+  color: #1e40af;
+  line-height: 1.55;
+}
+
+.journey-help-card i {
+  font-size: 1.4rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.journey-reward-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.reward-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: #059669;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.reward-text {
+  font-size: 0.885rem;
+  color: #065f46;
+}
+
+/* Chapter Grids */
+.five-places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.place-tile {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.place-tile i {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.place-tile strong {
+  font-size: 0.825rem;
+  color: var(--slate-900);
+}
+
+.place-tile span {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+}
+
+.document-flow-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+  padding: 1.25rem;
+  background-color: var(--slate-50);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--slate-300);
+}
+
+.flow-step {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1.25rem;
+  width: min(340px, 100%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.flow-step span {
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--slate-900);
+}
+
+.flow-step small {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+}
+
+.flow-step.highlight {
+  border-color: var(--primary);
+  background-color: #eff6ff;
+}
+
+.flow-step.highlight span {
+  color: var(--primary);
+}
+
+.flow-arrow {
+  color: var(--slate-400);
+  font-size: 0.85rem;
+}
+
+.four-doors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.door-card {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.door-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--primary);
+  background-color: #eff6ff;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.5rem;
+}
+
+.door-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin-bottom: 0.35rem;
+}
+
+.door-card p {
+  font-size: 0.825rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.triage-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.triage-card {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.triage-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.triage-badge.emergency { background: #fee2e2; color: #b91c1c; }
+.triage-badge.doctor { background: #e0f2fe; color: #0369a1; }
+.triage-badge.pharmacy { background: #dcfce7; color: #15803d; }
+.triage-badge.mental { background: #f3e8ff; color: #7e22ce; }
+
+.triage-card p {
+  font-size: 0.825rem;
+  color: var(--slate-600);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Interactive Italian Phrase Audio Cards */
+.phrases-interactive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.phrase-audio-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.15rem;
+  transition: var(--transition);
+}
+
+.phrase-audio-card:hover {
+  border-color: var(--primary-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.phrase-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.phrase-category-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--slate-500);
+}
+
+.phrase-it {
+  font-size: 0.95rem;
+  color: var(--slate-900);
+}
+
+.phrase-en {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+}
+
+.phrase-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #eff6ff;
+  color: var(--primary);
+  border: 1px solid #bfdbfe;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.phrase-audio-btn:hover,
+.phrase-audio-btn.speaking {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  transform: scale(1.04);
+}
+
+/* Community Tree */
+.community-tree-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin: 1.25rem 0;
+}
+
+.community-tree-header {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--slate-500);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.community-tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.community-node {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.community-node i {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.community-node strong {
+  font-size: 0.85rem;
+  color: var(--slate-900);
+}
+
+.community-node span {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+}
+
+/* Three Pathways */
+.three-pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.pathway-card {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.pathway-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: #eff6ff;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.pathway-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin-bottom: 0.35rem;
+}
+
+.pathway-card p {
+  font-size: 0.825rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sami-final-letter {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.sami-final-letter h3 {
+  font-size: 1.4rem;
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+}
+
+.sami-final-letter p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Nav Footer */
+.journey-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--slate-200);
+}
+
+.btn-complete-journey {
+  background: linear-gradient(135deg, #059669, #10b981) !important;
+  border-color: #059669 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3) !important;
+}
+
+/* Backpack Modal Drawer */
+.backpack-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.backpack-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.backpack-drawer-content {
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  width: min(600px, 92vw);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.backpack-modal-backdrop.active .backpack-drawer-content {
+  transform: translateY(0);
+}
+
+.backpack-drawer-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--slate-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drawer-icon-badge {
+  font-size: 1.75rem;
+}
+
+.drawer-close-btn {
+  background: none;
+  border: none;
+  color: var(--slate-400);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: var(--transition);
+}
+
+.drawer-close-btn:hover {
+  color: var(--slate-800);
+}
+
+.backpack-drawer-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.backpack-items-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.backpack-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.backpack-item.unlocked {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.backpack-item.locked {
+  opacity: 0.6;
+  background-color: var(--slate-50);
+}
+
+.backpack-item-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background-color: var(--slate-100);
+  color: var(--slate-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.backpack-item.unlocked .backpack-item-icon {
+  background-color: #059669;
+  color: #fff;
+}
+
+.backpack-item-info {
+  flex: 1;
+}
+
+.backpack-item-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--slate-900);
+}
+
+.backpack-item-desc {
+  font-size: 0.75rem;
+  color: var(--slate-500);
+}
+
+/* ==========================================================================
+   Dark Mode Overrides for Sami Survival Journey
+   ========================================================================== */
+
+[data-theme="dark"] .sami-journey-sticky-header {
+  background-color: #0b1120 !important;
+  border-bottom-color: #334155 !important;
+}
+
+[data-theme="dark"] .journey-chapter-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .btn-backpack-toggle {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .scrubber-pill {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .scrubber-pill span {
+  background-color: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .scrubber-pill.completed {
+  background-color: #064e3b !important;
+  border-color: #059669 !important;
+  color: #6ee7b7 !important;
+}
+
+[data-theme="dark"] .scrubber-pill.completed span {
+  background-color: #047857 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .journey-chapter-card {
+  background-color: #131d33 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .sami-scene-banner {
+  background: linear-gradient(135deg, #1e293b 0%, #172554 100%) !important;
+  border-color: #3b82f6 !important;
+}
+
+[data-theme="dark"] .sami-scene-banner h2 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .sami-dialogue-bubble {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  border-left-color: #38bdf8 !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .journey-info-box,
+[data-theme="dark"] .journey-action-card,
+[data-theme="dark"] .place-tile,
+[data-theme="dark"] .flow-step,
+[data-theme="dark"] .door-card,
+[data-theme="dark"] .triage-card,
+[data-theme="dark"] .phrase-audio-card,
+[data-theme="dark"] .community-node,
+[data-theme="dark"] .pathway-card {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .journey-info-box h4,
+[data-theme="dark"] .journey-action-card h4,
+[data-theme="dark"] .place-tile strong,
+[data-theme="dark"] .flow-step span,
+[data-theme="dark"] .door-card h4,
+[data-theme="dark"] .phrase-it,
+[data-theme="dark"] .community-node strong,
+[data-theme="dark"] .pathway-card h4 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .sami-checklist li,
+[data-theme="dark"] .journey-info-box p,
+[data-theme="dark"] .door-card p,
+[data-theme="dark"] .triage-card p,
+[data-theme="dark"] .phrase-en,
+[data-theme="dark"] .pathway-card p {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .phrase-audio-btn {
+  background-color: #172554 !important;
+  border-color: #1d4ed8 !important;
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .phrase-audio-btn:hover,
+[data-theme="dark"] .phrase-audio-btn.speaking {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .journey-warning-card {
+  background-color: #451a03 !important;
+  border-color: #92400e !important;
+  color: #fde68a !important;
+}
+
+[data-theme="dark"] .journey-help-card {
+  background-color: #172554 !important;
+  border-color: #1e40af !important;
+  color: #93c5fd !important;
+}
+
+[data-theme="dark"] .journey-reward-banner {
+  background: linear-gradient(135deg, #064e3b, #047857) !important;
+  border-color: #059669 !important;
+}
+
+[data-theme="dark"] .reward-text {
+  color: #a7f3d0 !important;
+}
+
+[data-theme="dark"] .backpack-drawer-content {
+  background-color: #131d33 !important;
+  border: 1px solid #334155 !important;
+}
+
+[data-theme="dark"] .backpack-drawer-header {
+  border-bottom-color: #334155 !important;
+}
+
+[data-theme="dark"] #backpackTitle {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .backpack-item {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .backpack-item.unlocked {
+  background-color: #064e3b !important;
+  border-color: #059669 !important;
+}
+
+[data-theme="dark"] .backpack-item-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .backpack-item-desc {
+  color: #94a3b8 !important;
+}

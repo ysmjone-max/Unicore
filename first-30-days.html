@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet Sami: Your First 30 Days in Italy | UNICORE Survival Journey</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="sami-journey-page">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="UNICORE">
+        UNICORE<span class="brand-dot">.</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <!-- About Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="about.html" class="nav-link dropdown-trigger">
+            About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link"><i class="fa-solid fa-info-circle"></i> Overview & Mission</a>
+            <a href="how-it-works.html" class="dropdown-link"><i class="fa-solid fa-route"></i> How It Works & Academics</a>
+            <a href="progress-stats.html" class="dropdown-link"><i class="fa-solid fa-chart-simple"></i> Stats & Impact</a>
+          </div>
+        </div>
+
+        <!-- Guides Dropdown -->
+        <div class="nav-item nav-dropdown">
+          <a href="living-in-italy.html" class="nav-link dropdown-trigger active">
+            Guides <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="first-30-days.html" class="dropdown-link active" style="color: var(--primary); font-weight: 700;"><i class="fa-solid fa-person-walking-luggage"></i> First 30 Days with Sami (New!)</a>
+            <a href="living-in-italy.html" class="dropdown-link"><i class="fa-solid fa-passport"></i> Living in Italy & Documents</a>
+            <a href="buddy-program.html" class="dropdown-link"><i class="fa-solid fa-people-arrows"></i> Buddy Mentorship Program</a>
+          </div>
+        </div>
+
+        <a href="faq.html" class="nav-link">FAQs</a>
+        <a href="stories-archive.html" class="nav-link">Stories & Archive</a>
+        <a href="important-links.html" class="nav-link">Important Links</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="nav-search-wrapper" id="navSearchWrapper">
+          <button type="button" class="mobile-search-toggle-btn" id="mobileSearchToggle" aria-label="Open search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <div class="nav-search-box">
+            <i class="fa-solid fa-magnifying-glass nav-search-icon"></i>
+            <input type="text" id="siteSearchInput" class="nav-search-input" placeholder="Search the whole website..." autocomplete="off" aria-label="Search the whole website">
+            <button type="button" id="clearSearchBtn" class="search-clear-btn" aria-label="Clear search" style="display: none;">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="search-dropdown-panel" id="siteSearchResults" style="display: none;"></div>
+        </div>
+
+        <button class="theme-toggle-btn" aria-label="Switch between light and dark mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Journey Header & Progress Tracker -->
+  <div class="sami-journey-sticky-header">
+    <div class="container">
+      <div class="journey-header-inner">
+        
+        <div class="journey-avatar-section">
+          <div class="sami-avatar-circle" id="samiAvatarEmoji">👋</div>
+          <div>
+            <div class="journey-subtitle">UNICORE SURVIVAL JOURNEY</div>
+            <div class="journey-chapter-title" id="chapterTitleHeader">Chapter 1: Pre-Departure Checklist</div>
+          </div>
+        </div>
+
+        <div class="journey-meta-actions">
+          <button type="button" class="btn btn-backpack-toggle" id="backpackToggleBtn" aria-label="Open Sami Backpack">
+            <i class="fa-solid fa-bag-shopping" style="color: #f59e0b;"></i>
+            <span>Backpack</span>
+            <span class="backpack-badge-pill" id="backpackCount">1/12</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Scrubber Trail -->
+      <div class="journey-scrubber-track" id="scrubberTrack">
+        <button class="scrubber-pill active" data-chapter="0"><span>0A</span> Pre-Departure</button>
+        <button class="scrubber-pill" data-chapter="1"><span>0B</span> Packing & Prep</button>
+        <button class="scrubber-pill" data-chapter="2"><span>1</span> I Just Landed</button>
+        <button class="scrubber-pill" data-chapter="3"><span>2</span> Neighborhood Map</button>
+        <button class="scrubber-pill" data-chapter="4"><span>3</span> The Documents</button>
+        <button class="scrubber-pill" data-chapter="5"><span>4</span> University Doors</button>
+        <button class="scrubber-pill" data-chapter="6"><span>5</span> Money & Stipends</button>
+        <button class="scrubber-pill" data-chapter="7"><span>6</span> Healthcare (SSN)</button>
+        <button class="scrubber-pill" data-chapter="8"><span>7</span> 10 Italian Phrases</button>
+        <button class="scrubber-pill" data-chapter="9"><span>8</span> Independence</button>
+        <button class="scrubber-pill" data-chapter="10"><span>9</span> Find Community</button>
+        <button class="scrubber-pill" data-chapter="11"><span>10</span> Future Launchpad</button>
+      </div>
+
+      <!-- Progress Line -->
+      <div class="journey-progress-bar">
+        <div class="journey-progress-fill" id="journeyProgressBarFill" style="width: 8.33%;"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main Interactive Experience Viewport -->
+  <main class="section bg-light" style="padding-top: 2rem; padding-bottom: 5rem;">
+    <div class="container" style="max-width: 860px;">
+
+      <!-- ========================================================
+           CHAPTER 0A: YOU'RE SELECTED! PRE-DEPARTURE CHECKLIST
+           ======================================================== -->
+      <article class="journey-chapter-card active" data-title="Chapter 0A: You're Selected! Pre-Departure" data-chapter="0">
+        
+        <div class="sami-scene-banner phase-pre-departure">
+          <div class="scene-icon-huge">📋</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-clipboard-check"></i> PHASE 0 &bull; BEFORE LEAVING (T-MINUS 30 DAYS)</span>
+            <h2>You're Selected! Pre-Departure Checklist</h2>
+          </div>
+        </div>
+
+        <!-- 1. STORY -->
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">👋</div>
+          <div class="sami-dialogue-text">
+            <strong>Hi, I'm Sami!</strong> I came to Italy through UNICORE too. When I got my admission letter, I was screaming with joy—and then immediately panicked: <em>"What paperwork do I need before boarding? What if I forget something?"</em> Take a deep breath. Let's get your pre-departure locked down! 🇮🇹
+          </div>
+        </div>
+
+        <!-- 2. EXPLANATION -->
+        <div class="journey-info-box">
+          <h4><i class="fa-solid fa-compass" style="color: var(--primary);"></i> 1. What is this step?</h4>
+          <p>
+            Your transition window between selection and boarding the flight to Italy. This is when Italian Embassies, UNHCR, and your host university coordinate your Italian Study Visa (Type D) or Consular Laissez-Passer travel document.
+          </p>
+        </div>
+
+        <!-- 3. WHY -->
+        <div class="journey-info-box">
+          <h4><i class="fa-solid fa-circle-question" style="color: #059669;"></i> 2. Why does it matter?</h4>
+          <p>
+            Once you board the flight, replacing an original degree certificate, refugee ID, or medical record from your country of first asylum is extremely difficult and slow. Having your pre-departure folder organized prevents months of stress in Italy.
+          </p>
+        </div>
+
+        <!-- 4. ACTION -->
+        <div class="journey-action-card">
+          <h4><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> 3. What should you do right now?</h4>
+          <ul class="sami-checklist">
+            <li><i class="fa-solid fa-check"></i> <strong>Certify your Bachelor's Degree:</strong> Make 2 physical photocopies of your degree certificate and transcript. If you have an EQPR or CIMEA statement, print 3 copies.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Validate your Travel Document:</strong> Coordinate with UNHCR and the Italian Embassy for your Italian National Visa (Type D) or Emergency Consular Laissez-Passer.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Prepare €150–€300 Cash Buffer:</strong> University stipends take 3–6 weeks to open bank accounts and disburse. Bring a small cash reserve for initial transit, SIM cards, and pharmacy needs.</li>
+          </ul>
+        </div>
+
+        <!-- 5. WARNING -->
+        <div class="journey-warning-card">
+          <div class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div>
+            <strong>Sami's Golden Rule: NEVER pack documents in checked luggage!</strong>
+            <p>Always carry all original certificates, passports, visa letters, and medical prescriptions in your <strong>backpack / hand carry</strong>. Checked baggage can be delayed, but your documents must stay with you at all border controls.</p>
+          </div>
+        </div>
+
+        <!-- 6. HELP -->
+        <div class="journey-help-card">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <div>
+            <strong>Who can help you at this stage?</strong>
+            <p>Your UNHCR country office, host university International Student Desk, and your assigned UNICORE Student Buddy (reach out on WhatsApp!).</p>
+          </div>
+        </div>
+
+        <!-- Reward Banner -->
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-folder-closed"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> Pre-Departure Document Folder added to your backpack!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 0B: PACKING & PREPARING YOUR MIND
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 0B: Packing & Prep" data-chapter="1" style="display: none;">
+        
+        <div class="sami-scene-banner phase-pre-departure">
+          <div class="scene-icon-huge">🧳</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-suitcase-rolling"></i> PHASE 0 &bull; BEFORE LEAVING (T-MINUS 14 DAYS)</span>
+            <h2>Packing & Preparing Your Mind</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">😅</div>
+          <div class="sami-dialogue-text">
+            I remember staring at my empty suitcase thinking: <em>"Do I pack heavy spices? Traditional clothes? How cold does Italy actually get?"</em> Trust me: Italian autumn starts getting chilly in October, especially in Northern and Central cities like Milan, Turin, Bologna, and Verona!
+          </div>
+        </div>
+
+        <div class="journey-info-box">
+          <h4><i class="fa-solid fa-compass" style="color: var(--primary);"></i> 1. What is this step?</h4>
+          <p>
+            Packing your luggage smartly for the climate, electronics compatibility, and emotional transition of moving across continents.
+          </p>
+        </div>
+
+        <div class="journey-info-box">
+          <h4><i class="fa-solid fa-circle-question" style="color: #059669;"></i> 2. Why does it matter?</h4>
+          <p>
+            Italian power sockets use <strong>Type C and Type L (round pins)</strong>. If your phone or laptop uses UK Type G or US Type A plugs, you won't be able to charge your devices upon landing without an adapter!
+          </p>
+        </div>
+
+        <div class="journey-action-card">
+          <h4><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> 3. Essential Packing List:</h4>
+          <ul class="sami-checklist">
+            <li><i class="fa-solid fa-check"></i> <strong>Clothing:</strong> 1 warm windproof jacket, 2 sweaters/hoodies, comfortable walking shoes (Italian cobblestones require good soles!), and 1 formal outfit for presentations.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Electronics:</strong> Universal Type C/L plug adapters, power bank, laptop, and charging cables.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Health:</strong> 30–60 days of essential prescription medication with English doctor notes.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Digital Prep:</strong> Download offline Google Maps of your university city and Google Translate (Italian offline package).</li>
+          </ul>
+        </div>
+
+        <div class="journey-warning-card">
+          <div class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div>
+            <strong>Customs Warning: Don't pack fresh or perishable food!</strong>
+            <p>EU border customs will seize unpackaged meat, dairy, or fresh plants. Pack dry spices or sentimental items instead, and buy groceries locally.</p>
+          </div>
+        </div>
+
+        <div class="journey-help-card">
+          <i class="fa-solid fa-people-arrows"></i>
+          <div>
+            <strong>Sami's Pro Tip: Connect with your Buddy on WhatsApp!</strong>
+            <p>Ask your university buddy: <em>"What is the weather like right now in our city?"</em> and <em>"What supermarkets are closest to the student dorm?"</em></p>
+          </div>
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-plug"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> EU Power Adapter & Warm Coat packed!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 1: I JUST LANDED (DAYS 1-2)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 1: I Just Landed" data-chapter="2" style="display: none;">
+        
+        <div class="sami-scene-banner phase-arrival">
+          <div class="scene-icon-huge">✈️</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-plane-arrival"></i> PHASE 1 &bull; SETTLEMENT (DAYS 1–2)</span>
+            <h2>I Just Landed: Welcome to Italy!</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">😌</div>
+          <div class="sami-dialogue-text">
+            <em>"Okay... we're actually here."</em> The plane has landed. You're walking out of Rome Fiumicino or Milan Malpensa airport with your suitcase. The signs are in Italian. People are speaking fast. <strong>You don't need to solve everything today!</strong>
+          </div>
+        </div>
+
+        <div class="journey-info-box">
+          <h4><i class="fa-solid fa-compass" style="color: var(--primary);"></i> 1. Your only 5 priorities for Days 1 & 2:</h4>
+          <ol style="margin-left: 1.25rem; line-height: 1.7; color: var(--slate-700);">
+            <li><strong>Get to your accommodation:</strong> Follow the transit instructions provided by your university or meeting buddy.</li>
+            <li><strong>Notify your contacts:</strong> Send a quick WhatsApp / SMS to your family and university international office confirming you arrived safely.</li>
+            <li><strong>Get connected:</strong> Connect to airport / dormitory Wi-Fi.</li>
+            <li><strong>Eat a warm meal:</strong> Visit the university canteen (Mensa) or nearby pizzeria.</li>
+            <li><strong>Sleep and rest:</strong> Your brain has just crossed countries and time zones!</li>
+          </ol>
+        </div>
+
+        <div class="journey-warning-card">
+          <div class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div>
+            <strong>Do NOT attempt bureaucracy on Day 1!</strong>
+            <p>Do not run to the Questura or Agenzia delle Entrate the moment you step off the plane. Rest first. You have 8 working days to file your residence permit kit.</p>
+          </div>
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> Flight Boarding Pass verified!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 2: WHERE AM I LIVING? (DAYS 2-3)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 2: Neighborhood Map" data-chapter="3" style="display: none;">
+        
+        <div class="sami-scene-banner phase-arrival">
+          <div class="scene-icon-huge">🏠</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-map-location-dot"></i> PHASE 1 &bull; SETTLEMENT (DAYS 2–3)</span>
+            <h2>Where Am I Living? Map Your World</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">🗺️</div>
+          <div class="sami-dialogue-text">
+            <em>"Before you learn all of Italy, learn your immediate neighborhood."</em> When you're tired, sick, or running late for a 9:00 AM lecture, you don't want to start searching for a pharmacy from scratch!
+          </div>
+        </div>
+
+        <div class="journey-action-card">
+          <h4><i class="fa-solid fa-location-dot" style="color: var(--primary);"></i> Save these 5 Essential Spots on Google Maps:</h4>
+          <div class="five-places-grid">
+            <div class="place-tile"><i class="fa-solid fa-bed"></i> <strong>1. Your Home / Dorm</strong><span>Where you sleep</span></div>
+            <div class="place-tile"><i class="fa-solid fa-building-columns"></i> <strong>2. University Campus</strong><span>Classrooms & Library</span></div>
+            <div class="place-tile"><i class="fa-solid fa-cart-shopping"></i> <strong>3. Supermarket</strong><span>Conad, Coop, Lidl, Eurospin</span></div>
+            <div class="place-tile"><i class="fa-solid fa-prescription-bottle-medical"></i> <strong>4. Farmacia (Green Cross)</strong><span>Medicine & essentials</span></div>
+            <div class="place-tile"><i class="fa-solid fa-bus-simple"></i> <strong>5. Bus / Metro Stop</strong><span>Daily commute point</span></div>
+          </div>
+        </div>
+
+        <div class="journey-info-box">
+          <h4><i class="fa-solid fa-sim-card" style="color: var(--primary);"></i> Get an Italian SIM Card (Day 2 or 3):</h4>
+          <p>
+            Visit an official store (Iliad, Fastweb, TIM, Vodafone, WindTre). For ~€8–€10/month, you get 100GB–150GB data. Bring your <strong>Passport</strong> and your <strong>Codice Fiscale</strong> (or temporary tax number).
+          </p>
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-sim-card"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> Italian SIM Card & Offline Map active!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 3: THE ITALIAN DOCUMENTS (DAYS 3-7)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 3: The Documents" data-chapter="4" style="display: none;">
+        
+        <div class="sami-scene-banner phase-documents">
+          <div class="scene-icon-huge">🪪</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-passport"></i> PHASE 1 &bull; BUREAUCRACY (DAYS 3–7)</span>
+            <h2>The Italian Documents: Codice Fiscale & Kit Giallo</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">📑</div>
+          <div class="sami-dialogue-text">
+            <em>"Welcome to Italy... where one document unlocks the next document!"</em> 😅 It looks scary at first, but it's just a simple 4-step sequence:
+          </div>
+        </div>
+
+        <div class="document-flow-diagram">
+          <div class="flow-step"><span>1. PASSPORT & VISA</span><small>Your entry ticket</small></div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-step highlight"><span>2. CODICE FISCALE</span><small>Your Italian Tax Code (Day 3)</small></div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-step highlight"><span>3. KIT GIALLO (POST OFFICE)</span><small>Residence permit application (Within 8 days)</small></div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          <div class="flow-step"><span>4. RICEVUTA POSTALE</span><small>Your legal protection in Italy</small></div>
+        </div>
+
+        <div class="journey-action-card">
+          <h4><i class="fa-solid fa-id-card" style="color: var(--primary);"></i> 1. Codice Fiscale (Tax Code)</h4>
+          <p>Issued free at the <em>Agenzia delle Entrate</em> (or pre-issued by the Italian Embassy). You need it for bank accounts, SIM cards, university enrollment, and apartment contracts.</p>
+          
+          <h4 style="margin-top: 1rem;"><i class="fa-solid fa-envelope-open-text" style="color: #059669;"></i> 2. Kit Giallo & Permesso di Soggiorno</h4>
+          <p>Pick up the free yellow envelope (*Kit Giallo*) at any Post Office *Sportello Amico*. Fill out Modulo 1 with your buddy. Submit it at the post office counter. Pay the postal fee (~€118–€148) and collect your <strong>Ricevuta Postale (Postal Receipt)</strong>.</p>
+        </div>
+
+        <div class="journey-warning-card">
+          <div class="warning-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <strong>The Ricevuta is your legal shield!</strong>
+            <p>While waiting for your Questura fingerprinting appointment (which might take several months), your official postal receipt (<em>Ricevuta</em>) carries 100% legal validity to live, study, work up to 20h/week, and access healthcare in Italy!</p>
+          </div>
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-id-card"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> Codice Fiscale & Postal Receipt added to your folder!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 4: WELCOME TO UNIVERSITY (DAYS 5-10)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 4: University Doors" data-chapter="5" style="display: none;">
+        
+        <div class="sami-scene-banner phase-academics">
+          <div class="scene-icon-huge">🎓</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-graduation-cap"></i> PHASE 1 &bull; CAMPUS LIFE (DAYS 5–10)</span>
+            <h2>Welcome to University: The 4 Doors</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">🏛️</div>
+          <div class="sami-dialogue-text">
+            <em>"Congratulations! You are officially a Master's student at an Italian university."</em> When you step onto campus, it can feel massive. Just remember these <strong>Four Main Doors</strong>:
+          </div>
+        </div>
+
+        <div class="four-doors-grid">
+          <div class="door-card">
+            <div class="door-badge"><i class="fa-solid fa-globe"></i> Door 1</div>
+            <h4>International Student Desk</h4>
+            <p>Your primary home for UNICORE orientation, scholarship questions, late arrival waivers, and tutor pairing.</p>
+          </div>
+          <div class="door-card">
+            <div class="door-badge"><i class="fa-solid fa-folder-tree"></i> Door 2</div>
+            <h4>Segreteria Studenti (Registrar)</h4>
+            <p>Handles official student card (Badge), enrollment certificates, exam booking portal (Esse3/Gomp), and CFU credits.</p>
+          </div>
+          <div class="door-card">
+            <div class="door-badge"><i class="fa-solid fa-chalkboard-user"></i> Door 3</div>
+            <h4>Programme Coordinator (Professors)</h4>
+            <p>Course curriculum, exam syllabus, laboratory placements, and Master's thesis supervisor assignment.</p>
+          </div>
+          <div class="door-card">
+            <div class="door-badge"><i class="fa-solid fa-briefcase"></i> Door 4</div>
+            <h4>Career & Placement Office</h4>
+            <p>Curriculum workshops, curricular internships, company job fairs, and Erasmus+ exchange mobility bandi.</p>
+          </div>
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-id-badge"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> Student ID Card & University Canteen Pass!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 5: MONEY & DAILY LIFE (DAYS 8-14)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 5: Money & Budget" data-chapter="6" style="display: none;">
+        
+        <div class="sami-scene-banner phase-money">
+          <div class="scene-icon-huge">💳</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-wallet"></i> PHASE 2 &bull; INDEPENDENCE (DAYS 8–14)</span>
+            <h2>Money & Daily Life: Budget Like a Pro</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">💸</div>
+          <div class="sami-dialogue-text">
+            When my first monthly stipend arrived, I felt like a king! Then: Rent 💸, Food 💸, Phone 💸, Transit 💸... and suddenly I was calculating every euro! 😂 Here is how to manage your finances safely:
+          </div>
+        </div>
+
+        <div class="journey-action-card">
+          <h4><i class="fa-solid fa-piggy-bank" style="color: var(--primary);"></i> 1. Open an Italian Student Bank Account</h4>
+          <p>You need an Italian <strong>IBAN</strong> for the university to transfer your monthly living allowance. Zero-fee student accounts include: <em>Poste Italiane (Postepay Evolution), Intesa Sanpaolo XME, Banca Etica, or UniCredit</em>. Bring your Passport, Codice Fiscale, and Enrollment Certificate.</p>
+
+          <h4 style="margin-top: 1rem;"><i class="fa-solid fa-calculator" style="color: #059669;"></i> 2. The Golden Budget Rule</h4>
+          <p>Always keep an emergency buffer of at least <strong>€100</strong> untouched in your account. Monthly living costs in Italy outside accommodation are typically €200–€300 for groceries and transport if you use the subsidized student canteen (*Mensa* Fascia 0).</p>
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-credit-card"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> Italian Bank Account & Active IBAN!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 6: LOOKING AFTER YOURSELF (DAYS 10-15)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 6: Healthcare & SSN" data-chapter="7" style="display: none;">
+        
+        <div class="sami-scene-banner phase-health">
+          <div class="scene-icon-huge">🩺</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-heart-pulse"></i> PHASE 2 &bull; WELLBEING (DAYS 10–15)</span>
+            <h2>Looking After Yourself: Healthcare & Mental Wellness</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">🤧</div>
+          <div class="sami-dialogue-text">
+            In November, I caught a bad fever and didn't know where to buy medicine or see a doctor. <em>"Understand healthcare before you need it!"</em> The Italian National Health Service (SSN) is universal and accessible.
+          </div>
+        </div>
+
+        <div class="triage-guide-grid">
+          <div class="triage-card">
+            <div class="triage-badge emergency"><i class="fa-solid fa-truck-medical"></i> Emergency 112 / Pronto Soccorso</div>
+            <p>For life-threatening emergencies, severe accidents, or urgent night hospital care. Free of charge.</p>
+          </div>
+          <div class="triage-card">
+            <div class="triage-badge doctor"><i class="fa-solid fa-user-doctor"></i> Medico di Base (Family Doctor)</div>
+            <p>Your free assigned doctor at the ASL for regular illnesses, medical prescriptions, specialist referrals, and checkups.</p>
+          </div>
+          <div class="triage-card">
+            <div class="triage-badge pharmacy"><i class="fa-solid fa-prescription-bottle-medical"></i> Farmacia (Green Cross)</div>
+            <p>For over-the-counter cold meds, bandages, and advice. Pharmacists in Italy are trained healthcare professionals.</p>
+          </div>
+          <div class="triage-card">
+            <div class="triage-badge mental"><i class="fa-solid fa-head-side-heart"></i> Free Mental Health & Therapy</div>
+            <p>Free confidential counseling on campus, SAMIFO refugee medical centers, and Assolavoro 100% psychotherapy refunds.</p>
+          </div>
+        </div>
+
+        <div class="journey-warning-card">
+          <div class="warning-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+          <div>
+            <strong>Important SSN Health Card Rule:</strong>
+            <p>Italian student health registrations expire on <strong>December 31st</strong> each year. Visit your local ASL health desk in January with your enrollment certificate to renew it for free!</p>
+          </div>
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> Tessera Sanitaria & Assigned Family Doctor!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 7: SURVIVING ITALIAN (DAYS 12-20)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 7: 10 Italian Phrases" data-chapter="8" style="display: none;">
+        
+        <div class="sami-scene-banner phase-italian">
+          <div class="scene-icon-huge">🇮🇹</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-language"></i> PHASE 2 &bull; LANGUAGE (DAYS 12–20)</span>
+            <h2>Surviving Italian: 10 Phrases You Actually Need</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">🗣️</div>
+          <div class="sami-dialogue-text">
+            Even if your Master's is 100% in English, speaking a little Italian makes locals smile and opens every door at the post office or coffee bar. <strong>Click the speaker icons to hear how each phrase sounds!</strong>
+          </div>
+        </div>
+
+        <div class="phrases-interactive-list">
+          
+          <div class="phrase-audio-card">
+            <div class="phrase-main">
+              <span class="phrase-category-tag">Administration</span>
+              <strong class="phrase-it">"Buongiorno, ho un appuntamento."</strong>
+              <span class="phrase-en">Good morning, I have an appointment.</span>
+            </div>
+            <button type="button" class="phrase-audio-btn" data-phrase="Buongiorno, ho un appuntamento" aria-label="Listen">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
+
+          <div class="phrase-audio-card">
+            <div class="phrase-main">
+              <span class="phrase-category-tag">Asking Help</span>
+              <strong class="phrase-it">"Potrebbe aiutarmi, per favore?"</strong>
+              <span class="phrase-en">Could you help me, please?</span>
+            </div>
+            <button type="button" class="phrase-audio-btn" data-phrase="Potrebbe aiutarmi, per favore?" aria-label="Listen">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
+
+          <div class="phrase-audio-card">
+            <div class="phrase-main">
+              <span class="phrase-category-tag">When Lost</span>
+              <strong class="phrase-it">"Non ho capito. Può ripetere più lentamente?"</strong>
+              <span class="phrase-en">I didn't understand. Could you repeat more slowly?</span>
+            </div>
+            <button type="button" class="phrase-audio-btn" data-phrase="Non ho capito. Può ripetere più lentamente?" aria-label="Listen">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
+
+          <div class="phrase-audio-card">
+            <div class="phrase-main">
+              <span class="phrase-category-tag">Language Switch</span>
+              <strong class="phrase-it">"Possiamo parlare in inglese?"</strong>
+              <span class="phrase-en">Can we speak in English?</span>
+            </div>
+            <button type="button" class="phrase-audio-btn" data-phrase="Possiamo parlare in inglese?" aria-label="Listen">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
+
+          <div class="phrase-audio-card">
+            <div class="phrase-main">
+              <span class="phrase-category-tag">Shopping</span>
+              <strong class="phrase-it">"Quanto costa questo?"</strong>
+              <span class="phrase-en">How much does this cost?</span>
+            </div>
+            <button type="button" class="phrase-audio-btn" data-phrase="Quanto costa questo?" aria-label="Listen">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
+
+          <div class="phrase-audio-card">
+            <div class="phrase-main">
+              <span class="phrase-category-tag">Transport</span>
+              <strong class="phrase-it">"Dove posso comprare il biglietto dell'autobus?"</strong>
+              <span class="phrase-en">Where can I buy a bus ticket?</span>
+            </div>
+            <button type="button" class="phrase-audio-btn" data-phrase="Dove posso comprare il biglietto dell'autobus?" aria-label="Listen">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
+
+          <div class="phrase-audio-card">
+            <div class="phrase-main">
+              <span class="phrase-category-tag">Health</span>
+              <strong class="phrase-it">"Ho bisogno di vedere un medico."</strong>
+              <span class="phrase-en">I need to see a doctor.</span>
+            </div>
+            <button type="button" class="phrase-audio-btn" data-phrase="Ho bisogno di vedere un medico." aria-label="Listen">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
+
+          <div class="phrase-audio-card">
+            <div class="phrase-main">
+              <span class="phrase-category-tag">Politeness</span>
+              <strong class="phrase-it">"Grazie mille e buona giornata!"</strong>
+              <span class="phrase-en">Thank you very much and have a nice day!</span>
+            </div>
+            <button type="button" class="phrase-audio-btn" data-phrase="Grazie mille e buona giornata!" aria-label="Listen">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
+
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> Spoken Italian Survival Phrasebook!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 8: BECOMING INDEPENDENT (DAYS 15-21)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 8: Independence" data-chapter="9" style="display: none;">
+        
+        <div class="sami-scene-banner phase-independence">
+          <div class="scene-icon-huge">🚌</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-person-walking"></i> PHASE 2 &bull; AUTONOMY (DAYS 15–21)</span>
+            <h2>Becoming Independent: You Can Do This</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">💪</div>
+          <div class="sami-dialogue-text">
+            In week 1, my buddy walked with me everywhere. But by week 3, I was buying my own tram tickets, mailing letters at the Post Office, and ordering espresso at the counter. <strong>The goal of the Buddy Program is to help you stand proudly on your own feet!</strong>
+          </div>
+        </div>
+
+        <div class="journey-action-card">
+          <h4><i class="fa-solid fa-star" style="color: var(--primary);"></i> 4 Milestones of Real Independence:</h4>
+          <ul class="sami-checklist">
+            <li><i class="fa-solid fa-check"></i> <strong>Buy a Student Monthly Transit Pass:</strong> Visit the municipal transport office (e.g. ATAC Rome, ATM Milan, TPER Bologna, GTT Turin) with your student certificate for 50%+ discounts.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Navigate the Italian Post Office (Poste):</strong> Take a ticket from the touchscreen kiosk (press *Finanziari* for bank/payments or *Posta e Pacchi* for parcels).</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Book Appointments Online:</strong> Learn to use university portals and municipal *Anagrafe* booking systems.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Write Simple Formal Italian Emails:</strong> Begin with <em>"Gentile Professore/Professoressa..."</em> and end with <em>"Cordiali saluti"</em>.</li>
+          </ul>
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-bus-simple"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> Annual Subsidized Student Transit Pass!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 9: FIND YOUR PEOPLE (DAYS 20-25)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 9: Find Community" data-chapter="10" style="display: none;">
+        
+        <div class="sami-scene-banner phase-community">
+          <div class="scene-icon-huge">🤝</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-people-group"></i> PHASE 2 &bull; COMMUNITY (DAYS 20–25)</span>
+            <h2>Find Your People: You Are Not Alone</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">🫂</div>
+          <div class="sami-dialogue-text">
+            <em>"Your Master's degree is important. But your people are what will make Italy feel like home."</em> When times get tough or exams get stressful, having friends to cook with and study with makes all the difference.
+          </div>
+        </div>
+
+        <div class="community-tree-box">
+          <div class="community-tree-header"><strong>THE UNICORE SUPPORT NETWORK</strong></div>
+          <div class="community-tree-grid">
+            <div class="community-node">
+              <i class="fa-solid fa-handshake"></i>
+              <strong>Your Peer Buddy</strong>
+              <span>Daily life & campus friend</span>
+            </div>
+            <div class="community-node">
+              <i class="fa-solid fa-users"></i>
+              <strong>Classmates & Cohort</strong>
+              <span>Study groups & project teams</span>
+            </div>
+            <div class="community-node">
+              <i class="fa-brands fa-linkedin"></i>
+              <strong>UNICORE Alumni Network</strong>
+              <span>Senior scholars across Italy</span>
+            </div>
+            <div class="community-node">
+              <i class="fa-solid fa-earth-africa"></i>
+              <strong>Community Matching</strong>
+              <span>Local mentors in 13 cities</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-reward-banner">
+          <div class="reward-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+          <div class="reward-text">
+            <strong>Backpack Milestone Unlocked:</strong> UNICORE Community Emblem & Alumni Network!
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ========================================================
+           CHAPTER 10: YOUR FUTURE STARTS NOW (DAYS 25-30)
+           ======================================================== -->
+      <article class="journey-chapter-card" data-title="Chapter 10: Future Launchpad" data-chapter="11" style="display: none;">
+        
+        <div class="sami-scene-banner phase-future">
+          <div class="scene-icon-huge">🚀</div>
+          <div class="scene-meta">
+            <span class="scene-phase-tag"><i class="fa-solid fa-trophy"></i> DAY 30 &bull; THE GRADUATION LAUNCHPAD</span>
+            <h2>Day 30 Reached: Your Future Starts Now</h2>
+          </div>
+        </div>
+
+        <div class="sami-dialogue-bubble">
+          <div class="sami-dialogue-avatar">😎🎓</div>
+          <div class="sami-dialogue-text">
+            Look back at Day 1 when you landed with that single suitcase. <strong>You now know where to go. You know who to ask. You understand the basics. And you know you don't have to do it alone!</strong>
+          </div>
+        </div>
+
+        <div class="three-pathways-grid">
+          <div class="pathway-card">
+            <div class="pathway-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h4>1. Professional Career & Job Search</h4>
+            <p>Under Italian Law (<em>Art. 39-bis.1</em>), UNICORE Master's graduates can convert their student permit into a <strong>12-Month Job Search Permit</strong>. Connect with 500+ certified employers on UNHCR's <em>Welcome-in-One-Click</em> portal.</p>
+          </div>
+          <div class="pathway-card">
+            <div class="pathway-icon"><i class="fa-solid fa-microscope"></i></div>
+            <h4>2. Fully Funded Ph.D. Research</h4>
+            <p>With an accredited Italian <em>Laurea Magistrale (120 CFU)</em>, you can apply for competitive funded doctoral research fellowships across Italian and European universities.</p>
+          </div>
+          <div class="pathway-card">
+            <div class="pathway-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h4>3. Community & Social Leadership</h4>
+            <p>Join the UNICORE Students Association, mentor incoming scholars, and publish research that shapes global higher education corridors.</p>
+          </div>
+        </div>
+
+        <div class="sami-final-letter">
+          <h3>🇮🇹 Benvenuto in Italia, My Friend!</h3>
+          <p>
+            You came to Italy to study. But you are also building a new life. Walk into your university with your head held high—you have earned your seat here!
+          </p>
+          <div style="margin-top: 1rem; font-weight: 700; color: var(--primary);">
+            &mdash; Sami & the UNICORE Senior Scholars Community
+          </div>
+        </div>
+
+        <div class="journey-reward-banner celebration">
+          <div class="reward-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="reward-text">
+            <strong>Full Backpack Mastery: 12/12 Milestones Unlocked!</strong> You are ready for your Master's journey in Italy.
+          </div>
+        </div>
+
+      </article>
+
+      <!-- Bottom Sticky Navigation Buttons -->
+      <div class="journey-nav-footer">
+        <button type="button" class="btn btn-outline" id="journeyPrevBtn">
+          <i class="fa-solid fa-arrow-left"></i> Previous Step
+        </button>
+        <button type="button" class="btn btn-primary" id="journeyNextBtn">
+          Next Step <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Backpack Modal Drawer -->
+  <div class="backpack-modal-backdrop" id="backpackModal" role="dialog" aria-modal="true" aria-labelledby="backpackTitle">
+    <div class="backpack-drawer-content">
+      <div class="backpack-drawer-header">
+        <div style="display: flex; align-items: center; gap: 0.65rem;">
+          <div class="drawer-icon-badge">🎒</div>
+          <div>
+            <h3 id="backpackTitle" style="margin: 0; font-size: 1.15rem; color: var(--slate-900);">Sami's Survival Backpack</h3>
+            <span style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600;">Items & Milestones Collected</span>
+          </div>
+        </div>
+        <button type="button" class="drawer-close-btn" id="closeBackpackBtn" aria-label="Close Backpack">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="backpack-drawer-body">
+        <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 1.25rem;">
+          As you progress through each survival chapter, your backpack collects the legal documents, cards, and skills you need for independence in Italy.
+        </p>
+        <div class="backpack-items-grid" id="backpackItemsGrid">
+          <!-- Dynamically populated by sami-journey.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">UNICORE<span class="brand-dot">.</span></div>
+          <p>
+            Independent student guidance & alumni network hub supporting University Corridors for Refugees across Italian universities.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="first-30-days.html">First 30 Days with Sami</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="living-in-italy.html">Living in Italy</a></li>
+            <li><a href="buddy-program.html">Buddy Program</a></li>
+            <li><a href="faq.html">FAQ Guide</a></li>
+            <li><a href="stories-archive.html">Stories & Archive</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Official Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://universitycorridors.unhcr.it/" target="_blank" rel="noopener noreferrer">Official UNICORE Portal (UNHCR)</a></li>
+            <li><a href="https://www.unhcr.it/" target="_blank" rel="noopener noreferrer">UNHCR Italia</a></li>
+            <li><a href="https://www.cimea.it/" target="_blank" rel="noopener noreferrer">CIMEA Recognition</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub &bull; Meet Sami Experience</div>
+        <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/sami-journey.js"></script>
+</body>
+</html>
