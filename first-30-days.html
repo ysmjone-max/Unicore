@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Italy with Yohannes: First 30 Days Scholar Guide | UNICORE</title>
+  <title>Linea UNICORE: Interactive Metro Map Transition Guide | UNICORE</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="journey-redesign-body">
+<body class="metro-map-body">
 
   <!-- Navbar -->
   <header class="navbar">
@@ -44,7 +44,7 @@
             Guides <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
           </a>
           <div class="dropdown-menu">
-            <a href="first-30-days.html" class="dropdown-link active" style="color: var(--primary); font-weight: 700;"><i class="fa-solid fa-person-walking-luggage"></i> First 30 Days with Yohannes</a>
+            <a href="first-30-days.html" class="dropdown-link active" style="color: var(--primary); font-weight: 700;"><i class="fa-solid fa-train-subway"></i> Linea UNICORE (Metro Map)</a>
             <a href="living-in-italy.html" class="dropdown-link"><i class="fa-solid fa-passport"></i> Living in Italy & Documents</a>
             <a href="buddy-program.html" class="dropdown-link"><i class="fa-solid fa-people-arrows"></i> Buddy Mentorship Program</a>
           </div>
@@ -81,1020 +81,223 @@
     </div>
   </header>
 
-  <!-- Hero Header -->
-  <header class="journey-hero">
+  <!-- Metro Hero Banner -->
+  <header class="metro-hero-header">
     <div class="container">
-      <div class="journey-hero-inner">
-        
-        <div class="journey-hero-text">
-          <div class="journey-badge-pill">
-            <i class="fa-solid fa-hand-holding-heart"></i> UNICORE SCHOLAR TRANSITION GUIDE
-          </div>
-          <h1>Welcome to Italy with Yohannes</h1>
-          <p class="journey-hero-lead">
-            An interactive, practical transition storybook for your first 30 days in Italy. Written by UNICORE alumni to guide you through packing, paperwork, budgeting, university life, and building your future.
-          </p>
-          
-          <div class="journey-hero-author">
-            <div class="author-avatar">👋</div>
-            <div class="author-info">
-              <strong>Yohannes Sisay Molla</strong>
-              <span>UNICORE Alumnus & Senior Scholar Mentor</span>
-            </div>
-          
-          <div class="journey-hero-actions" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem;">
-            <button type="button" onclick="window.print()" class="btn btn-outline btn-sm" style="color: #ffffff; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08);" aria-label="Print or save pocket guide">
-              <i class="fa-solid fa-print"></i> Print / Save Pocket PDF
-            </button>
-            <a href="#chapter-0a" class="btn btn-primary btn-sm" style="background: #38bdf8; color: #0f172a; border-color: #38bdf8; font-weight: 800;">
-              Start Reading <i class="fa-solid fa-arrow-down"></i>
-            </a>
-          </div>
-
+      <div class="metro-hero-content">
+        <div class="metro-line-badge">
+          <span class="metro-symbol">M</span>
+          <span class="metro-line-name">LINEA UNICORE &bull; ITALIA EXPRESS</span>
         </div>
+        <h1>Your First 30 Days: The Metro Map</h1>
+        <p>
+          Welcome aboard the UNICORE transition line with your senior guide <strong>Yohannes</strong>. Tap any station to explore your arrival tasks, paperwork, budget, and graduation launchpad.
+        </p>
 
-        <!-- Quick Summary Card -->
-        <div class="journey-hero-card">
-          <div class="journey-card-header">
-            <h3><i class="fa-solid fa-route" style="color: var(--primary);"></i> Scholar Milestone Map</h3>
-            <span class="milestone-counter-badge" id="globalProgressText">0 / 12 Read</span>
+        <div class="metro-status-bar">
+          <div class="metro-train-status">
+            <span class="train-indicator-dot"></span>
+            <span>Current Train Position: <strong id="currentStationNameHeader">Stazione 0A: Terminal Partenza</strong></span>
           </div>
-          <div class="journey-progress-track">
-            <div class="journey-progress-bar-fill" id="globalProgressBar" style="width: 0%;"></div>
-          </div>
-          
-          <div class="hero-phases-mini-grid">
-            <a href="#chapter-0a" class="mini-phase-btn"><span>0A</span> Departure</a>
-            <a href="#chapter-0b" class="mini-phase-btn"><span>0B</span> Packing & Maps</a>
-            <a href="#chapter-1" class="mini-phase-btn"><span>1</span> Landing</a>
-            <a href="#chapter-2" class="mini-phase-btn"><span>2</span> Neighborhood</a>
-            <a href="#chapter-3" class="mini-phase-btn"><span>3</span> Documents</a>
-            <a href="#chapter-4" class="mini-phase-btn"><span>4</span> University</a>
-            <a href="#chapter-5" class="mini-phase-btn"><span>5</span> Budget & CFU</a>
-            <a href="#chapter-6" class="mini-phase-btn"><span>6</span> Healthcare</a>
-            <a href="#chapter-7" class="mini-phase-btn"><span>7</span> 10 Phrases</a>
-            <a href="#chapter-8" class="mini-phase-btn"><span>8</span> Independence</a>
-            <a href="#chapter-9" class="mini-phase-btn"><span>9</span> Community</a>
-            <a href="#chapter-10" class="mini-phase-btn"><span>10</span> Launchpad</a>
+          <div class="metro-trip-progress">
+            <span id="metroProgressCount">0 / 12 Stations Visited</span>
+            <div class="metro-progress-pill"><div class="metro-progress-fill" id="metroProgressBarFill" style="width: 8.33%;"></div></div>
           </div>
         </div>
-
       </div>
     </div>
   </header>
 
-  <!-- Sticky Quick Navigation Bar -->
-  <div class="journey-sticky-nav-bar" id="journeyStickyNav">
+  <!-- Interactive Subway Line Track Diagram -->
+  <section class="metro-map-canvas-section">
     <div class="container">
-      <div class="sticky-nav-inner">
-        <span class="sticky-nav-label"><i class="fa-solid fa-compass"></i> Jump to:</span>
-        <div class="sticky-nav-pills-scroll">
-          <a href="#chapter-0a" class="sticky-pill active" data-chapter="0">0A. Pre-Departure</a>
-          <a href="#chapter-0b" class="sticky-pill" data-chapter="1">0B. Packing & Maps</a>
-          <a href="#chapter-1" class="sticky-pill" data-chapter="2">1. Arrival</a>
-          <a href="#chapter-2" class="sticky-pill" data-chapter="3">2. Smart Shopping</a>
-          <a href="#chapter-3" class="sticky-pill" data-chapter="4">3. Documents</a>
-          <a href="#chapter-4" class="sticky-pill" data-chapter="5">4. Campus & Email</a>
-          <a href="#chapter-5" class="sticky-pill" data-chapter="6">5. Budget & CFU</a>
-          <a href="#chapter-6" class="sticky-pill" data-chapter="7">6. Healthcare (SSN)</a>
-          <a href="#chapter-7" class="sticky-pill" data-chapter="8">7. Italian Audio</a>
-          <a href="#chapter-8" class="sticky-pill" data-chapter="9">8. Independence</a>
-          <a href="#chapter-9" class="sticky-pill" data-chapter="10">9. Community</a>
-          <a href="#chapter-10" class="sticky-pill" data-chapter="11">10. Launchpad</a>
+      <div class="metro-diagram-container">
+        
+        <div class="metro-diagram-header">
+          <div class="diagram-title"><i class="fa-solid fa-map"></i> MAPPA DELLA RETE &bull; METRO TRANSIT LINE</div>
+          <div class="diagram-instructions"><i class="fa-solid fa-hand-pointer"></i> Tap any station on the line to travel & view details</div>
         </div>
+
+        <!-- Scrollable Subway Track -->
+        <div class="metro-track-scroll-wrapper" id="metroTrackWrapper">
+          <div class="metro-track-line">
+            <!-- Connecting Route Line Background -->
+            <div class="metro-rail-line">
+              <div class="metro-rail-progress" id="metroRailProgress"></div>
+            </div>
+
+            <!-- 12 Subway Stations -->
+            <div class="metro-stations-row">
+              
+              <!-- Stazione 0A -->
+              <button type="button" class="metro-station-node active" data-station="0" aria-label="Station 0A: Pre-Departure">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">0A</span>
+                  <strong class="station-name">Partenza</strong>
+                  <span class="station-sub">Pre-Departure</span>
+                </div>
+              </button>
+
+              <!-- Stazione 0B -->
+              <button type="button" class="metro-station-node" data-station="1" aria-label="Station 0B: Packing & Maps">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">0B</span>
+                  <strong class="station-name">Bagagli</strong>
+                  <span class="station-sub">Packing & Maps</span>
+                </div>
+              </button>
+
+              <!-- Stazione 1 -->
+              <button type="button" class="metro-station-node" data-station="2" aria-label="Station 1: Landing">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">1</span>
+                  <strong class="station-name">Aeroporto</strong>
+                  <span class="station-sub">Landing (Day 1)</span>
+                </div>
+              </button>
+
+              <!-- Stazione 2 -->
+              <button type="button" class="metro-station-node" data-station="3" aria-label="Station 2: Neighborhood">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">2</span>
+                  <strong class="station-name">Quartiere</strong>
+                  <span class="station-sub">Smart Shopping</span>
+                </div>
+              </button>
+
+              <!-- Stazione 3 -->
+              <button type="button" class="metro-station-node interchange" data-station="4" aria-label="Station 3: Documents">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">3</span>
+                  <strong class="station-name">Burocrazia</strong>
+                  <span class="station-sub">Codice & Kit</span>
+                </div>
+              </button>
+
+              <!-- Stazione 4 -->
+              <button type="button" class="metro-station-node" data-station="5" aria-label="Station 4: University">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">4</span>
+                  <strong class="station-name">Campus</strong>
+                  <span class="station-sub">University & Email</span>
+                </div>
+              </button>
+
+              <!-- Stazione 5 -->
+              <button type="button" class="metro-station-node interchange" data-station="6" aria-label="Station 5: Budget">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">5</span>
+                  <strong class="station-name">Finanze</strong>
+                  <span class="station-sub">Budget & CFU</span>
+                </div>
+              </button>
+
+              <!-- Stazione 6 -->
+              <button type="button" class="metro-station-node" data-station="7" aria-label="Station 6: Healthcare">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">6</span>
+                  <strong class="station-name">Sanità</strong>
+                  <span class="station-sub">SSN & Doctor</span>
+                </div>
+              </button>
+
+              <!-- Stazione 7 -->
+              <button type="button" class="metro-station-node" data-station="8" aria-label="Station 7: Italian Audio">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">7</span>
+                  <strong class="station-name">Lingua</strong>
+                  <span class="station-sub">10 Audio Phrases</span>
+                </div>
+              </button>
+
+              <!-- Stazione 8 -->
+              <button type="button" class="metro-station-node" data-station="9" aria-label="Station 8: Independence">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">8</span>
+                  <strong class="station-name">Autonomia</strong>
+                  <span class="station-sub">City Transit</span>
+                </div>
+              </button>
+
+              <!-- Stazione 9 -->
+              <button type="button" class="metro-station-node" data-station="10" aria-label="Station 9: Community">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">9</span>
+                  <strong class="station-name">Comunità</strong>
+                  <span class="station-sub">Buddies & Alumni</span>
+                </div>
+              </button>
+
+              <!-- Stazione 10 -->
+              <button type="button" class="metro-station-node terminal" data-station="11" aria-label="Station 10: Graduation Launchpad">
+                <div class="station-stop-point"><span class="stop-dot"></span></div>
+                <div class="station-label-wrap">
+                  <span class="station-code">10</span>
+                  <strong class="station-name">Laurea</strong>
+                  <span class="station-sub">Capolinea & Future</span>
+                </div>
+              </button>
+
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Main Content Layout -->
-  <main class="section bg-light" style="padding-top: 2.5rem; padding-bottom: 5rem;">
-    <div class="container" style="max-width: 920px;">
+  <!-- Active Station Detail Terminal -->
+  <main class="section bg-light" style="padding-top: 1.5rem; padding-bottom: 5rem;">
+    <div class="container" style="max-width: 900px;">
 
-      <!-- ========================================================
-           CHAPTER 0A: PRE-DEPARTURE & TASTES OF HOME
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-0a" data-chapter-index="0">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 0 &bull; BEFORE LEAVING (T-MINUS 30 DAYS)</span>
-          <span class="step-badge">Chapter 0A</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">📋</div>
-          <div>
-            <h2>You're Selected! Pre-Departure & Tastes of Home</h2>
-            <p class="chapter-tagline">Preparing your documents, cash, and home comforts before flying to Italy.</p>
+      <!-- Active Station Stage Container (Rendered dynamically & smoothly by Metro Controller) -->
+      <div class="metro-station-terminal-card" id="metroStationCard">
+        
+        <!-- Station Top Banner -->
+        <div class="terminal-card-top-bar">
+          <div class="station-pill-tag" id="stationPillTag">
+            <span class="metro-m-badge">M</span>
+            <span id="stationCodeDisplay">STAZIONE 0A</span>
           </div>
-        </div>
-
-        <!-- Yohannes Dialogue -->
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">👋</div>
-          <div class="bubble-content">
-            <strong>Hi! I'm Yohannes.</strong> I came to Italy through UNICORE too. When I was selected, I felt overjoyed—and also had a hundred questions: <em>"What should I pack? What paperwork do I need before boarding? Will I miss my home food?"</em> Let me share what I wish someone had told me before I boarded the flight. <strong>Let's get you ready for Italy! 🇮🇹</strong>
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <h4><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> 1. Pre-Departure Action Checklist:</h4>
-          <ul class="clean-interactive-checklist">
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-0a-1">
-                <span><strong>Certify Bachelor's Degree & Transcripts:</strong> Make 2 physical photocopies of your degree certificate, transcript, and EQPR/CIMEA certificates. Keep originals in your hand luggage.</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-0a-2">
-                <span><strong>Keep Cash in Your Pocket (€50–€150):</strong> Have a small amount of cash in small €10/€20 notes. Many Italian train station ticket kiosks and buses do not accept foreign bank cards!</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-0a-3">
-                <span><strong>Pack Tastes of Home:</strong> Bring a few sealed packets of your favorite dried home spices, traditional tea, or coffee. In your first few weeks, when homesickness hits, cooking familiar home food is pure comfort!</span>
-              </label>
-            </li>
-          </ul>
-
-          <div class="pro-tip-box">
-            <div class="pro-tip-icon"><i class="fa-solid fa-lightbulb"></i></div>
-            <div>
-              <strong>Yohannes' Golden Rule: Keep ALL documents in your hand luggage!</strong>
-              <p>Never pack original academic certificates, passports, or medical records in checked suitcases. Always keep them in your personal backpack with you on the airplane.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="0">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-0b" class="btn btn-primary">
-            Next: Packing & Maps <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 0B: PACKING SMART & GOOGLE MAPS
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-0b" data-chapter-index="1">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 0 &bull; BEFORE LEAVING (T-MINUS 14 DAYS)</span>
-          <span class="step-badge">Chapter 0B</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">🧳</div>
-          <div>
-            <h2>Packing Smart & Google Maps Master Skill</h2>
-            <p class="chapter-tagline">Clothing for Italian climate, EU plug adapters, and your #1 navigation tool.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">🗺️</div>
-          <div class="bubble-content">
-            Italian autumn gets chilly in October (5°C–12°C in Milan, Turin, Bologna, Florence, Verona). But here is a secret: <strong>Google Maps is your #1 daily superpower in Italy!</strong> Before boarding, download the offline map of your university city.
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <h4><i class="fa-solid fa-mobile-screen-button" style="color: var(--primary);"></i> Why Google Maps is Vital in Italy:</h4>
-          <div class="feature-pills-grid">
-            <div class="feature-pill"><i class="fa-solid fa-bus"></i> <strong>Live Bus Timetables:</strong> Platform numbers and live delay alerts.</div>
-            <div class="feature-pill"><i class="fa-solid fa-store"></i> <strong>Find Ticket Tabacchi:</strong> Bus tickets are sold at tobacco shops (*'T'* sign), not on the bus!</div>
-            <div class="feature-pill"><i class="fa-solid fa-diamond-turn-right"></i> <strong>Cobblestone Shortcuts:</strong> Fast walking routes through medieval alleys.</div>
-          </div>
-
-          <h4 style="margin-top: 1.5rem;"><i class="fa-solid fa-plug" style="color: #059669;"></i> Electronics & Essentials Checklist:</h4>
-          <ul class="clean-interactive-checklist">
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-0b-1">
-                <span><strong>European Type C/L Plug Adapters:</strong> Italian sockets use round 2 or 3 pins. Bring 2 universal adapters for your phone and laptop.</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-0b-2">
-                <span><strong>Warm Windproof Jacket & Shoes:</strong> Comfortable shoes for walking on stone pavements and 1 warm jacket.</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-0b-3">
-                <span><strong>30–60 Days Personal Medication:</strong> Keep personal medicines in original packaging with an English doctor's note.</span>
-              </label>
-            </li>
-          </ul>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="1">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-1" class="btn btn-primary">
-            Next: I Just Landed <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 1: I JUST LANDED (DAYS 1-2)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-1" data-chapter-index="2">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 1 &bull; SETTLEMENT (DAYS 1–2)</span>
-          <span class="step-badge">Chapter 1</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">✈️</div>
-          <div>
-            <h2>I Just Landed: Reaching Your Accommodation</h2>
-            <p class="chapter-tagline">Navigating the airport, meeting your university coordinator, and settling in.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">😌</div>
-          <div class="bubble-content">
-            <em>"Okay... we're actually in Italy!"</em> You step out into Rome Fiumicino or Milan Malpensa. <strong>Follow the exact travel instructions given before departure to reach your university accommodation and meet your coordinator or buddy!</strong>
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <ul class="clean-interactive-checklist">
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-1-1">
-                <span><strong>Follow Transit Instructions to Accommodation:</strong> Take the pre-arranged airport train/shuttle to your university city.</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-1-2">
-                <span><strong>Meet Your Coordinator & Peer Buddy:</strong> Let your university International Desk know you arrived safely and collect your dorm room keys.</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-1-3">
-                <span><strong>Use Cash for Initial Travel:</strong> Use your pocket euros (€) to pay for local buses or train tickets if machines reject foreign cards.</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-1-4">
-                <span><strong>Eat a Warm Meal & Sleep:</strong> Rest and recover from jet lag before jumping into administrative paperwork.</span>
-              </label>
-            </li>
-          </ul>
-
-          <div class="pro-tip-box">
-            <div class="pro-tip-icon"><i class="fa-solid fa-bed"></i></div>
-            <div>
-              <strong>Do NOT rush to government offices on Day 1!</strong>
-              <p>You have 8 working days to submit your residence permit kit. Sleep first, unpack, and get your bearings.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="2">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-2" class="btn btn-primary">
-            Next: Neighborhood & Shopping <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 2: MAPS & SMART SHOPPING (DAYS 2-3)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-2" data-chapter-index="3">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 1 &bull; SETTLEMENT (DAYS 2–3)</span>
-          <span class="step-badge">Chapter 2</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">🛒</div>
-          <div>
-            <h2>Neighborhood Mapping & Smart Price Comparison</h2>
-            <p class="chapter-tagline">Pinning essential hubs and saving money on groceries and Italian SIM cards.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">💡</div>
-          <div class="bubble-content">
-            <em>"Always search on Google and compare prices before you buy anything!"</em> In Italy, buying groceries at small tourist mini-markets costs twice as much as shopping at discount supermarkets like <strong>Lidl, Eurospin, Conad, or Coop</strong>.
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <h4><i class="fa-solid fa-location-dot" style="color: var(--primary);"></i> Pin these 5 Essential Spots on Google Maps:</h4>
-          <div class="five-places-grid">
-            <div class="place-tile"><i class="fa-solid fa-bed"></i> <strong>1. Home / Dorm</strong><span>Where you sleep & cook</span></div>
-            <div class="place-tile"><i class="fa-solid fa-building-columns"></i> <strong>2. Campus Hub</strong><span>Classes & study rooms</span></div>
-            <div class="place-tile"><i class="fa-solid fa-cart-shopping"></i> <strong>3. Discount Supermarket</strong><span>Lidl, Eurospin, Conad</span></div>
-            <div class="place-tile"><i class="fa-solid fa-prescription-bottle-medical"></i> <strong>4. Farmacia (Green Cross)</strong><span>Medicine & essentials</span></div>
-            <div class="place-tile"><i class="fa-solid fa-bus-simple"></i> <strong>5. Bus / Metro Stop</strong><span>Daily commute point</span></div>
-          </div>
-
-          <h4 style="margin-top: 1.5rem;"><i class="fa-solid fa-sim-card" style="color: #059669;"></i> Get an Italian SIM Card (Day 2 or 3):</h4>
-          <p style="font-size: 0.9rem; color: var(--slate-700); line-height: 1.6;">
-            Visit an official store (Iliad, Fastweb, TIM, Vodafone, WindTre). For ~€8–€10/month, you get 100GB–150GB 5G mobile data. Bring your <strong>Passport</strong> and your <strong>Codice Fiscale</strong> (or temporary tax number).
-          </p>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="3">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-3" class="btn btn-primary">
-            Next: The Documents <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 3: THE DOCUMENTS & APPOINTMENT CULTURE (DAYS 3-7)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-3" data-chapter-index="4">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 1 &bull; BUREAUCRACY (DAYS 3–7)</span>
-          <span class="step-badge">Chapter 3</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">📑</div>
-          <div>
-            <h2>The Italian Documents & The Appointment Culture</h2>
-            <p class="chapter-tagline">Codice Fiscale, Kit Giallo Modulo 1, and the legal power of the Ricevuta Postale.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">🪪</div>
-          <div class="bubble-content">
-            <strong>The Golden Rule of Italian Administration: PRENOTAZIONI (Appointments)!</strong> Public offices in Italy—banks, Agenzia delle Entrate, Poste Italiane, Questura, and Anagrafe—require an advance online appointment. If you walk in without an appointment, you will be turned away. Always book in advance!
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <div class="document-flow-diagram">
-            <div class="flow-step"><span>1. PASSPORT & VISA</span><small>Your legal entry ticket into Italy</small></div>
-            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-            <div class="flow-step highlight"><span>2. CODICE FISCALE</span><small>Tax code issued free at Agenzia delle Entrate (Day 3–5)</small></div>
-            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-            <div class="flow-step highlight"><span>3. KIT GIALLO (POSTE ITALIANE)</span><small>Residence permit application (Within 8 working days)</small></div>
-            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-            <div class="flow-step"><span>4. RICEVUTA POSTALE</span><small>Your 100% legal protection while waiting for Questura</small></div>
-          </div>
-
-          <div class="pro-tip-box" style="background: #eff6ff; border-color: #93c5fd;">
-            <div class="pro-tip-icon" style="color: var(--primary);"><i class="fa-solid fa-shield-halved"></i></div>
-            <div>
-              <strong>The Ricevuta is your legal shield!</strong>
-              <p>While waiting for your Questura fingerprinting appointment (which might take several months), your official postal receipt (<em>Ricevuta</em>) carries 100% legal validity to live, study, work up to 20h/week, and access public healthcare in Italy!</p>
-            </div>
-          </div>
-
-          <!-- Mini Quiz -->
-          <div class="mini-quiz-box">
-            <div class="quiz-header"><i class="fa-solid fa-brain"></i> Quick Knowledge Check:</div>
-            <p class="quiz-question">Within how many working days of arriving in Italy must you submit your Kit Giallo for the Permesso di Soggiorno?</p>
-            <div class="quiz-options">
-              <button type="button" class="quiz-option-btn" data-correct="true" data-explanation="Under Art. 5 D.Lgs. 286/98, you have 8 working days from arrival.">Within 8 working days</button>
-              <button type="button" class="quiz-option-btn" data-correct="false" data-explanation="30 days is too late! Submit within 8 working days.">Within 30 days</button>
-            </div>
-            <div class="quiz-feedback" style="display: none;"></div>
-          </div>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="4">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-4" class="btn btn-primary">
-            Next: University & Email <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 4: UNIVERSITY & EMAIL LIFELINE (DAYS 5-10)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-4" data-chapter-index="5">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 1 &bull; CAMPUS LIFE (DAYS 5–10)</span>
-          <span class="step-badge">Chapter 4</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">🎓</div>
-          <div>
-            <h2>Welcome to University, Email Lifeline & AI Tools</h2>
-            <p class="chapter-tagline">The 4 campus offices, daily email habits, and ethical AI productivity.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">📧</div>
-          <div class="bubble-content">
-            <strong>Check your institutional university email (@studenti.uni...) every single morning!</strong> Everything in Italy—scholarship release notices, exam registration dates (*appelli*), professor cancellations, and Questura letters—arrives via email. Missing an email will cost you time, energy, and money!
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <div class="four-doors-grid">
-            <div class="door-card">
-              <div class="door-badge"><i class="fa-solid fa-globe"></i> Office 1</div>
-              <h4>International Student Desk</h4>
-              <p>Your primary home for UNICORE orientation, scholarship questions, late arrival waivers, and tutor pairing.</p>
-            </div>
-            <div class="door-card">
-              <div class="door-badge"><i class="fa-solid fa-folder-tree"></i> Office 2</div>
-              <h4>Segreteria Studenti (Registrar)</h4>
-              <p>Handles official student card (Badge), enrollment certificates, exam booking portal (Esse3/Gomp), and CFU credits.</p>
-            </div>
-            <div class="door-card">
-              <div class="door-badge"><i class="fa-solid fa-chalkboard-user"></i> Office 3</div>
-              <h4>Programme Coordinator</h4>
-              <p>Course curriculum, exam syllabus, laboratory placements, and Master's thesis supervisor assignment.</p>
-            </div>
-            <div class="door-card">
-              <div class="door-badge"><i class="fa-solid fa-briefcase"></i> Office 4</div>
-              <h4>Career & Placement Office</h4>
-              <p>Curriculum workshops, curricular internships, company job fairs, and Erasmus+ exchange mobility bandi.</p>
-            </div>
-          </div>
-
-          <div class="pro-tip-box" style="margin-top: 1.5rem;">
-            <div class="pro-tip-icon"><i class="fa-solid fa-robot"></i></div>
-            <div>
-              <strong>Yohannes' AI Productivity Tip:</strong>
-              <p>Use AI assistants (ChatGPT, Gemini, DeepL) to draft polite, formal Italian emails to professors (<em>"Gentile Professore/Professoressa..."</em>) or summarize dense Italian PDF documents. <strong>Always fact-check and proofread</strong> before sending!</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="5">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-5" class="btn btn-primary">
-            Next: Budget & CFU Rules <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 5: MONEY, CFU CREDIT RULES & BUDGET (DAYS 8-14)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-5" data-chapter-index="6">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 2 &bull; FINANCIAL MASTERY (DAYS 8–14)</span>
-          <span class="step-badge">Chapter 5</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">💶</div>
-          <div>
-            <h2>Scholarship Money, CFU Credit Rules & Dynamic Budget</h2>
-            <p class="chapter-tagline">How scholarship disbursements work, academic credit requirements, and flexible budgeting.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">💡</div>
-          <div class="bubble-content">
-            <strong>How Italian scholarships actually work:</strong> The first installment takes 3–6 weeks to arrive after opening your Italian bank account. But here is the most critical fact: <strong>subsequent installments require passing exams and earning CFU credits!</strong> If you don't earn enough credits by university deadlines, scholarship payments are paused or canceled!
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <div class="pro-tip-box" style="background: #f0fdf4; border-color: #86efac;">
-            <div class="pro-tip-icon" style="color: #059669;"><i class="fa-solid fa-piggy-bank"></i></div>
-            <div>
-              <strong>Why Saving Money Matters for Your Future:</strong>
-              <p>Being frugal and saving every month builds a vital fund for <strong>Erasmus+ study exchange semesters in other European countries</strong> and covers your transition period after graduation when converting to the <strong>12-Month Job Search Permit (*Art. 39-bis.1*)</strong>.</p>
-            </div>
-          </div>
-
-          <!-- Dynamic Budget Simulator -->
-          <div class="interactive-budget-box" style="margin-top: 1.5rem;">
-            <div class="budget-box-header">
-              <h4><i class="fa-solid fa-calculator" style="color: var(--primary);"></i> Scholar Dynamic Budget Calculator</h4>
-              <span class="budget-help-tag">Customizable Stipend & Range Calculation</span>
-            </div>
-            
-            <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 1.25rem;">
-              Stipends vary by university and regional agencies (EDISU, LazioDisco, ER.GO). <strong>Type your exact monthly amount or pick a range below:</strong>
-            </p>
-            
-            <!-- Stipend Input Area -->
-            <div class="stipend-input-container">
-              <div class="stipend-custom-input-row">
-                <label for="budgetStipendInput"><strong>Your Monthly Stipend / Income:</strong></label>
-                <div class="stipend-currency-wrap">
-                  <span class="currency-symbol">€</span>
-                  <input type="number" id="budgetStipendInput" min="0" max="3000" step="10" value="500" class="budget-num-field" aria-label="Monthly stipend amount">
-                  <span class="currency-period">/ month</span>
-                </div>
-              </div>
-
-              <div class="stipend-preset-pills">
-                <button type="button" class="preset-pill" data-amount="350">€350 (Partial)</button>
-                <button type="button" class="preset-pill active" data-amount="500">€500 (Standard)</button>
-                <button type="button" class="preset-pill" data-amount="650">€650 (Regional DSU)</button>
-                <button type="button" class="preset-pill" data-amount="850">€850 (Full Package)</button>
-              </div>
-              
-              <input type="range" id="budgetStipendSlider" min="100" max="1500" value="500" step="25" class="range-slider" aria-label="Stipend range slider">
-            </div>
-
-            <div class="budget-expense-category-title">
-              <i class="fa-solid fa-cart-flatbed"></i> Monthly Planned Living Expenses
-            </div>
-
-            <!-- Expense Sliders -->
-            <div class="budget-slider-row">
-              <label>
-                <span><i class="fa-solid fa-house-user"></i> Housing / Extra Utilities:</span>
-                <strong id="rentVal">€150</strong>
-              </label>
-              <input type="range" id="budgetRent" min="0" max="500" value="150" step="10" class="range-slider">
-            </div>
-
-            <div class="budget-slider-row">
-              <label>
-                <span><i class="fa-solid fa-utensils"></i> Groceries & Campus Canteen (*Mensa*):</span>
-                <strong id="foodVal">€180</strong>
-              </label>
-              <input type="range" id="budgetFood" min="50" max="400" value="180" step="10" class="range-slider">
-            </div>
-
-            <div class="budget-slider-row">
-              <label>
-                <span><i class="fa-solid fa-wifi"></i> Mobile SIM, Internet & Study Materials:</span>
-                <strong id="phoneVal">€30</strong>
-              </label>
-              <input type="range" id="budgetPhone" min="5" max="100" value="30" step="5" class="range-slider">
-            </div>
-
-            <div class="budget-slider-row">
-              <label>
-                <span><i class="fa-solid fa-bus-simple"></i> Local Bus / Metro Student Transit Pass:</span>
-                <strong id="transitVal">€25</strong>
-              </label>
-              <input type="range" id="budgetTransit" min="0" max="80" value="25" step="5" class="range-slider">
-            </div>
-
-            <div class="budget-slider-row">
-              <label>
-                <span><i class="fa-solid fa-mug-hot"></i> Coffee, Personal Care & Emergency Buffer:</span>
-                <strong id="otherVal">€45</strong>
-              </label>
-              <input type="range" id="budgetOther" min="10" max="200" value="45" step="5" class="range-slider">
-            </div>
-
-            
-          <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
-            <button type="button" class="btn btn-outline btn-sm" id="copyBudgetBtn" style="font-size: 0.8rem; font-weight: 700;">
-              <i class="fa-solid fa-copy"></i> Copy Budget Plan to Clipboard
+          <div class="terminal-quick-nav">
+            <button type="button" class="btn btn-sm btn-outline" id="prevStationBtn" aria-label="Previous Station">
+              <i class="fa-solid fa-chevron-left"></i> Previous Stop
+            </button>
+            <button type="button" class="btn btn-sm btn-primary" id="nextStationBtn" aria-label="Next Station">
+              Next Stop <i class="fa-solid fa-chevron-right"></i>
             </button>
           </div>
-
-            <!-- Live Dynamic Results -->
-            <div class="budget-calculation-results-panel">
-              <div class="budget-metric-card">
-                <span class="metric-label">Total Monthly Expenses</span>
-                <strong class="metric-val text-expense" id="budgetTotalDisplay">€430</strong>
-              </div>
-              <div class="budget-metric-card">
-                <span class="metric-label">Net Monthly Balance</span>
-                <strong class="metric-val text-surplus" id="budgetNetBalanceDisplay">+€70</strong>
-              </div>
-              <div class="budget-metric-card">
-                <span class="metric-label">10-Month Year Projection</span>
-                <strong class="metric-val text-surplus" id="budgetAnnualSavingsDisplay">+€700 Saved</strong>
-              </div>
-            </div>
-
-            <div id="budgetBalanceStatus" style="margin-top: 1rem;"></div>
-          </div>
         </div>
 
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="6">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
+        <!-- Dynamic Station Content Injector -->
+        <div id="stationContentViewport">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Terminal Card Bottom Actions -->
+        <div class="terminal-card-footer">
+          <button type="button" class="btn btn-outline" id="markStationVisitedBtn">
+            <i class="fa-solid fa-check"></i> Mark Station as Visited
           </button>
-          <a href="#chapter-6" class="btn btn-primary">
-            Next: Healthcare (SSN) <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 6: HOW THE ITALIAN HEALTHCARE SYSTEM WORKS (DAYS 10-15)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-6" data-chapter-index="7">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 2 &bull; HEALTHCARE (DAYS 10–15)</span>
-          <span class="step-badge">Chapter 6</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">🩺</div>
-          <div>
-            <h2>How the Italian Healthcare System (SSN) Works</h2>
-            <p class="chapter-tagline">Family Doctor (Medico di Base), Guardia Medica for nights, and Emergency 112.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">🩺</div>
-          <div class="bubble-content">
-            <strong>The Italian Healthcare System (SSN) is universal, but you must know how it works:</strong> For regular non-emergency illnesses, contact your <strong>Family Doctor (Medico di Base)</strong>. For life-threatening emergencies, go to the <strong>Emergency Room (Pronto Soccorso)</strong> or call 112.
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <div class="interactive-triage-tool">
-            <h4><i class="fa-solid fa-stethoscope" style="color: var(--primary);"></i> Interactive Healthcare Navigator:</h4>
-            <p style="font-size: 0.825rem; color: var(--slate-600); margin-bottom: 0.75rem;">Click your medical situation to see the correct procedure:</p>
-            
-            <div class="triage-buttons-grid">
-              <button type="button" class="triage-select-btn active" data-triage="cold"><i class="fa-solid fa-head-side-cough"></i> Non-Emergency (Cold/Cough)</button>
-              <button type="button" class="triage-select-btn" data-triage="fever"><i class="fa-solid fa-temperature-arrow-up"></i> Specialist Visit Needed</button>
-              <button type="button" class="triage-select-btn" data-triage="night"><i class="fa-solid fa-moon"></i> Night/Weekend Illness</button>
-              <button type="button" class="triage-select-btn" data-triage="emergency"><i class="fa-solid fa-truck-medical"></i> Severe Emergency (112)</button>
-              <button type="button" class="triage-select-btn" data-triage="mental"><i class="fa-solid fa-head-side-heart"></i> Stress / Mental Wellness</button>
-            </div>
-
-            <div id="triageResultBox" style="margin-top: 1rem;">
-              <div class="triage-result-card">
-                <div class="triage-res-title">💊 Non-Emergency: Cold, Cough, Muscle Pain, or Minor Ailment</div>
-                <div class="triage-res-dest"><strong>Where to go:</strong> Walk into your local Farmacia (Green Cross) or contact your Medico di Base</div>
-                <div class="triage-res-action">Pharmacists in Italy are trained healthcare professionals and can recommend over-the-counter medicine. For sick leave certificates or prescription medicine, message or call your assigned Medico di Base (Family Doctor). Consultations and prescriptions are 100% free.</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pro-tip-box" style="margin-top: 1.5rem;">
-            <div class="pro-tip-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
-            <div>
-              <strong>Important Health Card Rule:</strong>
-              <p>Italian student health registrations (*Tessera Sanitaria*) expire on <strong>December 31st</strong> every year. Visit your local ASL health desk in January with your enrollment certificate to renew it for free!</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="7">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-7" class="btn btn-primary">
-            Next: 10 Italian Phrases <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 7: 10 ITALIAN PHRASES WITH AUDIO (DAYS 12-20)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-7" data-chapter-index="8">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 2 &bull; LANGUAGE (DAYS 12–20)</span>
-          <span class="step-badge">Chapter 7</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">🗣️</div>
-          <div>
-            <h2>10 Italian Phrases You Actually Need</h2>
-            <p class="chapter-tagline">Polite daily expressions with native audio pronunciation.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">🇮🇹</div>
-          <div class="bubble-content">
-            Even if your Master's is 100% in English, greeting Italians with <em>"Buongiorno"</em> or <em>"Grazie mille"</em> makes people smile and opens doors at government desks. <strong>Click the speaker icons to hear each phrase spoken:</strong>
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <div class="phrases-interactive-list">
-            
-            <div class="phrase-audio-card">
-              <div class="phrase-main">
-                <span class="phrase-category-tag">Administration</span>
-                <strong class="phrase-it">"Buongiorno, ho un appuntamento."</strong>
-                <span class="phrase-en">Good morning, I have an appointment.</span>
-              </div>
-              <button type="button" class="phrase-audio-btn" data-phrase="Buongiorno, ho un appuntamento" aria-label="Listen">
-                <i class="fa-solid fa-volume-high"></i> Listen
-              </button>
-            </div>
-
-            <div class="phrase-audio-card">
-              <div class="phrase-main">
-                <span class="phrase-category-tag">Asking Help</span>
-                <strong class="phrase-it">"Potrebbe aiutarmi a compilare questo modulo?"</strong>
-                <span class="phrase-en">Could you help me fill out this form?</span>
-              </div>
-              <button type="button" class="phrase-audio-btn" data-phrase="Potrebbe aiutarmi a compilare questo modulo?" aria-label="Listen">
-                <i class="fa-solid fa-volume-high"></i> Listen
-              </button>
-            </div>
-
-            <div class="phrase-audio-card">
-              <div class="phrase-main">
-                <span class="phrase-category-tag">When Lost</span>
-                <strong class="phrase-it">"Non ho capito. Può ripetere più lentamente?"</strong>
-                <span class="phrase-en">I didn't understand. Could you repeat more slowly?</span>
-              </div>
-              <button type="button" class="phrase-audio-btn" data-phrase="Non ho capito. Può ripetere più lentamente?" aria-label="Listen">
-                <i class="fa-solid fa-volume-high"></i> Listen
-              </button>
-            </div>
-
-            <div class="phrase-audio-card">
-              <div class="phrase-main">
-                <span class="phrase-category-tag">Language Switch</span>
-                <strong class="phrase-it">"Possiamo parlare in inglese?"</strong>
-                <span class="phrase-en">Can we speak in English?</span>
-              </div>
-              <button type="button" class="phrase-audio-btn" data-phrase="Possiamo parlare in inglese?" aria-label="Listen">
-                <i class="fa-solid fa-volume-high"></i> Listen
-              </button>
-            </div>
-
-            <div class="phrase-audio-card">
-              <div class="phrase-main">
-                <span class="phrase-category-tag">Shopping</span>
-                <strong class="phrase-it">"Quanto costa questo?"</strong>
-                <span class="phrase-en">How much does this cost?</span>
-              </div>
-              <button type="button" class="phrase-audio-btn" data-phrase="Quanto costa questo?" aria-label="Listen">
-                <i class="fa-solid fa-volume-high"></i> Listen
-              </button>
-            </div>
-
-            <div class="phrase-audio-card">
-              <div class="phrase-main">
-                <span class="phrase-category-tag">Transport</span>
-                <strong class="phrase-it">"Dove posso comprare il biglietto dell'autobus?"</strong>
-                <span class="phrase-en">Where can I buy a bus ticket?</span>
-              </div>
-              <button type="button" class="phrase-audio-btn" data-phrase="Dove posso comprare il biglietto dell'autobus?" aria-label="Listen">
-                <i class="fa-solid fa-volume-high"></i> Listen
-              </button>
-            </div>
-
-            <div class="phrase-audio-card">
-              <div class="phrase-main">
-                <span class="phrase-category-tag">Health</span>
-                <strong class="phrase-it">"Ho bisogno di vedere un medico."</strong>
-                <span class="phrase-en">I need to see a doctor.</span>
-              </div>
-              <button type="button" class="phrase-audio-btn" data-phrase="Ho bisogno di vedere un medico." aria-label="Listen">
-                <i class="fa-solid fa-volume-high"></i> Listen
-              </button>
-            </div>
-
-            <div class="phrase-audio-card">
-              <div class="phrase-main">
-                <span class="phrase-category-tag">Politeness</span>
-                <strong class="phrase-it">"Grazie mille e buona giornata!"</strong>
-                <span class="phrase-en">Thank you very much and have a nice day!</span>
-              </div>
-              <button type="button" class="phrase-audio-btn" data-phrase="Grazie mille e buona giornata!" aria-label="Listen">
-                <i class="fa-solid fa-volume-high"></i> Listen
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="8">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-8" class="btn btn-primary">
-            Next: City Independence <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 8: BECOMING INDEPENDENT (DAYS 15-21)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-8" data-chapter-index="9">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 2 &bull; AUTONOMY (DAYS 15–21)</span>
-          <span class="step-badge">Chapter 8</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">🚌</div>
-          <div>
-            <h2>Becoming Independent in Italian Daily Life</h2>
-            <p class="chapter-tagline">Student transit passes, post office queuing machines, and administrative autonomy.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">💪</div>
-          <div class="bubble-content">
-            In week 1, my buddy accompanied me everywhere. But by week 3, I was buying my own tram tickets, booking postal appointments, and ordering food with confidence. <strong>The ultimate goal of UNICORE is to help you stand proudly on your own feet!</strong>
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <ul class="clean-interactive-checklist">
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-8-1">
-                <span><strong>Buy a Student Monthly Transit Pass:</strong> Visit the municipal transport office (e.g. ATAC Rome, ATM Milan, TPER Bologna, GTT Turin) with your student certificate for 50%+ discounts.</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-8-2">
-                <span><strong>Navigate the Italian Post Office (Poste):</strong> Take a ticket from the touchscreen kiosk (press *Finanziari* for bank/payments or *Posta e Pacchi* for parcels).</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-8-3">
-                <span><strong>Book Appointments Online:</strong> Learn to use university portals and municipal *Anagrafe* booking systems.</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item-label">
-                <input type="checkbox" class="journey-checkbox" data-task="task-8-4">
-                <span><strong>Write Simple Formal Italian Emails:</strong> Begin with <em>"Gentile Professore/Professoressa..."</em> and end with <em>"Cordiali saluti"</em>.</span>
-              </label>
-            </li>
-          </ul>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="9">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-9" class="btn btn-primary">
-            Next: Find Your Community <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 9: FIND YOUR COMMUNITY (DAYS 20-25)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-9" data-chapter-index="10">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">PHASE 2 &bull; COMMUNITY (DAYS 20–25)</span>
-          <span class="step-badge">Chapter 9</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">🤝</div>
-          <div>
-            <h2>Find Your People: You Are Never Alone</h2>
-            <p class="chapter-tagline">Peer mentorship, study cohorts, and the nationwide UNICORE alumni network.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">🫂</div>
-          <div class="bubble-content">
-            <em>"Your Master's degree is important. But your community is what makes Italy feel like home."</em> Form study groups with classmates, cook weekend dinners, and connect with senior UNICORE scholars who have walked this exact path before you.
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <div class="community-tree-box">
-            <div class="community-tree-header"><strong>THE UNICORE SUPPORT NETWORK</strong></div>
-            <div class="community-tree-grid">
-              <div class="community-node">
-                <i class="fa-solid fa-handshake"></i>
-                <strong>Your Peer Buddy</strong>
-                <span>Daily life & campus friend</span>
-              </div>
-              <div class="community-node">
-                <i class="fa-solid fa-users"></i>
-                <strong>Classmates & Cohort</strong>
-                <span>Study groups & project teams</span>
-              </div>
-              <div class="community-node">
-                <i class="fa-brands fa-linkedin"></i>
-                <strong>UNICORE Alumni Network</strong>
-                <span>Senior scholars across Italy</span>
-              </div>
-              <div class="community-node">
-                <i class="fa-solid fa-earth-africa"></i>
-                <strong>Community Matching</strong>
-                <span>Local mentors in 13 cities</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-outline mark-read-btn" data-chapter="10">
-            <i class="fa-solid fa-check"></i> Mark Chapter as Read
-          </button>
-          <a href="#chapter-10" class="btn btn-primary">
-            Next: Future Launchpad <i class="fa-solid fa-arrow-down"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- ========================================================
-           CHAPTER 10: FUTURE LAUNCHPAD & GRADUATION (DAYS 25-30)
-           ======================================================== -->
-      <section class="journey-section-card" id="chapter-10" data-chapter-index="11">
-        <div class="chapter-card-top-badge">
-          <span class="phase-tag">DAY 30 &bull; THE GRADUATION LAUNCHPAD</span>
-          <span class="step-badge">Chapter 10</span>
-        </div>
-
-        <div class="chapter-card-header">
-          <div class="chapter-icon-circle">🚀</div>
-          <div>
-            <h2>Day 30 Reached: Your Future Starts Now</h2>
-            <p class="chapter-tagline">120 CFU Laurea Magistrale, 12-Month Job Search Permit, and PhD research.</p>
-          </div>
-        </div>
-
-        <div class="yohannes-speech-bubble">
-          <div class="bubble-avatar">🎓</div>
-          <div class="bubble-content">
-            Look back at Day 1 when you landed with that single suitcase. <strong>You now know where to go. You know who to ask. You understand how Italian bureaucracy, university, and budgeting work. And most importantly, you know you don't have to do it alone!</strong>
-          </div>
-        </div>
-
-        <div class="chapter-content-body">
-          <div class="three-pathways-grid">
-            <div class="pathway-card">
-              <div class="pathway-icon"><i class="fa-solid fa-briefcase"></i></div>
-              <h4>1. Professional Career & Job Search</h4>
-              <p>Under Italian Law (<em>Art. 39-bis.1</em>), UNICORE Master's graduates can convert their student permit into a <strong>12-Month Job Search Permit</strong>. Connect with 500+ certified employers on UNHCR's <em>Welcome-in-One-Click</em> portal.</p>
-            </div>
-            <div class="pathway-card">
-              <div class="pathway-icon"><i class="fa-solid fa-microscope"></i></div>
-              <h4>2. Fully Funded Ph.D. Research</h4>
-              <p>With an accredited Italian <em>Laurea Magistrale (120 CFU)</em>, you can apply for competitive funded doctoral research fellowships across Italian and European universities.</p>
-            </div>
-            <div class="pathway-card">
-              <div class="pathway-icon"><i class="fa-solid fa-lightbulb"></i></div>
-              <h4>3. Community & Social Leadership</h4>
-              <p>Join the UNICORE Students Association, mentor incoming scholars, and publish research that shapes global higher education corridors.</p>
-            </div>
-          </div>
-
-          <div class="sami-final-letter" style="margin-top: 2rem;">
-            <h3>🇮🇹 Benvenuto in Italia, My Friend!</h3>
-            <p>
-              You came to Italy to study. But you are also building a new life. Walk into your university with your head held high—you have earned your seat here!
-            </p>
-            <div style="margin-top: 1rem; font-weight: 700; color: var(--primary);">
-              &mdash; Yohannes Sisay Molla & the UNICORE Senior Scholars Community
-            </div>
-          </div>
-        </div>
-
-        <div class="chapter-footer-action">
-          <button type="button" class="btn btn-primary mark-read-btn" data-chapter="11" style="background: #059669; border-color: #059669;">
-            <i class="fa-solid fa-trophy"></i> Complete Entire Guide & Celebrate!
+          <button type="button" class="btn btn-primary" id="terminalContinueBtn">
+            Continue Journey to Next Stop <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>
-      </section>
+
+      </div>
 
     </div>
-  
-  <!-- Floating Bottom Chapter Navigation Pill (Appears on Scroll) -->
-  <aside class="floating-chapter-fab" id="floatingChapterFab" aria-label="Quick chapter navigator" style="display: none;">
-    <button type="button" class="fab-btn fab-top-btn" id="fabScrollTopBtn" title="Back to top" aria-label="Back to top">
-      <i class="fa-solid fa-arrow-up"></i>
-    </button>
-    <a href="#chapter-0b" class="fab-next-link" id="fabNextChapterLink">
-      <span class="fab-label">Next Up:</span>
-      <strong class="fab-target-title" id="fabNextChapterTitle">Chapter 0B: Packing & Maps</strong>
-      <i class="fa-solid fa-chevron-right"></i>
-    </a>
-  </aside>
-
   </main>
 
   <!-- Footer -->
@@ -1111,7 +314,7 @@
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
-            <li><a href="first-30-days.html">First 30 Days with Yohannes</a></li>
+            <li><a href="first-30-days.html">Linea UNICORE (Metro Map)</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
             <li><a href="living-in-italy.html">Living in Italy</a></li>
             <li><a href="buddy-program.html">Buddy Program</a></li>
@@ -1131,7 +334,7 @@
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 UNICORE Student & Scholar Support Hub &bull; Welcome Guide with Yohannes</div>
+        <div>&copy; 2026 UNICORE Student & Scholar Support Hub &bull; Linea UNICORE Metro Guide</div>
         <div>Safe Pathways &bull; Academic Excellence &bull; Human Dignity</div>
       </div>
     </div>
