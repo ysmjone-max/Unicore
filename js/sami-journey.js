@@ -1,6 +1,6 @@
 /**
- * UNICORE: Welcome to Italy with Yohannes (v4.0 Bulletproof Storybook Edition)
- * ScrollSpy, Milestone Progress Persistence, Dynamic Budget Calculator, Healthcare Triage, Audio Speech
+ * UNICORE: Welcome to Italy with Yohannes (v4.5 Expert Edition)
+ * High-Performance ScrollSpy (requestAnimationFrame), Floating Milestone FAB, Live Budget Calculator & Copy Tool
  */
 
 (function () {
@@ -12,6 +12,21 @@
 
   let readChapters = new Set();
   let checkedTasks = new Set();
+
+  const CHAPTER_METADATA = [
+    { id: 'chapter-0a', title: '0A. Pre-Departure & Tastes of Home' },
+    { id: 'chapter-0b', title: '0B. Packing & Google Maps' },
+    { id: 'chapter-1', title: '1. I Just Landed' },
+    { id: 'chapter-2', title: '2. Maps & Smart Shopping' },
+    { id: 'chapter-3', title: '3. The Documents & Appointments' },
+    { id: 'chapter-4', title: '4. Campus & Daily Email' },
+    { id: 'chapter-5', title: '5. Budget & CFU Rules' },
+    { id: 'chapter-6', title: '6. Healthcare (SSN)' },
+    { id: 'chapter-7', title: '7. 10 Spoken Italian Phrases' },
+    { id: 'chapter-8', title: '8. City Independence' },
+    { id: 'chapter-9', title: '9. Find Your Community' },
+    { id: 'chapter-10', title: '10. Future Launchpad & Laurea' }
+  ];
 
   // Web Audio Synthesizer (Safe)
   let audioCtx = null;
@@ -59,13 +74,14 @@
 
   function init() {
     loadSavedState();
-    setupScrollSpy();
+    setupHighPerfScrollSpy();
     setupReadButtons();
     setupCheckboxes();
     setupBudgetCalculator();
     setupHealthcareTriage();
     setupItalianAudio();
     setupQuizzes();
+    setupCopyBudgetTool();
     updateProgressUI();
   }
 
@@ -117,44 +133,87 @@
     });
   }
 
-  function setupScrollSpy() {
+  // 60FPS / 120Hz ScrollSpy using requestAnimationFrame
+  function setupHighPerfScrollSpy() {
     const sections = document.querySelectorAll('.journey-section-card');
     const pills = document.querySelectorAll('.sticky-pill');
+    const fab = document.getElementById('floatingChapterFab');
+    const fabNextTitle = document.getElementById('fabNextChapterTitle');
+    const fabNextLink = document.getElementById('fabNextChapterLink');
+    const fabTopBtn = document.getElementById('fabScrollTopBtn');
 
-    function onScroll() {
-      let currentSectionId = '';
-      const scrollPos = window.scrollY + 200;
+    let ticking = false;
 
-      sections.forEach((sec) => {
+    function updateActivePill() {
+      const scrollY = window.scrollY;
+      const triggerY = scrollY + 220;
+      let activeIndex = -1;
+
+      sections.forEach((sec, idx) => {
         const top = sec.offsetTop;
         const height = sec.offsetHeight;
-        if (scrollPos >= top && scrollPos < top + height) {
-          currentSectionId = sec.id;
+        if (triggerY >= top && triggerY < top + height) {
+          activeIndex = idx;
         }
       });
 
-      if (currentSectionId) {
+      if (activeIndex !== -1) {
+        const currentSec = sections[activeIndex];
+        const currentId = currentSec.id;
+
         pills.forEach((pill) => {
-          if (pill.getAttribute('href') === `#${currentSectionId}`) {
+          if (pill.getAttribute('href') === `#${currentId}`) {
             pill.classList.add('active');
+            pill.setAttribute('aria-current', 'true');
             pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
           } else {
             pill.classList.remove('active');
+            pill.removeAttribute('aria-current');
           }
         });
+
+        // Update Floating Action Pill (FAB)
+        if (fab && fabNextTitle && fabNextLink) {
+          if (scrollY > 400) {
+            fab.style.display = 'flex';
+            if (activeIndex < TOTAL_CHAPTERS - 1) {
+              const nextMeta = CHAPTER_METADATA[activeIndex + 1];
+              fabNextTitle.textContent = nextMeta.title;
+              fabNextLink.setAttribute('href', `#${nextMeta.id}`);
+              fabNextLink.style.display = 'flex';
+            } else {
+              fabNextTitle.textContent = '🎉 All Chapters Explored!';
+              fabNextLink.setAttribute('href', '#chapter-10');
+            }
+          } else {
+            fab.style.display = 'none';
+          }
+        }
       }
+      ticking = false;
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateActivePill);
+        ticking = true;
+      }
+    }, { passive: true });
 
-    // Smooth scroll on pill click
+    if (fabTopBtn) {
+      fabTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Smooth Scrolling when clicking pills
     pills.forEach((pill) => {
       pill.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = pill.getAttribute('href');
         const targetEl = document.querySelector(targetId);
         if (targetEl) {
-          const headerOffset = 130;
+          const headerOffset = 135;
           const elementPosition = targetEl.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -215,6 +274,7 @@
     });
   }
 
+  // Live Budget Calculator Engine
   function setupBudgetCalculator() {
     const stipendInput = document.getElementById('budgetStipendInput');
     const stipendSlider = document.getElementById('budgetStipendSlider');
@@ -341,6 +401,52 @@
     });
 
     calculate();
+  }
+
+  // Copy Budget Plan to Clipboard Tool
+  function setupCopyBudgetTool() {
+    const copyBtn = document.getElementById('copyBudgetBtn');
+    if (!copyBtn) return;
+
+    copyBtn.addEventListener('click', () => {
+      const stipend = document.getElementById('budgetStipendInput')?.value || '500';
+      const rent = document.getElementById('rentVal')?.textContent || '€150';
+      const food = document.getElementById('foodVal')?.textContent || '€180';
+      const phone = document.getElementById('phoneVal')?.textContent || '€30';
+      const transit = document.getElementById('transitVal')?.textContent || '€25';
+      const other = document.getElementById('otherVal')?.textContent || '€45';
+      const total = document.getElementById('budgetTotalDisplay')?.textContent || '€430';
+      const net = document.getElementById('budgetNetBalanceDisplay')?.textContent || '+€70';
+      const projection = document.getElementById('budgetAnnualSavingsDisplay')?.textContent || '+€700 Saved';
+
+      const planText = [
+        '🇮🇹 UNICORE Student Monthly Budget Plan',
+        '---------------------------------------',
+        `• Monthly Stipend: €${stipend}/month`,
+        `• Housing / Utilities: ${rent}`,
+        `• Groceries & Mensa: ${food}`,
+        `• Phone & Internet: ${phone}`,
+        `• Public Transit Pass: ${transit}`,
+        `• Personal & Buffer: ${other}`,
+        '---------------------------------------',
+        `• Total Monthly Expenses: ${total}`,
+        `• Net Balance: ${net}/month`,
+        `• 10-Month Academic Projection: ${projection}`,
+        '',
+        'Generated from UNICORE Scholar Transition Guide (https://ysmjone-max.github.io/Unicore/first-30-days.html)'
+      ].join('\n');
+
+      navigator.clipboard.writeText(planText).then(() => {
+        const originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fa-solid fa-check" style="color: #059669;"></i> Budget Plan Copied!';
+        playSound('check');
+        setTimeout(() => {
+          copyBtn.innerHTML = originalHTML;
+        }, 2500);
+      }).catch(() => {
+        alert('Plan text:\n\n' + planText);
+      });
+    });
   }
 
   function setupHealthcareTriage() {
