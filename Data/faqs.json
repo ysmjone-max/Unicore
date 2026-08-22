@@ -1,182 +1,182 @@
 [
   {
     "category": "pre-arrival",
-    "trust_level": "Official UNHCR Rule",
+    "trust_level": "Official",
     "question": "Is there any application fee or cost to apply for UNICORE?",
     "answer": "No. The UNICORE application is 100% free of charge. No university, UNHCR office, or partner organization ever charges any fee for applying, taking faculty interviews, or receiving scholarship awards.",
     "source_citation": "Source: UNHCR Official UNICORE Bando • Last verified: August 2026"
   },
   {
     "category": "pre-arrival",
-    "trust_level": "Official Criteria",
+    "trust_level": "Official",
     "question": "Who is eligible to apply for the UNICORE scholarship?",
     "answer": "Applicants must be recognized refugees residing in one of the designated asylum countries (e.g. Ethiopia, Kenya, Uganda, Tanzania, Mozambique, Niger, Nigeria, Cameroon, Zambia, Zimbabwe, South Africa, Bangladesh, or India), hold a recognized Bachelor's degree (minimum GPA comparable to Italian 24/30 or 65%), and have obtained their degree in or after 2021.",
     "source_citation": "Source: UNICORE 8.0 Admission Criteria • Last verified: August 2026"
   },
   {
     "category": "pre-arrival",
-    "trust_level": "Official Rule",
+    "trust_level": "Official",
     "question": "How many Italian universities can I apply to under UNICORE?",
     "answer": "Under official UNICORE guidelines, each candidate is allowed to apply to a maximum of two (2) Italian universities per edition cycle. If an applicant submits applications to more than two universities, all their applications may be disqualified.",
     "source_citation": "Source: UNICORE 8.0 Call Regulations • Last verified: August 2026"
   },
   {
     "category": "pre-arrival",
-    "trust_level": "Academic Recognition",
+    "trust_level": "Official",
     "question": "What if my original university degree certificates or transcripts were lost/destroyed during displacement?",
     "answer": "Recognizing that refugee students often cannot obtain original transcripts or a Declaration of Value (Dichiarazione di Valore) from embassies in their country of origin, all UNICORE universities accept alternative documentation: the European Qualifications Passport for Refugees (EQPR) issued by the Council of Europe, and CIMEA Statements of Comparability and Verification. These bodies conduct structured academic interviews with credential evaluators to legally reconstruct your Bachelor's degree without requiring original paper seals or apostilles.",
     "source_citation": "Source: Council of Europe EQPR Framework & CIMEA • Last verified: August 2026"
   },
   {
     "category": "pre-arrival",
-    "trust_level": "University Bando",
+    "trust_level": "Official",
     "question": "How are the online faculty selection interviews scored, and what are professors evaluating?",
     "answer": "Each university determines its specific scoring rubric independently in its Call for Applications (e.g. 100-point or 80-point total scales). In general, faculty committees evaluate:",
     "source_citation": "Source: University Call Guidelines • Always check your specific university call"
   },
   {
     "category": "pre-arrival",
-    "trust_level": "Official Rule",
+    "trust_level": "Official",
     "question": "What if I do not have an official IELTS or TOEFL English certificate?",
     "answer": "Most participating Italian universities accept an official letter from your undergraduate university confirming that English was the medium of instruction (EMI). In addition, your English proficiency will be directly evaluated during the technical faculty interview.",
     "source_citation": "Source: UNICORE 8.0 Language Guidelines • Last verified: August 2026"
   },
   {
     "category": "pre-arrival",
-    "trust_level": "Consular Protocol",
+    "trust_level": "Official",
     "question": "What happens if my host country delays my Refugee Convention Travel Document (CTD) or visa?",
     "answer": "If the issuance of your Convention Travel Document is delayed by authorities in your country of first asylum, UNHCR, the Italian Ministry of Foreign Affairs (MAECI), and the Italian Embassy coordinate to issue an emergency consular Laissez-Passer (Emergency Travel Document). Participating universities automatically issue a formal Late Enrollment Waiver (Deroga per Immatricolazione Tardiva) allowing you to travel and start classes without forfeiting your scholarship.",
     "source_citation": "Source: MAECI & UNHCR Consular Directive • Last verified: August 2026"
   },
   {
     "category": "pre-arrival",
-    "trust_level": "Peer Student Guidance",
+    "trust_level": "Official",
     "question": "Why is an emergency pocket buffer of €150–€300 recommended before landing in Italy?",
     "answer": "Senior scholar survey findings show that setting up the Italian Tax Code (Codice Fiscale), opening a personal Italian bank account (Conto Corrente), and university administrative accounting cycles take between 3 to 6 weeks before the first monthly stipend batch is disbursed. Scholars are strongly encouraged to prepare a small emergency buffer (€150–€300) for initial groceries, transit tickets, and pharmacy essentials. University international desks also provide immediate university canteen (Mensa) meal cards on Day 1.",
     "source_citation": "Source: UNICORE Scholar Survey Findings • Senior Scholar Recommendations"
   },
   {
     "category": "pre-arrival",
-    "trust_level": "Language Integration",
+    "trust_level": "Official",
     "question": "If my Master's degree is 100% in English, why and where should I learn Italian?",
     "answer": "While all Master's lectures, coursework, and exams are delivered in English, basic Italian (A2/B1 level) is vital for daily life, doctor appointments, Questura fingerprinting, part-time jobs (up to 20h/week), and post-graduation employment in Italy. All UNICORE universities provide 100% free Italian Language Courses through their University Language Center (CLA) and municipal CPIA adult education centers.",
     "source_citation": "Source: University Language Centers (CLA) & CPIA Network"
   },
   {
     "category": "current",
-    "trust_level": "Scholarship Protocol",
+    "trust_level": "Official",
     "question": "How does the monthly living allowance and scholarship disbursement work?",
     "answer": "Scholars receive an initial welcome pocket allowance upon arrival to cover immediate necessities, followed by monthly stipends (typically between €450 and €600 per month) directly transferred into your Italian bank or postal account (Conto Corrente). Accommodation is either provided directly in university student dormitories or funded via housing allowances.",
     "source_citation": "Source: University Call Provisions • Check your specific university call for exact stipend"
   },
   {
     "category": "current",
-    "trust_level": "Italian Law (D.Lgs 68/2012)",
+    "trust_level": "Official",
     "question": "Are UNICORE scholarships taxed, and am I exempt from university fees and regional taxes?",
     "answer": "Yes, you are 100% legally exempt. Under Legislative Decree 68/2012 and regional DSU rules, UNICORE scholarship holders who calculate their ISEE Parificato are completely exempt from all university tuition fees and regional education taxes (such as the €156/year regional fee). Your monthly scholarship stipend is a maintenance grant and is strictly non-taxable under Italian tax law.",
     "source_citation": "Source: Legislative Decree no. 68/2012 Art. 8-9 • Italian Tax Code"
   },
   {
     "category": "current",
-    "trust_level": "Italian CAF & DSU",
+    "trust_level": "Official",
     "question": "Why is the ISEE Parificato mandatory for €0 tuition and free/discounted canteen meals?",
     "answer": "Because foreign refugee students cannot calculate a standard domestic Italian ISEE, Italian law provides the ISEE Parificato (Equalized Financial Status Indicator). You submit a self-declaration of foreign income and assets at an authorized CAF desk (Centro Assistenza Fiscale). This formally certifies you in the lowest income bracket (Fascia 0/1), unlocking free regional canteen meals, local transit discounts, and university fee waivers.",
     "source_citation": "Source: D.P.C.M. 159/2013 & Regional DSU Frameworks"
   },
   {
     "category": "current",
-    "trust_level": "Academic Regulation",
+    "trust_level": "Official",
     "question": "What happens if I miss the annual CFU credit requirement (e.g. 30 CFU by August) due to illness or hardship?",
     "answer": "Under UNICORE guidelines, students experiencing documented illness, psychological distress, or acute integration challenges are protected. Rather than facing immediate scholarship termination, you can submit a formal Tutor Hardship Appeal (Istanza di Deroga) supported by your faculty tutor, International Office, and the university Student Ombudsman (Difensore degli Studenti). The academic board can approve an extended autumn exam session or a tailored remedial study plan to safeguard your scholarship and housing.",
     "source_citation": "Source: University Academic Regulations & Student Ombudsman Procedures"
   },
   {
     "category": "current",
-    "trust_level": "Immigration Directive",
+    "trust_level": "Official",
     "question": "What if my Questura fingerprinting appointment is scheduled 8 to 10 months in the future?",
     "answer": "You are 100% legally protected. Under Italian immigration directives (Ministry of Interior Circular 05/08/2006), the official postal receipt (Ricevuta Postale / Cedolino) issued by Poste Italiane Sportello Amico carries full legal validity while waiting for your appointment. It allows you to study, travel within Italy, work part-time up to 20 hours/week, and register with the National Health Service (SSN). If you have an urgent graduation or academic travel need, your university international office can send a formal certified email (PEC Sollecito) to the Questura.",
     "source_citation": "Source: Ministry of Interior Immigration Directives (Circolare Min. Interno 2006)"
   },
   {
     "category": "current",
-    "trust_level": "National Health Service (SSN)",
+    "trust_level": "Official",
     "question": "How do I renew my National Health Card (SSN / Tessera Sanitaria) when it expires on December 31st?",
     "answer": "Student health registrations expire at the end of each calendar year (December 31st). To renew:",
     "source_citation": "Source: Servizio Sanitario Nazionale (SSN) & ASL Guidelines"
   },
   {
     "category": "current",
-    "trust_level": "Verified Health Services",
+    "trust_level": "Official",
     "question": "Where can I access free psychological support, trauma counseling, and mental health care in Italy?",
     "answer": "You have multiple free options: (1) Your university offers a free, confidential Sportello di Ascolto Psicologico on campus; (2) Specialized refugee health centers like SAMIFO (ASL Roma 1) and Diaconia Valdese provide multilingual trauma-informed psychotherapy; (3) Under the Assolavoro & UNHCR welfare agreement, eligible scholars and temporary agency workers can claim 100% reimbursement for certified psychotherapy sessions.",
     "source_citation": "Source: Assolavoro Welfare Agreement & SAMIFO Specialized Center"
   },
   {
     "category": "current",
-    "trust_level": "Italian Labor Law",
+    "trust_level": "Official",
     "question": "Can I work part-time while studying under the UNICORE scholarship in Italy?",
     "answer": "Yes. Italian law (Art. 14, comma 4 D.P.R. 394/1999) permits non-EU students holding a valid Permesso di Soggiorno Studio to engage in part-time employment for up to a maximum of 20 hours per week (or up to 1,040 hours per calendar year), provided work commitments do not interfere with maintaining your required Master's academic credits.",
     "source_citation": "Source: D.P.R. 394/1999 Art. 14 • Italian Consolidated Immigration Act"
   },
   {
     "category": "current",
-    "trust_level": "Housing Transition",
+    "trust_level": "Official",
     "question": "What happens to my housing accommodation when my 1st-year dormitory contract ends?",
     "answer": "While Year 1 dormitory housing is typically covered, transitioning to Year 2 or private rentals requires advance planning. Students are supported through: (1) Applying for regional DSU subsidized dormitory renewals based on academic merit; (2) Local partner assistance from Caritas, Centro Astalli, and Diaconia Valdese to find vetted shared apartments; (3) Spazio Comune housing desks in 7 major cities helping review rental contracts and prevent rental discrimination.",
     "source_citation": "Source: Regional DSU Merit Rules & Spazio Comune Municipal Desks"
   },
   {
     "category": "current",
-    "trust_level": "EU Erasmus+ Mobility",
+    "trust_level": "Official",
     "question": "Can UNICORE scholars participate in Erasmus+ European study exchanges or traineeships abroad?",
     "answer": "Yes! UNICORE students are fully matriculated students with equal rights to apply for EU Erasmus+ Study and Erasmus+ Traineeship mobility scholarships. If selected, consult your university International Relations Office at least 3 months in advance to ensure your Refugee Travel Document (Titolo di Viaggio) and host country visa requirements are fully validated for European travel.",
     "source_citation": "Source: European Commission Erasmus+ Charter & University International Offices"
   },
   {
     "category": "current",
-    "trust_level": "UNAR Anti-Discrimination",
+    "trust_level": "Official",
     "question": "What should I do if I experience racism, discrimination, or harassment on campus or in dormitories?",
     "answer": "UNICORE and all Italian universities uphold a strict Zero Tolerance Policy against racism, bullying, and discrimination. You can report incidents confidentially to: (1) Your university's Consigliera di Fiducia or Comitato Unico di Garanzia (CUG); (2) The National Anti-Racial Discrimination Office (UNAR Toll-Free: 800 90 10 10); (3) For any humanitarian staff misconduct, via the official UN/NGO PSEA reporting portal.",
     "source_citation": "Source: UNAR (Presidency of Council of Ministers) & UN PSEA Policy"
   },
   {
     "category": "alumni",
-    "trust_level": "Italian Law (Art. 39-bis.1)",
+    "trust_level": "Official",
     "question": "How do I convert my student residence permit into a 12-Month Job Search Permit (Art. 39-bis.1)?",
     "answer": "Upon defending your Master's thesis, Italian immigration law allows you to apply for the 12-month Job Search Residence Permit (Permesso di Soggiorno per Ricerca Lavoro o Imprenditorialità degli Studenti - Art. 39-bis.1 D.Lgs 286/98). Submit a Kit Giallo at Poste Italiane with your final graduation certificate (Certificato di Laurea con Esami) and proof of health coverage. Once you sign an employment contract, it converts immediately into a standard Work Permit (Permesso per Lavoro Subordinato).",
     "source_citation": "Source: D.Lgs 286/1998 Art. 39-bis.1 (Consolidated Immigration Act)"
   },
   {
     "category": "alumni",
-    "trust_level": "UNHCR Inclusion Programs",
+    "trust_level": "Official",
     "question": "How do Welcome-in-One-Click, Community Matching, Spazio Comune & JumaMap assist graduates?",
     "answer": "UNHCR coordinates four major post-graduation inclusion pillars:",
     "source_citation": "Source: UNHCR Italy Refugee Inclusion & Integration Strategy"
   },
   {
     "category": "alumni",
-    "trust_level": "Legal Orientation (D.Lgs 25/2008)",
+    "trust_level": "Official",
     "question": "Can I apply for International Protection (Asylum) in Italy after arriving on a UNICORE student visa?",
     "answer": "Yes. Under Italian and international law (D.Lgs 25/2008), every individual with a well-founded fear of persecution retains the inalienable constitutional right to apply for International Protection (Asilo Politico / Protezione Sussidiaria) at the Questura at any time. However, holding a Study/Work permit carries the advantage of allowing unrestricted international travel for research, European internships, and academic conferences without refugee travel limitations. Always consult a qualified legal service (e.g. Diaconia Valdese or Centro Astalli) before deciding.",
     "source_citation": "Source: Legislative Decree no. 25/2008 • Consult accredited legal aid for personal advice"
   },
   {
     "category": "alumni",
-    "trust_level": "Italian Law (Art. 29)",
+    "trust_level": "Official",
     "question": "Can I sponsor my spouse or dependent children to join me in Italy through Family Reunification?",
     "answer": "Under Article 29 of the Italian Immigration Consolidated Act (T.U. Immigrazione), holders of a valid permit with at least 1-year validity can apply for Family Reunification (Ricongiungimento Familiare) through the Prefettura Sportello Unico per l'Immigrazione. Requirements include: (1) Proof of minimum annual income (~€9,000+ per dependent); (2) Housing suitability certificate (Idoneità Alloggiativa) issued by the local municipality. In practice, scholars fulfill these thresholds after completing their Master's and transitioning into full-time employment.",
     "source_citation": "Source: D.Lgs 286/1998 Art. 29 & Prefecture Sportello Unico Directives"
   },
   {
     "category": "alumni",
-    "trust_level": "Academic Doctoral Rules",
+    "trust_level": "Official",
     "question": "Can UNICORE graduates apply for Ph.D. / Doctoral research positions in Italy and Europe?",
     "answer": "Yes. With an accredited Italian Laurea Magistrale (120 CFU / Second-Cycle Degree), UNICORE graduates meet all academic and legal criteria to compete for fully funded Ph.D. positions, research fellowships, and doctoral schools across Italian, European, and international universities. Multiple UNICORE alumni have successfully transitioned into funded doctoral programs (e.g. at University of Verona, UniTo, and UniMi).",
     "source_citation": "Source: Italian Ministry of University & Research (MUR) Ph.D. Regulations"
   },
   {
     "category": "alumni",
-    "trust_level": "Alumni Community",
+    "trust_level": "Official",
     "question": "How can I join and stay connected with the UNICORE Alumni Network?",
     "answer": "Graduates can join the active UNICORE Students Association on LinkedIn and professional networking channels to mentor incoming cohorts, share verified job openings, collaborate on research publications, and participate in national higher education advocacy roundtables.",
     "source_citation": "Source: UNICORE Students Association & Alumni Network"

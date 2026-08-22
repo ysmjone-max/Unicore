@@ -4590,3 +4590,157 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 [data-theme="dark"] .guarantee-table tr:hover td {
   background-color: rgba(30, 58, 138, 0.15);
 }
+
+
+/* ==========================================================================
+   Color Ribbon System for FAQs & Cards (Clean, Uncluttered, Minimalist)
+   ========================================================================== */
+
+/* Key / Legend Banner at the Top of FAQs */
+.faq-ribbon-key {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.75rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.ribbon-key-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--slate-700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ribbon-key-items {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.ribbon-key-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--slate-700);
+}
+
+.ribbon-key-bar {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.ribbon-key-item.official .ribbon-key-bar {
+  background-color: #059669; /* Emerald Green */
+}
+
+.ribbon-key-item.verified .ribbon-key-bar {
+  background-color: #1d4ed8; /* Royal Blue */
+}
+
+.ribbon-key-item.community .ribbon-key-bar {
+  background-color: #f59e0b; /* Amber / Orange */
+}
+
+/* FAQ Item with Left Color Ribbon */
+.faq-item {
+  position: relative;
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-left: 6px solid #94a3b8; /* Default fallback ribbon */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-xs);
+}
+
+.faq-item:hover {
+  border-color: var(--slate-300);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.faq-item.ribbon-official {
+  border-left-color: #059669; /* Official Rule Green */
+}
+
+.faq-item.ribbon-verified {
+  border-left-color: #1d4ed8; /* Verified Partner Blue */
+}
+
+.faq-item.ribbon-community {
+  border-left-color: #f59e0b; /* Community Insight Amber */
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.35rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  background-color: var(--slate-50);
+}
+
+.faq-q-text {
+  flex: 1;
+  line-height: 1.45;
+}
+
+.faq-item.active .faq-question {
+  background-color: var(--slate-50);
+  color: var(--primary);
+}
+
+[data-theme="dark"] .faq-ribbon-key {
+  background-color: var(--white);
+  border-color: var(--slate-200);
+}
+
+[data-theme="dark"] .ribbon-key-item {
+  color: var(--slate-300);
+}
+
+[data-theme="dark"] .faq-item {
+  background-color: var(--white);
+  border-color: var(--slate-200);
+}
+
+[data-theme="dark"] .faq-item.ribbon-official {
+  border-left-color: #10b981;
+}
+
+[data-theme="dark"] .faq-item.ribbon-verified {
+  border-left-color: #38bdf8;
+}
+
+[data-theme="dark"] .faq-item.ribbon-community {
+  border-left-color: #fbbf24;
+}
