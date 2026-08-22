@@ -9506,3 +9506,283 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-color: #334155 !important;
   color: #f8fafc !important;
 }
+
+
+/* ==========================================================================
+   Interactive Kit Giallo (Modulo 1) Practice Simulator CSS
+   ========================================================================== */
+
+.kit-simulator-card {
+  background: var(--white);
+  border: 2px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.simulator-stepper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--slate-100);
+  border-bottom: 2px solid var(--slate-200);
+}
+
+@media (max-width: 650px) {
+  .simulator-stepper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sim-step-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--slate-600);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.sim-step-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--primary);
+}
+
+.sim-step-btn.active {
+  background: var(--white);
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.sim-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--slate-300);
+  color: var(--slate-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.sim-step-btn.active .sim-step-num {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.simulator-form-body {
+  padding: 2rem;
+}
+
+@media (max-width: 600px) {
+  .simulator-form-body {
+    padding: 1.25rem;
+  }
+}
+
+.sim-page-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.sim-page-header h4 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  margin: 0 0 0.35rem 0;
+  color: var(--slate-900);
+}
+
+.sim-page-header p {
+  font-size: 0.85rem;
+  color: var(--slate-600);
+  margin: 0;
+}
+
+.sim-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.sim-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sim-field-group label {
+  font-size: 0.825rem;
+  color: var(--slate-800);
+}
+
+.sim-field-group label .req {
+  color: #e11d48;
+}
+
+.sim-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-family: monospace, sans-serif;
+  color: var(--slate-900);
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+}
+
+.sim-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+}
+
+.sim-help {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+}
+
+.sim-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.sim-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--slate-800);
+  cursor: pointer;
+}
+
+.sim-marca-bollo-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fef2f2;
+  border: 1px dashed #f87171;
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+}
+
+.marca-stamp-icon {
+  width: 50px;
+  height: 50px;
+  background: #dc2626;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.85rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.sim-marca-bollo-box strong {
+  color: #991b1b;
+  font-size: 0.9rem;
+}
+
+.sim-marca-bollo-box p {
+  font-size: 0.8rem;
+  color: #7f1d1d;
+  margin: 0.2rem 0 0 0;
+}
+
+.sim-summary-box {
+  background: #f8fafc;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.sim-summary-box h5 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin: 0 0 0.85rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sim-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.65rem;
+  font-size: 0.825rem;
+  color: var(--slate-700);
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+}
+
+.simulator-footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--slate-50);
+  border-top: 1px solid var(--slate-200);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.sim-page-indicator {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--slate-500);
+}
+
+/* Dark Mode Overrides for Simulator */
+[data-theme="dark"] .kit-simulator-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .simulator-stepper {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .sim-step-btn.active {
+  background: #1e293b;
+}
+
+[data-theme="dark"] .sim-input {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .sim-summary-box {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .sim-summary-grid {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .simulator-footer-nav {
+  background: #0f172a;
+  border-color: #334155;
+}

@@ -174,22 +174,206 @@
 <section class="section bg-light" id="modulo1">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge"><i class="fa-solid fa-envelope-open-text"></i> Official Form Guide</span>
-        <h2>Modulo 1 & Kit Giallo: Step-by-Step Instructions & PDF Preview</h2>
+        <span class="section-badge"><i class="fa-solid fa-envelope-open-text"></i> Interactive Practice Tool</span>
+        <h2>Interactive Kit Giallo (Modulo 1) Practice Simulator</h2>
         <p>
-          Click the dropdown below (<strong>+ / &minus;</strong>) to explore the complete box-by-box filling procedure, attachment rules, and interactive embedded PDF preview.
+          Practice filling out your official residence permit form before writing on your physical paper kit. Test your fields in uppercase (<em>STAMPATELLO MAIUSCOLO</em>) with live validation and error checking.
         </p>
       </div>
 
-      <div class="doc-accordion-list">
+      <!-- Interactive Form Simulator Card -->
+      <div class="kit-simulator-card">
+        
+        <!-- Simulator Top Stepper -->
+        <div class="simulator-stepper">
+          <button type="button" class="sim-step-btn active" data-sim-page="1">
+            <span class="sim-step-num">1</span>
+            <span>Page 1: Request & Marca da Bollo</span>
+          </button>
+          <button type="button" class="sim-step-btn" data-sim-page="2">
+            <span class="sim-step-num">2</span>
+            <span>Page 2: Personal & Passport</span>
+          </button>
+          <button type="button" class="sim-step-btn" data-sim-page="3">
+            <span class="sim-step-num">3</span>
+            <span>Page 3: Domicile & Address</span>
+          </button>
+        </div>
+
+        <!-- Simulator Form Body -->
+        <div class="simulator-form-body">
+          
+          <!-- Page 1 -->
+          <div class="sim-page-content active" id="simPage1">
+            <div class="sim-page-header">
+              <h4><i class="fa-solid fa-stamp" style="color: #e11d48;"></i> MODULO 1 &ndash; SEZIONE 1 (Dati della Richiesta)</h4>
+              <p>Top section: Select your Questura province and affix your €16.00 revenue stamp.</p>
+            </div>
+
+            <div class="sim-grid-2">
+              <div class="sim-field-group">
+                <label for="simProvincia"><strong>Box 1: Sigla Provincia Questura (2 Letters)</strong> <span class="req">*</span></label>
+                <input type="text" id="simProvincia" class="sim-input uppercase-field" placeholder="e.g. SI (Siena), RM (Roma), MI (Milano), BO (Bologna)" maxlength="2" value="SI">
+                <small class="sim-help">2-letter abbreviation of your university province.</small>
+              </div>
+
+              <div class="sim-field-group">
+                <label for="simComune"><strong>Box 2: Comune di Residenza / Università</strong> <span class="req">*</span></label>
+                <input type="text" id="simComune" class="sim-input uppercase-field" placeholder="e.g. SIENA, ROMA, MILANO, BOLOGNA" value="SIENA">
+                <small class="sim-help">City name in CAPITAL LETTERS.</small>
+              </div>
+            </div>
+
+            <div class="sim-grid-2" style="margin-top: 1rem;">
+              <div class="sim-field-group">
+                <label><strong>Box 3: Tipo di Richiesta (Request Type)</strong> <span class="req">*</span></label>
+                <div class="sim-radio-group">
+                  <label class="sim-radio-label">
+                    <input type="radio" name="simTipo" value="rilascio" checked>
+                    <span><strong>[X] RILASCIO</strong> (First Permit upon arrival)</span>
+                  </label>
+                  <label class="sim-radio-label">
+                    <input type="radio" name="simTipo" value="rinnovo">
+                    <span><strong>[ ] RINNOVO</strong> (Subsequent year renewal)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="sim-field-group">
+                <label for="simMotivo"><strong>Box 14: Codice Motivo (Reason Code)</strong> <span class="req">*</span></label>
+                <input type="text" id="simMotivo" class="sim-input" value="11 (STUDIO)" readonly style="background: #f1f5f9; font-weight: 700; color: #0284c7;">
+                <small class="sim-help">Code 11 is the official immigration code for Higher Education.</small>
+              </div>
+            </div>
+
+            <div class="sim-marca-bollo-box" style="margin-top: 1.5rem;">
+              <div class="marca-stamp-icon">💶 €16.00</div>
+              <div>
+                <strong>Marca da Bollo Revenue Stamp (€16.00)</strong>
+                <p>Buy at any Tabaccheria ('T' sign). Stick it directly in the top right box of Page 1 before going to Poste Italiane.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page 2 -->
+          <div class="sim-page-content" id="simPage2" style="display: none;">
+            <div class="sim-page-header">
+              <h4><i class="fa-solid fa-id-card" style="color: #0284c7;"></i> MODULO 1 &ndash; SEZIONE 2 (Dati Anagrafici & Passaporto)</h4>
+              <p>Personal identification, Codice Fiscale, and passport border details.</p>
+            </div>
+
+            <div class="sim-grid-2">
+              <div class="sim-field-group">
+                <label for="simCognome"><strong>Box 22: Cognome (Surname)</strong> <span class="req">*</span></label>
+                <input type="text" id="simCognome" class="sim-input uppercase-field" placeholder="e.g. MOLLA" value="MOLLA">
+              </div>
+
+              <div class="sim-field-group">
+                <label for="simNome"><strong>Box 23: Nome (First Name)</strong> <span class="req">*</span></label>
+                <input type="text" id="simNome" class="sim-input uppercase-field" placeholder="e.g. YOHANNES" value="YOHANNES">
+              </div>
+            </div>
+
+            <div class="sim-grid-2" style="margin-top: 1rem;">
+              <div class="sim-field-group">
+                <label for="simCF"><strong>Box 24: Codice Fiscale (16 Characters)</strong> <span class="req">*</span></label>
+                <input type="text" id="simCF" class="sim-input uppercase-field" placeholder="e.g. MLLYHN98A01Z330A" maxlength="16" value="MLLYHN98A01Z330A">
+                <small class="sim-help" id="simCFValidation" style="color: #059669; font-weight: 700;">✓ 16 Characters valid</small>
+              </div>
+
+              <div class="sim-field-group">
+                <label for="simPassaporto"><strong>Box 27: Numero Passaporto</strong> <span class="req">*</span></label>
+                <input type="text" id="simPassaporto" class="sim-input uppercase-field" placeholder="e.g. EP1234567" value="EP1234567">
+              </div>
+            </div>
+
+            <div class="sim-grid-2" style="margin-top: 1rem;">
+              <div class="sim-field-group">
+                <label for="simValidoAl"><strong>Box 28: Valido Al (Passport Expiry DD/MM/YYYY)</strong> <span class="req">*</span></label>
+                <input type="text" id="simValidoAl" class="sim-input" placeholder="DD/MM/YYYY" value="15/09/2028">
+              </div>
+
+              <div class="sim-field-group">
+                <label for="simValico"><strong>Box 30: Valico di Frontiera (Airport of Entry)</strong> <span class="req">*</span></label>
+                <input type="text" id="simValico" class="sim-input uppercase-field" placeholder="e.g. AEROPORTO FIUMICINO ROMA" value="AEROPORTO FIUMICINO ROMA">
+              </div>
+            </div>
+          </div>
+
+          <!-- Page 3 -->
+          <div class="sim-page-content" id="simPage3" style="display: none;">
+            <div class="sim-page-header">
+              <h4><i class="fa-solid fa-location-dot" style="color: #059669;"></i> MODULO 1 &ndash; SEZIONE 3 (Recapito & Domicilio in Italia)</h4>
+              <p>Your registered residence address, university C/O, and Italian phone number.</p>
+            </div>
+
+            <div class="sim-grid-2">
+              <div class="sim-field-group">
+                <label for="simIndirizzo"><strong>Box 32: Indirizzo (Street Address & House Number)</strong> <span class="req">*</span></label>
+                <input type="text" id="simIndirizzo" class="sim-input uppercase-field" placeholder="e.g. VIA DEI MILLE 12" value="VIA DEI MILLE 12">
+              </div>
+
+              <div class="sim-field-group">
+                <label for="simCAP"><strong>Box 34: C.A.P. (5-Digit Postal Code)</strong> <span class="req">*</span></label>
+                <input type="text" id="simCAP" class="sim-input" placeholder="e.g. 53100" maxlength="5" value="53100">
+              </div>
+            </div>
+
+            <div class="sim-grid-2" style="margin-top: 1rem;">
+              <div class="sim-field-group">
+                <label for="simPresso"><strong>Box 35: Presso (University C/O if applicable)</strong></label>
+                <input type="text" id="simPresso" class="sim-input uppercase-field" placeholder="e.g. C/O RESIDENZA UNIVERSITARIA" value="C/O RESIDENZA UNIVERSITARIA">
+              </div>
+
+              <div class="sim-field-group">
+                <label for="simTelefono"><strong>Box 37: Recapito Telefonico (Italian Mobile Number)</strong> <span class="req">*</span></label>
+                <input type="tel" id="simTelefono" class="sim-input" placeholder="e.g. +39 345 1234567" value="+39 345 1234567">
+              </div>
+            </div>
+
+            <!-- Live Form Summary Generator -->
+            <div class="sim-summary-box" style="margin-top: 1.5rem;">
+              <h5><i class="fa-solid fa-clipboard-check"></i> Generated Modulo 1 Pocket Summary:</h5>
+              <div class="sim-summary-table" id="simGeneratedSummary">
+                <!-- Dynamically generated -->
+              </div>
+              <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                <button type="button" class="btn btn-outline btn-sm" id="copySimSummaryBtn">
+                  <i class="fa-solid fa-copy"></i> Copy Summary to Clipboard
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">
+                  <i class="fa-solid fa-print"></i> Print Form Summary
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Simulator Bottom Controls -->
+        <div class="simulator-footer-nav">
+          <button type="button" class="btn btn-outline btn-sm" id="simPrevBtn" disabled>
+            <i class="fa-solid fa-arrow-left"></i> Previous Page
+          </button>
+          <div class="sim-page-indicator" id="simPageIndicator">Page 1 of 3</div>
+          <button type="button" class="btn btn-primary btn-sm" id="simNextBtn">
+            Next Page <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Narrative Step-by-Step Instructions & Official PDF Dropdown -->
+      <div class="doc-accordion-list" style="margin-top: 2.5rem;">
         
         <div class="doc-accordion-item active">
           <button type="button" class="doc-accordion-header" aria-expanded="true">
             <div class="doc-header-left">
               <div class="doc-header-icon"><i class="fa-solid fa-file-signature"></i></div>
               <div class="doc-header-titles">
-                <h3>Guida alla Compilazione del Modulo 1 & Kit Giallo (Step-by-Step & Official PDF)</h3>
-                <span class="doc-header-subtitle">Modulo 1 &bull; Bollettino Postale &bull; Marca da Bollo &bull; PDF Ufficiale</span>
+                <h3>Official Narrative Instructions & PDF Handbook</h3>
+                <span class="doc-header-subtitle">Step-by-Step Rules &bull; Bollettino Postale &bull; Marca da Bollo &bull; PDF Ufficiale</span>
               </div>
             </div>
             <div class="doc-toggle-btn"><i class="fa-solid fa-minus"></i></div>

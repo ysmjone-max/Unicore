@@ -1169,4 +1169,155 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // =========================================================================
+  // Interactive Kit Giallo (Modulo 1) Practice Simulator Logic
+  // =========================================================================
+  const simStepBtns = document.querySelectorAll('.sim-step-btn');
+  const simPages = [
+    document.getElementById('simPage1'),
+    document.getElementById('simPage2'),
+    document.getElementById('simPage3')
+  ];
+  const simPrevBtn = document.getElementById('simPrevBtn');
+  const simNextBtn = document.getElementById('simNextBtn');
+  const simPageIndicator = document.getElementById('simPageIndicator');
+  let currentSimPage = 1;
+
+  function updateSimPage(page) {
+    if (page < 1) page = 1;
+    if (page > 3) page = 3;
+    currentSimPage = page;
+
+    simPages.forEach((p, idx) => {
+      if (p) {
+        p.style.display = (idx + 1 === currentSimPage) ? 'block' : 'none';
+        p.classList.toggle('active', idx + 1 === currentSimPage);
+      }
+    });
+
+    simStepBtns.forEach(btn => {
+      const pNum = parseInt(btn.getAttribute('data-sim-page'), 10);
+      btn.classList.toggle('active', pNum === currentSimPage);
+    });
+
+    if (simPageIndicator) simPageIndicator.textContent = `Page ${currentSimPage} of 3`;
+    if (simPrevBtn) {
+      simPrevBtn.disabled = currentSimPage === 1;
+      simPrevBtn.style.opacity = currentSimPage === 1 ? '0.4' : '1';
+    }
+    if (simNextBtn) {
+      simNextBtn.innerHTML = currentSimPage === 3 ? '<i class="fa-solid fa-check"></i> Finished' : 'Next Page <i class="fa-solid fa-arrow-right"></i>';
+    }
+
+    renderSimSummary();
+  }
+
+  function renderSimSummary() {
+    const summaryContainer = document.getElementById('simGeneratedSummary');
+    if (!summaryContainer) return;
+
+    const prov = document.getElementById('simProvincia')?.value || 'SI';
+    const comune = document.getElementById('simComune')?.value || 'SIENA';
+    const cognome = document.getElementById('simCognome')?.value || 'MOLLA';
+    const nome = document.getElementById('simNome')?.value || 'YOHANNES';
+    const cf = document.getElementById('simCF')?.value || 'MLLYHN98A01Z330A';
+    const pass = document.getElementById('simPassaporto')?.value || 'EP1234567';
+    const valico = document.getElementById('simValico')?.value || 'AEROPORTO FIUMICINO ROMA';
+    const addr = document.getElementById('simIndirizzo')?.value || 'VIA DEI MILLE 12';
+    const cap = document.getElementById('simCAP')?.value || '53100';
+    const tel = document.getElementById('simTelefono')?.value || '+39 345 1234567';
+
+    summaryContainer.innerHTML = `
+      <div class="sim-summary-grid">
+        <div><strong>Questura:</strong> ${prov} (${comune})</div>
+        <div><strong>Motivo:</strong> 11 (STUDIO) &bull; RILASCIO</div>
+        <div><strong>Richiedente:</strong> ${cognome} ${nome}</div>
+        <div><strong>Codice Fiscale:</strong> ${cf}</div>
+        <div><strong>Passaporto:</strong> ${pass}</div>
+        <div><strong>Frontiera d'Ingresso:</strong> ${valico}</div>
+        <div><strong>Domicilio:</strong> ${addr}, ${cap} ${comune}</div>
+        <div><strong>Telefono:</strong> ${tel}</div>
+      </div>
+    `;
+  }
+
+  simStepBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const p = parseInt(btn.getAttribute('data-sim-page'), 10);
+      if (!isNaN(p)) updateSimPage(p);
+    });
+  });
+
+  simPrevBtn?.addEventListener('click', () => {
+    if (currentSimPage > 1) updateSimPage(currentSimPage - 1);
+  });
+
+  simNextBtn?.addEventListener('click', () => {
+    if (currentSimPage < 3) updateSimPage(currentSimPage + 1);
+  });
+
+  // Uppercase auto-transform for Modulo 1 simulator inputs
+  document.querySelectorAll('.uppercase-field').forEach(input => {
+    input.addEventListener('input', () => {
+      input.value = input.value.toUpperCase();
+      renderSimSummary();
+    });
+  });
+
+  // CF length validator
+  const simCFInput = document.getElementById('simCF');
+  const simCFValidation = document.getElementById('simCFValidation');
+  simCFInput?.addEventListener('input', () => {
+    if (simCFValidation) {
+      if (simCFInput.value.length === 16) {
+        simCFValidation.textContent = '✓ 16 Characters valid';
+        simCFValidation.style.color = '#059669';
+      } else {
+        simCFValidation.textContent = `⚠ ${simCFInput.value.length}/16 Characters (Must be exactly 16)`;
+        simCFValidation.style.color = '#e11d48';
+      }
+    }
+  });
+
+  // Copy simulator summary to clipboard
+  document.getElementById('copySimSummaryBtn')?.addEventListener('click', () => {
+    const prov = document.getElementById('simProvincia')?.value || 'SI';
+    const comune = document.getElementById('simComune')?.value || 'SIENA';
+    const cognome = document.getElementById('simCognome')?.value || 'MOLLA';
+    const nome = document.getElementById('simNome')?.value || 'YOHANNES';
+    const cf = document.getElementById('simCF')?.value || 'MLLYHN98A01Z330A';
+    const pass = document.getElementById('simPassaporto')?.value || 'EP1234567';
+    const addr = document.getElementById('simIndirizzo')?.value || 'VIA DEI MILLE 12';
+    const cap = document.getElementById('simCAP')?.value || '53100';
+    const tel = document.getElementById('simTelefono')?.value || '+39 345 1234567';
+
+    const text = [
+      '🇮🇹 UNICORE: MODULO 1 KIT GIALLO SUMMARY',
+      '----------------------------------------',
+      `• Questura / Comune: ${prov} - ${comune}`,
+      `• Reason Code: 11 (STUDIO) - RILASCIO`,
+      `• Name: ${cognome} ${nome}`,
+      `• Codice Fiscale: ${cf}`,
+      `• Passport: ${pass}`,
+      `• Domicile: ${addr}, ${cap} ${comune}`,
+      `• Mobile: ${tel}`,
+      '----------------------------------------',
+      'Remember: Write in BLACK INK & CAPITAL LETTERS. Sign ONLY at the Post Office counter.'
+    ].join('\n');
+
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copySimSummaryBtn');
+      if (btn) {
+        btn.innerHTML = '<i class="fa-solid fa-check" style="color: #059669;"></i> Copied!';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Summary to Clipboard';
+        }, 2000);
+      }
+    });
+  });
+
+  if (document.getElementById('simPage1')) {
+    updateSimPage(1);
+  }
 });
