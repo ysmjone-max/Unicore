@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linea UNICORE: Interactive Metro Map Transition Guide | UNICORE</title>
+  <title>Linea UNICORE: Scholar Transition Metro Guide | UNICORE</title>
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="metro-map-body">
+<body class="metro-app-body">
 
   <!-- Navbar -->
   <header class="navbar">
@@ -44,7 +44,7 @@
             Guides <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
           </a>
           <div class="dropdown-menu">
-            <a href="first-30-days.html" class="dropdown-link active" style="color: var(--primary); font-weight: 700;"><i class="fa-solid fa-train-subway"></i> Linea UNICORE (Metro Map)</a>
+            <a href="first-30-days.html" class="dropdown-link active" style="color: var(--primary); font-weight: 700;"><i class="fa-solid fa-train-subway"></i> Linea UNICORE (Metro Guide)</a>
             <a href="living-in-italy.html" class="dropdown-link"><i class="fa-solid fa-passport"></i> Living in Italy & Documents</a>
             <a href="buddy-program.html" class="dropdown-link"><i class="fa-solid fa-people-arrows"></i> Buddy Mentorship Program</a>
           </div>
@@ -81,224 +81,212 @@
     </div>
   </header>
 
-  <!-- Metro Hero Banner -->
-  <header class="metro-hero-header">
-    <div class="container">
-      <div class="metro-hero-content">
-        <div class="metro-line-badge">
-          <span class="metro-symbol">M</span>
-          <span class="metro-line-name">LINEA UNICORE &bull; ITALIA EXPRESS</span>
-        </div>
-        <h1>Your First 30 Days: The Metro Map</h1>
-        <p>
-          Welcome aboard the UNICORE transition line with your senior guide <strong>Yohannes</strong>. Tap any station to explore your arrival tasks, paperwork, budget, and graduation launchpad.
-        </p>
-
-        <div class="metro-status-bar">
-          <div class="metro-train-status">
-            <span class="train-indicator-dot"></span>
-            <span>Current Train Position: <strong id="currentStationNameHeader">Stazione 0A: Terminal Partenza</strong></span>
-          </div>
-          <div class="metro-trip-progress">
-            <span id="metroProgressCount">0 / 12 Stations Visited</span>
-            <div class="metro-progress-pill"><div class="metro-progress-fill" id="metroProgressBarFill" style="width: 8.33%;"></div></div>
+  <!-- Workspace Container: Retractable Side Rail + Station Stage -->
+  <div class="metro-workspace-layout" id="metroWorkspace">
+    
+    <!-- Retractable Metro Side Rail -->
+    <aside class="metro-side-rail" id="metroSideRail" aria-label="Metro route map">
+      
+      <!-- Side Rail Header -->
+      <div class="side-rail-header">
+        <div class="side-rail-title-wrap">
+          <div class="rail-m-badge">M</div>
+          <div class="rail-header-text">
+            <strong>LINEA UNICORE</strong>
+            <span id="railProgressText">1 / 12 Stations Visited</span>
           </div>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Interactive Subway Line Track Diagram -->
-  <section class="metro-map-canvas-section">
-    <div class="container">
-      <div class="metro-diagram-container">
         
-        <div class="metro-diagram-header">
-          <div class="diagram-title"><i class="fa-solid fa-map"></i> MAPPA DELLA RETE &bull; METRO TRANSIT LINE</div>
-          <div class="diagram-instructions"><i class="fa-solid fa-hand-pointer"></i> Tap any station on the line to travel & view details</div>
-        </div>
-
-        <!-- Scrollable Subway Track -->
-        <div class="metro-track-scroll-wrapper" id="metroTrackWrapper">
-          <div class="metro-track-line">
-            <!-- Connecting Route Line Background -->
-            <div class="metro-rail-line">
-              <div class="metro-rail-progress" id="metroRailProgress"></div>
-            </div>
-
-            <!-- 12 Subway Stations -->
-            <div class="metro-stations-row">
-              
-              <!-- Stazione 0A -->
-              <button type="button" class="metro-station-node active" data-station="0" aria-label="Station 0A: Pre-Departure">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">0A</span>
-                  <strong class="station-name">Partenza</strong>
-                  <span class="station-sub">Pre-Departure</span>
-                </div>
-              </button>
-
-              <!-- Stazione 0B -->
-              <button type="button" class="metro-station-node" data-station="1" aria-label="Station 0B: Packing & Maps">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">0B</span>
-                  <strong class="station-name">Bagagli</strong>
-                  <span class="station-sub">Packing & Maps</span>
-                </div>
-              </button>
-
-              <!-- Stazione 1 -->
-              <button type="button" class="metro-station-node" data-station="2" aria-label="Station 1: Landing">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">1</span>
-                  <strong class="station-name">Aeroporto</strong>
-                  <span class="station-sub">Landing (Day 1)</span>
-                </div>
-              </button>
-
-              <!-- Stazione 2 -->
-              <button type="button" class="metro-station-node" data-station="3" aria-label="Station 2: Neighborhood">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">2</span>
-                  <strong class="station-name">Quartiere</strong>
-                  <span class="station-sub">Smart Shopping</span>
-                </div>
-              </button>
-
-              <!-- Stazione 3 -->
-              <button type="button" class="metro-station-node interchange" data-station="4" aria-label="Station 3: Documents">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">3</span>
-                  <strong class="station-name">Burocrazia</strong>
-                  <span class="station-sub">Codice & Kit</span>
-                </div>
-              </button>
-
-              <!-- Stazione 4 -->
-              <button type="button" class="metro-station-node" data-station="5" aria-label="Station 4: University">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">4</span>
-                  <strong class="station-name">Campus</strong>
-                  <span class="station-sub">University & Email</span>
-                </div>
-              </button>
-
-              <!-- Stazione 5 -->
-              <button type="button" class="metro-station-node interchange" data-station="6" aria-label="Station 5: Budget">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">5</span>
-                  <strong class="station-name">Finanze</strong>
-                  <span class="station-sub">Budget & CFU</span>
-                </div>
-              </button>
-
-              <!-- Stazione 6 -->
-              <button type="button" class="metro-station-node" data-station="7" aria-label="Station 6: Healthcare">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">6</span>
-                  <strong class="station-name">Sanità</strong>
-                  <span class="station-sub">SSN & Doctor</span>
-                </div>
-              </button>
-
-              <!-- Stazione 7 -->
-              <button type="button" class="metro-station-node" data-station="8" aria-label="Station 7: Italian Audio">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">7</span>
-                  <strong class="station-name">Lingua</strong>
-                  <span class="station-sub">10 Audio Phrases</span>
-                </div>
-              </button>
-
-              <!-- Stazione 8 -->
-              <button type="button" class="metro-station-node" data-station="9" aria-label="Station 8: Independence">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">8</span>
-                  <strong class="station-name">Autonomia</strong>
-                  <span class="station-sub">City Transit</span>
-                </div>
-              </button>
-
-              <!-- Stazione 9 -->
-              <button type="button" class="metro-station-node" data-station="10" aria-label="Station 9: Community">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">9</span>
-                  <strong class="station-name">Comunità</strong>
-                  <span class="station-sub">Buddies & Alumni</span>
-                </div>
-              </button>
-
-              <!-- Stazione 10 -->
-              <button type="button" class="metro-station-node terminal" data-station="11" aria-label="Station 10: Graduation Launchpad">
-                <div class="station-stop-point"><span class="stop-dot"></span></div>
-                <div class="station-label-wrap">
-                  <span class="station-code">10</span>
-                  <strong class="station-name">Laurea</strong>
-                  <span class="station-sub">Capolinea & Future</span>
-                </div>
-              </button>
-
-            </div>
-          </div>
-        </div>
-
+        <!-- Retract / Collapse Toggle Button -->
+        <button type="button" class="rail-collapse-toggle-btn" id="railCollapseToggle" title="Collapse / Expand Metro Rail" aria-label="Toggle sidebar width">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
       </div>
-    </div>
-  </section>
 
-  <!-- Active Station Detail Terminal -->
-  <main class="section bg-light" style="padding-top: 1.5rem; padding-bottom: 5rem;">
-    <div class="container" style="max-width: 900px;">
-
-      <!-- Active Station Stage Container (Rendered dynamically & smoothly by Metro Controller) -->
-      <div class="metro-station-terminal-card" id="metroStationCard">
-        
-        <!-- Station Top Banner -->
-        <div class="terminal-card-top-bar">
-          <div class="station-pill-tag" id="stationPillTag">
-            <span class="metro-m-badge">M</span>
-            <span id="stationCodeDisplay">STAZIONE 0A</span>
-          </div>
-          <div class="terminal-quick-nav">
-            <button type="button" class="btn btn-sm btn-outline" id="prevStationBtn" aria-label="Previous Station">
-              <i class="fa-solid fa-chevron-left"></i> Previous Stop
-            </button>
-            <button type="button" class="btn btn-sm btn-primary" id="nextStationBtn" aria-label="Next Station">
-              Next Stop <i class="fa-solid fa-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Dynamic Station Content Injector -->
-        <div id="stationContentViewport">
-          <!-- Populated by JS -->
-        </div>
-
-        <!-- Terminal Card Bottom Actions -->
-        <div class="terminal-card-footer">
-          <button type="button" class="btn btn-outline" id="markStationVisitedBtn">
-            <i class="fa-solid fa-check"></i> Mark Station as Visited
+      <!-- Station List Vertical Track -->
+      <div class="side-rail-stations-scroll">
+        <nav class="side-rail-track-line" aria-label="Subway stations list">
+          
+          <button type="button" class="rail-station-item active" data-station="0">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">0A</span>
+              <strong class="rail-name">Partenza</strong>
+              <span class="rail-desc">Pre-Departure & Home Tastes</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
           </button>
-          <button type="button" class="btn btn-primary" id="terminalContinueBtn">
-            Continue Journey to Next Stop <i class="fa-solid fa-arrow-right"></i>
+
+          <button type="button" class="rail-station-item" data-station="1">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">0B</span>
+              <strong class="rail-name">Hub Bagagli</strong>
+              <span class="rail-desc">Packing & Google Maps</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item" data-station="2">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">1</span>
+              <strong class="rail-name">Aeroporto</strong>
+              <span class="rail-desc">Landing & Housing (Day 1)</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item" data-station="3">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">2</span>
+              <strong class="rail-name">Quartiere</strong>
+              <span class="rail-desc">Smart Shopping & SIM Card</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item interchange" data-station="4">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">3</span>
+              <strong class="rail-name">Snodo Burocrazia</strong>
+              <span class="rail-desc">Codice Fiscale & Kit Giallo</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item" data-station="5">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">4</span>
+              <strong class="rail-name">Campus Universitario</strong>
+              <span class="rail-desc">4 Offices & Daily Email</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item interchange" data-station="6">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">5</span>
+              <strong class="rail-name">Finanze & Borsa</strong>
+              <span class="rail-desc">CFU Credits & Budget Plan</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item" data-station="7">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">6</span>
+              <strong class="rail-name">Sanità Pubblica</strong>
+              <span class="rail-desc">SSN, Family Doctor & 112</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item" data-station="8">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">7</span>
+              <strong class="rail-name">Corso Italiano</strong>
+              <span class="rail-desc">10 Spoken Audio Phrases</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item" data-station="9">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">8</span>
+              <strong class="rail-name">Autonomia Cittadina</strong>
+              <span class="rail-desc">Transit Pass & Post Office</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item" data-station="10">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">9</span>
+              <strong class="rail-name">Rete & Comunità</strong>
+              <span class="rail-desc">Buddies & UNICORE Alumni</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+          <button type="button" class="rail-station-item terminal" data-station="11">
+            <div class="rail-node-dot"><span class="inner-dot"></span></div>
+            <div class="rail-station-info">
+              <span class="rail-code">10</span>
+              <strong class="rail-name">Capolinea Laurea</strong>
+              <span class="rail-desc">120 CFU & Job Search Permit</span>
+            </div>
+            <div class="rail-check-icon"><i class="fa-solid fa-circle-check"></i></div>
+          </button>
+
+        </nav>
+      </div>
+
+    </aside>
+
+    <!-- Main Active Station Stage Area -->
+    <main class="metro-main-stage">
+      
+      <!-- Stage Top Control Bar -->
+      <div class="stage-top-bar">
+        
+        <div class="stage-top-left">
+          <!-- Mobile Sidebar Drawer Trigger -->
+          <button type="button" class="mobile-rail-trigger-btn" id="mobileRailTrigger" aria-label="Open Metro Line Navigation">
+            <i class="fa-solid fa-train-subway" style="color: #e11d48;"></i>
+            <span>Metro Line</span>
+            <span class="mobile-active-code" id="mobileCurrentStationCode">0A</span>
+          </button>
+
+          <div class="stage-train-status">
+            <span class="live-train-dot"></span>
+            <span id="trainStatusLabel">Stazione 0A: Partenza (Pre-Departure)</span>
+          </div>
+        </div>
+
+        <div class="stage-top-right">
+          <button type="button" onclick="window.print()" class="btn btn-outline btn-sm" aria-label="Print pocket guide">
+            <i class="fa-solid fa-print"></i> Print PDF
+          </button>
+          <button type="button" class="btn btn-outline btn-sm" id="prevStationBtn" aria-label="Previous Stop">
+            <i class="fa-solid fa-chevron-left"></i> Prev
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" id="nextStationBtn" aria-label="Next Stop">
+            Next <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
 
       </div>
 
-    </div>
-  </main>
+      <!-- Main Station Card Viewport -->
+      <div class="station-card-canvas" id="stationCardCanvas">
+        <!-- Content injected dynamically by JS -->
+      </div>
+
+      <!-- Stage Bottom Action Bar -->
+      <div class="stage-bottom-bar">
+        <button type="button" class="btn btn-outline" id="markStationCheckedBtn">
+          <i class="fa-solid fa-check"></i> Mark Station as Explored
+        </button>
+        <button type="button" class="btn btn-primary" id="stageContinueBtn">
+          Continue to Next Stop <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="mobile-rail-backdrop" id="mobileRailBackdrop"></div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -314,7 +302,7 @@
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
-            <li><a href="first-30-days.html">Linea UNICORE (Metro Map)</a></li>
+            <li><a href="first-30-days.html">Linea UNICORE (Metro Guide)</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
             <li><a href="living-in-italy.html">Living in Italy</a></li>
             <li><a href="buddy-program.html">Buddy Program</a></li>

@@ -1,6 +1,6 @@
 /**
- * LINEA UNICORE: Interactive Metro Map Controller (v5.0 Metro Transit Edition)
- * Metro Transit Track Animation, Station Switching, Sound Synthesis, Dynamic Budget Calculator, Healthcare Triage
+ * LINEA UNICORE: Retractable Side-Rail Metro Controller (v5.5)
+ * Retractable Sidebar Toggle, Mobile Off-Canvas Drawer, Station Transitions, Sound Synthesis, Dynamic Tools
  */
 
 (function () {
@@ -8,23 +8,25 @@
 
   const STORAGE_VISITED_KEY = 'unicore_metro_visited_stations';
   const STORAGE_CHECKS_KEY = 'unicore_metro_checked_tasks';
+  const STORAGE_SIDEBAR_COLLAPSED_KEY = 'unicore_metro_sidebar_collapsed';
   const TOTAL_STATIONS = 12;
 
   let currentStation = 0;
-  let visitedStations = new Set([0]); // Station 0 is visited by default
+  let visitedStations = new Set([0]);
   let checkedTasks = new Set();
+  let isSidebarCollapsed = false;
 
-  // Metro Station Master Database
+  // Master Station Content Database
   const STATIONS = [
     {
       code: '0A',
       name: 'Stazione 0A: Partenza (Pre-Departure)',
-      subtitle: 'PHASE 0 &bull; BEFORE LEAVING (T-MINUS 30 DAYS)',
+      phase: 'PHASE 0 &bull; BEFORE LEAVING (T-MINUS 30 DAYS)',
       icon: '📋',
       avatar: '👋',
       speech: '<strong>Benvenuto aboard Linea UNICORE! I\'m Yohannes.</strong> When I was selected, I felt overjoyed—and also had a hundred questions: <em>"What should I pack? What paperwork do I need before boarding? Will I miss my home food?"</em> Let me share what I wish someone had told me before I boarded the flight. <strong>Let\'s get you ready for Italy! 🇮🇹</strong>',
       body: `
-        <h4><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> 1. Pre-Departure Action Checklist:</h4>
+        <h4><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Pre-Departure Action Checklist:</h4>
         <ul class="clean-interactive-checklist">
           <li>
             <label class="check-item-label">
@@ -58,7 +60,7 @@
     {
       code: '0B',
       name: 'Stazione 0B: Hub Bagagli & Mappe',
-      subtitle: 'PHASE 0 &bull; BEFORE LEAVING (T-MINUS 14 DAYS)',
+      phase: 'PHASE 0 &bull; BEFORE LEAVING (T-MINUS 14 DAYS)',
       icon: '🧳',
       avatar: '🗺️',
       speech: 'Italian autumn gets chilly in October (5°C–12°C in Milan, Turin, Bologna, Florence, Verona). But here is a secret: <strong>Google Maps is your #1 daily superpower in Italy!</strong> Before boarding, download the offline map of your university city.',
@@ -96,7 +98,7 @@
     {
       code: '1',
       name: 'Stazione 1: Aeroporto d\'Arrivo (Day 1)',
-      subtitle: 'PHASE 1 &bull; SETTLEMENT (DAYS 1–2)',
+      phase: 'PHASE 1 &bull; SETTLEMENT (DAYS 1–2)',
       icon: '✈️',
       avatar: '😌',
       speech: '<em>"Okay... we\'re actually in Italy!"</em> You step out into Rome Fiumicino or Milan Malpensa. <strong>Follow the exact travel instructions given before departure to reach your university accommodation and meet your coordinator or buddy!</strong>',
@@ -140,7 +142,7 @@
     {
       code: '2',
       name: 'Stazione 2: Quartiere & Spesa (Days 2–3)',
-      subtitle: 'PHASE 1 &bull; SETTLEMENT (DAYS 2–3)',
+      phase: 'PHASE 1 &bull; SETTLEMENT (DAYS 2–3)',
       icon: '🛒',
       avatar: '💡',
       speech: '<em>"Always search on Google and compare prices before you buy anything!"</em> In Italy, buying groceries at small tourist mini-markets costs twice as much as shopping at discount supermarkets like <strong>Lidl, Eurospin, Conad, or Coop</strong>.',
@@ -163,7 +165,7 @@
     {
       code: '3',
       name: 'Stazione 3: Snodo Burocrazia (Days 3–7)',
-      subtitle: 'PHASE 1 &bull; BUREAUCRACY (DAYS 3–7)',
+      phase: 'PHASE 1 &bull; BUREAUCRACY (DAYS 3–7)',
       icon: '📑',
       avatar: '🪪',
       speech: '<strong>The Golden Rule of Italian Administration: PRENOTAZIONI (Appointments)!</strong> Public offices in Italy—banks, Agenzia delle Entrate, Poste Italiane, Questura, and Anagrafe—require an advance online appointment. If you walk in without an appointment, you will be turned away. Always book in advance!',
@@ -200,7 +202,7 @@
     {
       code: '4',
       name: 'Stazione 4: Campus Universitario (Days 5–10)',
-      subtitle: 'PHASE 1 &bull; CAMPUS LIFE (DAYS 5–10)',
+      phase: 'PHASE 1 &bull; CAMPUS LIFE (DAYS 5–10)',
       icon: '🏛️',
       avatar: '📧',
       speech: '<strong>Check your institutional university email (@studenti.uni...) every single morning!</strong> Everything in Italy—scholarship release notices, exam registration dates (*appelli*), professor cancellations, and Questura letters—arrives via email. Missing an email will cost you time, energy, and money!',
@@ -240,7 +242,7 @@
     {
       code: '5',
       name: 'Stazione 5: Banca & Borsa di Studio (Days 8–14)',
-      subtitle: 'PHASE 2 &bull; FINANCIAL MASTERY (DAYS 8–14)',
+      phase: 'PHASE 2 &bull; FINANCIAL MASTERY (DAYS 8–14)',
       icon: '💶',
       avatar: '💡',
       speech: '<strong>How Italian scholarships actually work:</strong> The first installment takes 3–6 weeks to arrive after opening your Italian bank account. But here is the most critical fact: <strong>subsequent installments require passing exams and earning CFU credits!</strong> If you don\'t earn enough credits by university deadlines, scholarship payments are paused or canceled!',
@@ -339,8 +341,8 @@
     },
     {
       code: '6',
-      name: 'Stazione 6: Servizio Sanitario SSN (Days 10–15)',
-      subtitle: 'PHASE 2 &bull; HEALTHCARE (DAYS 10–15)',
+      name: 'Stazione 6: Sanità Pubblica SSN (Days 10–15)',
+      phase: 'PHASE 2 &bull; HEALTHCARE (DAYS 10–15)',
       icon: '🩺',
       avatar: '🩺',
       speech: '<strong>The Italian Healthcare System (SSN) is universal, but you must know how it works:</strong> For regular non-emergency illnesses, contact your <strong>Family Doctor (Medico di Base)</strong>. For life-threatening emergencies, go to the <strong>Emergency Room (Pronto Soccorso)</strong> or call 112.',
@@ -378,7 +380,7 @@
     {
       code: '7',
       name: 'Stazione 7: Corso Italiano (Days 12–20)',
-      subtitle: 'PHASE 2 &bull; LANGUAGE (DAYS 12–20)',
+      phase: 'PHASE 2 &bull; LANGUAGE (DAYS 12–20)',
       icon: '🗣️',
       avatar: '🇮🇹',
       speech: 'Even if your Master\'s is 100% in English, greeting Italians with <em>"Buongiorno"</em> or <em>"Grazie mille"</em> makes people smile and opens doors at government desks. <strong>Click the speaker icons to hear each phrase spoken:</strong>',
@@ -477,7 +479,7 @@
     {
       code: '8',
       name: 'Stazione 8: Autonomia Cittadina (Days 15–21)',
-      subtitle: 'PHASE 2 &bull; AUTONOMY (DAYS 15–21)',
+      phase: 'PHASE 2 &bull; AUTONOMY (DAYS 15–21)',
       icon: '🚌',
       avatar: '💪',
       speech: 'In week 1, my buddy accompanied me everywhere. But by week 3, I was buying my own tram tickets, booking postal appointments, and ordering food with confidence. <strong>The ultimate goal of UNICORE is to help you stand proudly on your own feet!</strong>',
@@ -513,7 +515,7 @@
     {
       code: '9',
       name: 'Stazione 9: Rete & Comunità (Days 20–25)',
-      subtitle: 'PHASE 2 &bull; COMMUNITY (DAYS 20–25)',
+      phase: 'PHASE 2 &bull; COMMUNITY (DAYS 20–25)',
       icon: '🤝',
       avatar: '🫂',
       speech: '<em>"Your Master\'s degree is important. But your community is what makes Italy feel like home."</em> Form study groups with classmates, cook weekend dinners, and connect with senior UNICORE scholars who have walked this exact path before you.',
@@ -548,7 +550,7 @@
     {
       code: '10',
       name: 'Stazione 10: Capolinea Laurea (Days 25–30)',
-      subtitle: 'DAY 30 &bull; THE GRADUATION LAUNCHPAD',
+      phase: 'DAY 30 &bull; THE GRADUATION LAUNCHPAD',
       icon: '🎓',
       avatar: '🚀',
       speech: 'Look back at Day 1 when you landed with that single suitcase. <strong>You now know where to go. You know who to ask. You understand how Italian bureaucracy, university, and budgeting work. And most importantly, you know you don\'t have to do it alone!</strong>',
@@ -584,9 +586,9 @@
     }
   ];
 
-  // Web Audio Synthesizer (Safe)
+  // Sound Synthesizer
   let audioCtx = null;
-  function playMetroChime(type = 'chime') {
+  function playSound(type = 'chime') {
     try {
       if (!audioCtx) {
         const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -602,14 +604,13 @@
       gain.connect(audioCtx.destination);
 
       if (type === 'chime') {
-        // Italian train announcement two-tone chime (Fa - Do)
         osc.type = 'triangle';
         osc.frequency.setValueAtTime(349.23, now);
         osc.frequency.setValueAtTime(523.25, now + 0.12);
         gain.gain.setValueAtTime(0.15, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
         osc.start(now);
-        osc.stop(now + 0.5);
+        osc.stop(now + 0.45);
       } else if (type === 'check') {
         osc.type = 'sine';
         osc.frequency.setValueAtTime(587.33, now);
@@ -633,14 +634,16 @@
         });
       }
     } catch (e) {
-      // Audio fallback
+      // Fallback
     }
   }
 
   function init() {
     loadSavedState();
-    attachMetroStationEvents();
-    renderActiveStation(currentStation, false);
+    setupSidebarToggle();
+    setupMobileDrawer();
+    setupStationClicks();
+    renderStation(currentStation, false);
   }
 
   function loadSavedState() {
@@ -650,6 +653,12 @@
 
       const savedChecks = localStorage.getItem(STORAGE_CHECKS_KEY);
       if (savedChecks) checkedTasks = new Set(JSON.parse(savedChecks));
+
+      const savedCollapse = localStorage.getItem(STORAGE_SIDEBAR_COLLAPSED_KEY);
+      if (savedCollapse === 'true') {
+        isSidebarCollapsed = true;
+        document.getElementById('metroWorkspace')?.classList.add('sidebar-collapsed');
+      }
     } catch (e) {
       // Storage fallback
     }
@@ -659,12 +668,52 @@
     try {
       localStorage.setItem(STORAGE_VISITED_KEY, JSON.stringify(Array.from(visitedStations)));
       localStorage.setItem(STORAGE_CHECKS_KEY, JSON.stringify(Array.from(checkedTasks)));
+      localStorage.setItem(STORAGE_SIDEBAR_COLLAPSED_KEY, isSidebarCollapsed ? 'true' : 'false');
     } catch (e) {
       // Storage fallback
     }
   }
 
-  function renderActiveStation(index, isUserAction = true) {
+  function setupSidebarToggle() {
+    const toggleBtn = document.getElementById('railCollapseToggle');
+    const workspace = document.getElementById('metroWorkspace');
+
+    if (toggleBtn && workspace) {
+      toggleBtn.addEventListener('click', () => {
+        isSidebarCollapsed = !isSidebarCollapsed;
+        workspace.classList.toggle('sidebar-collapsed', isSidebarCollapsed);
+        toggleBtn.innerHTML = isSidebarCollapsed ? '<i class="fa-solid fa-chevron-right"></i>' : '<i class="fa-solid fa-chevron-left"></i>';
+        saveState();
+      });
+
+      if (isSidebarCollapsed) {
+        toggleBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+      }
+    }
+  }
+
+  function setupMobileDrawer() {
+    const triggerBtn = document.getElementById('mobileRailTrigger');
+    const sideRail = document.getElementById('metroSideRail');
+    const backdrop = document.getElementById('mobileRailBackdrop');
+
+    function openMobileDrawer() {
+      sideRail?.classList.add('mobile-open');
+      backdrop?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileDrawer() {
+      sideRail?.classList.remove('mobile-open');
+      backdrop?.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    triggerBtn?.addEventListener('click', openMobileDrawer);
+    backdrop?.addEventListener('click', closeMobileDrawer);
+  }
+
+  function renderStation(index, isUserAction = true) {
     if (index < 0) index = 0;
     if (index >= TOTAL_STATIONS) index = TOTAL_STATIONS - 1;
     currentStation = index;
@@ -674,73 +723,58 @@
     const data = STATIONS[currentStation];
     if (!data) return;
 
-    // 1. Update Metro Track Nodes
-    const stationNodes = document.querySelectorAll('.metro-station-node');
-    stationNodes.forEach((node, idx) => {
-      node.classList.toggle('active', idx === currentStation);
-      node.classList.toggle('visited', visitedStations.has(idx));
+    // 1. Update Rail Station Items in Sidebar
+    const stationItems = document.querySelectorAll('.rail-station-item');
+    stationItems.forEach((item, idx) => {
+      item.classList.toggle('active', idx === currentStation);
+      item.classList.toggle('visited', visitedStations.has(idx));
     });
 
-    // Scroll active station node into view on horizontal track
-    const activeNode = document.querySelector(`.metro-station-node[data-station="${currentStation}"]`);
-    if (activeNode) {
-      activeNode.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    const activeItem = document.querySelector(`.rail-station-item[data-station="${currentStation}"]`);
+    if (activeItem) {
+      activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    // 2. Update Metro Rail Line Glowing Progress
-    const railProgress = document.getElementById('metroRailProgress');
-    if (railProgress) {
-      const railPct = (currentStation / (TOTAL_STATIONS - 1)) * 100;
-      railProgress.style.width = `${railPct}%`;
-    }
+    // 2. Update Header & Mobile Labels
+    const trainStatusLabel = document.getElementById('trainStatusLabel');
+    const railProgressText = document.getElementById('railProgressText');
+    const mobileCurrentCode = document.getElementById('mobileCurrentStationCode');
 
-    // 3. Update Header Status
-    const headerName = document.getElementById('currentStationNameHeader');
-    const progressCount = document.getElementById('metroProgressCount');
-    const progressBarFill = document.getElementById('metroProgressBarFill');
+    if (trainStatusLabel) trainStatusLabel.textContent = data.name;
+    if (railProgressText) railProgressText.textContent = `${visitedStations.size} / ${TOTAL_STATIONS} Stations Visited`;
+    if (mobileCurrentCode) mobileCurrentCode.textContent = data.code;
 
-    if (headerName) headerName.textContent = data.name;
-    if (progressCount) progressCount.textContent = `${visitedStations.size} / ${TOTAL_STATIONS} Stations Visited`;
-    if (progressBarFill) {
-      const pct = Math.round((visitedStations.size / TOTAL_STATIONS) * 100);
-      progressBarFill.style.width = `${pct}%`;
-    }
-
-    // 4. Update Terminal Card Viewport
-    const viewport = document.getElementById('stationContentViewport');
-    const stationCodeDisplay = document.getElementById('stationCodeDisplay');
-    const prevBtn = document.getElementById('prevStationBtn');
-    const nextBtn = document.getElementById('nextStationBtn');
-    const markVisitedBtn = document.getElementById('markStationVisitedBtn');
-    const continueBtn = document.getElementById('terminalContinueBtn');
-
-    if (stationCodeDisplay) stationCodeDisplay.textContent = `STAZIONE ${data.code}`;
-
-    if (viewport) {
-      viewport.innerHTML = `
-        <div class="terminal-station-header">
-          <div class="station-main-icon">${data.icon}</div>
+    // 3. Render Station Canvas Content
+    const canvas = document.getElementById('stationCardCanvas');
+    if (canvas) {
+      canvas.innerHTML = `
+        <div class="station-hero-banner">
+          <div class="station-hero-icon">${data.icon}</div>
           <div>
-            <span class="station-subtitle-tag">${data.subtitle}</span>
-            <h2 class="station-main-title">${data.name}</h2>
+            <span class="station-phase-pill">${data.phase}</span>
+            <h2 class="station-title">${data.name}</h2>
           </div>
         </div>
 
-        <div class="yohannes-speech-bubble" style="margin-top: 1.25rem;">
+        <div class="yohannes-speech-bubble">
           <div class="bubble-avatar">${data.avatar}</div>
           <div class="bubble-content">${data.speech}</div>
         </div>
 
-        <div class="station-inner-content">
+        <div class="station-body-wrap">
           ${data.body}
         </div>
       `;
 
-      // Re-initialize dynamic tools inside the rendered content
-      initDynamicTools();
+      initTools();
     }
 
-    // 5. Update Navigation Buttons
+    // 4. Update Navigation Buttons
+    const prevBtn = document.getElementById('prevStationBtn');
+    const nextBtn = document.getElementById('nextStationBtn');
+    const stageContinueBtn = document.getElementById('stageContinueBtn');
+    const markCheckedBtn = document.getElementById('markStationCheckedBtn');
+
     if (prevBtn) {
       prevBtn.disabled = currentStation === 0;
       prevBtn.style.opacity = currentStation === 0 ? '0.4' : '1';
@@ -750,79 +784,68 @@
       if (currentStation === TOTAL_STATIONS - 1) {
         nextBtn.innerHTML = '<i class="fa-solid fa-trophy"></i> Capolinea';
       } else {
-        nextBtn.innerHTML = 'Next Stop <i class="fa-solid fa-chevron-right"></i>';
+        nextBtn.innerHTML = 'Next <i class="fa-solid fa-chevron-right"></i>';
       }
     }
 
-    if (continueBtn) {
+    if (stageContinueBtn) {
       if (currentStation === TOTAL_STATIONS - 1) {
-        continueBtn.innerHTML = '<i class="fa-solid fa-trophy"></i> Arrived at Capolinea Laurea!';
-        continueBtn.style.background = '#059669';
+        stageContinueBtn.innerHTML = '<i class="fa-solid fa-trophy"></i> All 12 Stations Completed!';
+        stageContinueBtn.style.background = '#059669';
       } else {
         const nextData = STATIONS[currentStation + 1];
-        continueBtn.innerHTML = `Travel to ${nextData.code}. ${nextData.name.split(':')[1] || ''} <i class="fa-solid fa-arrow-right"></i>`;
-        continueBtn.style.background = '';
+        stageContinueBtn.innerHTML = `Travel to ${nextData.code}. ${nextData.name.split(':')[1] || ''} <i class="fa-solid fa-arrow-right"></i>`;
+        stageContinueBtn.style.background = '';
       }
     }
 
-    if (markVisitedBtn) {
-      markVisitedBtn.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #059669;"></i> Station Checked';
+    if (markCheckedBtn) {
+      markCheckedBtn.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #059669;"></i> Station Explored';
     }
+
+    // Close mobile drawer on selection
+    document.getElementById('metroSideRail')?.classList.remove('mobile-open');
+    document.getElementById('mobileRailBackdrop')?.classList.remove('active');
+    document.body.style.overflow = '';
 
     if (isUserAction) {
-      playMetroChime('chime');
-      const card = document.getElementById('metroStationCard');
-      if (card) {
-        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      playSound('chime');
+      window.scrollTo({ top: 110, behavior: 'smooth' });
     }
   }
 
-  function attachMetroStationEvents() {
-    // Station Nodes on Map
-    document.querySelectorAll('.metro-station-node').forEach((node) => {
-      node.addEventListener('click', () => {
-        const idx = parseInt(node.getAttribute('data-station'), 10);
-        if (!isNaN(idx)) renderActiveStation(idx, true);
+  function setupStationClicks() {
+    document.querySelectorAll('.rail-station-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const idx = parseInt(item.getAttribute('data-station'), 10);
+        if (!isNaN(idx)) renderStation(idx, true);
       });
     });
 
-    // Top Prev/Next Buttons
-    const prevBtn = document.getElementById('prevStationBtn');
-    const nextBtn = document.getElementById('nextStationBtn');
-    const continueBtn = document.getElementById('terminalContinueBtn');
+    document.getElementById('prevStationBtn')?.addEventListener('click', () => {
+      if (currentStation > 0) renderStation(currentStation - 1, true);
+    });
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        if (currentStation > 0) renderActiveStation(currentStation - 1, true);
-      });
-    }
+    document.getElementById('nextStationBtn')?.addEventListener('click', () => {
+      if (currentStation < TOTAL_STATIONS - 1) {
+        renderStation(currentStation + 1, true);
+      } else {
+        playSound('complete');
+        triggerConfetti();
+      }
+    });
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        if (currentStation < TOTAL_STATIONS - 1) {
-          renderActiveStation(currentStation + 1, true);
-        } else {
-          playMetroChime('complete');
-          triggerConfetti();
-        }
-      });
-    }
-
-    if (continueBtn) {
-      continueBtn.addEventListener('click', () => {
-        if (currentStation < TOTAL_STATIONS - 1) {
-          renderActiveStation(currentStation + 1, true);
-        } else {
-          playMetroChime('complete');
-          triggerConfetti();
-        }
-      });
-    }
+    document.getElementById('stageContinueBtn')?.addEventListener('click', () => {
+      if (currentStation < TOTAL_STATIONS - 1) {
+        renderStation(currentStation + 1, true);
+      } else {
+        playSound('complete');
+        triggerConfetti();
+      }
+    });
   }
 
-  // Dynamic Tools Attachments (Budget, Triage, Audio, Quizzes, Checks)
-  function initDynamicTools() {
+  function initTools() {
     // Checkboxes
     document.querySelectorAll('.journey-checkbox').forEach((cb) => {
       const taskId = cb.getAttribute('data-task');
@@ -838,7 +861,7 @@
         if (cb.checked) {
           if (id) checkedTasks.add(id);
           if (parentLi) parentLi.classList.add('checked-task');
-          playMetroChime('check');
+          playSound('check');
         } else {
           if (id) checkedTasks.delete(id);
           if (parentLi) parentLi.classList.remove('checked-task');
@@ -963,7 +986,7 @@
           stipendSlider.value = amount;
           presetPills.forEach(p => p.classList.toggle('active', p === pill));
           calculateBudget();
-          playMetroChime('check');
+          playSound('check');
         }
       });
     });
@@ -975,45 +998,45 @@
     calculateBudget();
 
     // Copy Budget Button
-    const copyBtn = document.getElementById('copyBudgetBtn');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', () => {
-        const stipend = document.getElementById('budgetStipendInput')?.value || '500';
-        const rent = document.getElementById('rentVal')?.textContent || '€150';
-        const food = document.getElementById('foodVal')?.textContent || '€180';
-        const phone = document.getElementById('phoneVal')?.textContent || '€30';
-        const transit = document.getElementById('transitVal')?.textContent || '€25';
-        const other = document.getElementById('otherVal')?.textContent || '€45';
-        const total = document.getElementById('budgetTotalDisplay')?.textContent || '€430';
-        const net = document.getElementById('budgetNetBalanceDisplay')?.textContent || '+€70';
-        const projection = document.getElementById('budgetAnnualSavingsDisplay')?.textContent || '+€700 Saved';
+    document.getElementById('copyBudgetBtn')?.addEventListener('click', () => {
+      const stipend = document.getElementById('budgetStipendInput')?.value || '500';
+      const rent = document.getElementById('rentVal')?.textContent || '€150';
+      const food = document.getElementById('foodVal')?.textContent || '€180';
+      const phone = document.getElementById('phoneVal')?.textContent || '€30';
+      const transit = document.getElementById('transitVal')?.textContent || '€25';
+      const other = document.getElementById('otherVal')?.textContent || '€45';
+      const total = document.getElementById('budgetTotalDisplay')?.textContent || '€430';
+      const net = document.getElementById('budgetNetBalanceDisplay')?.textContent || '+€70';
+      const projection = document.getElementById('budgetAnnualSavingsDisplay')?.textContent || '+€700 Saved';
 
-        const planText = [
-          '🇮🇹 UNICORE Student Monthly Budget Plan',
-          '---------------------------------------',
-          `• Monthly Stipend: €${stipend}/month`,
-          `• Housing / Utilities: ${rent}`,
-          `• Groceries & Mensa: ${food}`,
-          `• Phone & Internet: ${phone}`,
-          `• Public Transit Pass: ${transit}`,
-          `• Personal & Buffer: ${other}`,
-          '---------------------------------------',
-          `• Total Monthly Expenses: ${total}`,
-          `• Net Balance: ${net}/month`,
-          `• 10-Month Academic Projection: ${projection}`,
-          '',
-          'Generated from Linea UNICORE Metro Guide (https://ysmjone-max.github.io/Unicore/first-30-days.html)'
-        ].join('\n');
+      const planText = [
+        '🇮🇹 UNICORE Student Monthly Budget Plan',
+        '---------------------------------------',
+        `• Monthly Stipend: €${stipend}/month`,
+        `• Housing / Utilities: ${rent}`,
+        `• Groceries & Mensa: ${food}`,
+        `• Phone & Internet: ${phone}`,
+        `• Public Transit Pass: ${transit}`,
+        `• Personal & Buffer: ${other}`,
+        '---------------------------------------',
+        `• Total Monthly Expenses: ${total}`,
+        `• Net Balance: ${net}/month`,
+        `• 10-Month Academic Projection: ${projection}`,
+        '',
+        'Generated from Linea UNICORE Metro Guide (https://ysmjone-max.github.io/Unicore/first-30-days.html)'
+      ].join('\n');
 
-        navigator.clipboard.writeText(planText).then(() => {
+      navigator.clipboard.writeText(planText).then(() => {
+        const copyBtn = document.getElementById('copyBudgetBtn');
+        if (copyBtn) {
           copyBtn.innerHTML = '<i class="fa-solid fa-check" style="color: #059669;"></i> Copied!';
-          playMetroChime('check');
+          playSound('check');
           setTimeout(() => {
             copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Budget Plan to Clipboard';
           }, 2500);
-        });
+        }
       });
-    }
+    });
 
     // Healthcare Triage
     const triageBtns = document.querySelectorAll('.triage-select-btn');
@@ -1061,7 +1084,7 @@
               <div class="triage-res-action">${item.action}</div>
             </div>
           `;
-          playMetroChime('check');
+          playSound('check');
         }
       });
     });
@@ -1108,7 +1131,7 @@
         if (feedbackEl) {
           if (isCorrect) {
             feedbackEl.innerHTML = `<span style="color: #059669; font-weight: 800;"><i class="fa-solid fa-circle-check"></i> Exactly right!</span> ${btn.getAttribute('data-explanation') || ''}`;
-            playMetroChime('check');
+            playSound('check');
           } else {
             feedbackEl.innerHTML = `<span style="color: #dc2626; font-weight: 800;"><i class="fa-solid fa-circle-xmark"></i> Not quite!</span> ${btn.getAttribute('data-explanation') || ''}`;
           }
