@@ -1,6 +1,6 @@
 /**
- * UNICORE: Welcome to Italy with Yohannes (v3.0 Friendly Mentorship Edition)
- * State Management, Flexible Dynamic Budget Simulator, Healthcare Triage, Audio Synthesis, Web Audio Chimes
+ * UNICORE: Welcome to Italy with Yohannes (v3.1 Mobile & Dynamic Budget Edition)
+ * State Management, Touch Gesture Swipe, Dynamic Algorithm, Healthcare Triage, Audio Synthesis
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const audioBtns = document.querySelectorAll('.phrase-audio-btn');
   const interactiveCheckboxes = document.querySelectorAll('.interactive-check-input');
 
-  // Load Saved State
   function loadSavedState() {
     try {
       const savedChapter = localStorage.getItem(STORAGE_KEY);
@@ -147,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Render Current Chapter
   function renderChapter(index, isUserAction = false) {
     if (index < 0) index = 0;
     if (index >= TOTAL_CHAPTERS) index = TOTAL_CHAPTERS - 1;
@@ -295,6 +293,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Mobile Touch Swipe Gesture Support (Swipe Left/Right to change chapters)
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let touchStartY = 0;
+  let touchEndY = 0;
+
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipeGesture();
+  }, { passive: true });
+
+  function handleSwipeGesture() {
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+
+    // Only register horizontal swipes (ignore vertical scrolling)
+    if (Math.abs(diffX) > 75 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+      if (diffX < 0) {
+        // Swiped Left -> Next Chapter
+        if (currentChapter < TOTAL_CHAPTERS - 1) renderChapter(currentChapter + 1, true);
+      } else {
+        // Swiped Right -> Prev Chapter
+        if (currentChapter > 0) renderChapter(currentChapter - 1, true);
+      }
+    }
+  }
+
   function openBackpackModal() {
     if (backpackModal) {
       backpackModal.classList.add('active');
@@ -350,56 +381,98 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Enhanced Dynamic Student Budget Simulator (Flexible Stipend Input)
-  const stipendSlider = document.getElementById('budgetStipend');
+  // =========================================================================
+  // DYNAMIC ALGORITHM: Customizable Stipend Range & Multi-Expense Calculator
+  // =========================================================================
+  const stipendInput = document.getElementById('budgetStipendInput');
+  const stipendSlider = document.getElementById('budgetStipendSlider');
+  const presetPills = document.querySelectorAll('.preset-pill');
+
   const rentSlider = document.getElementById('budgetRent');
   const foodSlider = document.getElementById('budgetFood');
+  const phoneSlider = document.getElementById('budgetPhone');
+  const transitSlider = document.getElementById('budgetTransit');
   const otherSlider = document.getElementById('budgetOther');
-  const totalCostEl = document.getElementById('budgetTotalDisplay');
+
+  const totalDisplay = document.getElementById('budgetTotalDisplay');
+  const netDisplay = document.getElementById('budgetNetBalanceDisplay');
+  const annualDisplay = document.getElementById('budgetAnnualSavingsDisplay');
   const balanceStatusEl = document.getElementById('budgetBalanceStatus');
 
-  function updateBudgetCalc() {
-    if (!stipendSlider || !rentSlider || !foodSlider || !otherSlider || !totalCostEl) return;
-    
-    const stipend = parseInt(stipendSlider.value, 10) || 500;
-    const rent = parseInt(rentSlider.value, 10) || 0;
-    const food = parseInt(foodSlider.value, 10) || 0;
-    const other = parseInt(otherSlider.value, 10) || 0;
-    const total = rent + food + other;
+  function calculateBudget() {
+    if (!stipendInput) return;
 
-    totalCostEl.textContent = `€${total}`;
-    const sEl = document.getElementById('stipendVal');
-    const rEl = document.getElementById('rentVal');
-    const fEl = document.getElementById('foodVal');
-    const oEl = document.getElementById('otherVal');
-    
-    if (sEl) sEl.textContent = `€${stipend}/mo`;
-    if (rEl) rEl.textContent = `€${rent}`;
-    if (fEl) fEl.textContent = `€${food}`;
-    if (oEl) oEl.textContent = `€${other}`;
+    let stipend = parseFloat(stipendInput.value) || 0;
+    if (stipend < 0) stipend = 0;
 
+    const rent = parseFloat(rentSlider?.value) || 0;
+    const food = parseFloat(foodSlider?.value) || 0;
+    const phone = parseFloat(phoneSlider?.value) || 0;
+    const transit = parseFloat(transitSlider?.value) || 0;
+    const other = parseFloat(otherSlider?.value) || 0;
+
+    const totalExpenses = rent + food + phone + transit + other;
+    const netMonthly = stipend - totalExpenses;
+    const annualSavings = netMonthly * 10; // Standard 10-month university academic year
+
+    // Update Live Value Labels
+    if (document.getElementById('rentVal')) document.getElementById('rentVal').textContent = `€${rent}`;
+    if (document.getElementById('foodVal')) document.getElementById('foodVal').textContent = `€${food}`;
+    if (document.getElementById('phoneVal')) document.getElementById('phoneVal').textContent = `€${phone}`;
+    if (document.getElementById('transitVal')) document.getElementById('transitVal').textContent = `€${transit}`;
+    if (document.getElementById('otherVal')) document.getElementById('otherVal').textContent = `€${other}`;
+
+    // Update Result Metrics
+    if (totalDisplay) totalDisplay.textContent = `€${totalExpenses}`;
+
+    if (netDisplay) {
+      if (netMonthly >= 0) {
+        netDisplay.textContent = `+€${netMonthly}`;
+        netDisplay.className = 'metric-val text-surplus';
+      } else {
+        netDisplay.textContent = `-€${Math.abs(netMonthly)}`;
+        netDisplay.className = 'metric-val text-deficit';
+      }
+    }
+
+    if (annualDisplay) {
+      if (annualSavings >= 0) {
+        annualDisplay.textContent = `+€${annualSavings} Saved`;
+        annualDisplay.className = 'metric-val text-surplus';
+      } else {
+        annualDisplay.textContent = `-€${Math.abs(annualSavings)} Deficit`;
+        annualDisplay.className = 'metric-val text-deficit';
+      }
+    }
+
+    // Dynamic Contextual Advice Algorithm
     if (balanceStatusEl) {
-      if (total <= stipend) {
-        const saved = stipend - total;
+      if (netMonthly >= 100) {
         balanceStatusEl.innerHTML = `
           <div class="budget-status-box positive">
-            <span style="color: #059669; font-weight: 800; font-size: 0.95rem;">
-              <i class="fa-solid fa-circle-check"></i> Great Plan! You save €${saved}/month.
-            </span>
-            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #065f46;">
-              💡 <strong>Yohannes Tip:</strong> Put this €${saved} directly into your Erasmus+ / Job Search transition savings buffer!
+            <span class="status-title"><i class="fa-solid fa-circle-check"></i> Outstanding Budgeting! (+€${netMonthly}/mo)</span>
+            <p class="status-desc">
+              Over your 10-month Master's academic year, you will build a <strong>€${annualSavings} savings fund</strong>. This is enough to fund an <strong>Erasmus+ mobility semester</strong> in another EU country or cover your post-graduation job search transition permit (*Art. 39-bis.1*)!
+            </p>
+          </div>
+        `;
+      } else if (netMonthly >= 0) {
+        balanceStatusEl.innerHTML = `
+          <div class="budget-status-box balanced">
+            <span class="status-title"><i class="fa-solid fa-scale-balanced"></i> Healthy Balanced Budget (+€${netMonthly}/mo)</span>
+            <p class="status-desc">
+              You are living comfortably within your scholarship amount with €${netMonthly}/month set aside for unforeseen expenses. 
             </p>
           </div>
         `;
       } else {
-        const over = total - stipend;
+        const deficit = Math.abs(netMonthly);
         balanceStatusEl.innerHTML = `
           <div class="budget-status-box negative">
-            <span style="color: #dc2626; font-weight: 800; font-size: 0.95rem;">
-              <i class="fa-solid fa-triangle-exclamation"></i> Deficit Alert: €${over}/month above your stipend!
-            </span>
-            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #991b1b;">
-              💡 <strong>Yohannes Tip:</strong> Use the university Mensa (Fascia 0/1 subsidized meals for €2–€3) and cook with roommates to stay balanced!
+            <span class="status-title"><i class="fa-solid fa-triangle-exclamation"></i> Budget Deficit Alert: -€${deficit}/month</span>
+            <p class="status-desc">
+              Your planned expenses exceed your monthly stipend by €${deficit}. 
+              <br>💡 <strong>Yohannes Tip:</strong> Apply for university canteen (*Mensa*) Fascia 0 (€2.50 full meals), share groceries with roommates, and buy student discounted annual transit passes to eliminate this deficit!
             </p>
           </div>
         `;
@@ -407,12 +480,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  [stipendSlider, rentSlider, foodSlider, otherSlider].forEach(slider => {
-    if (slider) slider.addEventListener('input', updateBudgetCalc);
-  });
-  updateBudgetCalc();
+  // Sync Number Input with Slider & Presets
+  if (stipendInput && stipendSlider) {
+    stipendInput.addEventListener('input', () => {
+      stipendSlider.value = stipendInput.value;
+      updatePresetActive(stipendInput.value);
+      calculateBudget();
+    });
 
-  // Symptom Triage Tool (Italian Healthcare System)
+    stipendSlider.addEventListener('input', () => {
+      stipendInput.value = stipendSlider.value;
+      updatePresetActive(stipendSlider.value);
+      calculateBudget();
+    });
+  }
+
+  presetPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const amount = pill.getAttribute('data-amount');
+      if (stipendInput && stipendSlider) {
+        stipendInput.value = amount;
+        stipendSlider.value = amount;
+        updatePresetActive(amount);
+        calculateBudget();
+        playChime('step');
+      }
+    });
+  });
+
+  function updatePresetActive(val) {
+    presetPills.forEach(p => {
+      if (p.getAttribute('data-amount') === val) {
+        p.classList.add('active');
+      } else {
+        p.classList.remove('active');
+      }
+    });
+  }
+
+  [rentSlider, foodSlider, phoneSlider, transitSlider, otherSlider].forEach(slider => {
+    if (slider) slider.addEventListener('input', calculateBudget);
+  });
+  calculateBudget();
+
+  // Symptom Triage Tool
   const triageOptions = document.querySelectorAll('.triage-select-btn');
   const triageOutput = document.getElementById('triageResultBox');
 
@@ -498,7 +609,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Confetti Animation
+  // Confetti Particle Engine
   function triggerConfetti() {
     try {
       const duration = 3500;

@@ -608,35 +608,108 @@
           </ul>
         </div>
 
-        <!-- Enhanced Flexible Dynamic Budget Simulator -->
+                <!-- Enhanced Flexible Dynamic Budget Simulator -->
         <div class="interactive-budget-box">
-          <h4><i class="fa-solid fa-calculator" style="color: var(--primary);"></i> Flexible Student Budget Simulator</h4>
-          <p style="font-size: 0.825rem; color: var(--slate-600); margin-bottom: 1rem;">Set your monthly scholarship amount and adjust estimated spending:</p>
+          <div class="budget-box-header">
+            <h4><i class="fa-solid fa-calculator" style="color: var(--primary);"></i> Scholar Dynamic Budget Calculator</h4>
+            <span class="budget-help-tag">Customizable Stipend & Range Calculation</span>
+          </div>
           
+          <p style="font-size: 0.85rem; color: var(--slate-600); margin-bottom: 1.25rem;">
+            Stipends vary by university and regional scholarship agencies (EDISU, LazioDisco, ER.GO). <strong>Type your exact monthly amount or pick a range below:</strong>
+          </p>
+          
+          <!-- Stipend Input Area -->
+          <div class="stipend-input-container">
+            <div class="stipend-custom-input-row">
+              <label for="budgetStipendInput"><strong>Your Monthly Stipend / Income:</strong></label>
+              <div class="stipend-currency-wrap">
+                <span class="currency-symbol">€</span>
+                <input type="number" id="budgetStipendInput" min="0" max="3000" step="10" value="500" class="budget-num-field" aria-label="Monthly stipend amount">
+                <span class="currency-period">/ month</span>
+              </div>
+            </div>
+
+            <!-- Quick Presets -->
+            <div class="stipend-preset-pills">
+              <button type="button" class="preset-pill" data-amount="350">€350 (Partial)</button>
+              <button type="button" class="preset-pill active" data-amount="500">€500 (Standard)</button>
+              <button type="button" class="preset-pill" data-amount="650">€650 (Regional DSU)</button>
+              <button type="button" class="preset-pill" data-amount="850">€850 (Full Package)</button>
+            </div>
+            
+            <input type="range" id="budgetStipendSlider" min="100" max="1500" value="500" step="25" class="range-slider" aria-label="Stipend range slider">
+          </div>
+
+          <div class="budget-expense-category-title">
+            <i class="fa-solid fa-cart-flatbed"></i> Monthly Planned Living Expenses
+          </div>
+
+          <!-- Expense Sliders -->
           <div class="budget-slider-row">
-            <label>Monthly Scholarship / Income: <strong id="stipendVal" style="color: var(--primary);">€500/mo</strong></label>
-            <input type="range" id="budgetStipend" min="300" max="900" value="500" step="25">
+            <label>
+              <span><i class="fa-solid fa-house-user"></i> Housing / Extra Utilities:</span>
+              <strong id="rentVal">€150</strong>
+            </label>
+            <input type="range" id="budgetRent" min="0" max="500" value="150" step="10" class="range-slider">
           </div>
 
           <div class="budget-slider-row">
-            <label>Housing Utilities & Extra Rent: <strong id="rentVal">€150</strong></label>
-            <input type="range" id="budgetRent" min="50" max="350" value="150" step="10">
+            <label>
+              <span><i class="fa-solid fa-utensils"></i> Groceries & Campus Canteen (*Mensa*):</span>
+              <strong id="foodVal">€180</strong>
+            </label>
+            <input type="range" id="budgetFood" min="50" max="400" value="180" step="10" class="range-slider">
           </div>
 
           <div class="budget-slider-row">
-            <label>Groceries & Canteen (*Mensa*): <strong id="foodVal">€180</strong></label>
-            <input type="range" id="budgetFood" min="100" max="300" value="180" step="10">
+            <label>
+              <span><i class="fa-solid fa-wifi"></i> Mobile SIM, Internet & Study Materials:</span>
+              <strong id="phoneVal">€30</strong>
+            </label>
+            <input type="range" id="budgetPhone" min="5" max="100" value="30" step="5" class="range-slider">
           </div>
 
           <div class="budget-slider-row">
-            <label>Phone, Transit & Personal: <strong id="otherVal">€70</strong></label>
-            <input type="range" id="budgetOther" min="30" max="150" value="70" step="5">
+            <label>
+              <span><i class="fa-solid fa-bus-simple"></i> Local Bus / Metro Student Transit Pass:</span>
+              <strong id="transitVal">€25</strong>
+            </label>
+            <input type="range" id="budgetTransit" min="0" max="80" value="25" step="5" class="range-slider">
           </div>
 
-          <div class="budget-summary-bar">
-            <div>Total Monthly Expenses: <strong id="budgetTotalDisplay">€400</strong></div>
-            <div id="budgetBalanceStatus"></div>
+          <div class="budget-slider-row">
+            <label>
+              <span><i class="fa-solid fa-mug-hot"></i> Coffee, Personal Care & Emergency Buffer:</span>
+              <strong id="otherVal">€45</strong>
+            </label>
+            <input type="range" id="budgetOther" min="10" max="200" value="45" step="5" class="range-slider">
           </div>
+
+          <!-- Live Dynamic Calculation Dashboard -->
+          <div class="budget-calculation-results-panel">
+            
+            <div class="budget-metric-card">
+              <span class="metric-label">Total Monthly Expenses</span>
+              <strong class="metric-val text-expense" id="budgetTotalDisplay">€430</strong>
+            </div>
+
+            <div class="budget-metric-card">
+              <span class="metric-label">Net Monthly Balance</span>
+              <strong class="metric-val" id="budgetNetBalanceDisplay">+€70</strong>
+            </div>
+
+            <div class="budget-metric-card">
+              <span class="metric-label">10-Month Year Projection</span>
+              <strong class="metric-val" id="budgetAnnualSavingsDisplay">+€700 Saved</strong>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Advice Box -->
+          <div id="budgetBalanceStatus" style="margin-top: 1rem;"></div>
+
+        </div>
         </div>
 
         <div class="journey-reward-banner">

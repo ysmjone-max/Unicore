@@ -7422,3 +7422,261 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 [data-theme="dark"] .pocket-list li {
   color: #cbd5e1 !important;
 }
+
+
+/* ==========================================================================
+   Mobile-Optimized Animation Stages & Dynamic Budget Dashboard
+   ========================================================================== */
+
+/* Fluid Mobile Stages */
+@media (max-width: 640px) {
+  .sami-animated-stage {
+    height: 110px !important;
+    margin-bottom: 1.25rem !important;
+  }
+  
+  .stage-pre-departure .element-letter {
+    font-size: 2.5rem !important;
+  }
+  
+  .stage-seal-stamp {
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.5rem !important;
+    bottom: 8px !important;
+    right: 10px !important;
+  }
+
+  .stage-suitcase {
+    font-size: 2.2rem !important;
+  }
+
+  .stage-airplane {
+    font-size: 2rem !important;
+  }
+
+  .map-floating-pins .pin {
+    font-size: 0.62rem !important;
+    padding: 0.15rem 0.35rem !important;
+  }
+
+  .door-anim {
+    font-size: 0.68rem !important;
+    padding: 0.3rem 0.5rem !important;
+  }
+
+  .stage-city-silhouette {
+    letter-spacing: 0.25rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Stipend Custom Input & Presets */
+.stipend-input-container {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.stipend-custom-input-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.stipend-currency-wrap {
+  display: inline-flex;
+  align-items: center;
+  background: #eff6ff;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.75rem;
+  gap: 0.35rem;
+}
+
+.currency-symbol {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.budget-num-field {
+  width: 90px;
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--slate-900);
+  outline: none;
+  font-family: inherit;
+}
+
+.currency-period {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--slate-500);
+}
+
+.stipend-preset-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.preset-pill {
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  color: var(--slate-700);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.preset-pill:hover,
+.preset-pill.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.budget-expense-category-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--slate-600);
+  margin: 1.25rem 0 0.85rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Results Calculation Metrics Dashboard */
+.budget-calculation-results-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--slate-200);
+}
+
+.budget-metric-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--slate-500);
+}
+
+.metric-val {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.metric-val.text-expense { color: var(--slate-900); }
+.metric-val.text-surplus { color: #059669; }
+.metric-val.text-deficit { color: #dc2626; }
+
+/* Dynamic Status Box */
+.budget-status-box {
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  border-left: 5px solid;
+  animation: chapterFadeIn 0.3s ease;
+}
+
+.budget-status-box.positive {
+  background: #f0fdf4;
+  border-left-color: #059669;
+  border-top: 1px solid #bbf7d0;
+  border-right: 1px solid #bbf7d0;
+  border-bottom: 1px solid #bbf7d0;
+}
+
+.budget-status-box.balanced {
+  background: #eff6ff;
+  border-left-color: var(--primary);
+  border-top: 1px solid #bfdbfe;
+  border-right: 1px solid #bfdbfe;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.budget-status-box.negative {
+  background: #fef2f2;
+  border-left-color: #dc2626;
+  border-top: 1px solid #fecaca;
+  border-right: 1px solid #fecaca;
+  border-bottom: 1px solid #fecaca;
+}
+
+.status-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  display: block;
+}
+
+.budget-status-box.positive .status-title { color: #065f46; }
+.budget-status-box.balanced .status-title { color: #1e40af; }
+.budget-status-box.negative .status-title { color: #991b1b; }
+
+.status-desc {
+  font-size: 0.825rem;
+  margin: 0.35rem 0 0 0;
+  line-height: 1.55;
+}
+
+.budget-status-box.positive .status-desc { color: #047857; }
+.budget-status-box.balanced .status-desc { color: #1d4ed8; }
+.budget-status-box.negative .status-desc { color: #b91c1c; }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .stipend-input-container {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .stipend-currency-wrap {
+  background: #0f172a !important;
+  border-color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .budget-num-field {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .preset-pill {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .budget-metric-card {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .metric-val.text-expense {
+  color: #f8fafc !important;
+}
