@@ -1,35 +1,35 @@
 /**
- * UNICORE: Your First 30 Days - Interactive Survival Journey with Sami (v2.0 Enhanced)
- * State Management, Interactive Quizzes, Budget Calculator, Symptom Triage, Audio Synthesis, Web Audio Chimes
+ * UNICORE: Welcome to Italy with Yohannes (v3.0 Friendly Mentorship Edition)
+ * State Management, Flexible Dynamic Budget Simulator, Healthcare Triage, Audio Synthesis, Web Audio Chimes
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   const TOTAL_CHAPTERS = 12;
-  const STORAGE_KEY = 'unicore_sami_progress';
-  const BACKPACK_KEY = 'unicore_sami_backpack';
-  const CHECKLIST_KEY = 'unicore_sami_checklist';
+  const STORAGE_KEY = 'unicore_yohannes_progress';
+  const BACKPACK_KEY = 'unicore_yohannes_backpack';
+  const CHECKLIST_KEY = 'unicore_yohannes_checklist';
 
   // Milestone Backpack Rewards
   const BACKPACK_ITEMS = [
-    { id: 'docs', icon: 'fa-solid fa-folder-closed', name: 'Document Folder', desc: 'Certified degree copies & visa/laissez-passer' },
-    { id: 'adapter', icon: 'fa-solid fa-plug', name: 'EU Power Adapter', desc: 'Type C/L plug adapter & warm clothing' },
-    { id: 'boarding', icon: 'fa-solid fa-plane-arrival', name: 'Flight Pass', desc: 'Boarding pass & arrival confirmation' },
-    { id: 'sim', icon: 'fa-solid fa-sim-card', name: 'Italian SIM Card', desc: 'Local mobile data & offline city map' },
-    { id: 'cf', icon: 'fa-solid fa-id-card', name: 'Codice Fiscale', desc: 'Official Italian tax code certificate' },
-    { id: 'badge', icon: 'fa-solid fa-id-badge', name: 'Student ID Badge', desc: 'Campus library, Wi-Fi & canteen card' },
-    { id: 'bank', icon: 'fa-solid fa-credit-card', name: 'Bank Card (IBAN)', desc: 'Zero-fee student bank account for stipend' },
-    { id: 'ssn', icon: 'fa-solid fa-heart-pulse', name: 'Tessera Sanitaria', desc: 'SSN health registration & family doctor' },
-    { id: 'phrasebook', icon: 'fa-solid fa-book-open-reader', name: 'Italian Phrasebook', desc: '10 Essential daily survival phrases' },
-    { id: 'transit', icon: 'fa-solid fa-bus-simple', name: 'Metro & Bus Pass', desc: 'Annual subsidized regional student transit pass' },
-    { id: 'buddy', icon: 'fa-solid fa-handshake-angle', name: 'UNICORE Buddy Pin', desc: 'Lifelong peer network & Community Matching' },
-    { id: 'laurea', icon: 'fa-solid fa-graduation-cap', name: 'Master Laurea (120 CFU)', desc: '12-Month Job Search Permit & PhD pathways' }
+    { id: 'docs', icon: 'fa-solid fa-folder-closed', name: 'Pre-Departure Folder', desc: 'Degree certificates, visa/laissez-passer & comfort foods' },
+    { id: 'adapter', icon: 'fa-solid fa-plug', name: 'EU Adapter & Coat', desc: 'Type C/L plug adapter, warm jacket & Google Maps offline' },
+    { id: 'cash', icon: 'fa-solid fa-money-bill-wave', name: 'Pocket Euros (€)', desc: 'Small cash notes for airport transit & initial needs' },
+    { id: 'sim', icon: 'fa-solid fa-sim-card', name: 'Italian SIM & Apps', desc: 'Local mobile data, Google Maps & Trenitalia app' },
+    { id: 'cf', icon: 'fa-solid fa-id-card', name: 'Codice Fiscale & Kit', desc: 'Tax code & postal receipt (Ricevuta) legal shield' },
+    { id: 'badge', icon: 'fa-solid fa-id-badge', name: 'Student Badge & Email', desc: 'Institutional university email & campus card' },
+    { id: 'bank', icon: 'fa-solid fa-credit-card', name: 'Student Bank (IBAN)', desc: 'Zero-fee account & smart monthly budget plan' },
+    { id: 'ssn', icon: 'fa-solid fa-heart-pulse', name: 'Tessera Sanitaria', desc: 'SSN public health card & Medico di Base' },
+    { id: 'phrasebook', icon: 'fa-solid fa-book-open-reader', name: 'Spoken Italian Guide', desc: '10 Essential polite daily phrases with audio' },
+    { id: 'transit', icon: 'fa-solid fa-bus-simple', name: 'Student Transit Pass', desc: 'Subsidized regional bus & metro travel card' },
+    { id: 'buddy', icon: 'fa-solid fa-handshake-angle', name: 'Community & Mentors', desc: 'Peer buddy, study cohort & UNICORE Alumni' },
+    { id: 'laurea', icon: 'fa-solid fa-graduation-cap', name: 'Master Laurea & Launch', desc: '120 CFU degree, Erasmus+ & 12-Mo Job Permit' }
   ];
 
   let currentChapter = 0;
   let unlockedItems = new Set();
   let checkedTasks = new Set();
 
-  // Audio Context for UI Chimes (pure Web Audio API synthesized, no external files)
+  // Audio Context for UI Chimes
   let audioCtx = null;
   function getAudioContext() {
     if (!audioCtx) {
@@ -57,12 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (type === 'unlock') {
         osc.type = 'triangle';
         osc.frequency.setValueAtTime(523.25, now);
-        osc.frequency.setValueAtTime(659.25, now + 0.1);
-        osc.frequency.setValueAtTime(783.99, now + 0.2);
+        osc.frequency.setValueAtTime(659.25, now + 0.09);
+        osc.frequency.setValueAtTime(783.99, now + 0.18);
         gain.gain.setValueAtTime(0.15, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
         osc.start(now);
-        osc.stop(now + 0.5);
+        osc.stop(now + 0.45);
       } else if (type === 'correct') {
         osc.type = 'sine';
         osc.frequency.setValueAtTime(587.33, now);
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     } catch (e) {
-      // Audio fallback silent
+      // Silent fallback
     }
   }
 
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const audioBtns = document.querySelectorAll('.phrase-audio-btn');
   const interactiveCheckboxes = document.querySelectorAll('.interactive-check-input');
 
-  // Load Saved Progress
+  // Load Saved State
   function loadSavedState() {
     try {
       const savedChapter = localStorage.getItem(STORAGE_KEY);
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (nextBtn) {
       if (currentChapter === TOTAL_CHAPTERS - 1) {
-        nextBtn.innerHTML = '<i class="fa-solid fa-trophy"></i> Complete Journey';
+        nextBtn.innerHTML = '<i class="fa-solid fa-trophy"></i> Complete Welcome Guide';
         nextBtn.classList.add('btn-complete-journey');
       } else {
         nextBtn.innerHTML = 'Next Step <i class="fa-solid fa-arrow-right"></i>';
@@ -270,7 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Navigation Buttons
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       if (currentChapter > 0) renderChapter(currentChapter - 1, true);
@@ -330,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Spoken Italian Audio (Web Speech API)
+  // Web Speech Spoken Italian
   if ('speechSynthesis' in window) {
     audioBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -351,7 +350,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Interactive Chapter 5: Monthly Student Budget Calculator Slider
+  // Enhanced Dynamic Student Budget Simulator (Flexible Stipend Input)
+  const stipendSlider = document.getElementById('budgetStipend');
   const rentSlider = document.getElementById('budgetRent');
   const foodSlider = document.getElementById('budgetFood');
   const otherSlider = document.getElementById('budgetOther');
@@ -359,17 +359,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const balanceStatusEl = document.getElementById('budgetBalanceStatus');
 
   function updateBudgetCalc() {
-    if (!rentSlider || !foodSlider || !otherSlider || !totalCostEl) return;
+    if (!stipendSlider || !rentSlider || !foodSlider || !otherSlider || !totalCostEl) return;
+    
+    const stipend = parseInt(stipendSlider.value, 10) || 500;
     const rent = parseInt(rentSlider.value, 10) || 0;
     const food = parseInt(foodSlider.value, 10) || 0;
     const other = parseInt(otherSlider.value, 10) || 0;
     const total = rent + food + other;
-    const stipend = 500;
 
     totalCostEl.textContent = `€${total}`;
+    const sEl = document.getElementById('stipendVal');
     const rEl = document.getElementById('rentVal');
     const fEl = document.getElementById('foodVal');
     const oEl = document.getElementById('otherVal');
+    
+    if (sEl) sEl.textContent = `€${stipend}/mo`;
     if (rEl) rEl.textContent = `€${rent}`;
     if (fEl) fEl.textContent = `€${food}`;
     if (oEl) oEl.textContent = `€${other}`;
@@ -377,46 +381,70 @@ document.addEventListener('DOMContentLoaded', () => {
     if (balanceStatusEl) {
       if (total <= stipend) {
         const saved = stipend - total;
-        balanceStatusEl.innerHTML = `<span style="color: #059669; font-weight: 800;"><i class="fa-solid fa-circle-check"></i> Great Budget! You save €${saved}/mo for your emergency fund.</span>`;
+        balanceStatusEl.innerHTML = `
+          <div class="budget-status-box positive">
+            <span style="color: #059669; font-weight: 800; font-size: 0.95rem;">
+              <i class="fa-solid fa-circle-check"></i> Great Plan! You save €${saved}/month.
+            </span>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #065f46;">
+              💡 <strong>Yohannes Tip:</strong> Put this €${saved} directly into your Erasmus+ / Job Search transition savings buffer!
+            </p>
+          </div>
+        `;
       } else {
         const over = total - stipend;
-        balanceStatusEl.innerHTML = `<span style="color: #d97706; font-weight: 800;"><i class="fa-solid fa-triangle-exclamation"></i> Careful: €${over} above typical monthly stipend. Cut entertainment/takeaway!</span>`;
+        balanceStatusEl.innerHTML = `
+          <div class="budget-status-box negative">
+            <span style="color: #dc2626; font-weight: 800; font-size: 0.95rem;">
+              <i class="fa-solid fa-triangle-exclamation"></i> Deficit Alert: €${over}/month above your stipend!
+            </span>
+            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #991b1b;">
+              💡 <strong>Yohannes Tip:</strong> Use the university Mensa (Fascia 0/1 subsidized meals for €2–€3) and cook with roommates to stay balanced!
+            </p>
+          </div>
+        `;
       }
     }
   }
 
-  [rentSlider, foodSlider, otherSlider].forEach(slider => {
+  [stipendSlider, rentSlider, foodSlider, otherSlider].forEach(slider => {
     if (slider) slider.addEventListener('input', updateBudgetCalc);
   });
   updateBudgetCalc();
 
-  // Interactive Chapter 6: Symptom Healthcare Triage Selector
+  // Symptom Triage Tool (Italian Healthcare System)
   const triageOptions = document.querySelectorAll('.triage-select-btn');
   const triageOutput = document.getElementById('triageResultBox');
 
   const triageMap = {
     cold: {
-      title: '💊 Mild Cold, Headache, or Minor Scratch',
-      dest: 'Walk to your local Farmacia (Green Cross)',
-      action: 'Ask the pharmacist: "Ho un raffreddore/mal di gola, cosa mi consiglia?". Pharmacists will recommend over-the-counter paracetamol, throat lozenges, or saline spray.',
+      title: '💊 Non-Emergency: Cold, Cough, Muscle Pain, or Minor Ailment',
+      dest: 'Walk into your local Farmacia (Green Cross) or contact your Medico di Base',
+      action: 'Pharmacists in Italy are trained healthcare professionals and can recommend over-the-counter medicine. For sick leave certificates or prescription medicine, message or call your assigned Medico di Base (Family Doctor). Consultations and prescriptions are 100% free.',
       urgent: false
     },
     fever: {
-      title: '🩺 Persistent Fever (>38°C) or Need a Prescription',
-      dest: 'Book an appointment with your Medico di Base (Family Doctor)',
-      action: 'Call your assigned ASL general practitioner or visit during walk-in morning clinic hours. Bring your Tessera Sanitaria (Health Card). Consultations and prescriptions are 100% free.',
+      title: '🩺 Persistent Illness or Specialist Visit Referral (*Impegnativa*)',
+      dest: 'Contact your assigned Medico di Base (Family Doctor)',
+      action: 'Call your family doctor during clinic hours. If you need blood tests, X-rays, or a specialist doctor (e.g. dermatologist, dentist, ophthalmologist), your doctor will write an electronic prescription (Ricetta Elettronica) for the public hospital network with subsidized ticket fees.',
+      urgent: false
+    },
+    night: {
+      title: '🌙 Night or Weekend Sudden Illness (When Doctor's Clinic is Closed)',
+      dest: 'Call or visit the local Guardia Medica (Continuità Assistenziale)',
+      action: 'Every Italian city has a free out-of-hours public doctor service (Guardia Medica) open every night from 20:00 to 08:00, and 24 hours on weekends/holidays. They provide free medical consultations and urgent prescriptions when your family doctor is unavailable.',
       urgent: false
     },
     emergency: {
-      title: '🚨 Severe Accident, Difficulty Breathing, or Chest Pain',
-      dest: 'Call 112 or visit Pronto Soccorso (Emergency Hospital)',
-      action: 'Dial 112 (free from any phone) for ambulance dispatch or go directly to the hospital Pronto Soccorso. Emergency treatment is guaranteed to all persons regardless of paperwork.',
+      title: '🚨 Severe Accident, Chest Pain, or Difficulty Breathing',
+      dest: 'Call 112 or go straight to Pronto Soccorso (Emergency Hospital)',
+      action: 'Dial 112 (free from any mobile phone) for emergency ambulance dispatch or proceed immediately to the hospital Pronto Soccorso. Emergency care is guaranteed to all persons regardless of residency status.',
       urgent: true
     },
     mental: {
-      title: '🧠 Feeling Overwhelmed, Isolated, or Anxious',
-      dest: 'Free Campus Counseling & SAMIFO Medical Center',
-      action: 'Book a free confidential appointment with your University Student Psychological Counseling Service (Servizio di Counseling Psicologico) or access 100% free psychotherapy through Assolavoro.',
+      title: '🧠 Feeling Overwhelmed, Anxious, Isolated, or Stressed',
+      dest: 'Free University Psychological Counseling & SAMIFO Center',
+      action: 'Every Italian university offers confidential, 100% free psychological counseling (Servizio di Counseling Psicologico). You can also access SAMIFO (specialized refugee health centers in Rome/Milan) or 100% therapy refunds through Assolavoro.',
       urgent: false
     }
   };
@@ -431,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
         triageOutput.innerHTML = `
           <div class="triage-result-card ${res.urgent ? 'urgent' : ''}">
             <div class="triage-res-title">${res.title}</div>
-            <div class="triage-res-dest"><strong>Recommended Destination:</strong> ${res.dest}</div>
+            <div class="triage-res-dest"><strong>Where to go:</strong> ${res.dest}</div>
             <div class="triage-res-action">${res.action}</div>
           </div>
         `;
@@ -440,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Interactive Mini Quizzes
+  // Mini Quizzes
   document.querySelectorAll('.quiz-option-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const container = btn.closest('.mini-quiz-box');
@@ -470,7 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Confetti Particle Engine
+  // Confetti Animation
   function triggerConfetti() {
     try {
       const duration = 3500;

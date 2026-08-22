@@ -302,12 +302,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Complete Indexed Website Corpus (90+ entries across all 9 pages)
   const searchCorpus = [
   {
-    "title": "Meet Sami: Your First 30 Days in Italy (Interactive Survival Journey)",
+    "title": "Welcome to Italy with Yohannes (First 30 Days Guide)",
     "url": "first-30-days.html",
     "tag": "Interactive Experience",
     "desc": "An animated survival journey with 12 chapters (Pre-Arrival to Day 30), interactive backpack milestones, and 10 spoken Italian phrases.",
     "icon": "fa-person-walking-luggage",
-    "keywords": "meet sami your first 30 days in italy survival journey pre departure packing codice fiscale kit giallo health ssn bank account phrases"
+    "keywords": "welcome to italy with yohannes first 30 days your first 30 days in italy survival journey pre departure packing codice fiscale kit giallo health ssn bank account phrases"
   },
   {
     "title": "10 Italian Survival Phrases with Audio",
