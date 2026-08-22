@@ -4744,3 +4744,33 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 [data-theme="dark"] .faq-item.ribbon-community {
   border-left-color: #fbbf24;
 }
+
+
+/* Help Stage Card Left Color Ribbons */
+.help-stage-card {
+  border-left: 5px solid #94a3b8;
+}
+
+.help-stage-card.ribbon-official {
+  border-left-color: #059669;
+}
+
+.help-stage-card.ribbon-verified {
+  border-left-color: #1d4ed8;
+}
+
+.help-stage-card.ribbon-community {
+  border-left-color: #f59e0b;
+}
+
+[data-theme="dark"] .help-stage-card.ribbon-official {
+  border-left-color: #10b981;
+}
+
+[data-theme="dark"] .help-stage-card.ribbon-verified {
+  border-left-color: #38bdf8;
+}
+
+[data-theme="dark"] .help-stage-card.ribbon-community {
+  border-left-color: #fbbf24;
+}
